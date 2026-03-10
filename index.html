@@ -588,6 +588,46 @@
         .content {
             animation: fadeIn 0.5s ease;
         }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.6);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -608,7 +648,6 @@
                 <li><a onclick="showSection('objetivo'); toggleMenu()">Objetivo</a></li>
                 <li><a onclick="showSection('aulas'); toggleMenu()">Aulas</a></li>
                 <li><a onclick="showSection('progresso'); toggleMenu()">Progresso</a></li>
-                <li><a onclick="showSection('recursos'); toggleMenu()">Recursos</a></li>
             </ul>
         </div>
     </div>
@@ -654,85 +693,85 @@
             
             <h3>📚 Estrutura do Método</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px;">
-                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700;">1️⃣ Textos com Áudio</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Textos em níveis progressivos (A1 → A2 → B1 → B2) com situações reais: apresentação pessoal, restaurante, hotel, viagem, compras e muito mais!</p>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">1️⃣ Textos com Áudio</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Textos em níveis progressivos (A1 → A2 → B1 → B2) com situações reais: apresentação pessoal, restaurante, hotel, viagem, compras e muito mais!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700;">2️⃣ Listening Intensivo</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Escute o mesmo áudio várias vezes por dia para acostumar o ouvido, reconhecer padrões e entender o inglês falado com naturalidade!</p>
+                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">2️⃣ Listening Intensivo</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Escute o mesmo áudio várias vezes por dia para acostumar o ouvido, reconhecer padrões e entender o inglês falado com naturalidade!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #333;">3️⃣ Shadowing (Fala)</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em; color: #333;">Repita as frases em voz alta junto com o áudio! Treine pronúncia, ritmo e entonação. O foco é falar sem travar!</p>
+                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.3);">3️⃣ Shadowing (Fala)</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.2);">Repita as frases em voz alta junto com o áudio! Treine pronúncia, ritmo e entonação. O foco é falar sem travar!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(168, 230, 207, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(168, 230, 207, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700;">4️⃣ Anki (Memória)</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Todos os textos e frases entram no Anki com revisão diária. Frases completas para garantir que o vocabulário não seja esquecido!</p>
+                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(168, 230, 207, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(168, 230, 207, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">4️⃣ Anki (Memória)</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Todos os textos e frases entram no Anki com revisão diária. Frases completas para garantir que o vocabulário não seja esquecido!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%); color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 154, 158, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(255, 154, 158, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 154, 158, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #333;">5️⃣ Conversação Guiada</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em; color: #333;">Ao final de cada mês, perguntas em inglês sobre os textos. Você usa o que já ouviu e treinou!</p>
+                <div style="background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%); color: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 154, 158, 0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(255, 154, 158, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 154, 158, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.3);">5️⃣ Conversação Guiada</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.2);">Ao final de cada mês, perguntas em inglês sobre os textos. Você usa o que já ouviu e treinou!</p>
                 </div>
             </div>
             
             <h3>📊 Progresso Esperado</h3>
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 30px;">
-                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">Meses 1-3 (A1 - Iniciante)</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Entender 40-50% de áudios A1, conseguir se apresentar, reconhecer palavras comuns, fazer perguntas simples</p>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Meses 1-3 (A1 - Iniciante)</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Entender 40-50% de áudios A1, conseguir se apresentar, reconhecer palavras comuns, fazer perguntas simples</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">Meses 4-6 (A2 - Elementar)</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Entender 60-70% de áudios A2, manter conversas curtas, descrever rotina e planos, pedir ajuda em situações reais</p>
+                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Meses 4-6 (A2 - Elementar)</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Entender 60-70% de áudios A2, manter conversas curtas, descrever rotina e planos, pedir ajuda em situações reais</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #333; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #333;">Meses 7-9 (B1 - Intermediário)</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em; color: #333;">Entender 70-80% de áudios B1, conversar sobre tópicos variados, expressar opiniões, lidar com situações inesperadas</p>
+                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.3);">Meses 7-9 (B1 - Intermediário)</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.2);">Entender 70-80% de áudios B1, conversar sobre tópicos variados, expressar opiniões, lidar com situações inesperadas</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(168, 230, 207, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(168, 230, 207, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">Meses 10-12 (B2 - Intermediário Superior)</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Entender 80%+ de áudios B1/B2, conversas fluidas e naturais, vocabulário amplo e contextualizado, confiança em situações reais</p>
+                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(168, 230, 207, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(168, 230, 207, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Meses 10-12 (B2 - Intermediário Superior)</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Entender 80%+ de áudios B1/B2, conversas fluidas e naturais, vocabulário amplo e contextualizado, confiança em situações reais</p>
                 </div>
             </div>
             
             <h3>✈️ O que você será capaz de fazer:</h3>
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 30px;">
-                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700;">✈️ Viagem</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Fazer check-in em aeroportos, falar em hotéis e pedir informações, pedir comida e fazer pedidos especiais, resolver problemas simples, pedir ajuda e entender instruções, negociar preços e entender ofertas</p>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">✈️ Viagem</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Fazer check-in em aeroportos, falar em hotéis e pedir informações, pedir comida e fazer pedidos especiais, resolver problemas simples, pedir ajuda e entender instruções, negociar preços e entender ofertas</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700;">🗣️ Conversação</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Se apresentar com segurança e naturalidade, falar da rotina, planos e experiências, dar opiniões e argumentar, manter diálogos curtos e médios, entender cerca de 80%+ de áudios no nível B1/B2, fazer perguntas de acompanhamento</p>
+                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">🗣️ Conversação</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Se apresentar com segurança e naturalidade, falar da rotina, planos e experiências, dar opiniões e argumentar, manter diálogos curtos e médios, entender cerca de 80%+ de áudios no nível B1/B2, fazer perguntas de acompanhamento</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
-                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #333;">💼 Trabalho (Nível Inicial)</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em; color: #333;">Trabalhar em ambientes que exigem inglês funcional, entender ordens e instruções, responder perguntas e fazer relatórios simples, comunicar problemas e soluções, atuar em áreas como atendimento, hotelaria, serviços e ambientes internacionais</p>
+                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
+                    <h4 style="font-size: 1.3em; margin-bottom: 12px; font-weight: 700; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.3);">💼 Trabalho (Nível Inicial)</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.2);">Trabalhar em ambientes que exigem inglês funcional, entender ordens e instruções, responder perguntas e fazer relatórios simples, comunicar problemas e soluções, atuar em áreas como atendimento, hotelaria, serviços e ambientes internacionais</p>
                 </div>
             </div>
             
             <h3>⚠️ Disciplina é a Chave</h3>
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 30px;">
-                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">✅ Consistência > Intensidade</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">1 hora diária é melhor que 7 horas no fim de semana. A rotina é fundamental!</p>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 107, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 107, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">✅ Consistência > Intensidade</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">1 hora diária é melhor que 7 horas no fim de semana. A rotina é fundamental!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">✅ Todos os Dias Importa</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Pular dias quebra o ritmo de aprendizado. Estude todos os dias, mesmo que por pouco tempo!</p>
+                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(78, 205, 196, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(78, 205, 196, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">✅ Todos os Dias Importa</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Pular dias quebra o ritmo de aprendizado. Estude todos os dias, mesmo que por pouco tempo!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #333; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #333;">✅ Repetição é Essencial</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em; color: #333;">Seu cérebro precisa de repetição para consolidar memória. Quanto mais repete, mais aprende!</p>
+                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 217, 61, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 217, 61, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.3);">✅ Repetição é Essencial</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.2);">Seu cérebro precisa de repetição para consolidar memória. Quanto mais repete, mais aprende!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(168, 230, 207, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(168, 230, 207, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">✅ Paciência com o Processo</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em;">Progresso não é linear. Alguns dias você entenderá mais, outros menos. Isso é normal!</p>
+                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(168, 230, 207, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(168, 230, 207, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">✅ Paciência com o Processo</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">Progresso não é linear. Alguns dias você entenderá mais, outros menos. Isso é normal!</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%); color: #333; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 154, 158, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 154, 158, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 154, 158, 0.3)'">
-                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #333;">✅ Sem Perfeição</h4>
-                    <p style="line-height: 1.6; font-size: 0.95em; color: #333;">O objetivo é se comunicar, não ser perfeito. Erros são parte do aprendizado!</p>
+                <div style="background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%); color: #1a1a1a; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 154, 158, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 154, 158, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255, 154, 158, 0.3)'">
+                    <h4 style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.3);">✅ Sem Perfeição</h4>
+                    <p style="line-height: 1.7; font-size: 1em; color: #1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.2);">O objetivo é se comunicar, não ser perfeito. Erros são parte do aprendizado!</p>
                 </div>
             </div>
             
@@ -803,16 +842,16 @@
             
             <div class="progress-section">
                 <h3>Progresso Geral do Curso</h3>
-                <div class="progress-text">Aula 1 de 12 (8.33%)</div>
+                <div class="progress-text">Encontro 1 de 48 (2.08%)</div>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 8.33%;">8%</div>
+                    <div class="progress-fill" style="width: 2.08%;">2%</div>
                 </div>
             </div>
 
             <div class="info-cards">
                 <div class="info-card">
-                    <h4>📚 Aulas Completadas</h4>
-                    <p style="font-size: 1.5em; margin-top: 10px;">1 / 12</p>
+                    <h4>📚 Encontros Completados</h4>
+                    <p style="font-size: 1.5em; margin-top: 10px;">1 / 48</p>
                 </div>
                 <div class="info-card">
                     <h4>📖 Textos Estudados</h4>
@@ -820,7 +859,7 @@
                 </div>
                 <div class="info-card">
                     <h4>⏱️ Tempo Restante</h4>
-                    <p style="font-size: 1.5em; margin-top: 10px;">11 meses</p>
+                    <p style="font-size: 1.5em; margin-top: 10px;">47 encontros</p>
                 </div>
                 <div class="info-card">
                     <h4>🎯 Nível Atual</h4>
@@ -837,34 +876,8 @@
             </div>
         </div>
 
-        <!-- Recursos Section -->
-        <div id="recursos" class="content hidden">
-            <h2>Recursos Úteis 🔗</h2>
-            <p>Ferramentas e links para complementar seu aprendizado.</p>
-
-            <div class="box-info">
-                <h4>📱 Duolingo</h4>
-                <p>Reforce seu vocabulário com 300 XP por semana.</p>
-                <a href="https://www.duolingo.com" target="_blank" class="btn" style="background: #2563eb; color: white; text-decoration: none; display: inline-block; margin-top: 10px;">Acessar Duolingo</a>
-            </div>
-
-            <div class="box-info">
-                <h4>🧠 Anki</h4>
-                <p>Memorização de longo prazo com sistema de repetição espaçada.</p>
-                <a href="https://apps.ankiweb.net" target="_blank" class="btn" style="background: #2563eb; color: white; text-decoration: none; display: inline-block; margin-top: 10px;">Acessar Anki</a>
-            </div>
-
-            <div class="box-info">
-                <h4>📖 Objetivo do Curso</h4>
-                <p>Leia o documento completo sobre o método e objetivos.</p>
-                <a href="Objetivo do Curso.md" class="btn" style="background: #2563eb; color: white; text-decoration: none; display: inline-block; margin-top: 10px;">Ler Documento</a>
-            </div>
-
-            <div class="box-info">
-                <h4>❓ Dúvidas?</h4>
-                <p>Pergunte ao Tio Binho! Ele está aqui para ajudar.</p>
-            </div>
-        </div>
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
         <!-- Footer -->
         <footer>
@@ -928,6 +941,24 @@
                     behavior: 'smooth'
                 });
             }
+        }
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
     </script>
 </body>
