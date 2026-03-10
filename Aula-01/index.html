@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 01 - Tio Binho</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" href="./icone.png?v=1">
+    <link rel="apple-touch-icon" href="./icone.png?v=1">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -361,6 +362,34 @@
             margin-right: 8px;
         }
 
+        .text-content {
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .text-btn:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        .text-btn:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 80px;
+        }
+
         @media (max-width: 768px) {
             .back-to-top {
                 bottom: 20px;
@@ -418,8 +447,8 @@
     <div class="toolbar">
         <div class="toolbar-content">
             <a href="../index.html" class="toolbar-logo">
-                <img src="../../capa.png" alt="Tio Binho">
-                Tio Binho
+                <img src="../icone.png" alt="Tio Binho">
+                Inglês com Tio Binho
             </a>
             <a href="../index.html" class="back-btn">← Voltar</a>
         </div>

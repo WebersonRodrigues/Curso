@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de Inglês - Tio Binho</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="./icone.png?v=1">
+    <link rel="apple-touch-icon" href="./icone.png?v=1">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,8 +22,8 @@
 
         /* Toolbar */
         .toolbar {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #FFD93D 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -589,6 +590,35 @@
             animation: fadeIn 0.5s ease;
         }
 
+        .text-content {
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .toolbar-nav a:focus,
+        .btn:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 80px;
+        }
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -635,8 +665,8 @@
     <div class="toolbar">
         <div class="toolbar-content">
             <a href="#" class="toolbar-logo">
-                <img src="capa.png" alt="Tio Binho">
-                Tio Binho
+                <img src="./icone.png" alt="Tio Binho">
+                Inglês com Tio Binho
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
@@ -897,13 +927,11 @@
         }
 
         function showSection(sectionId) {
-            // Hide all sections
             const sections = document.querySelectorAll('.content');
             sections.forEach(section => {
                 section.classList.add('hidden');
             });
 
-            // Show home content when home is clicked
             if (sectionId === 'home') {
                 document.getElementById('home').classList.remove('hidden');
                 document.getElementById('home-content').classList.remove('hidden');
@@ -914,7 +942,6 @@
                 }
             }
 
-            // Update nav active state
             const navLinks = document.querySelectorAll('.toolbar-nav a');
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -923,7 +950,6 @@
                 event.target.classList.add('active');
             }
 
-            // Scroll to section with offset for toolbar
             if (sectionId !== 'home') {
                 const selectedSection = document.getElementById(sectionId);
                 if (selectedSection) {
