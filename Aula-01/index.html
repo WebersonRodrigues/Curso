@@ -123,6 +123,15 @@
             color: white;
         }
 
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333;
+        }
+
         .audio-section {
             background: #f9f9f9;
             padding: 20px;
@@ -199,23 +208,116 @@
         }
 
         @media (max-width: 768px) {
-            .side-by-side {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .toolbar-content {
+                height: 60px;
+                padding: 0 15px;
+            }
+
+            .toolbar-logo {
+                font-size: 1.2em;
+                gap: 8px;
+            }
+
+            .toolbar-logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .back-btn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .content {
+                padding: 15px;
+                border-radius: 10px;
             }
 
             .header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 15px;
+                padding-bottom: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.3em;
             }
 
             .text-selector {
                 width: 100%;
+                flex-wrap: wrap;
             }
 
             .text-btn {
                 flex: 1;
+                min-width: 80px;
+                padding: 8px 12px;
+                font-size: 0.85em;
+            }
+
+            .side-by-side {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .column {
+                padding: 15px;
+            }
+
+            .column h3 {
+                font-size: 1em;
+            }
+
+            .column p {
+                font-size: 0.9em;
+                line-height: 1.6;
+            }
+
+            audio {
+                height: 40px;
+            }
+
+            .download-btn {
+                padding: 10px 14px;
+                font-size: 0.85em;
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toolbar-logo {
+                font-size: 1em;
+            }
+
+            .toolbar-logo img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .back-btn {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+
+            .header h1 {
+                font-size: 1.1em;
+            }
+
+            .text-btn {
+                font-size: 0.75em;
+                padding: 6px 10px;
+            }
+
+            .column p {
+                font-size: 0.85em;
             }
         }
     </style>
