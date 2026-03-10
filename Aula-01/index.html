@@ -294,6 +294,78 @@
             }
         }
 
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #1e40af;
+        }
+
+        .breadcrumb span {
+            color: #999;
+        }
+
+        .tab-progress {
+            font-size: 0.85em;
+            color: #999;
+            font-weight: 500;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5em;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        .section-icon {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2em;
+            }
+        }
+
         @media (max-width: 480px) {
             .toolbar-logo {
                 font-size: 1em;
@@ -321,6 +393,19 @@
             .column p {
                 font-size: 0.85em;
             }
+
+            .breadcrumb {
+                font-size: 0.85em;
+                margin-bottom: 20px;
+            }
+
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -336,9 +421,17 @@
     </div>
 
     <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 01</span>
+        </div>
         <div class="content">
             <div class="header">
-                <h1>📚 Aula 01 - Semana 1</h1>
+                <div>
+                    <h1>📚 Aula 01 - Semana 1</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
                 <div class="text-selector">
                     <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
                     <button class="text-btn" onclick="showText(1)">Texto 1</button>
@@ -351,12 +444,12 @@
                 <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 01</h2>
                 
                 <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
-                    <h3 style="color: #2563eb; margin-bottom: 15px;">🎯 Objetivo da Semana</h3>
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
                     <p style="line-height: 1.8;">Aprender a se apresentar em inglês e reconhecer cores e números em contextos reais.</p>
                 </div>
 
                 <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
-                    <h3 style="color: #2563eb; margin-bottom: 15px;">📖 Textos da Semana</h3>
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
                     <div style="margin-bottom: 15px;">
                         <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Talking to People</h4>
                         <p style="margin-bottom: 8px;"><strong>Tema:</strong> Apresentação pessoal e conversação básica</p>
@@ -372,7 +465,7 @@
                 </div>
 
                 <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
-                    <h3 style="color: #2563eb; margin-bottom: 15px;">🧠 Como Estudar os Textos</h3>
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
                     <div style="margin-bottom: 15px;">
                         <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
                         <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
@@ -400,7 +493,7 @@
                 </div>
 
                 <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
-                    <h3 style="color: #2563eb; margin-bottom: 15px;">💡 Dicas Importantes</h3>
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
                     <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
                     <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
                     <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
@@ -409,7 +502,7 @@
                 </div>
 
                 <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
-                    <h3 style="color: #2563eb; margin-bottom: 15px;">❓ Dúvidas Comuns</h3>
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
                     <div style="margin-bottom: 15px;">
                         <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
                         <p style="margin-left: 15px; color: #666;">R: Não! Na primeira semana, o objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
@@ -431,7 +524,7 @@
 
             <!-- Texto 1 -->
             <div id="text-1" class="text-content hidden">
-                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">🎯 Texto 1: Talking to People</h2>
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Talking to People</h2>
                 <div class="audio-section">
                     <audio controls>
                         <source src="./01-Talking-to-People/01-Talking-to-People.mp3" type="audio/mpeg">
@@ -550,7 +643,7 @@
 
             <!-- Texto 2 -->
             <div id="text-2" class="text-content hidden">
-                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">🎯 Texto 2: Colors and Numbers in Real Life</h2>
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Colors and Numbers in Real Life</h2>
                 <div class="audio-section">
                     <audio controls>
                         <source src="./02-Colors-and-Numbers-in-Real-Life/02-Colors-and-Numbers-in-Real-Life.mp3" type="audio/mpeg">
@@ -661,6 +754,8 @@
         <p>Estude com consistência e você verá progresso! 💪</p>
     </footer>
 
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
     <script>
         function showText(textNumber) {
             document.getElementById('text-0').classList.add('hidden');
@@ -671,8 +766,22 @@
             document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
 
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
             window.scrollTo(0, 0);
         }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
