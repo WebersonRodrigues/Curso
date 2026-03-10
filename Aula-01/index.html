@@ -124,6 +124,11 @@
             color: white;
         }
 
+        .text-btn:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
         .menu-toggle {
             display: none;
             background: none;
@@ -526,7 +531,7 @@
             <div id="text-1" class="text-content hidden">
                 <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Talking to People</h2>
                 <div class="audio-section">
-                    <audio controls>
+                    <audio controls id="audio-1">
                         <source src="./01-Talking-to-People/01-Talking-to-People.mp3" type="audio/mpeg">
                     </audio>
                     <a href="./01-Talking-to-People/01-Talking-to-People.pdf" class="download-btn" download>📥 Download PDF</a>
@@ -603,39 +608,39 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. TALK 💬</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Conversar</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I talk to people"</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para se comunicar!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Conversar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I talk to people"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para se comunicar!</p>
                         </div>
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. SPEAK 🗣️</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Falar um idioma</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I speak English"</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para falar inglês!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Falar um idioma</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I speak English"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar inglês!</p>
                         </div>
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. LEARN 📚</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Aprender</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I learn every day"</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para melhorar!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Aprender</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I learn every day"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para melhorar!</p>
                         </div>
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. ASK ❓</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Perguntar</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I ask questions"</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para entender melhor!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Perguntar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I ask questions"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para entender melhor!</p>
                         </div>
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. UNDERSTAND 💡</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Entender</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I understand"</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para compreender!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Entender</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I understand"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para compreender!</p>
                         </div>
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. LISTEN 👂</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Ouvir, escutar</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I listen to music"</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para entender melhor!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ouvir, escutar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I listen to music"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para entender melhor!</p>
                         </div>
                     </div>
                 </div>
@@ -645,7 +650,7 @@
             <div id="text-2" class="text-content hidden">
                 <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Colors and Numbers in Real Life</h2>
                 <div class="audio-section">
-                    <audio controls>
+                    <audio controls id="audio-2">
                         <source src="./02-Colors-and-Numbers-in-Real-Life/02-Colors-and-Numbers-in-Real-Life.mp3" type="audio/mpeg">
                     </audio>
                     <a href="./02-Colors-and-Numbers-in-Real-Life/02-Colors-and-Numbers-in-Real-Life.pdf" class="download-btn" download>📥 Download PDF</a>
@@ -722,26 +727,26 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">Cores Básicas</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>White</strong> - Branco</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Black</strong> - Preto</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Red</strong> - Vermelho</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Blue</strong> - Azul</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Green</strong> - Verde</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>White</strong> - Branco</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Black</strong> - Preto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Red</strong> - Vermelho</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Blue</strong> - Azul</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Green</strong> - Verde</p>
                         </div>
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">Números 0-10</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Zero</strong> - 0</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>One</strong> - 1</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Two</strong> - 2</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Five</strong> - 5</p>
-                            <p style="font-size: 0.9em; color: #555;"><strong>Ten</strong> - 10</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Zero</strong> - 0</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>One</strong> - 1</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Two</strong> - 2</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Five</strong> - 5</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Ten</strong> - 10</p>
                         </div>
                         <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                             <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">Números 11-20</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Eleven</strong> - 11</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Twelve</strong> - 12</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Fifteen</strong> - 15</p>
-                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Twenty</strong> - 20</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Eleven</strong> - 11</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Twelve</strong> - 12</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Fifteen</strong> - 15</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Twenty</strong> - 20</p>
                         </div>
                     </div>
                 </div>
@@ -782,6 +787,28 @@
                 backToTop.classList.remove('show');
             }
         });
+
+        // Keyboard navigation
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+
+        // Lazy load audio
+        const originalShowText = showText;
+        showText = function(textNumber) {
+            originalShowText(textNumber);
+            const audio = document.getElementById('audio-' + textNumber);
+            if (audio && audio.querySelector('source').src) {
+                const src = audio.querySelector('source');
+                if (!src.dataset.loaded) {
+                    src.dataset.loaded = 'true';
+                    audio.load();
+                }
+            }
+        };
     </script>
 </body>
 </html>
