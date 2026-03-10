@@ -1,0 +1,46 @@
+{
+  "name": "Inglês com Tio Binho",
+  "short_name": "Tio Binho",
+  "description": "Curso de Inglês - Do Zero Absoluto ao B2 Intermediário em 12 Meses",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#FF6B6B",
+  "icons": [
+    {
+      "src": "./icone.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icone.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["education"],
+  "screenshots": [
+    {
+      "src": "./icone.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "./icone.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
