@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01 - Tio Binho</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+        }
+
+        .toolbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .toolbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .toolbar-logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toolbar-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .back-btn {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #1e40af;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #2563eb;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .text-selector {
+            display: flex;
+            gap: 10px;
+        }
+
+        .text-btn {
+            background: #f0f0f0;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .text-btn.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .text-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .audio-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2563eb;
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .download-btn:hover {
+            background: #1e40af;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .column {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .column h3 {
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .column p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .side-by-side {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .text-selector {
+                width: 100%;
+            }
+
+            .text-btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../../capa.png" alt="Tio Binho">
+                Tio Binho
+            </a>
+            <a href="../index.html" class="back-btn">← Voltar</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <h1>📚 Aula 01 - Semana 1</h1>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 01</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">🎯 Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a se apresentar em inglês e reconhecer cores e números em contextos reais.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📖 Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Talking to People</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Apresentação pessoal e conversação básica</p>
+                        <p style="margin-bottom: 8px;"><strong>Verbos:</strong> meet, talk, speak, learn, ask, answer</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Colors and Numbers in Real Life</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Cores e números em situações do dia a dia</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> 0-20, 10 cores básicas</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">🧠 Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">💡 Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">❓ Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! Na primeira semana, o objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1 -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">🎯 Texto 1: Talking to People</h2>
+                <div class="audio-section">
+                    <audio controls>
+                        <source src="./01-Talking-to-People/01-Talking-to-People.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01-Talking-to-People/01-Talking-to-People.mp3" class="download-btn" download>⬇️ Áudio</a>
+                    <a href="./01-Talking-to-People/01-Talking-to-People.pdf" class="download-btn" download>⬇️ PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Hello! Nice to meet you. My name is Tom. We meet for the first time today.</p>
+                        <p>I like to talk to people. I speak English a little, but I learn every day. Sometimes I forget words, but that is OK 😊</p>
+                        <p>When I don't understand, I ask questions. When people ask me something, I answer slowly.</p>
+                        <p>Yesterday, I met a new friend. We talked for a few minutes. He asked me where I am from. I answered, "I am from Brazil."</p>
+                        <p>We talked about work and hobbies. I enjoy music and movies. I prefer simple conversations.</p>
+                        <p>Today, I stay at home. I study English and practice speaking. I remember new words and phrases.</p>
+                        <p>Next week, I plan to travel. I want to visit a new city. I hope to meet new people there.</p>
+                        <p>When I arrive, I wait and listen. I choose simple words. I speak slowly and clearly.</p>
+                        <p>At the end of the day, I feel good. I enjoy learning English. I know I am improving little by little.</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Olá! Prazer em conhecer você. Meu nome é Tom. Nós nos conhecemos pela primeira vez hoje.</p>
+                        <p>Eu gosto de conversar com pessoas. Eu falo inglês um pouco, mas eu aprendo todos os dias. Às vezes eu esqueço palavras, mas tudo bem 😊</p>
+                        <p>Quando eu não entendo, eu faço perguntas. Quando as pessoas me perguntam algo, eu respondo devagar.</p>
+                        <p>Ontem, eu conheci um novo amigo. Nós conversamos por alguns minutos. Ele me perguntou de onde eu sou. Eu respondi, "Eu sou do Brasil."</p>
+                        <p>Nós falamos sobre trabalho e hobbies. Eu gosto de música e filmes. Eu prefiro conversas simples.</p>
+                        <p>Hoje, eu fico em casa. Eu estudo inglês e pratico a fala. Eu lembro novas palavras e frases.</p>
+                        <p>Na próxima semana, eu planejo viajar. Eu quero visitar uma nova cidade. Eu espero conhecer novas pessoas lá.</p>
+                        <p>Quando eu chego, eu espero e escuto. Eu escolho palavras simples. Eu falo devagar e claramente.</p>
+                        <p>No final do dia, eu me sinto bem. Eu gosto de aprender inglês. Eu sei que estou melhorando pouco a pouco.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Hello! Nice to meet you.</div>
+                            <div style="color: #666; font-size: 0.95em;">Olá! Prazer em conhecer você.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My name is Tom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu nome é Tom.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I like to talk to people.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto de conversar com pessoas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I speak English a little, but I learn every day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu falo inglês um pouco, mas eu aprendo todos os dias.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes I forget words, but that is OK.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes eu esqueço palavras, mas tudo bem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I don't understand, I ask questions.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando eu não entendo, eu faço perguntas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I study English and practice speaking.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu estudo inglês e pratico a fala.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I enjoy learning English.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto de aprender inglês.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🤝 Verbos Importantes</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. TALK 💬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Conversar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I talk to people"</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para se comunicar!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. SPEAK 🗣️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Falar um idioma</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I speak English"</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para falar inglês!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. LEARN 📚</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Aprender</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I learn every day"</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para melhorar!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. ASK ❓</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Perguntar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I ask questions"</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para entender melhor!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. UNDERSTAND 💡</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Entender</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I understand"</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para compreender!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. LISTEN 👂</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Significado:</strong> Ouvir, escutar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Exemplo:</strong> "I listen to music"</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Por quê:</strong> Para entender melhor!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2 -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">🎯 Texto 2: Colors and Numbers in Real Life</h2>
+                <div class="audio-section">
+                    <audio controls>
+                        <source src="./02-Colors-and-Numbers-in-Real-Life/02-Colors-and-Numbers-in-Real-Life.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02-Colors-and-Numbers-in-Real-Life/02-Colors-and-Numbers-in-Real-Life.mp3" class="download-btn" download>⬇️ Áudio</a>
+                    <a href="./02-Colors-and-Numbers-in-Real-Life/02-Colors-and-Numbers-in-Real-Life.pdf" class="download-btn" download>⬇️ PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Colors and numbers are part of my day. Early in the morning, there are zero people on the street. Everything is quiet.</p>
+                        <p>On the table, I have one white cup and two black spoons. Near the door, I leave three gray shoes.</p>
+                        <p>In the room, I count four brown chairs and five red pillows. Next to the window, there are six green plants.</p>
+                        <p>Outside my house, I see seven blue cars and eight yellow bikes. On the ground, nine orange balls are ready to play.</p>
+                        <p>At the party, ten pink balloons are in the air. I also see eleven people wearing light and dark colors.</p>
+                        <p>In the park, twelve birds fly over the trees. On the bench, thirteen books show many different colors.</p>
+                        <p>At school, fourteen students sit in the classroom. On the table, fifteen notebooks are white, black, and gray.</p>
+                        <p>In the café, sixteen plates and seventeen cups are ready to use. The chairs are brown, and the walls are light yellow.</p>
+                        <p>On the street, I pass eighteen houses and nineteen windows. Some are white, some are dark gray.</p>
+                        <p>At night, I look at the sky and count twenty stars. The sky is dark blue, and the day is over.</p>
+                        <p>Colors make life interesting. Numbers help me understand the world.</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Cores e números fazem parte do meu dia. De manhã cedo, há zero pessoas na rua. Tudo está quieto.</p>
+                        <p>Na mesa, eu tenho uma xícara branca e duas colheres pretas. Perto da porta, eu deixo três sapatos cinza.</p>
+                        <p>No quarto, eu conto quatro cadeiras marrons e cinco almofadas vermelhas. Perto da janela, há seis plantas verdes.</p>
+                        <p>Fora da minha casa, eu vejo sete carros azuis e oito bicicletas amarelas. No chão, nove bolas laranja estão prontas para brincar.</p>
+                        <p>Na festa, dez balões rosas estão no ar. Eu também vejo onze pessoas usando cores claras e escuras.</p>
+                        <p>No parque, doze pássaros voam sobre as árvores. No banco, treze livros mostram muitas cores diferentes.</p>
+                        <p>Na escola, quatorze alunos sentam na sala. Na mesa, quinze cadernos são brancos, pretos e cinza.</p>
+                        <p>No café, dezesseis pratos e dezessete xícaras estão prontos para usar. As cadeiras são marrons e as paredes são amarelo claro.</p>
+                        <p>Na rua, eu passo por dezoito casas e dezenove janelas. Algumas são brancas, outras são cinza escuro.</p>
+                        <p>À noite, eu olho para o céu e conto vinte estrelas. O céu é azul escuro, e o dia termina.</p>
+                        <p>Cores tornam a vida interessante. Números me ajudam a entender o mundo.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Colors and numbers are part of my day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Cores e números fazem parte do meu dia.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Early in the morning, there are zero people on the street.</div>
+                            <div style="color: #666; font-size: 0.95em;">De manhã cedo, há zero pessoas na rua.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the table, I have one white cup and two black spoons.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na mesa, eu tenho uma xícara branca e duas colheres pretas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the room, I count four brown chairs and five red pillows.</div>
+                            <div style="color: #666; font-size: 0.95em;">No quarto, eu conto quatro cadeiras marrons e cinco almofadas vermelhas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Outside my house, I see seven blue cars and eight yellow bikes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Fora da minha casa, eu vejo sete carros azuis e oito bicicletas amarelas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the party, ten pink balloons are in the air.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na festa, dez balões rosas estão no ar.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At night, I look at the sky and count twenty stars.</div>
+                            <div style="color: #666; font-size: 0.95em;">À noite, eu olho para o céu e conto vinte estrelas.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🎨 Cores e Números</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">Cores Básicas</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>White</strong> - Branco</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Black</strong> - Preto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Red</strong> - Vermelho</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Blue</strong> - Azul</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Green</strong> - Verde</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">Números 0-10</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Zero</strong> - 0</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>One</strong> - 1</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Two</strong> - 2</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Five</strong> - 5</p>
+                            <p style="font-size: 0.9em; color: #555;"><strong>Ten</strong> - 10</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">Números 11-20</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Eleven</strong> - 11</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Twelve</strong> - 12</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Fifteen</strong> - 15</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #555;"><strong>Twenty</strong> - 20</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 01 - Tio Binho</strong></p>
+        <p>Estude com consistência e você verá progresso! 💪</p>
+    </footer>
+
+    <script>
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+
+            window.scrollTo(0, 0);
+        }
+    </script>
+    </script>
+</body>
+</html>
