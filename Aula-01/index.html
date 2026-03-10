@@ -451,6 +451,100 @@
                 font-size: 1em;
             }
         }
+
+        /* Install Banner */
+        #installBanner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #FFD93D 100%);
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #installBanner h3 {
+            color: white;
+            font-size: 1.1em;
+            margin: 0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        #installBanner p {
+            color: white;
+            font-size: 0.9em;
+            margin: 0;
+            text-align: center;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .install-buttons {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .install-btn {
+            background: white;
+            color: #FF6B6B;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .install-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .install-btn.cancel {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .install-btn.cancel:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 480px) {
+            #installBanner {
+                padding: 15px;
+            }
+
+            #installBanner h3 {
+                font-size: 1em;
+            }
+
+            #installBanner p {
+                font-size: 0.85em;
+            }
+
+            .install-btn {
+                padding: 10px 16px;
+                font-size: 0.85em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -465,6 +559,15 @@
     </div>
 
     <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
         <div class="breadcrumb">
             <a href="../index.html">🏠 Home</a>
             <span>›</span>
@@ -801,6 +904,45 @@
     <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
 
     <script>
+        let deferredPrompt;
+
+        // Capturar evento de instalação
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) {
+                banner.style.display = 'flex';
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('App instalado com sucesso!');
+                    }
+                    deferredPrompt = null;
+                    const banner = document.getElementById('installBanner');
+                    if (banner) {
+                        banner.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) {
+                banner.style.display = 'none';
+            }
+        }
+
         // Registrar Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
