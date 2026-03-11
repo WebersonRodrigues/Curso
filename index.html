@@ -27,6 +27,7 @@
             font-family: 'DM Sans', sans-serif;
             background: #f8f8f8;
             color: #333;
+            font-size: 18px;
         }
 
         /* Toolbar */
@@ -83,16 +84,18 @@
         .toolbar-nav a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.2s ease;
             cursor: pointer;
             position: relative;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            padding: 8px 14px;
+            border-radius: 20px;
         }
 
         .toolbar-nav a:hover {
-            color: #fff;
-            transform: translateY(-2px);
+            background: rgba(255,255,255,0.25);
         }
 
         .toolbar-nav a.active {
@@ -194,8 +197,8 @@
         }
 
         .content p {
-            font-size: 1.05em;
-            line-height: 1.8;
+            font-size: 1em;
+            line-height: 1.9;
             color: #555;
             margin-bottom: 15px;
         }
@@ -238,13 +241,13 @@
         }
 
         .info-card h4 {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 10px;
             font-weight: 700;
         }
 
         .info-card p {
-            font-size: 0.95em;
+            font-size: 1em;
             opacity: 0.95;
             color: white;
         }
@@ -294,21 +297,21 @@
         }
 
         .aula-card h3 {
-            font-size: 1.5em;
+            font-size: 1.6em;
             margin-bottom: 10px;
             font-weight: 700;
             color: white;
         }
 
         .aula-card p {
-            font-size: 0.95em;
+            font-size: 1em;
             opacity: 0.95;
             margin-bottom: 15px;
             color: white;
         }
 
         .aula-card .textos {
-            font-size: 0.9em;
+            font-size: 0.95em;
             opacity: 0.9;
             margin-bottom: 15px;
             color: white;
@@ -318,13 +321,15 @@
             display: inline-block;
             background: white;
             color: #333;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.2s ease;
             margin-right: 10px;
             margin-top: 10px;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.15);
         }
 
         .aula-card:nth-child(3) .btn {
@@ -332,8 +337,13 @@
         }
 
         .aula-card .btn:hover {
-            background: #f0f0f0;
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 0 rgba(0,0,0,0.15);
+        }
+
+        .aula-card .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.15);
         }
 
         /* Progress Section */
@@ -730,6 +740,63 @@
             }
         }
 
+        /* Mascote Tio Binho - desativado temporariamente (poluído no mobile)
+        .mascote-container {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .mascote-balao {
+            background: white;
+            border-radius: 16px 16px 4px 16px;
+            padding: 10px 14px;
+            font-size: 0.78em;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            max-width: 160px;
+            text-align: center;
+            line-height: 1.4;
+            animation: fadeInBalao 0.4s ease;
+            border: 2px solid #FFD93D;
+        }
+
+        @keyframes fadeInBalao {
+            from { opacity: 0; transform: scale(0.8) translateY(10px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .mascote-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            animation: mascoteFloat 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .mascote-img:hover { transform: scale(1.1); }
+        .mascote-img:active { transform: scale(0.95); }
+
+        @keyframes mascoteFloat {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 480px) {
+            .mascote-container { bottom: 75px; right: 15px; }
+            .mascote-img { width: 55px; height: 55px; }
+            .mascote-balao { font-size: 0.72em; max-width: 130px; }
+        }
+        */
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -1022,8 +1089,8 @@
 
             <div class="box-info" style="margin-top: 30px;">
                 <h4>🔍 Mapa de Palavras Estudadas</h4>
-                <p style="margin-bottom: 15px; color: #666;">Veja as plavras que você aprendeu através dos textos estudados:</p>
-                <p>Abaixo segue o grafico da ferramenta voyant-tools, ao clicar em alguma palavra vc será levado até a ferramenta onde consta as infromaões de todos os textos e palavras estudadas. </p>
+                <p style="margin-bottom: 15px; color: #666;">Veja as palavras que você aprendeu através dos textos estudados:</p>
+                <p>Abaixo segue o gráfico da ferramenta Voyant Tools. Ao clicar em alguma palavra, você será levado até a ferramenta onde constam as informações de todos os textos e palavras estudadas.</p>
                 <div style="overflow-x: auto;">
                    <iframe style='width: 100%; max-width: 100%; height: 471px; border: none; border-radius: 8px;' src='https://voyant-tools.org/tool/CorpusTerms/?corpus=30b615bfd36267b45b359fb5ba7347dc'></iframe>
                    
@@ -1042,6 +1109,13 @@
         <!-- Back to Top Button -->
         <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
+        <!-- Mascote Tio Binho - desativado temporariamente (poluído no mobile)
+        <div class="mascote-container">
+            <div class="mascote-balao" id="mascoteBalao">Vamos aprender! 🚀</div>
+            <img src="./tiobinho.png" alt="Tio Binho" class="mascote-img" onclick="trocarFrase()">
+        </div>
+        -->
+
         <!-- Footer -->
         <footer>
             <p><strong>Inglês com Tio Binho</strong></p>
@@ -1053,6 +1127,39 @@
     </div>
 
     <script>
+        /* Mascote frases rotativas - desativado temporariamente (poluído no mobile)
+        const frasesMascote = [
+            'Vamos aprender! 🚀',
+            'Você consegue! 💪',
+            'Repita em voz alta! 🗣️',
+            'Ouça bastante! 🎧',
+            'Todo dia um pouquinho! ⭐',
+            'Inglês é divertido! 😄',
+            'Não desista! 🏆',
+            'Pratique hoje! 📚',
+        ];
+        let fraseAtual = 0;
+
+        function trocarFrase() {
+            fraseAtual = (fraseAtual + 1) % frasesMascote.length;
+            const balao = document.getElementById('mascoteBalao');
+            balao.style.animation = 'none';
+            balao.offsetHeight;
+            balao.style.animation = '';
+            balao.textContent = frasesMascote[fraseAtual];
+        }
+        setInterval(trocarFrase, 5000);
+        */
+
+        // Feedback visual nos botões
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
         let deferredPrompt = null;
         let installPromptShown = false;
 

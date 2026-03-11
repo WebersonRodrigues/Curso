@@ -27,6 +27,7 @@
             font-family: 'DM Sans', sans-serif;
             background: #f8f8f8;
             color: #333;
+            font-size: 18px;
         }
 
         .toolbar {
@@ -69,18 +70,23 @@
         .back-btn {
             background: white;
             color: #FF6B6B;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.12);
         }
 
         .back-btn:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 0 rgba(0,0,0,0.12);
+        }
+
+        .back-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.12);
         }
 
         .install-app-btn {
@@ -144,27 +150,31 @@
         .text-btn {
             background: #f0f0f0;
             color: #333;
-            padding: 10px 20px;
+            padding: 12px 22px;
             border: none;
-            border-radius: 8px;
+            border-radius: 50px;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.1);
         }
 
         .text-btn.active {
             background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%);
             color: white;
+            box-shadow: 0 4px 0 rgba(200,60,60,0.3);
         }
 
         .text-btn:hover {
             background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%);
             color: white;
+            transform: translateY(-2px);
         }
 
-        .text-btn:focus {
-            outline: 2px solid #2563eb;
-            outline-offset: 2px;
+        .text-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.1);
         }
 
         .menu-toggle {
@@ -229,7 +239,7 @@
         }
 
         .column p {
-            line-height: 1.8;
+            line-height: 1.9;
             margin-bottom: 15px;
             font-size: 1em;
         }
@@ -366,6 +376,63 @@
             color: #999;
             font-weight: 500;
         }
+
+        /* Mascote Tio Binho - desativado temporariamente (poluído no mobile)
+        .mascote-container {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .mascote-balao {
+            background: white;
+            border-radius: 16px 16px 4px 16px;
+            padding: 10px 14px;
+            font-size: 0.78em;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            max-width: 160px;
+            text-align: center;
+            line-height: 1.4;
+            animation: fadeInBalao 0.4s ease;
+            border: 2px solid #FFD93D;
+        }
+
+        @keyframes fadeInBalao {
+            from { opacity: 0; transform: scale(0.8) translateY(10px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .mascote-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            animation: mascoteFloat 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .mascote-img:hover { transform: scale(1.1); }
+        .mascote-img:active { transform: scale(0.95); }
+
+        @keyframes mascoteFloat {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 480px) {
+            .mascote-container { bottom: 75px; right: 15px; }
+            .mascote-img { width: 55px; height: 55px; }
+            .mascote-balao { font-size: 0.72em; max-width: 130px; }
+        }
+        */
 
         .back-to-top {
             position: fixed;
@@ -1132,7 +1199,47 @@
 
     <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
 
+    <!-- Mascote Tio Binho - desativado temporariamente (poluído no mobile)
+    <div class="mascote-container">
+        <div class="mascote-balao" id="mascoteBalao">Vamos aprender! 🚀</div>
+        <img src="../tiobinho.png" alt="Tio Binho" class="mascote-img" onclick="trocarFrase()">
+    </div>
+    -->
+
     <script>
+        /* Mascote frases rotativas - desativado temporariamente (poluído no mobile)
+        const frasesMascote = [
+            'Vamos aprender! 🚀',
+            'Você consegue! 💪',
+            'Repita em voz alta! 🗣️',
+            'Ouça bastante! 🎧',
+            'Todo dia um pouquinho! ⭐',
+            'Inglês é divertido! 😄',
+            'Não desista! 🏆',
+            'Pratique hoje! 📚',
+        ];
+        let fraseAtual = 0;
+
+        function trocarFrase() {
+            fraseAtual = (fraseAtual + 1) % frasesMascote.length;
+            const balao = document.getElementById('mascoteBalao');
+            balao.style.animation = 'none';
+            balao.offsetHeight;
+            balao.style.animation = '';
+            balao.textContent = frasesMascote[fraseAtual];
+        }
+        setInterval(trocarFrase, 5000);
+        */
+
+        // Feedback visual nos botões
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
         let deferredPrompt = null;
         let installPromptShown = false;
 
