@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aula 01 - Curso de Inglês com Tio Binho">
     <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Tio Binho">
     <title>Aula 01 - Tio Binho</title>
     <link rel="manifest" href="../manifest.json">
-    <link rel="icon" type="image/png" href="./icone.png?v=1">
-    <link rel="apple-touch-icon" href="./icone.png?v=1">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -78,6 +81,30 @@
             background: #f0f0f0;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .install-app-btn {
+            background: white;
+            color: #FF6B6B;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 10px;
+        }
+
+        .install-app-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .install-app-btn.show {
+            display: inline-block;
         }
 
         .container {
@@ -551,10 +578,13 @@
     <div class="toolbar">
         <div class="toolbar-content">
             <a href="../index.html" class="toolbar-logo">
-                <img src="../icone.png" alt="Tio Binho">
+                <img src="../icone-192.png" alt="Tio Binho">
                 Inglês com Tio Binho
             </a>
-            <a href="../index.html" class="back-btn">← Voltar</a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+                <button class="install-app-btn" id="installAppBtn" onclick="installApp()">📱 Instalar App</button>
+            </div>
         </div>
     </div>
 
@@ -719,6 +749,10 @@
                             <div style="color: #666; font-size: 0.95em;">Meu nome é Tom.</div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We meet for the first time today.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós nos conhecemos pela primeira vez hoje.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I like to talk to people.</div>
                             <div style="color: #666; font-size: 0.95em;">Eu gosto de conversar com pessoas.</div>
                         </div>
@@ -735,12 +769,84 @@
                             <div style="color: #666; font-size: 0.95em;">Quando eu não entendo, eu faço perguntas.</div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When people ask me something, I answer slowly.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando as pessoas me perguntam algo, eu respondo devagar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Yesterday, I met a new friend.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ontem, eu conheci um novo amigo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We talked for a few minutes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós conversamos por alguns minutos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He asked me where I am from.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele me perguntou de onde eu sou.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I answered, "I am from Brazil."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu respondi, "Eu sou do Brasil."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We talked about work and hobbies.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós falamos sobre trabalho e hobbies.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I enjoy music and movies.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto de música e filmes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I prefer simple conversations.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu prefiro conversas simples.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today, I stay at home.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje, eu fico em casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I study English and practice speaking.</div>
                             <div style="color: #666; font-size: 0.95em;">Eu estudo inglês e pratico a fala.</div>
                         </div>
-                        <div style="margin-bottom: 0;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I remember new words and phrases.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu lembro novas palavras e frases.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Next week, I plan to travel.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na próxima semana, eu planejo viajar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I want to visit a new city.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu quero visitar uma nova cidade.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I hope to meet new people there.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu espero conhecer novas pessoas lá.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I arrive, I wait and listen.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando eu chego, eu espero e escuto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I choose simple words.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu escolho palavras simples.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I speak slowly and clearly.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu falo devagar e claramente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the end of the day, I feel good.</div>
+                            <div style="color: #666; font-size: 0.95em;">No final do dia, eu me sinto bem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I enjoy learning English.</div>
                             <div style="color: #666; font-size: 0.95em;">Eu gosto de aprender inglês.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I know I am improving little by little.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu sei que estou melhorando pouco a pouco.</div>
                         </div>
                     </div>
                 </div>
@@ -842,24 +948,88 @@
                             <div style="color: #666; font-size: 0.95em;">De manhã cedo, há zero pessoas na rua.</div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everything is quiet.</div>
+                            <div style="color: #666; font-size: 0.95em;">Tudo está quieto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the table, I have one white cup and two black spoons.</div>
                             <div style="color: #666; font-size: 0.95em;">Na mesa, eu tenho uma xícara branca e duas colheres pretas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Near the door, I leave three gray shoes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Perto da porta, eu deixo três sapatos cinza.</div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the room, I count four brown chairs and five red pillows.</div>
                             <div style="color: #666; font-size: 0.95em;">No quarto, eu conto quatro cadeiras marrons e cinco almofadas vermelhas.</div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Next to the window, there are six green plants.</div>
+                            <div style="color: #666; font-size: 0.95em;">Perto da janela, há seis plantas verdes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Outside my house, I see seven blue cars and eight yellow bikes.</div>
                             <div style="color: #666; font-size: 0.95em;">Fora da minha casa, eu vejo sete carros azuis e oito bicicletas amarelas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the ground, nine orange balls are ready to play.</div>
+                            <div style="color: #666; font-size: 0.95em;">No chão, nove bolas laranja estão prontas para brincar.</div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the party, ten pink balloons are in the air.</div>
                             <div style="color: #666; font-size: 0.95em;">Na festa, dez balões rosas estão no ar.</div>
                         </div>
-                        <div style="margin-bottom: 0;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also see eleven people wearing light and dark colors.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu também vejo onze pessoas usando cores claras e escuras.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the park, twelve birds fly over the trees.</div>
+                            <div style="color: #666; font-size: 0.95em;">No parque, doze pássaros voam sobre as árvores.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the bench, thirteen books show many different colors.</div>
+                            <div style="color: #666; font-size: 0.95em;">No banco, treze livros mostram muitas cores diferentes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At school, fourteen students sit in the classroom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na escola, quatorze alunos sentam na sala.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the table, fifteen notebooks are white, black, and gray.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na mesa, quinze cadernos são brancos, pretos e cinza.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the café, sixteen plates and seventeen cups are ready to use.</div>
+                            <div style="color: #666; font-size: 0.95em;">No café, dezesseis pratos e dezessete xícaras estão prontos para usar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The chairs are brown, and the walls are light yellow.</div>
+                            <div style="color: #666; font-size: 0.95em;">As cadeiras são marrons e as paredes são amarelo claro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the street, I pass eighteen houses and nineteen windows.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na rua, eu passo por dezoito casas e dezenove janelas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Some are white, some are dark gray.</div>
+                            <div style="color: #666; font-size: 0.95em;">Algumas são brancas, outras são cinza escuro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
                             <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At night, I look at the sky and count twenty stars.</div>
                             <div style="color: #666; font-size: 0.95em;">À noite, eu olho para o céu e conto vinte estrelas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The sky is dark blue, and the day is over.</div>
+                            <div style="color: #666; font-size: 0.95em;">O céu é azul escuro, e o dia termina.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Colors make life interesting.</div>
+                            <div style="color: #666; font-size: 0.95em;">Cores tornam a vida interessante.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Numbers help me understand the world.</div>
+                            <div style="color: #666; font-size: 0.95em;">Números me ajudam a entender o mundo.</div>
                         </div>
                     </div>
                 </div>
@@ -905,6 +1075,7 @@
 
     <script>
         let deferredPrompt;
+        let installPromptShown = false;
 
         // Capturar evento de instalação
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -913,26 +1084,50 @@
             showInstallPrompt();
         });
 
+        // Mostrar banner em mobile mesmo sem beforeinstallprompt
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            
+            // Se é mobile e não está em modo standalone/PWA, mostrar banner
+            if (isMobile && !isStandalone && !isInPWAMode && !installPromptShown) {
+                // Mostrar botão na toolbar
+                const installBtn = document.getElementById('installAppBtn');
+                if (installBtn) {
+                    installBtn.classList.add('show');
+                }
+                // Aguardar um pouco para melhor UX
+                setTimeout(() => {
+                    showInstallPrompt();
+                }, 2000);
+            }
+        }
+
         function showInstallPrompt() {
             const banner = document.getElementById('installBanner');
-            if (banner) {
+            if (banner && !installPromptShown) {
                 banner.style.display = 'flex';
+                installPromptShown = true;
+                // Salvar no localStorage que já mostrou
+                localStorage.setItem('installPromptShown', 'true');
             }
         }
 
         function installApp() {
             if (deferredPrompt) {
+                // Se tem deferredPrompt, usar o prompt nativo
                 deferredPrompt.prompt();
                 deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('App instalado com sucesso!');
                     }
                     deferredPrompt = null;
-                    const banner = document.getElementById('installBanner');
-                    if (banner) {
-                        banner.style.display = 'none';
-                    }
+                    closeInstallPrompt();
                 });
+            } else {
+                // Se não tem deferredPrompt, mostrar instruções
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
             }
         }
 
@@ -940,6 +1135,11 @@
             const banner = document.getElementById('installBanner');
             if (banner) {
                 banner.style.display = 'none';
+            }
+            // Esconder botão da toolbar também
+            const installBtn = document.getElementById('installAppBtn');
+            if (installBtn) {
+                installBtn.classList.remove('show');
             }
         }
 
@@ -955,6 +1155,9 @@
                     });
             });
         }
+
+        // Verificar se é mobile ao carregar
+        window.addEventListener('load', checkIfMobileAndShowBanner);
 
         function showText(textNumber) {
             document.getElementById('text-0').classList.add('hidden');

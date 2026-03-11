@@ -1,8 +1,8 @@
-const CACHE_NAME = 'tio-binho-v1';
+const CACHE_NAME = 'tio-binho-v2';
 const urlsToCache = [
   './',
   './index.html',
-  './icone.png',
+  './icone-192.png',
   './capa.png',
   './manifest.json',
   'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
@@ -23,6 +23,7 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME) {
+            console.log('Deletando cache antigo:', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -37,26 +38,31 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Ignorar requisições de extensões e protocolos não-HTTP
+  if (!event.request.url.startsWith('http')) {
+    return;
+  }
+
+  // Estratégia: Network first, fallback para cache
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then(response => {
-        if (response) {
+        // Se a resposta for válida, cachear
+        if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
         }
-        return fetch(event.request).then(response => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-          const responseToCache = response.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseToCache);
-            });
-          return response;
-        });
+        const responseToCache = response.clone();
+        caches.open(CACHE_NAME)
+          .then(cache => {
+            cache.put(event.request, responseToCache);
+          })
+          .catch(err => console.log('Cache put error:', err));
+        return response;
       })
       .catch(() => {
-        return caches.match('./index.html');
+        // Se falhar, usar cache
+        return caches.match(event.request)
+          .then(response => response || caches.match('./index.html'));
       })
   );
 });

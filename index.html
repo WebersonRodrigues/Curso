@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Curso de Inglês - Do Zero Absoluto ao B2 Intermediário em 12 Meses">
     <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Tio Binho">
     <title>Curso de Inglês - Tio Binho</title>
     <link rel="manifest" href="./manifest.json">
-    <link rel="icon" type="image/png" href="./icone.png?v=1">
-    <link rel="apple-touch-icon" href="./icone.png?v=1">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -71,6 +74,29 @@
             display: flex;
             gap: 30px;
             list-style: none;
+        }
+
+        .install-app-btn {
+            background: white;
+            color: #FF6B6B;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+            display: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .install-app-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .install-app-btn.show {
+            display: block;
         }
 
         .toolbar-nav a {
@@ -769,7 +795,7 @@
     <div class="toolbar">
         <div class="toolbar-content">
             <a href="#" class="toolbar-logo">
-                <img src="./icone.png" alt="Tio Binho">
+                <img src="./icone-192.png" alt="Tio Binho">
                 Inglês com Tio Binho
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
@@ -783,6 +809,7 @@
                 <li><a onclick="showSection('aulas'); toggleMenu()">Aulas</a></li>
                 <li><a onclick="showSection('progresso'); toggleMenu()">Progresso</a></li>
             </ul>
+            <button class="install-app-btn" id="installAppBtn" onclick="installApp()">📱 Instalar App</button>
         </div>
     </div>
 
@@ -1035,6 +1062,7 @@
 
     <script>
         let deferredPrompt;
+        let installPromptShown = false;
 
         // Capturar evento de instalação
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -1043,26 +1071,50 @@
             showInstallPrompt();
         });
 
+        // Mostrar banner em mobile mesmo sem beforeinstallprompt
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            
+            // Se é mobile e não está em modo standalone/PWA, mostrar banner
+            if (isMobile && !isStandalone && !isInPWAMode && !installPromptShown) {
+                // Mostrar botão na toolbar
+                const installBtn = document.getElementById('installAppBtn');
+                if (installBtn) {
+                    installBtn.classList.add('show');
+                }
+                // Aguardar um pouco para melhor UX
+                setTimeout(() => {
+                    showInstallPrompt();
+                }, 2000);
+            }
+        }
+
         function showInstallPrompt() {
             const banner = document.getElementById('installBanner');
-            if (banner) {
+            if (banner && !installPromptShown) {
                 banner.style.display = 'flex';
+                installPromptShown = true;
+                // Salvar no localStorage que já mostrou
+                localStorage.setItem('installPromptShown', 'true');
             }
         }
 
         function installApp() {
             if (deferredPrompt) {
+                // Se tem deferredPrompt, usar o prompt nativo
                 deferredPrompt.prompt();
                 deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('App instalado com sucesso!');
                     }
                     deferredPrompt = null;
-                    const banner = document.getElementById('installBanner');
-                    if (banner) {
-                        banner.style.display = 'none';
-                    }
+                    closeInstallPrompt();
                 });
+            } else {
+                // Se não tem deferredPrompt, mostrar instruções
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
             }
         }
 
@@ -1070,6 +1122,11 @@
             const banner = document.getElementById('installBanner');
             if (banner) {
                 banner.style.display = 'none';
+            }
+            // Esconder botão da toolbar também
+            const installBtn = document.getElementById('installAppBtn');
+            if (installBtn) {
+                installBtn.classList.remove('show');
             }
         }
 
@@ -1085,6 +1142,9 @@
                     });
             });
         }
+
+        // Verificar se é mobile ao carregar
+        window.addEventListener('load', checkIfMobileAndShowBanner);
 
         function toggleMenu() {
             const navbar = document.getElementById('navbar');
