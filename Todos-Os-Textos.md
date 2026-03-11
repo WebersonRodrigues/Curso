@@ -1,32 +1,3 @@
-I like animals.
-Animals are everywhere: at home, on farms, in the forest, and in the ocean.
-At home, I have a dog and a cat.
-The dog is friendly and likes to play.
-The cat is small and likes to sleep.
-On the farm, there are many animals.
-I see a cow, a horse, and a pig.
-The cow gives milk.
-The horse is big and strong.
-The pig is pink and likes food.
-I also see a chicken and a duck.
-The chicken lays eggs.
-The duck likes water.
-In the forest, there are wild animals.
-I see a lion, a tiger, and an elephant.
-The lion is strong.
-The tiger is fast.
-The elephant is very big.
-In the trees, I see a monkey and a bird.
-The monkey climbs trees.
-The bird can fly.
-In the ocean, there are sea animals.
-I see a fish, a shark, and a whale.
-The fish is small.
-The shark is dangerous.
-The whale is very large.
-Animals are different, but all animals are important.
-I like animals very much.
----
 Colors and numbers are part of my day.
 Early in the morning, there are zero people on the street.
 Everything is quiet.
@@ -50,31 +21,6 @@ At night, I look at the sky and count twenty stars.
 The sky is dark blue, and the day is over.
 Colors make life interesting.
 Numbers help me understand the world
----
-My day starts early, and the world already has many colors.
-When I open my eyes, I see two blue curtains and a gray wall.
-My phone shows seven messages, but I read only one.
-In the kitchen, I make coffee.
-On the table, there is a white mug, a silver spoon, and a black phone.
-I drop three sugar cubes by mistake. Oops.
-Outside, the street is waking up.
-I see five small houses, some yellow, some light green.
-A brown dog runs after a red ball. He misses it.
-At the corner, four people wait for the bus.
-One wears a dark blue jacket.
-Another has bright orange shoes. They are very hard to miss.
-Later, I walk into a café.
-There are ten chairs: black, white, and gray.
-I choose the green one. I like green.
-On the wall, I count twelve pictures.
-One is purple, one is pink, and one is gold.
-I don’t understand the art, but it looks cool.
-In the afternoon, the sky changes.
-I see sixteen clouds, soft white and dark gray.
-Then I see nineteen birds flying together. That feels like a good sign.
-At night, I feel tired but happy.
-I count twenty stars in the deep blue sky.
-Today is full of colors. I like days like this.
 ---
 Hello! Nice to meet you.
 My name is Tom.
