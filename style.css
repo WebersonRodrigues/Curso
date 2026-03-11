@@ -1,0 +1,603 @@
+/* ============================================================
+   Inglês com Tio Binho - CSS Base Compartilhado
+   Usado por: index.html, Aula-XX/index.html
+   ============================================================ */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f8f8f8;
+    color: #333;
+    font-size: 18px;
+}
+
+/* ── Toolbar ── */
+.toolbar {
+    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #FFD93D 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.toolbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.toolbar-logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.toolbar-title { display: none; }
+.install-app-btn { display: none !important; }
+
+/* Nav (index.html) */
+.toolbar-nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.toolbar-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-nav a:hover { background: rgba(255,255,255,0.25); }
+
+.toolbar-nav a.active { color: #fff; font-weight: 700; }
+
+.toolbar-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 14px;
+    right: 14px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Botão Voltar (páginas de aula) */
+.back-btn {
+    background: white;
+    color: #FF6B6B;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.12);
+}
+
+.back-btn:hover { transform: translateY(-3px); box-shadow: 0 7px 0 rgba(0,0,0,0.12); }
+.back-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,0,0,0.12); }
+
+/* ── Container ── */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ── Content card ── */
+.content {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    scroll-margin-top: 70px;
+    animation: fadeIn 0.5s ease;
+}
+
+.content.hidden { display: none; }
+
+.content h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    scroll-margin-top: 70px;
+}
+
+.content h3 {
+    color: #333;
+    font-size: 1.3em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 1em;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* ── Info Cards ── */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.info-card {
+    border-radius: 12px;
+    padding: 25px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.info-card:nth-child(1) { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); }
+.info-card:nth-child(2) { background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); }
+.info-card:nth-child(3) { background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #333; }
+.info-card:nth-child(3) p { color: #333; }
+.info-card:nth-child(4) { background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); }
+
+.info-card h4 { font-size: 1.3em; margin-bottom: 10px; font-weight: 700; }
+.info-card p  { font-size: 1em; opacity: 0.95; color: white; }
+
+/* ── Aulas Grid ── */
+.aulas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.aula-card {
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aula-card:nth-child(1) { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); }
+.aula-card:nth-child(2) { background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); }
+.aula-card:nth-child(3) { background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #333; }
+.aula-card:nth-child(3) p,
+.aula-card:nth-child(3) .textos { color: #333; }
+.aula-card:nth-child(4) { background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); }
+
+.aula-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3); }
+
+.aula-card h3    { font-size: 1.6em; margin-bottom: 10px; font-weight: 700; color: white; }
+.aula-card p     { font-size: 1em; opacity: 0.95; margin-bottom: 15px; color: white; }
+.aula-card .textos { font-size: 0.95em; opacity: 0.9; margin-bottom: 15px; color: white; }
+
+.aula-card .btn {
+    display: inline-block;
+    background: white;
+    color: #333;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    margin-right: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+}
+
+.aula-card:nth-child(3) .btn { color: #FFD93D; }
+.aula-card .btn:hover  { transform: translateY(-3px); box-shadow: 0 7px 0 rgba(0,0,0,0.15); }
+.aula-card .btn:active { transform: translateY(2px);  box-shadow: 0 2px 0 rgba(0,0,0,0.15); }
+
+/* ── Progress Section ── */
+.progress-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.progress-section h3 { color: #2563eb; margin-bottom: 20px; font-size: 1.3em; font-weight: 700; }
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.progress-text { color: #666; font-size: 0.95em; margin-bottom: 10px; }
+
+/* ── Box Info ── */
+.box-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #2563eb;
+}
+
+.box-info h4 { color: #2563eb; margin-bottom: 10px; font-weight: 700; }
+.box-info p  { color: #555; margin: 5px 0; }
+
+/* ── Aula: Header / Tabs ── */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 20px;
+}
+
+.header h1 { color: #333; font-size: 2em; font-weight: 700; }
+
+.text-selector { display: flex; gap: 10px; }
+
+.text-btn {
+    background: #f0f0f0;
+    color: #333;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+}
+
+.text-btn.active {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%);
+    color: white;
+    box-shadow: 0 4px 0 rgba(200,60,60,0.3);
+}
+
+.text-btn:hover { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: white; transform: translateY(-2px); }
+.text-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,0,0,0.1); }
+.text-btn:focus { outline: 2px solid #2563eb; outline-offset: 2px; }
+
+.tab-progress { font-size: 0.85em; color: #999; font-weight: 500; }
+
+/* ── Aula: Audio / Texto ── */
+.audio-section {
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0E5 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border-left: 4px solid #FF6B6B;
+}
+
+audio { width: 100%; margin-bottom: 10px; }
+
+.download-btn {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #FF6B6B;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.download-btn:hover { background: #e8e8e8; border-color: #FF6B6B; }
+
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.column {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #FF6B6B;
+}
+
+.column h3 { color: #333; margin-bottom: 20px; font-weight: 700; font-size: 1.1em; }
+.column p  { line-height: 1.9; margin-bottom: 15px; font-size: 1em; }
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.breadcrumb a { color: #2563eb; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+.breadcrumb a:hover { color: #1e40af; }
+.breadcrumb span { color: #999; }
+
+/* ── Utilitários ── */
+.hidden { display: none; }
+.section-icon { margin-right: 8px; }
+
+/* ── Install Banner ── */
+#installBanner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #FFD93D 100%);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+}
+
+#installBanner h3 { color: white; font-size: 1.1em; margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+#installBanner p  { color: white; font-size: 0.9em; margin: 0; text-align: center; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+
+.install-buttons { display: flex; gap: 10px; width: 100%; justify-content: center; }
+
+.install-btn {
+    background: white;
+    color: #FF6B6B;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+.install-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.install-btn.cancel { background: rgba(255,255,255,0.2); color: white; }
+.install-btn.cancel:hover { background: rgba(255,255,255,0.3); }
+
+/* ── Back to Top ── */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(37, 99, 235, 0.6); }
+.back-to-top.show  { display: flex; }
+
+/* ── Footer ── */
+footer {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 80px;
+}
+
+footer p { color: #666; font-size: 0.95em; margin-bottom: 10px; }
+footer .footer-credit { margin-top: 15px; font-size: 0.9em; color: #999; }
+
+/* ── Animações ── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+
+.text-content { animation: slideIn 0.3s ease; }
+
+/* ── Mascote Tio Binho - desativado temporariamente (poluído no mobile)
+.mascote-container {
+    position: fixed; bottom: 90px; right: 25px; z-index: 998;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+}
+.mascote-balao {
+    background: white; border-radius: 16px 16px 4px 16px; padding: 10px 14px;
+    font-size: 0.78em; font-weight: 600; color: #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); max-width: 160px;
+    text-align: center; line-height: 1.4; animation: fadeInBalao 0.4s ease;
+    border: 2px solid #FFD93D;
+}
+@keyframes fadeInBalao {
+    from { opacity: 0; transform: scale(0.8) translateY(10px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.mascote-img {
+    width: 70px; height: 70px; object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    animation: mascoteFloat 3s ease-in-out infinite;
+    cursor: pointer; transition: transform 0.2s ease;
+}
+.mascote-img:hover  { transform: scale(1.1); }
+.mascote-img:active { transform: scale(0.95); }
+@keyframes mascoteFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+── */
+
+/* ── Responsivo 768px ── */
+@media (max-width: 768px) {
+    .toolbar { position: relative; }
+    .toolbar-content { height: 60px; padding: 0 15px; }
+    .toolbar-logo { font-size: 1.2em; gap: 8px; }
+    .toolbar-logo img { width: 40px; height: 40px; }
+
+    .menu-toggle { display: block; }
+
+    .toolbar-nav {
+        position: absolute; top: 60px; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .toolbar-nav.active { max-height: 500px; }
+    .toolbar-nav li { border-bottom: 1px solid #f0f0f0; }
+    .toolbar-nav a { display: block; padding: 15px 20px; color: #333; font-weight: 500; border-radius: 0; }
+    .toolbar-nav a:hover { background: #f0f0f0; color: #2563eb; }
+    .toolbar-nav a.active { background: #f0f0f0; color: #2563eb; border-left: 3px solid #2563eb; padding-left: 17px; }
+    .toolbar-nav a.active::after { display: none; }
+
+    .container { padding: 15px; }
+
+    .content { padding: 20px; border-radius: 10px; }
+    .content h2 { font-size: 1.5em; }
+    .content h3 { font-size: 1.1em; }
+    .content p  { font-size: 0.95em; }
+
+    .info-cards { grid-template-columns: 1fr; gap: 15px; }
+    .info-card  { padding: 20px; }
+    .info-card h4 { font-size: 1em; }
+
+    .aulas-grid { grid-template-columns: 1fr; gap: 15px; }
+    .aula-card  { padding: 20px; }
+    .aula-card h3 { font-size: 1.2em; }
+    .aula-card .btn { padding: 8px 16px; font-size: 0.9em; width: 100%; text-align: center; margin-right: 0; margin-bottom: 8px; }
+
+    .header { flex-direction: column; align-items: flex-start; gap: 15px; padding-bottom: 15px; }
+    .header h1 { font-size: 1.3em; }
+    .text-selector { width: 100%; flex-wrap: wrap; }
+    .text-btn { flex: 1; min-width: 80px; padding: 8px 12px; font-size: 0.85em; }
+
+    .side-by-side { grid-template-columns: 1fr; gap: 15px; }
+    .column { padding: 15px; }
+    .column h3 { font-size: 1em; }
+    .column p  { font-size: 0.9em; line-height: 1.6; }
+
+    audio { height: 40px; }
+    .download-btn { padding: 10px 14px; font-size: 0.85em; display: block; width: 100%; text-align: center; margin-bottom: 8px; }
+
+    .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 1.2em; }
+
+    footer { padding: 20px; }
+
+    #installBanner { padding: 15px; }
+    #installBanner h3 { font-size: 1em; }
+    #installBanner p  { font-size: 0.85em; }
+    .install-btn { padding: 10px 16px; font-size: 0.85em; }
+}
+
+/* ── Responsivo 480px ── */
+@media (max-width: 480px) {
+    .toolbar-logo { font-size: 1em; }
+    .toolbar-logo img { width: 35px; height: 35px; }
+
+    .content h2 { font-size: 1.3em; }
+    .content p  { font-size: 0.9em; line-height: 1.6; }
+
+    .box-info { padding: 15px; }
+    .box-info h4 { font-size: 0.95em; }
+    .box-info p  { font-size: 0.85em; }
+
+    .back-btn { padding: 6px 12px; font-size: 0.8em; }
+    .header h1 { font-size: 1.1em; }
+    .text-btn  { font-size: 0.75em; padding: 6px 10px; }
+    .column p  { font-size: 0.85em; }
+    .breadcrumb { font-size: 0.85em; margin-bottom: 20px; }
+    .back-to-top { bottom: 15px; right: 15px; width: 40px; height: 40px; font-size: 1em; }
+
+    /* mascote mobile - desativado
+    .mascote-container { bottom: 75px; right: 15px; }
+    .mascote-img { width: 55px; height: 55px; }
+    .mascote-balao { font-size: 0.72em; max-width: 130px; }
+    */
+}
