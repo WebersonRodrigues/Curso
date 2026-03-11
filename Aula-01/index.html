@@ -1097,11 +1097,6 @@
             
             // Se é mobile e não está em modo standalone/PWA, mostrar banner
             if (isMobile && !installPromptShown) {
-                // Mostrar botão na toolbar
-                const installBtn = document.getElementById('installAppBtn');
-                if (installBtn) {
-                    installBtn.classList.add('show');
-                }
                 // Aguardar um pouco para melhor UX
                 setTimeout(() => {
                     showInstallPrompt();
@@ -1140,11 +1135,6 @@
             const banner = document.getElementById('installBanner');
             if (banner) {
                 banner.style.display = 'none';
-            }
-            // Esconder botão da toolbar também
-            const installBtn = document.getElementById('installAppBtn');
-            if (installBtn) {
-                installBtn.classList.remove('show');
             }
         }
 
