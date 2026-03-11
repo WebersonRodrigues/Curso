@@ -583,7 +583,6 @@
             </a>
             <div style="display: flex; gap: 10px;">
                 <a href="../index.html" class="back-btn">← Voltar</a>
-                <button class="install-app-btn" id="installAppBtn" onclick="installApp()">📱 Instalar App</button>
             </div>
         </div>
     </div>
@@ -1090,8 +1089,14 @@
             const isStandalone = window.navigator.standalone === true;
             const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
             
+            // Se já está instalado (standalone ou PWA mode), não mostrar nada
+            if (isStandalone || isInPWAMode) {
+                console.log('App já está instalado');
+                return;
+            }
+            
             // Se é mobile e não está em modo standalone/PWA, mostrar banner
-            if (isMobile && !isStandalone && !isInPWAMode && !installPromptShown) {
+            if (isMobile && !installPromptShown) {
                 // Mostrar botão na toolbar
                 const installBtn = document.getElementById('installAppBtn');
                 if (installBtn) {
