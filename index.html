@@ -1041,11 +1041,12 @@
     </div>
 
     <script>
-        let deferredPrompt;
+        let deferredPrompt = null;
         let installPromptShown = false;
 
-        // Capturar evento de instalação
+        // Capturar evento de instalação - ANTES de qualquer outra coisa
         window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('beforeinstallprompt disparado');
             e.preventDefault();
             deferredPrompt = e;
             showInstallPrompt();
@@ -1056,6 +1057,8 @@
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             const isStandalone = window.navigator.standalone === true;
             const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            
+            console.log('isMobile:', isMobile, 'isStandalone:', isStandalone, 'isInPWAMode:', isInPWAMode);
             
             // Se já está instalado (standalone ou PWA mode), não mostrar nada
             if (isStandalone || isInPWAMode) {
@@ -1077,23 +1080,32 @@
             if (banner && !installPromptShown) {
                 banner.style.display = 'flex';
                 installPromptShown = true;
-                // Salvar no localStorage que já mostrou
-                localStorage.setItem('installPromptShown', 'true');
+                console.log('Banner de instalação mostrado');
             }
         }
 
         function installApp() {
+            console.log('installApp chamado, deferredPrompt:', deferredPrompt);
+            
             if (deferredPrompt) {
+                console.log('Disparando prompt nativo');
                 // Se tem deferredPrompt, usar o prompt nativo
                 deferredPrompt.prompt();
                 deferredPrompt.userChoice.then((choiceResult) => {
+                    console.log('Resultado da instalação:', choiceResult.outcome);
                     if (choiceResult.outcome === 'accepted') {
                         console.log('App instalado com sucesso!');
+                    } else {
+                        console.log('Usuário recusou a instalação');
                     }
                     deferredPrompt = null;
                     closeInstallPrompt();
+                }).catch(error => {
+                    console.error('Erro ao instalar:', error);
+                    closeInstallPrompt();
                 });
             } else {
+                console.log('deferredPrompt é null, mostrando instruções');
                 // Se não tem deferredPrompt, mostrar instruções
                 alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
             }

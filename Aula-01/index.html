@@ -1073,7 +1073,7 @@
     <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
 
     <script>
-        let deferredPrompt;
+        let deferredPrompt = null;
         let installPromptShown = false;
 
         // Capturar evento de instalação
@@ -1121,8 +1121,13 @@
                 deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('App instalado com sucesso!');
+                    } else {
+                        console.log('Usuário recusou a instalação');
                     }
                     deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(error => {
+                    console.error('Erro ao instalar:', error);
                     closeInstallPrompt();
                 });
             } else {
