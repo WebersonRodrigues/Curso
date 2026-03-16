@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aula 02 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 02 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 02</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 02 - Semana 2</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 02</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender os verbos essenciais do dia a dia e o vocabulário de animais em inglês.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ My Simple Day (Verbos Essenciais)</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Rotina diária com os verbos mais usados em inglês</p>
+                        <p style="margin-bottom: 8px;"><strong>Verbos principais:</strong> be, go, do, like, want, need, work, eat, drink, feel</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Animals Around Us</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Animais de casa, fazenda, floresta e oceano</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> dog, cat, cow, horse, pig, chicken, duck, lion, tiger, elephant, monkey, bird, fish, shark, whale</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1 -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: My Simple Day</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01-verbos-essenciais/01-verbos-essenciais.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Hi! My name <span class="palavra-destaque">is</span> Tom.</p>
+                        <p>I <span class="palavra-destaque">am</span> from Brazil.</p>
+                        <p>I <span class="palavra-destaque">live</span> in a small city.</p>
+                        <p>I <span class="palavra-destaque">work</span> in an office, but I <span class="palavra-destaque">don't work</span> on weekends 😄</p>
+                        <p>Every day, I <span class="palavra-destaque">wake up</span> early.</p>
+                        <p>I <span class="palavra-destaque">feel</span> tired, but I <span class="palavra-destaque">try</span> to smile.</p>
+                        <p>I <span class="palavra-destaque">go</span> to the kitchen and <span class="palavra-destaque">get</span> coffee.</p>
+                        <p>I <span class="palavra-destaque">like</span> coffee.</p>
+                        <p>I <span class="palavra-destaque">don't like</span> tea.</p>
+                        <p>I <span class="palavra-destaque">eat</span> breakfast and <span class="palavra-destaque">drink</span> coffee.</p>
+                        <p>Then I <span class="palavra-destaque">go</span> to work.</p>
+                        <p>At work, I <span class="palavra-destaque">use</span> my computer.</p>
+                        <p>I <span class="palavra-destaque">do</span> my tasks and <span class="palavra-destaque">make</span> reports.</p>
+                        <p>Sometimes I <span class="palavra-destaque">think</span>, "I need a vacation!"</p>
+                        <p>My boss <span class="palavra-destaque">calls</span> me and <span class="palavra-destaque">says</span>,</p>
+                        <p>"Can you <span class="palavra-destaque">help</span> me?"</p>
+                        <p>I <span class="palavra-destaque">say</span>, "Yes, no problem."</p>
+                        <p>I <span class="palavra-destaque">take</span> my notebook and <span class="palavra-destaque">start</span> to work.</p>
+                        <p>At work, I <span class="palavra-destaque">see</span> many people.</p>
+                        <p>I <span class="palavra-destaque">know</span> my team well.</p>
+                        <p>We <span class="palavra-destaque">work</span> together and <span class="palavra-destaque">help</span> each other.</p>
+                        <p>At lunch time, I <span class="palavra-destaque">leave</span> the office.</p>
+                        <p>I <span class="palavra-destaque">go</span> to a restaurant.</p>
+                        <p>I <span class="palavra-destaque">want</span> food.</p>
+                        <p>I <span class="palavra-destaque">need</span> food 😆</p>
+                        <p>I <span class="palavra-destaque">buy</span> lunch and <span class="palavra-destaque">eat</span> rice and chicken.</p>
+                        <p>In the afternoon, I <span class="palavra-destaque">find</span> a small problem.</p>
+                        <p>I <span class="palavra-destaque">try</span> to fix it.</p>
+                        <p>I <span class="palavra-destaque">do</span> my best.</p>
+                        <p>At 6 p.m., I <span class="palavra-destaque">stop</span> working.</p>
+                        <p>After work, I <span class="palavra-destaque">come</span> home.</p>
+                        <p>I <span class="palavra-destaque">feel</span> happy.</p>
+                        <p>I <span class="palavra-destaque">like</span> my home.</p>
+                        <p>I <span class="palavra-destaque">get</span> some water and <span class="palavra-destaque">drink</span> it.</p>
+                        <p>At night, I <span class="palavra-destaque">study</span> English.</p>
+                        <p>I <span class="palavra-destaque">want</span> to speak English well.</p>
+                        <p>I <span class="palavra-destaque">think</span> English <span class="palavra-destaque">is</span> important.</p>
+                        <p>Before bed, I <span class="palavra-destaque">say</span>,</p>
+                        <p>"Today is a good day."</p>
+                        <p>I <span class="palavra-destaque">start</span> to relax and <span class="palavra-destaque">go</span> to sleep 😴</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Oi! Meu nome <span class="palavra-destaque">é</span> Tom.</p>
+                        <p>Eu <span class="palavra-destaque">sou</span> do Brasil.</p>
+                        <p>Eu <span class="palavra-destaque">moro</span> em uma cidade pequena.</p>
+                        <p>Eu <span class="palavra-destaque">trabalho</span> em um escritório, mas eu <span class="palavra-destaque">não trabalho</span> nos fins de semana 😄</p>
+                        <p>Todos os dias, eu <span class="palavra-destaque">acordo</span> cedo.</p>
+                        <p>Eu <span class="palavra-destaque">me sinto</span> cansado, mas eu <span class="palavra-destaque">tento</span> sorrir.</p>
+                        <p>Eu <span class="palavra-destaque">vou</span> para a cozinha e <span class="palavra-destaque">pego</span> café.</p>
+                        <p>Eu <span class="palavra-destaque">gosto</span> de café.</p>
+                        <p>Eu <span class="palavra-destaque">não gosto</span> de chá.</p>
+                        <p>Eu <span class="palavra-destaque">como</span> café da manhã e <span class="palavra-destaque">bebo</span> café.</p>
+                        <p>Depois eu <span class="palavra-destaque">vou</span> trabalhar.</p>
+                        <p>No trabalho, eu <span class="palavra-destaque">uso</span> meu computador.</p>
+                        <p>Eu <span class="palavra-destaque">faço</span> minhas tarefas e <span class="palavra-destaque">crio</span> relatórios.</p>
+                        <p>Às vezes eu <span class="palavra-destaque">penso</span>: "Eu preciso de férias!"</p>
+                        <p>Meu chefe <span class="palavra-destaque">me liga</span> e <span class="palavra-destaque">diz</span>:</p>
+                        <p>"Você pode me <span class="palavra-destaque">ajudar</span>?"</p>
+                        <p>Eu <span class="palavra-destaque">digo</span>: "Sim, sem problema."</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> meu caderno e <span class="palavra-destaque">começo</span> a trabalhar.</p>
+                        <p>No trabalho, eu <span class="palavra-destaque">vejo</span> muitas pessoas.</p>
+                        <p>Eu <span class="palavra-destaque">conheço</span> bem minha equipe.</p>
+                        <p>Nós <span class="palavra-destaque">trabalhamos</span> juntos e <span class="palavra-destaque">ajudamos</span> uns aos outros.</p>
+                        <p>Na hora do almoço, eu <span class="palavra-destaque">saio</span> do escritório.</p>
+                        <p>Eu <span class="palavra-destaque">vou</span> a um restaurante.</p>
+                        <p>Eu <span class="palavra-destaque">quero</span> comida.</p>
+                        <p>Eu <span class="palavra-destaque">preciso</span> de comida 😆</p>
+                        <p>Eu <span class="palavra-destaque">compro</span> o almoço e <span class="palavra-destaque">como</span> arroz e frango.</p>
+                        <p>À tarde, eu <span class="palavra-destaque">encontro</span> um pequeno problema.</p>
+                        <p>Eu <span class="palavra-destaque">tento</span> resolver.</p>
+                        <p>Eu <span class="palavra-destaque">faço</span> o meu melhor.</p>
+                        <p>Às 6 da tarde, eu <span class="palavra-destaque">paro</span> de trabalhar.</p>
+                        <p>Depois do trabalho, eu <span class="palavra-destaque">volto</span> para casa.</p>
+                        <p>Eu <span class="palavra-destaque">me sinto</span> feliz.</p>
+                        <p>Eu <span class="palavra-destaque">gosto</span> da minha casa.</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> um pouco de água e <span class="palavra-destaque">bebo</span>.</p>
+                        <p>À noite, eu <span class="palavra-destaque">estudo</span> inglês.</p>
+                        <p>Eu <span class="palavra-destaque">quero</span> falar inglês bem.</p>
+                        <p>Eu <span class="palavra-destaque">acho</span> que inglês <span class="palavra-destaque">é</span> importante.</p>
+                        <p>Antes de dormir, eu <span class="palavra-destaque">digo</span>:</p>
+                        <p>"Hoje é um bom dia."</p>
+                        <p>Eu <span class="palavra-destaque">começo</span> a relaxar e <span class="palavra-destaque">vou</span> dormir 😴</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Hi! My name <span class="palavra-destaque">is</span> Tom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Oi! Meu nome <span class="palavra-destaque">é</span> Tom.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">am</span> from Brazil.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">sou</span> do Brasil.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">live</span> in a small city.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">moro</span> em uma cidade pequena.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">work</span> in an office, but I <span class="palavra-destaque">don't work</span> on weekends 😄</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">trabalho</span> em um escritório, mas eu <span class="palavra-destaque">não trabalho</span> nos fins de semana 😄</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every day, I <span class="palavra-destaque">wake up</span> early.</div>
+                            <div style="color: #666; font-size: 0.95em;">Todos os dias, eu <span class="palavra-destaque">acordo</span> cedo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> tired, but I <span class="palavra-destaque">try</span> to smile.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">me sinto</span> cansado, mas eu <span class="palavra-destaque">tento</span> sorrir.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">go</span> to the kitchen and <span class="palavra-destaque">get</span> coffee.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">vou</span> para a cozinha e <span class="palavra-destaque">pego</span> café.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">like</span> coffee.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">gosto</span> de café.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">don't like</span> tea.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">não gosto</span> de chá.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">eat</span> breakfast and <span class="palavra-destaque">drink</span> coffee.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">como</span> café da manhã e <span class="palavra-destaque">bebo</span> café.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I <span class="palavra-destaque">go</span> to work.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois eu <span class="palavra-destaque">vou</span> trabalhar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At work, I <span class="palavra-destaque">use</span> my computer.</div>
+                            <div style="color: #666; font-size: 0.95em;">No trabalho, eu <span class="palavra-destaque">uso</span> meu computador.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">do</span> my tasks and <span class="palavra-destaque">make</span> reports.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">faço</span> minhas tarefas e <span class="palavra-destaque">crio</span> relatórios.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes I <span class="palavra-destaque">think</span>, "I need a vacation!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes eu <span class="palavra-destaque">penso</span>: "Eu preciso de férias!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My boss <span class="palavra-destaque">calls</span> me and <span class="palavra-destaque">says</span>,</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu chefe <span class="palavra-destaque">me liga</span> e <span class="palavra-destaque">diz</span>:</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Can you <span class="palavra-destaque">help</span> me?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Você pode me <span class="palavra-destaque">ajudar</span>?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">say</span>, "Yes, no problem."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">digo</span>: "Sim, sem problema."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">take</span> my notebook and <span class="palavra-destaque">start</span> to work.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pego</span> meu caderno e <span class="palavra-destaque">começo</span> a trabalhar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At work, I <span class="palavra-destaque">see</span> many people.</div>
+                            <div style="color: #666; font-size: 0.95em;">No trabalho, eu <span class="palavra-destaque">vejo</span> muitas pessoas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">know</span> my team well.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">conheço</span> bem minha equipe.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">work</span> together and <span class="palavra-destaque">help</span> each other.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós <span class="palavra-destaque">trabalhamos</span> juntos e <span class="palavra-destaque">ajudamos</span> uns aos outros.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At lunch time, I <span class="palavra-destaque">leave</span> the office.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na hora do almoço, eu <span class="palavra-destaque">saio</span> do escritório.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">go</span> to a restaurant.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">vou</span> a um restaurante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">want</span> food.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">quero</span> comida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">need</span> food 😆</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">preciso</span> de comida 😆</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">buy</span> lunch and <span class="palavra-destaque">eat</span> rice and chicken.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">compro</span> o almoço e <span class="palavra-destaque">como</span> arroz e frango.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the afternoon, I <span class="palavra-destaque">find</span> a small problem.</div>
+                            <div style="color: #666; font-size: 0.95em;">À tarde, eu <span class="palavra-destaque">encontro</span> um pequeno problema.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">try</span> to fix it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">tento</span> resolver.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">do</span> my best.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">faço</span> o meu melhor.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At 6 p.m., I <span class="palavra-destaque">stop</span> working.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às 6 da tarde, eu <span class="palavra-destaque">paro</span> de trabalhar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After work, I <span class="palavra-destaque">come</span> home.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois do trabalho, eu <span class="palavra-destaque">volto</span> para casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> happy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">me sinto</span> feliz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">like</span> my home.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">gosto</span> da minha casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">get</span> some water and <span class="palavra-destaque">drink</span> it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pego</span> um pouco de água e <span class="palavra-destaque">bebo</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At night, I <span class="palavra-destaque">study</span> English.</div>
+                            <div style="color: #666; font-size: 0.95em;">À noite, eu <span class="palavra-destaque">estudo</span> inglês.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">want</span> to speak English well.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">quero</span> falar inglês bem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">think</span> English <span class="palavra-destaque">is</span> important.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">acho</span> que inglês <span class="palavra-destaque">é</span> importante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before bed, I <span class="palavra-destaque">say</span>,</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de dormir, eu <span class="palavra-destaque">digo</span>:</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Today is a good day."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Hoje é um bom dia."</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">start</span> to relax and <span class="palavra-destaque">go</span> to sleep 😴</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">começo</span> a relaxar e <span class="palavra-destaque">vou</span> dormir 😴</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔑 Verbos Essenciais</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. BE (am/is) 🌟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ser / Estar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I am from Brazil"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> O verbo mais usado!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. GO 🚶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I go to work"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para ir a qualquer lugar!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. DO ✅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Fazer</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I do my tasks"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para realizar tarefas!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. LIKE ❤️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Gostar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I like coffee"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para expressar preferências!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. WANT 🎯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Querer</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I want food"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para pedir o que precisa!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. WORK 💼</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Trabalhar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I work in an office"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar da rotina!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. EAT 🍽️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Comer</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I eat breakfast"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Essencial no dia a dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. FEEL 😊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sentir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel happy"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para expressar emoções!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2 -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Animals Around Us</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02-animals-around-us/02-animals-around-us.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I like animals.</p>
+                        <p>Animals are everywhere: at home, on farms, in the forest, and in the ocean.</p>
+                        <p>At home, I have a <span class="palavra-destaque">dog</span> and a <span class="palavra-destaque">cat</span>.</p>
+                        <p>The dog is friendly and likes to play.</p>
+                        <p>The cat is small and likes to sleep.</p>
+                        <p>On the farm, there are many animals.</p>
+                        <p>I see a <span class="palavra-destaque">cow</span>, a <span class="palavra-destaque">horse</span>, and a <span class="palavra-destaque">pig</span>.</p>
+                        <p>The cow gives milk.</p>
+                        <p>The horse is big and strong.</p>
+                        <p>The pig is pink and likes food.</p>
+                        <p>I also see a <span class="palavra-destaque">chicken</span> and a <span class="palavra-destaque">duck</span>.</p>
+                        <p>The chicken lays eggs.</p>
+                        <p>The duck likes water.</p>
+                        <p>In the forest, there are wild animals.</p>
+                        <p>I see a <span class="palavra-destaque">lion</span>, a <span class="palavra-destaque">tiger</span>, and an <span class="palavra-destaque">elephant</span>.</p>
+                        <p>The lion is strong.</p>
+                        <p>The tiger is fast.</p>
+                        <p>The elephant is very big.</p>
+                        <p>In the trees, I see a <span class="palavra-destaque">monkey</span> and a <span class="palavra-destaque">bird</span>.</p>
+                        <p>The monkey climbs trees.</p>
+                        <p>The bird can fly.</p>
+                        <p>In the ocean, there are sea animals.</p>
+                        <p>I see a <span class="palavra-destaque">fish</span>, a <span class="palavra-destaque">shark</span>, and a <span class="palavra-destaque">whale</span>.</p>
+                        <p>The fish is small.</p>
+                        <p>The shark is dangerous.</p>
+                        <p>The whale is very large.</p>
+                        <p>Animals are different, but all animals are important.</p>
+                        <p>I like animals very much.</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu gosto de animais.</p>
+                        <p>Os animais estão em todos os lugares: em casa, nas fazendas, na floresta e no oceano.</p>
+                        <p>Em casa, eu tenho um <span class="palavra-destaque">cachorro</span> e um <span class="palavra-destaque">gato</span>.</p>
+                        <p>O cachorro é amigável e gosta de brincar.</p>
+                        <p>O gato é pequeno e gosta de dormir.</p>
+                        <p>Na fazenda, há muitos animais.</p>
+                        <p>Eu vejo uma <span class="palavra-destaque">vaca</span>, um <span class="palavra-destaque">cavalo</span> e um <span class="palavra-destaque">porco</span>.</p>
+                        <p>A vaca dá leite.</p>
+                        <p>O cavalo é grande e forte.</p>
+                        <p>O porco é rosa e gosta de comida.</p>
+                        <p>Eu também vejo uma <span class="palavra-destaque">galinha</span> e um <span class="palavra-destaque">pato</span>.</p>
+                        <p>A galinha bota ovos.</p>
+                        <p>O pato gosta de água.</p>
+                        <p>Na floresta, há animais selvagens.</p>
+                        <p>Eu vejo um <span class="palavra-destaque">leão</span>, um <span class="palavra-destaque">tigre</span> e um <span class="palavra-destaque">elefante</span>.</p>
+                        <p>O leão é forte.</p>
+                        <p>O tigre é rápido.</p>
+                        <p>O elefante é muito grande.</p>
+                        <p>Nas árvores, eu vejo um <span class="palavra-destaque">macaco</span> e um <span class="palavra-destaque">pássaro</span>.</p>
+                        <p>O macaco sobe em árvores.</p>
+                        <p>O pássaro pode voar.</p>
+                        <p>No oceano, há animais marinhos.</p>
+                        <p>Eu vejo um <span class="palavra-destaque">peixe</span>, um <span class="palavra-destaque">tubarão</span> e uma <span class="palavra-destaque">baleia</span>.</p>
+                        <p>O peixe é pequeno.</p>
+                        <p>O tubarão é perigoso.</p>
+                        <p>A baleia é muito grande.</p>
+                        <p>Os animais são diferentes, mas todos os animais são importantes.</p>
+                        <p>Eu gosto muito de animais.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I like animals.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto de animais.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Animals are everywhere: at home, on farms, in the forest, and in the ocean.</div>
+                            <div style="color: #666; font-size: 0.95em;">Os animais estão em todos os lugares: em casa, nas fazendas, na floresta e no oceano.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At home, I have a <span class="palavra-destaque">dog</span> and a <span class="palavra-destaque">cat</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Em casa, eu tenho um <span class="palavra-destaque">cachorro</span> e um <span class="palavra-destaque">gato</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The dog is friendly and likes to play.</div>
+                            <div style="color: #666; font-size: 0.95em;">O cachorro é amigável e gosta de brincar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The cat is small and likes to sleep.</div>
+                            <div style="color: #666; font-size: 0.95em;">O gato é pequeno e gosta de dormir.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the farm, there are many animals.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na fazenda, há muitos animais.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I see a <span class="palavra-destaque">cow</span>, a <span class="palavra-destaque">horse</span>, and a <span class="palavra-destaque">pig</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu vejo uma <span class="palavra-destaque">vaca</span>, um <span class="palavra-destaque">cavalo</span> e um <span class="palavra-destaque">porco</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The cow gives milk.</div>
+                            <div style="color: #666; font-size: 0.95em;">A vaca dá leite.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The horse is big and strong.</div>
+                            <div style="color: #666; font-size: 0.95em;">O cavalo é grande e forte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The pig is pink and likes food.</div>
+                            <div style="color: #666; font-size: 0.95em;">O porco é rosa e gosta de comida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also see a <span class="palavra-destaque">chicken</span> and a <span class="palavra-destaque">duck</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu também vejo uma <span class="palavra-destaque">galinha</span> e um <span class="palavra-destaque">pato</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The chicken lays eggs.</div>
+                            <div style="color: #666; font-size: 0.95em;">A galinha bota ovos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The duck likes water.</div>
+                            <div style="color: #666; font-size: 0.95em;">O pato gosta de água.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the forest, there are wild animals.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na floresta, há animais selvagens.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I see a <span class="palavra-destaque">lion</span>, a <span class="palavra-destaque">tiger</span>, and an <span class="palavra-destaque">elephant</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu vejo um <span class="palavra-destaque">leão</span>, um <span class="palavra-destaque">tigre</span> e um <span class="palavra-destaque">elefante</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The lion is strong.</div>
+                            <div style="color: #666; font-size: 0.95em;">O leão é forte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The tiger is fast.</div>
+                            <div style="color: #666; font-size: 0.95em;">O tigre é rápido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The elephant is very big.</div>
+                            <div style="color: #666; font-size: 0.95em;">O elefante é muito grande.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the trees, I see a <span class="palavra-destaque">monkey</span> and a <span class="palavra-destaque">bird</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nas árvores, eu vejo um <span class="palavra-destaque">macaco</span> e um <span class="palavra-destaque">pássaro</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The monkey climbs trees.</div>
+                            <div style="color: #666; font-size: 0.95em;">O macaco sobe em árvores.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The bird can fly.</div>
+                            <div style="color: #666; font-size: 0.95em;">O pássaro pode voar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the ocean, there are sea animals.</div>
+                            <div style="color: #666; font-size: 0.95em;">No oceano, há animais marinhos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I see a <span class="palavra-destaque">fish</span>, a <span class="palavra-destaque">shark</span>, and a <span class="palavra-destaque">whale</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu vejo um <span class="palavra-destaque">peixe</span>, um <span class="palavra-destaque">tubarão</span> e uma <span class="palavra-destaque">baleia</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The fish is small.</div>
+                            <div style="color: #666; font-size: 0.95em;">O peixe é pequeno.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The shark is dangerous.</div>
+                            <div style="color: #666; font-size: 0.95em;">O tubarão é perigoso.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The whale is very large.</div>
+                            <div style="color: #666; font-size: 0.95em;">A baleia é muito grande.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Animals are different, but all animals are important.</div>
+                            <div style="color: #666; font-size: 0.95em;">Os animais são diferentes, mas todos os animais são importantes.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I like animals very much.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto muito de animais.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🐾 Palavras Importantes</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. DOG 🐶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cachorro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have a dog"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal doméstico mais comum!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. CAT 🐱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Gato</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The cat likes to sleep"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal doméstico muito popular!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. COW 🐄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vaca</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The cow gives milk"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal de fazenda essencial!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. HORSE 🐎</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cavalo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The horse is big and strong"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal forte e famoso!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. LION 🦁</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Leão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The lion is strong"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> O rei da floresta!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. ELEPHANT 🐘</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Elefante</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The elephant is very big"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> O maior animal terrestre!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. BIRD 🐦</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pássaro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The bird can fly"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Único animal que voa naturalmente!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. FISH 🐟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Peixe</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The fish is small"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal aquático mais comum!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. SHARK 🦈</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tubarão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The shark is dangerous"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal marinho muito famoso!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. WHALE 🐳</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Baleia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The whale is very large"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> O maior animal do mundo!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 02 - Tio Binho</strong></p>
+        <p>Estude com consistência e você verá progresso! 💪</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
+        let deferredPrompt = null;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone || isInPWAMode) return;
+            if (isMobile && !installPromptShown) {
+                setTimeout(() => { showInstallPrompt(); }, 2000);
+            }
+        }
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner && !installPromptShown) {
+                banner.style.display = 'flex';
+                installPromptShown = true;
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(() => closeInstallPrompt());
+            } else {
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+</body>
+</html>

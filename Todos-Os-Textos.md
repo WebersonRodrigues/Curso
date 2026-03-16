@@ -49,3 +49,74 @@ I speak slowly and clearly.
 At the end of the day, I feel good.
 I enjoy learning English.
 I know I am improving little by little.
+
+---
+Hi! My name is Tom.
+I am from Brazil.
+I live in a small city.
+I work in an office, but I don't work on weekends.
+Every day, I wake up early.
+I feel tired, but I try to smile.
+I go to the kitchen and get coffee.
+I like coffee.
+I don't like tea.
+I eat breakfast and drink coffee.
+Then I go to work.
+At work, I use my computer.
+I do my tasks and make reports.
+Sometimes I think, "I need a vacation!"
+My boss calls me and says,
+"Can you help me?"
+I say, "Yes, no problem."
+I take my notebook and start to work.
+At work, I see many people.
+I know my team well.
+We work together and help each other.
+At lunch time, I leave the office.
+I go to a restaurant.
+I want food.
+I need food.
+I buy lunch and eat rice and chicken.
+In the afternoon, I find a small problem.
+I try to fix it.
+I do my best.
+At 6 p.m., I stop working.
+After work, I come home.
+I feel happy.
+I like my home.
+I get some water and drink it.
+At night, I study English.
+I want to speak English well.
+I think English is important.
+Before bed, I say,
+"Today is a good day."
+I start to relax and go to sleep.
+---
+I like animals.
+Animals are everywhere: at home, on farms, in the forest, and in the ocean.
+At home, I have a dog and a cat.
+The dog is friendly and likes to play.
+The cat is small and likes to sleep.
+On the farm, there are many animals.
+I see a cow, a horse, and a pig.
+The cow gives milk.
+The horse is big and strong.
+The pig is pink and likes food.
+I also see a chicken and a duck.
+The chicken lays eggs.
+The duck likes water.
+In the forest, there are wild animals.
+I see a lion, a tiger, and an elephant.
+The lion is strong.
+The tiger is fast.
+The elephant is very big.
+In the trees, I see a monkey and a bird.
+The monkey climbs trees.
+The bird can fly.
+In the ocean, there are sea animals.
+I see a fish, a shark, and a whale.
+The fish is small.
+The shark is dangerous.
+The whale is very large.
+Animals are different, but all animals are important.
+I like animals very much.

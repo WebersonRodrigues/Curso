@@ -552,6 +552,12 @@ footer .footer-credit { margin-top: 15px; font-size: 0.9em; color: #999; }
 }
 ── */
 
+/* ── Palavra Destacada ── */
+.palavra-destaque {
+    color: #e63946;
+    font-weight: 700;
+}
+
 /* ── Responsivo 768px ── */
 @media (max-width: 768px) {
     .toolbar { position: relative; }
