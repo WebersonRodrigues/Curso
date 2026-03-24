@@ -1,7 +1,8 @@
-const CACHE_NAME = 'tio-binho-v8';
+const CACHE_NAME = 'tio-binho-v10';
 const urlsToCache = [
   './',
   './index.html',
+  './style.css',
   './icone-192.png',
   './icone-512.png',
   './capa.png',
