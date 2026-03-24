@@ -120,3 +120,29 @@ The shark is dangerous.
 The whale is very large.
 Animals are different, but all animals are important.
 I like animals very much.
+---
+Hi! My name is Sophia. I am ten years old.
+I live with my parents and my older brother. We call him Carlinhos.
+I am short and thin. My brother is tall and very funny.
+He is also the cutest one in the family — but don't tell him that!
+I love learning new things and I am always ready for new adventures.
+My mother's name is Patrícia. She takes care of our house.
+She makes lunch, dinner, and breakfast for us.
+She also washes and irons our clothes. They always smell amazing.
+My father's name is Jonathan. He works very hard.
+He is a carpenter and he is always taking care of us.
+He leaves home at seven in the morning and comes back at seven at night.
+He is very dedicated!
+I love my family.
+Yesterday, we went to Uncle Binho's house. He made pizza for everyone and it was delicious!
+Today, we are staying home, watching a movie and eating popcorn.
+Tomorrow, we are going to visit my grandmother's house. I can't wait!
+---
+Hi! My name is Lis. I am eight years old.
+I live with my mom Bruna and my sister Anna Beli.
+But there is a place I really love: Aunt Sula's house!
+There, I do so many things! I watch Chiquititas on Netflix, draw pictures, paint cardboard boxes, and play with her dogs.
+The dogs are named Zara, Lola, and Pipoca. Zara is a little wild, but Lola gives the best warm kisses. Pipoca is kind of grumpy — but I love him anyway!
+Sometimes me and my uncle go to the garden to find worms for the fish. We dig small holes in the ground and look really carefully.
+The other day I found a super crooked, weird-looking worm. I gave her a name: Magali! I think she liked it.
+I love going to Aunt Sula's house. I have so much fun there, and every visit is a new adventure!

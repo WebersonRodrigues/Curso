@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aula 03 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 03 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 03</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 03 - Semana 3</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 03</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de família, descrição física, rotina doméstica e atividades do cotidiano em inglês.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ My Family</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Sophia apresenta sua família, descreve membros e conta a rotina dos pais</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário principal:</strong> parents, mother, father, brother, uncle, grandmother, short, tall, thin, funny, cute, dedicated</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ At Aunt Sula's House</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Lis conta sobre visitas à casa da tia Sula, cachorros e atividades no jardim</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário principal:</strong> dog, fish, worm, grumpy, warm, crooked, watch, draw, paint, play with, look for</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1 -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: My Family</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01-my-family/01-my-family.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01-my-family/01-my-family.pdf" download style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #2563eb; color: white; border-radius: 8px; text-decoration: none; font-weight: 500;">📥 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Hi! My name is Sophia. I am ten years old.</p>
+                        <p>I live with my <span class="palavra-destaque">parents</span> and my older <span class="palavra-destaque">brother</span>. We call him Carlinhos.</p>
+                        <p>I am <span class="palavra-destaque">short</span> and <span class="palavra-destaque">thin</span>. My brother is <span class="palavra-destaque">tall</span> and very <span class="palavra-destaque">funny</span>.</p>
+                        <p>He is also the <span class="palavra-destaque">cute</span>st one in the family — but don't tell him that!</p>
+                        <p>I love learning new things and I am always ready for new adventures.</p>
+                        <p>My <span class="palavra-destaque">mother</span>'s name is Patrícia. She <span class="palavra-destaque">takes care of</span> our house.</p>
+                        <p>She <span class="palavra-destaque">makes</span> lunch, dinner, and breakfast for us.</p>
+                        <p>She also <span class="palavra-destaque">washes</span> and <span class="palavra-destaque">irons</span> our clothes. They always smell amazing.</p>
+                        <p>My <span class="palavra-destaque">father</span>'s name is Jonathan. He works very hard.</p>
+                        <p>He is a carpenter and he is always taking care of us.</p>
+                        <p>He <span class="palavra-destaque">leaves</span> home at seven in the morning and <span class="palavra-destaque">comes back</span> at seven at night.</p>
+                        <p>He is very <span class="palavra-destaque">dedicated</span>!</p>
+                        <p>I love my family.</p>
+                        <p><span class="palavra-destaque">Yesterday</span>, we went to <span class="palavra-destaque">Uncle</span> Binho's house. He made pizza for everyone and it was delicious!</p>
+                        <p><span class="palavra-destaque">Today</span>, we are staying home, watching a movie and eating popcorn.</p>
+                        <p><span class="palavra-destaque">Tomorrow</span>, we are going to visit my <span class="palavra-destaque">grandmother</span>'s house. I can't wait!</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Olá! Meu nome é Sophia. Eu tenho dez anos.</p>
+                        <p>Eu moro com meus <span class="palavra-destaque">pais</span> e meu <span class="palavra-destaque">irmão</span> mais velho. A gente chama ele de Carlinhos.</p>
+                        <p>Eu sou <span class="palavra-destaque">baixa</span> e <span class="palavra-destaque">magra</span>. Meu irmão é <span class="palavra-destaque">alto</span> e muito <span class="palavra-destaque">engraçado</span>.</p>
+                        <p>Ele também é o mais <span class="palavra-destaque">fofo</span> da família — mas não conta para ele!</p>
+                        <p>Eu adoro aprender coisas novas e estou sempre pronta para novas aventuras.</p>
+                        <p>Minha <span class="palavra-destaque">mãe</span> se chama Patrícia. Ela <span class="palavra-destaque">cuida</span> da nossa casa.</p>
+                        <p>Ela <span class="palavra-destaque">prepara</span> o almoço, o jantar e o café da manhã para a gente.</p>
+                        <p>Ela também <span class="palavra-destaque">lava</span> e <span class="palavra-destaque">passa</span> nossas roupas. Elas ficam sempre cheirosíssimas.</p>
+                        <p>Meu <span class="palavra-destaque">pai</span> se chama Jonathan. Ele trabalha muito.</p>
+                        <p>Ele é marceneiro e está sempre cuidando da gente.</p>
+                        <p>Ele <span class="palavra-destaque">sai de casa</span> às sete da manhã e <span class="palavra-destaque">volta</span> às sete da noite.</p>
+                        <p>Ele é muito <span class="palavra-destaque">dedicado</span>!</p>
+                        <p>Eu amo minha família.</p>
+                        <p><span class="palavra-destaque">Ontem</span> fomos à casa do <span class="palavra-destaque">tio</span> Binho. Ele fez pizza para todo mundo e foi muito gostoso!</p>
+                        <p><span class="palavra-destaque">Hoje</span> vamos ficar em casa assistindo a um filme e comendo pipoca.</p>
+                        <p><span class="palavra-destaque">Amanhã</span> vamos visitar a casa da minha <span class="palavra-destaque">avó</span>. Mal posso esperar!</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Hi! My name is Sophia. I am ten years old.</div>
+                            <div style="color: #666; font-size: 0.95em;">Olá! Meu nome é Sophia. Eu tenho dez anos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I live with my <span class="palavra-destaque">parents</span> and my older <span class="palavra-destaque">brother</span>. We call him Carlinhos.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu moro com meus <span class="palavra-destaque">pais</span> e meu <span class="palavra-destaque">irmão</span> mais velho. A gente chama ele de Carlinhos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I am <span class="palavra-destaque">short</span> and <span class="palavra-destaque">thin</span>. My brother is <span class="palavra-destaque">tall</span> and very <span class="palavra-destaque">funny</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu sou <span class="palavra-destaque">baixa</span> e <span class="palavra-destaque">magra</span>. Meu irmão é <span class="palavra-destaque">alto</span> e muito <span class="palavra-destaque">engraçado</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He is also the <span class="palavra-destaque">cute</span>st one in the family — but don't tell him that!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele também é o mais <span class="palavra-destaque">fofo</span> da família — mas não conta para ele!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I love learning new things and I am always ready for new adventures.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu adoro aprender coisas novas e estou sempre pronta para novas aventuras.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My <span class="palavra-destaque">mother</span>'s name is Patrícia. She <span class="palavra-destaque">takes care of</span> our house.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha <span class="palavra-destaque">mãe</span> se chama Patrícia. Ela <span class="palavra-destaque">cuida</span> da nossa casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">makes</span> lunch, dinner, and breakfast for us.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">prepara</span> o almoço, o jantar e o café da manhã para a gente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She also <span class="palavra-destaque">washes</span> and <span class="palavra-destaque">irons</span> our clothes. They always smell amazing.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela também <span class="palavra-destaque">lava</span> e <span class="palavra-destaque">passa</span> nossas roupas. Elas ficam sempre cheirosíssimas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My <span class="palavra-destaque">father</span>'s name is Jonathan. He works very hard.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu <span class="palavra-destaque">pai</span> se chama Jonathan. Ele trabalha muito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He is a carpenter and he is always taking care of us.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele é marceneiro e está sempre cuidando da gente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">leaves</span> home at seven in the morning and <span class="palavra-destaque">comes back</span> at seven at night.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">sai de casa</span> às sete da manhã e <span class="palavra-destaque">volta</span> às sete da noite.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He is very <span class="palavra-destaque">dedicated</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele é muito <span class="palavra-destaque">dedicado</span>!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I love my family.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu amo minha família.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Yesterday</span>, we went to <span class="palavra-destaque">Uncle</span> Binho's house. He made pizza for everyone and it was delicious!</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Ontem</span> fomos à casa do <span class="palavra-destaque">tio</span> Binho. Ele fez pizza para todo mundo e foi muito gostoso!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Today</span>, we are staying home, watching a movie and eating popcorn.</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Hoje</span> vamos ficar em casa assistindo a um filme e comendo pipoca.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Tomorrow</span>, we are going to visit my <span class="palavra-destaque">grandmother</span>'s house. I can't wait!</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Amanhã</span> vamos visitar a casa da minha <span class="palavra-destaque">avó</span>. Mal posso esperar!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">👨‍👩‍👧‍👦 Vocabulário — Família e Descrição</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. <span class="palavra-destaque">PARENTS</span> 👨‍👩‍👧</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pais</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I live with my parents"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Palavra essencial para falar de família!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. <span class="palavra-destaque">MOTHER</span> 👩</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mãe</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My mother's name is Patrícia"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Membro mais importante da família!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. <span class="palavra-destaque">FATHER</span> 👨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pai</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My father's name is Jonathan"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Essencial para apresentar a família!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. <span class="palavra-destaque">BROTHER</span> 👦</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Irmão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My older brother is tall"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de irmãos!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. <span class="palavra-destaque">UNCLE</span> 👨‍🦱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We went to Uncle Binho's house"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de parentes!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. <span class="palavra-destaque">GRANDMOTHER</span> 👵</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Avó</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We are going to visit my grandmother's house"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar dos avós!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. <span class="palavra-destaque">SHORT</span> 📏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Baixo/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I am short and thin"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para descrever altura!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. <span class="palavra-destaque">TALL</span> 📐</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Alto/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My brother is tall"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Oposto de short!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. <span class="palavra-destaque">THIN</span> 🪶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Magro/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I am short and thin"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para descrever corpo!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. <span class="palavra-destaque">FUNNY</span> 😂</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Engraçado/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My brother is very funny"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para descrever personalidade!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">11. <span class="palavra-destaque">CUTE</span> 🥰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Fofo/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He is the cutest one in the family"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para elogiar alguém!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">12. <span class="palavra-destaque">DEDICATED</span> 💪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Dedicado/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He is very dedicated"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para elogiar esforço!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🏠 Atividades e Rotina</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. <span class="palavra-destaque">TAKES CARE OF</span> 🤲</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cuida de</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She takes care of our house"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de responsabilidades!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. <span class="palavra-destaque">MAKES</span> 🍳</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Prepara / Faz</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She makes lunch, dinner, and breakfast"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de preparar refeições!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. <span class="palavra-destaque">WASHES AND IRONS</span> 👕</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lava e passa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She washes and irons our clothes"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de tarefas domésticas!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. <span class="palavra-destaque">LEAVES HOME</span> 🚪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sai de casa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He leaves home at seven in the morning"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de rotina!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. <span class="palavra-destaque">COMES BACK</span> 🏠</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Volta / Retorna</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He comes back at seven at night"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de chegada!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔑 Expressões Importantes</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. <span class="palavra-destaque">YESTERDAY</span> / <span class="palavra-destaque">TODAY</span> / <span class="palavra-destaque">TOMORROW</span> 📅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ontem / Hoje / Amanhã</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Yesterday we went. Today we are staying. Tomorrow we are going."</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Três tempos verbais em três frases — ótimo para praticar!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. "I CAN'T WAIT!" 🎉</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mal posso esperar!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We are going to visit my grandmother's house. I can't wait!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Expressão idiomática muito comum para demonstrar animação!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. "DON'T TELL HIM THAT!" 🤫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Não conta para ele!</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He is the cutest — but don't tell him that!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Imperativo negativo: "don't" + verbo base. Muito usado no inglês informal!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. "MY MOTHER'S NAME IS" 📝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Minha mãe se chama</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My mother's name is Patrícia"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Forma natural em inglês para apresentar o nome de alguém!</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; color: #666; font-size: 0.9em;">👉 Esse vocabulário cobre <strong>família, descrição física e rotina</strong> — temas essenciais do dia a dia.</p>
+                </div>
+            </div>
+
+            <!-- Texto 2 -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: At Aunt Sula's House</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02-at-aunt-sulas-house/02-at-aunt-sulas-house.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02-at-aunt-sulas-house/02-at-aunt-sulas-house.pdf" download style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #2563eb; color: white; border-radius: 8px; text-decoration: none; font-weight: 500;">📥 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Hi! My name is Lis. I am eight years old.</p>
+                        <p>I live with my mom Bruna and my <span class="palavra-destaque">sister</span> Anna Beli.</p>
+                        <p>But there is a place I really love: <span class="palavra-destaque">Aunt</span> Sula's house!</p>
+                        <p>There, I do so many things! I <span class="palavra-destaque">watch</span> Chiquititas on Netflix, <span class="palavra-destaque">draw</span> pictures, <span class="palavra-destaque">paint</span> cardboard boxes, and <span class="palavra-destaque">play with</span> her <span class="palavra-destaque">dog</span>s.</p>
+                        <p>The dogs are named Zara, Lola, and Pipoca. Zara is a little <span class="palavra-destaque">wild</span>, but Lola gives the best <span class="palavra-destaque">warm</span> kisses.</p>
+                        <p>Pipoca is kind of <span class="palavra-destaque">grumpy</span> — but I love him <span class="palavra-destaque">anyway</span>!</p>
+                        <p>Sometimes me and my <span class="palavra-destaque">uncle</span> go to the garden to <span class="palavra-destaque">find</span> <span class="palavra-destaque">worm</span>s for the <span class="palavra-destaque">fish</span>.</p>
+                        <p>We dig small holes in the ground and <span class="palavra-destaque">look</span> really carefully.</p>
+                        <p><span class="palavra-destaque">The other day</span> I found a super <span class="palavra-destaque">crooked</span>, weird-looking worm. I gave her a name: Magali!</p>
+                        <p>I think she liked it.</p>
+                        <p>I love going to Aunt Sula's house. I have so much fun there, and <span class="palavra-destaque">every</span> visit is a new adventure!</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Olá! Meu nome é Lis. Eu tenho oito anos.</p>
+                        <p>Eu moro com minha mãe Bruna e minha <span class="palavra-destaque">irmã</span> Anna Beli.</p>
+                        <p>Mas tem um lugar que eu amo muito: a casa da <span class="palavra-destaque">tia</span> Sula!</p>
+                        <p>Lá eu faço muitas coisas! <span class="palavra-destaque">Assisto</span> Chiquititas na Netflix, faço <span class="palavra-destaque">desenhos</span>, <span class="palavra-destaque">pinto</span> caixas de papelão e <span class="palavra-destaque">brinco com</span> os <span class="palavra-destaque">cachorro</span>s dela.</p>
+                        <p>Os cachorros se chamam Zara, Lola e Pipoca. Zara é meio <span class="palavra-destaque">bruta</span>, mas Lola dá beijinhos <span class="palavra-destaque">quentinhos</span>.</p>
+                        <p>Já o Pipoca é um pouco <span class="palavra-destaque">rabugento</span> — mas eu adoro ele <span class="palavra-destaque">do mesmo jeito</span>!</p>
+                        <p>Às vezes, eu e meu <span class="palavra-destaque">tio</span> vamos ao jardim procurar <span class="palavra-destaque">minhoca</span>s para dar aos <span class="palavra-destaque">peixe</span>s.</p>
+                        <p>A gente faz buraquinhos na terra e fica <span class="palavra-destaque">olhando</span> com cuidado.</p>
+                        <p><span class="palavra-destaque">Outro dia</span>, achei uma minhoca bem <span class="palavra-destaque">torta</span> e diferente. Dei um nome para ela: Magali!</p>
+                        <p>Acho que ela gostou.</p>
+                        <p>Eu adoro ficar na casa da tia Sula. Lá eu me divirto muito e <span class="palavra-destaque">cada</span> visita é uma nova aventura!</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Hi! My name is Lis. I am eight years old.</div>
+                            <div style="color: #666; font-size: 0.95em;">Olá! Meu nome é Lis. Eu tenho oito anos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I live with my mom Bruna and my <span class="palavra-destaque">sister</span> Anna Beli.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu moro com minha mãe Bruna e minha <span class="palavra-destaque">irmã</span> Anna Beli.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But there is a place I really love: <span class="palavra-destaque">Aunt</span> Sula's house!</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas tem um lugar que eu amo muito: a casa da <span class="palavra-destaque">tia</span> Sula!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">There, I do so many things! I <span class="palavra-destaque">watch</span> Chiquititas on Netflix, <span class="palavra-destaque">draw</span> pictures, <span class="palavra-destaque">paint</span> cardboard boxes, and <span class="palavra-destaque">play with</span> her <span class="palavra-destaque">dog</span>s.</div>
+                            <div style="color: #666; font-size: 0.95em;">Lá eu faço muitas coisas! <span class="palavra-destaque">Assisto</span> Chiquititas na Netflix, faço <span class="palavra-destaque">desenhos</span>, <span class="palavra-destaque">pinto</span> caixas de papelão e <span class="palavra-destaque">brinco com</span> os <span class="palavra-destaque">cachorro</span>s dela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The dogs are named Zara, Lola, and Pipoca. Zara is a little <span class="palavra-destaque">wild</span>, but Lola gives the best <span class="palavra-destaque">warm</span> kisses.</div>
+                            <div style="color: #666; font-size: 0.95em;">Os cachorros se chamam Zara, Lola e Pipoca. Zara é meio <span class="palavra-destaque">bruta</span>, mas Lola dá beijinhos <span class="palavra-destaque">quentinhos</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pipoca is kind of <span class="palavra-destaque">grumpy</span> — but I love him <span class="palavra-destaque">anyway</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Já o Pipoca é um pouco <span class="palavra-destaque">rabugento</span> — mas eu adoro ele <span class="palavra-destaque">do mesmo jeito</span>!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes me and my <span class="palavra-destaque">uncle</span> go to the garden to <span class="palavra-destaque">find</span> <span class="palavra-destaque">worm</span>s for the <span class="palavra-destaque">fish</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes, eu e meu <span class="palavra-destaque">tio</span> vamos ao jardim procurar <span class="palavra-destaque">minhoca</span>s para dar aos <span class="palavra-destaque">peixe</span>s.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We dig small holes in the ground and <span class="palavra-destaque">look</span> really carefully.</div>
+                            <div style="color: #666; font-size: 0.95em;">A gente faz buraquinhos na terra e fica <span class="palavra-destaque">olhando</span> com cuidado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">The other day</span> I found a super <span class="palavra-destaque">crooked</span>, weird-looking worm. I gave her a name: Magali!</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Outro dia</span>, achei uma minhoca bem <span class="palavra-destaque">torta</span> e diferente. Dei um nome para ela: Magali!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I think she liked it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Acho que ela gostou.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I love going to Aunt Sula's house. I have so much fun there, and <span class="palavra-destaque">every</span> visit is a new adventure!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu adoro ficar na casa da tia Sula. Lá eu me divirto muito e <span class="palavra-destaque">cada</span> visita é uma nova aventura!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🐾 Vocabulário — Pessoas, Animais e Atividades</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. <span class="palavra-destaque">MOTHER</span> 👩</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mãe</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I live with my mom Bruna"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Membro essencial da família!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. <span class="palavra-destaque">SISTER</span> 👧</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Irmã</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My sister Anna Beli"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de irmãs!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. <span class="palavra-destaque">AUNT</span> 👩‍🦰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Aunt Sula's house"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de parentes!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. <span class="palavra-destaque">UNCLE</span> 👨‍🦱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Me and my uncle go to the garden"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de parentes!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. <span class="palavra-destaque">DOG</span> 🐶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cachorro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I play with her dogs"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal doméstico mais comum!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. <span class="palavra-destaque">FISH</span> 🐟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Peixe</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We find worms for the fish"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Animal aquático muito comum!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. <span class="palavra-destaque">WORM</span> 🪱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Minhoca</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I found a super crooked worm"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Palavra divertida para aprender!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. <span class="palavra-destaque">WILD</span> 🌿</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bruto/a / Selvagem</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Zara is a little wild"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para descrever comportamento!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. <span class="palavra-destaque">GRUMPY</span> 😾</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Rabugento/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Pipoca is kind of grumpy"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Adjetivo divertido para descrever humor!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. <span class="palavra-destaque">WARM</span> 🤗</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Quentinho/a / Caloroso/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Lola gives the best warm kisses"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para descrever carinho!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">11. <span class="palavra-destaque">CROOKED</span> 〰️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Torto/a</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A super crooked, weird-looking worm"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para descrever aparência!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🎨 Atividades</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. <span class="palavra-destaque">WATCH</span> 📺</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Assistir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I watch Chiquititas on Netflix"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de entretenimento!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. <span class="palavra-destaque">DRAW</span> ✏️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desenhar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I draw pictures"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de hobbies!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. <span class="palavra-destaque">PAINT</span> 🎨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pintar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I paint cardboard boxes"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de atividades criativas!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. <span class="palavra-destaque">PLAY WITH</span> 🎮</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Brincar com</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I play with her dogs"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de diversão!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. <span class="palavra-destaque">LOOK FOR</span> 🔍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Procurar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We go to the garden to look for worms"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Phrasal verb muito comum no dia a dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. <span class="palavra-destaque">FIND</span> 🔎</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Encontrar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I found a super crooked worm"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de descobertas!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. DIG 🕳️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cavar / Fazer buracos</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We dig small holes in the ground"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para falar de atividades ao ar livre!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔑 Expressões Importantes</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. <span class="palavra-destaque">ANYWAY</span> 🤷</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Do mesmo jeito / De qualquer forma</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Pipoca is grumpy — but I love him anyway!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Indica que algo acontece apesar de uma condição negativa!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. <span class="palavra-destaque">LOOK FOR</span> 🔍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Procurar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We go to the garden to look for worms"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Diferente de "look at" (olhar para) e "look" (parecer)!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. <span class="palavra-destaque">THE OTHER DAY</span> 📅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Outro dia / Esses dias</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The other day I found a super crooked worm"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Expressão usada para falar de algo recente sem data exata!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. <span class="palavra-destaque">EVERY</span> 🔄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cada / Todo(a)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Every visit is a new adventure"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> "Every" + substantivo singular = cada. Muito usado para generalizações!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. "FEED THE FISH" 🐟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Dar comida aos peixes / Alimentar os peixes</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We look for worms to feed the fish"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> "Feed" = dar comida a alguém ou a um animal!</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; color: #666; font-size: 0.9em;">👉 Esse vocabulário cobre <strong>família, animais, atividades e expressões do cotidiano</strong>.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 03 - Tio Binho</strong></p>
+        <p>Estude com consistência e você verá progresso! 💪</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
+        let deferredPrompt = null;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone || isInPWAMode) return;
+            if (isMobile && !installPromptShown) {
+                setTimeout(() => { showInstallPrompt(); }, 2000);
+            }
+        }
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner && !installPromptShown) {
+                banner.style.display = 'flex';
+                installPromptShown = true;
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(() => closeInstallPrompt());
+            } else {
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+</body>
+</html>
