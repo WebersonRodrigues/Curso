@@ -1,0 +1,20 @@
+# Anotações pessoais e credenciais
+util.txt
+
+# Kiro IDE (ignorar settings/MCP, manter specs e steering)
+.kiro/settings/
+
+# VS Code
+.vscode/
+
+# SQL de setup (já executado no Supabase)
+supabase-setup.sql
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (caso use no futuro)
+node_modules/
+package-lock.json

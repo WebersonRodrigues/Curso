@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tio-binho-v10';
+const CACHE_NAME = 'tio-binho-v11';
 const urlsToCache = [
   './',
   './index.html',
@@ -7,6 +7,9 @@ const urlsToCache = [
   './icone-512.png',
   './capa.png',
   './manifest.json',
+  './supabase-config.js',
+  './auth.js',
+  './access-log.js',
   'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
 ];
 
@@ -42,6 +45,11 @@ self.addEventListener('fetch', event => {
 
   // Ignorar requisições de extensões e protocolos não-HTTP
   if (!event.request.url.startsWith('http')) {
+    return;
+  }
+
+  // Não cachear requisições para o Supabase (sempre usar network)
+  if (event.request.url.includes('supabase.co')) {
     return;
   }
 
