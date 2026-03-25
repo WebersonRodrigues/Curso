@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Aula 01 - Curso de Inglês com Tio Binho">
     <meta name="theme-color" content="#FF6B6B">
     <meta name="mobile-web-app-capable" content="yes">
@@ -752,12 +752,29 @@
             }
         };
     </script>
+    <script src="../platform-detect.js"></script>
     <script src="../supabase-config.js"></script>
     <script src="../auth.js"></script>
     <script src="../access-log.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             initAuth();
+        });
+
+        // Tratamento de erro de áudio cross-browser
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontWeight = '600';
+                    msg.style.marginTop = '10px';
+                    msg.textContent = '⚠️ Erro ao carregar o áudio. Tente recarregar a página.';
+                    section.appendChild(msg);
+                }
+            });
         });
     </script>
 </body>

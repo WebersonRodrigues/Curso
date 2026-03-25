@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tio-binho-v11';
+const CACHE_NAME = 'tio-binho-v12';
 const urlsToCache = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const urlsToCache = [
   './supabase-config.js',
   './auth.js',
   './access-log.js',
+  './platform-detect.js',
   'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'
 ];
 

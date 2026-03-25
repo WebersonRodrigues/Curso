@@ -54,6 +54,21 @@ async function initAuth() {
       if (loginOverlay) loginOverlay.style.display = '';
       if (appContent) appContent.style.display = 'none';
     }
+
+    // Escutar mudanças de estado de autenticação (necessário para iOS standalone)
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+        if (event === 'SIGNED_IN' && session) {
+            const loginOverlay = document.getElementById('loginOverlay');
+            const appContent = document.getElementById('appContent');
+            if (loginOverlay) loginOverlay.style.display = 'none';
+            if (appContent) appContent.style.display = '';
+            exibirUsuarioNaToolbar();
+            upsertUsuario(session.user);
+            if (typeof registrarAcesso === 'function') {
+                registrarAcesso(window.location.pathname);
+            }
+        }
+    });
   } catch (err) {
     console.warn('Erro inesperado em initAuth:', err);
   }
@@ -65,20 +80,42 @@ async function initAuth() {
  */
 async function loginComGoogle() {
   try {
-    const { error } = await supabaseClient.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: window.location.origin
+    if (Platform.isIOS && Platform.isStandalone) {
+      // iOS standalone: abrir OAuth no Safari via window.open
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin,
+          skipBrowserRedirect: true
+        }
+      });
+      if (data?.url) {
+        window.open(data.url, '_blank');
       }
-    });
-
-    if (error) {
-      const loginError = document.getElementById('loginError');
-      if (loginError) {
-        loginError.textContent = 'Erro ao fazer login: ' + error.message;
-        loginError.style.display = '';
+      if (error) {
+        const loginError = document.getElementById('loginError');
+        if (loginError) {
+          loginError.textContent = 'Erro ao fazer login: ' + error.message;
+          loginError.style.display = '';
+        }
+        console.warn('Erro no login com Google:', error.message);
       }
-      console.warn('Erro no login com Google:', error.message);
+    } else {
+      // Fluxo normal: redirect
+      const { error } = await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin
+        }
+      });
+      if (error) {
+        const loginError = document.getElementById('loginError');
+        if (loginError) {
+          loginError.textContent = 'Erro ao fazer login: ' + error.message;
+          loginError.style.display = '';
+        }
+        console.warn('Erro no login com Google:', error.message);
+      }
     }
   } catch (err) {
     const loginError = document.getElementById('loginError');

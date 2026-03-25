@@ -10,6 +10,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
 body {
     font-family: 'DM Sans', sans-serif;
     background: #f8f8f8;
@@ -21,6 +26,7 @@ body {
 .toolbar {
     background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #FFD93D 100%);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -940,4 +946,31 @@ footer .footer-credit { margin-top: 15px; font-size: 0.9em; color: #999; }
     .analytics-filter input[type="date"] {
         width: 100%;
     }
+}
+
+/* ── Safe Areas para iOS Standalone ── */
+body.is-ios-standalone .toolbar {
+    padding-top: env(safe-area-inset-top);
+}
+
+body.is-ios-standalone .container {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+}
+
+body.is-ios-standalone footer {
+    padding-bottom: calc(30px + env(safe-area-inset-bottom));
+}
+
+body.is-ios-standalone #installBanner {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}
+
+body.is-ios-standalone .login-overlay {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+body.is-ios-standalone .back-to-top {
+    bottom: calc(30px + env(safe-area-inset-bottom));
 }
