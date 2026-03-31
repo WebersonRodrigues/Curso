@@ -158,16 +158,21 @@ async function loginComGoogle() {
  * Encerra a sessão do usuário e redireciona para a tela de login.
  */
 async function logout() {
-  try {
-    await supabaseClient.auth.signOut();
-  } catch (err) {
-    console.warn('Erro ao fazer logout:', err);
-  }
-  // Redireciona para a página principal (login)
+  // Limpar visitante
+  sessionStorage.removeItem('visitante');
+
+  // Mostrar login instantaneamente
+  const loginOverlay = document.getElementById('loginOverlay');
+  const appContent = document.getElementById('appContent');
+  if (loginOverlay) loginOverlay.style.display = '';
+  if (appContent) appContent.style.display = 'none';
+
+  // SignOut do Supabase em background (não bloqueia a UI)
+  supabaseClient.auth.signOut().catch(err => console.warn('Erro ao fazer logout:', err));
+
+  // Redirecionar se estiver em página de aula
   if (isPaginaDeAula()) {
     window.location.href = '../index.html';
-  } else {
-    window.location.reload();
   }
 }
 
