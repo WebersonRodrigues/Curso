@@ -974,3 +974,23 @@ body.is-ios-standalone .login-overlay {
 body.is-ios-standalone .back-to-top {
     bottom: calc(30px + env(safe-area-inset-bottom));
 }
+
+/* ── Botão Entrar como Visitante ── */
+.login-btn-anonimo {
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.login-btn-anonimo:hover {
+    border-color: #999;
+    color: #333;
+    background: #f9f9f9;
+}

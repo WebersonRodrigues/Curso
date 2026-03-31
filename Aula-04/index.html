@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 04 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 04 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 04</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 04 - Semana 4</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 04</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de comida, refeições, higiene pessoal, clima e rotina em casa.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ What I Eat Every Day</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Comida, refeições e alimentação do dia a dia</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> food, bread, butter, milk, scrambled eggs, orange juice, sandwich, cookies, rice, beans, pot roast, soup, carrots, potatoes, pasta, meat, barbecue, garlic bread, apple, pear, strawberries</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ My Day at Home</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Higiene pessoal, brincar no quintal e clima</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> take a shower, wash, brush teeth, comb hair, flush toilet, soap, towel, mirror, backyard, sun, rain, fog, clouds, puddles</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~2 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1 -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: What I Eat Every Day</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01-what-i-eat-every-day/01-what-i-eat-every-day.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01-what-i-eat-every-day/01-what-i-eat-every-day.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Hi! My name is Ana. I am nine years old.</p>
+                        <p>I <span class="palavra-destaque">love</span> eating! Food is the best part of my day.</p>
+                        <p>In the morning, I <span class="palavra-destaque">have</span> breakfast in the kitchen. I <span class="palavra-destaque">eat</span> bread with butter and <span class="palavra-destaque">drink</span> milk. Sometimes, my mom <span class="palavra-destaque">makes</span> scrambled eggs. They are so tasty!</p>
+                        <p>I also <span class="palavra-destaque">like</span> orange juice. It is sweet and fresh.</p>
+                        <p>At school, I <span class="palavra-destaque">bring</span> my lunchbox. Inside, there is a sandwich, a banana, and a small bottle of water.</p>
+                        <p>My friend Maria always <span class="palavra-destaque">brings</span> cookies. We <span class="palavra-destaque">eat</span> together at snack time and there is always enough for seconds!</p>
+                        <p>At lunch time, I <span class="palavra-destaque">eat</span> at home. My grandmother <span class="palavra-destaque">cooks</span> for us. She <span class="palavra-destaque">makes</span> rice, beans, potatoes, and pot roast. I <span class="palavra-destaque">love</span> pot roast!</p>
+                        <p>My grandmother always <span class="palavra-destaque">says</span>: "You <span class="palavra-destaque">need</span> to eat vegetables!" So I <span class="palavra-destaque">eat</span> a little bit of salad.</p>
+                        <p>Sometimes she <span class="palavra-destaque">makes</span> soup. The soup is hot and <span class="palavra-destaque">has</span> carrots, potatoes, and pasta. I <span class="palavra-destaque">like</span> it when it is cold outside.</p>
+                        <p>In the afternoon, I <span class="palavra-destaque">get</span> hungry again. I <span class="palavra-destaque">eat</span> a fruit — an apple or a pear. My brother <span class="palavra-destaque">prefers</span> strawberries.</p>
+                        <p>At dinner, we <span class="palavra-destaque">eat</span> together. My dad <span class="palavra-destaque">makes</span> barbecue on the weekend. The meat is delicious! He also <span class="palavra-destaque">makes</span> garlic bread.</p>
+                        <p>Before bed, I <span class="palavra-destaque">drink</span> a glass of warm milk. My mom <span class="palavra-destaque">says</span> it <span class="palavra-destaque">helps</span> you sleep better.</p>
+                        <p>I <span class="palavra-destaque">like</span> trying new foods. Last week, I <span class="palavra-destaque">tried</span> sushi for the first time. It was different, but I <span class="palavra-destaque">liked</span> it!</p>
+                        <p>Food is very important. It <span class="palavra-destaque">gives</span> us energy to play, study, and grow!</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Oi! Meu nome é Ana. Eu tenho nove anos.</p>
+                        <p>Eu <span class="palavra-destaque">adoro</span> comer! A comida é a melhor parte do meu dia.</p>
+                        <p>De manhã, eu <span class="palavra-destaque">tomo</span> café da manhã na cozinha. Eu <span class="palavra-destaque">como</span> pão com manteiga e <span class="palavra-destaque">bebo</span> leite. Às vezes, minha mãe <span class="palavra-destaque">faz</span> ovos mexidos. Eles são tão gostosos!</p>
+                        <p>Eu também <span class="palavra-destaque">gosto</span> de suco de laranja. É doce e fresquinho.</p>
+                        <p>Na escola, eu <span class="palavra-destaque">levo</span> minha lancheira. Dentro tem um sanduíche, uma banana e uma garrafinha de água.</p>
+                        <p>Minha amiga Maria sempre <span class="palavra-destaque">traz</span> biscoitos. A gente <span class="palavra-destaque">come</span> junto na hora do lanche e sempre sobra para repetir!</p>
+                        <p>Na hora do almoço, eu <span class="palavra-destaque">como</span> em casa. Minha avó <span class="palavra-destaque">cozinha</span> para a gente. Ela <span class="palavra-destaque">faz</span> arroz, feijão, batata e bife de panela. Eu <span class="palavra-destaque">adoro</span> bife de panela!</p>
+                        <p>Minha avó sempre <span class="palavra-destaque">diz</span>: "Você <span class="palavra-destaque">precisa</span> comer legumes!" Então eu <span class="palavra-destaque">como</span> um pouquinho de salada.</p>
+                        <p>Às vezes ela <span class="palavra-destaque">faz</span> sopa. A sopa é quente e <span class="palavra-destaque">tem</span> cenoura, batata e macarrão. Eu <span class="palavra-destaque">gosto</span> quando está frio lá fora.</p>
+                        <p>De tarde, eu <span class="palavra-destaque">fico</span> com fome de novo. Eu <span class="palavra-destaque">como</span> uma fruta — uma maçã ou uma pera. Meu irmão <span class="palavra-destaque">prefere</span> morangos.</p>
+                        <p>No jantar, a gente <span class="palavra-destaque">come</span> junto. Meu pai <span class="palavra-destaque">faz</span> churrasco no fim de semana. A carne é deliciosa! Ele também <span class="palavra-destaque">faz</span> pão de alho.</p>
+                        <p>Antes de dormir, eu <span class="palavra-destaque">bebo</span> um copo de leite quente. Minha mãe <span class="palavra-destaque">diz</span> que <span class="palavra-destaque">ajuda</span> a dormir melhor.</p>
+                        <p>Eu <span class="palavra-destaque">gosto</span> de experimentar comidas novas. Semana passada, eu <span class="palavra-destaque">provei</span> sushi pela primeira vez. Era diferente, mas eu <span class="palavra-destaque">gostei</span>!</p>
+                        <p>Comida é muito importante. Ela nos <span class="palavra-destaque">dá</span> energia para brincar, estudar e crescer!</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Hi! My name is Ana. I am nine years old.</div>
+                            <div style="color: #666; font-size: 0.95em;">Oi! Meu nome é Ana. Eu tenho nove anos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">love</span> eating! Food is the best part of my day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">adoro</span> comer! A comida é a melhor parte do meu dia.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the morning, I <span class="palavra-destaque">have</span> breakfast in the kitchen.</div>
+                            <div style="color: #666; font-size: 0.95em;">De manhã, eu <span class="palavra-destaque">tomo</span> café da manhã na cozinha.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">eat</span> bread with butter and <span class="palavra-destaque">drink</span> milk.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">como</span> pão com manteiga e <span class="palavra-destaque">bebo</span> leite.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes, my mom <span class="palavra-destaque">makes</span> scrambled eggs. They are so tasty!</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes, minha mãe <span class="palavra-destaque">faz</span> ovos mexidos. Eles são tão gostosos!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also <span class="palavra-destaque">like</span> orange juice. It is sweet and fresh.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu também <span class="palavra-destaque">gosto</span> de suco de laranja. É doce e fresquinho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At school, I <span class="palavra-destaque">bring</span> my lunchbox.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na escola, eu <span class="palavra-destaque">levo</span> minha lancheira.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Inside, there is a sandwich, a banana, and a small bottle of water.</div>
+                            <div style="color: #666; font-size: 0.95em;">Dentro tem um sanduíche, uma banana e uma garrafinha de água.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Maria always <span class="palavra-destaque">brings</span> cookies.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha amiga Maria sempre <span class="palavra-destaque">traz</span> biscoitos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">eat</span> together at snack time and there is always enough for seconds!</div>
+                            <div style="color: #666; font-size: 0.95em;">A gente <span class="palavra-destaque">come</span> junto na hora do lanche e sempre sobra para repetir!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At lunch time, I <span class="palavra-destaque">eat</span> at home. My grandmother <span class="palavra-destaque">cooks</span> for us.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na hora do almoço, eu <span class="palavra-destaque">como</span> em casa. Minha avó <span class="palavra-destaque">cozinha</span> para a gente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">makes</span> rice, beans, potatoes, and pot roast. I <span class="palavra-destaque">love</span> pot roast!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">faz</span> arroz, feijão, batata e bife de panela. Eu <span class="palavra-destaque">adoro</span> bife de panela!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My grandmother always <span class="palavra-destaque">says</span>: "You <span class="palavra-destaque">need</span> to eat vegetables!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha avó sempre <span class="palavra-destaque">diz</span>: "Você <span class="palavra-destaque">precisa</span> comer legumes!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">So I <span class="palavra-destaque">eat</span> a little bit of salad.</div>
+                            <div style="color: #666; font-size: 0.95em;">Então eu <span class="palavra-destaque">como</span> um pouquinho de salada.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes she <span class="palavra-destaque">makes</span> soup. The soup is hot and <span class="palavra-destaque">has</span> carrots, potatoes, and pasta.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes ela <span class="palavra-destaque">faz</span> sopa. A sopa é quente e <span class="palavra-destaque">tem</span> cenoura, batata e macarrão.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">like</span> it when it is cold outside.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">gosto</span> quando está frio lá fora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the afternoon, I <span class="palavra-destaque">get</span> hungry again.</div>
+                            <div style="color: #666; font-size: 0.95em;">De tarde, eu <span class="palavra-destaque">fico</span> com fome de novo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">eat</span> a fruit — an apple or a pear. My brother <span class="palavra-destaque">prefers</span> strawberries.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">como</span> uma fruta — uma maçã ou uma pera. Meu irmão <span class="palavra-destaque">prefere</span> morangos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At dinner, we <span class="palavra-destaque">eat</span> together.</div>
+                            <div style="color: #666; font-size: 0.95em;">No jantar, a gente <span class="palavra-destaque">come</span> junto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad <span class="palavra-destaque">makes</span> barbecue on the weekend. The meat is delicious!</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai <span class="palavra-destaque">faz</span> churrasco no fim de semana. A carne é deliciosa!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He also <span class="palavra-destaque">makes</span> garlic bread.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele também <span class="palavra-destaque">faz</span> pão de alho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before bed, I <span class="palavra-destaque">drink</span> a glass of warm milk.</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de dormir, eu <span class="palavra-destaque">bebo</span> um copo de leite quente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">says</span> it <span class="palavra-destaque">helps</span> you sleep better.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe <span class="palavra-destaque">diz</span> que <span class="palavra-destaque">ajuda</span> a dormir melhor.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">like</span> trying new foods. Last week, I <span class="palavra-destaque">tried</span> sushi for the first time.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">gosto</span> de experimentar comidas novas. Semana passada, eu <span class="palavra-destaque">provei</span> sushi pela primeira vez.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It was different, but I <span class="palavra-destaque">liked</span> it!</div>
+                            <div style="color: #666; font-size: 0.95em;">Era diferente, mas eu <span class="palavra-destaque">gostei</span>!</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Food is very important. It <span class="palavra-destaque">gives</span> us energy to play, study, and grow!</div>
+                            <div style="color: #666; font-size: 0.95em;">Comida é muito importante. Ela nos <span class="palavra-destaque">dá</span> energia para brincar, estudar e crescer!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🍽️ Palavras Importantes</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. FOOD 🍽️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Comida</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Food is the best part of my day"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Palavra essencial do dia a dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. BREAD 🍞</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I eat bread with butter"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Alimento básico do café da manhã!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. MILK 🥛</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Leite</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I drink a glass of warm milk"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Bebida muito comum!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. RICE 🍚</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Arroz</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She makes rice and beans"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Base da alimentação brasileira!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. BEANS 🫘</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Feijão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She makes rice, beans, and pot roast"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Comida típica brasileira!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. BREAKFAST 🌅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Café da manhã</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have breakfast in the kitchen"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Primeira refeição do dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. LUNCH 🍱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Almoço</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At lunch time, I eat at home"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Refeição principal do dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. DINNER 🍽️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Jantar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At dinner, we eat together"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Última refeição do dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. BARBECUE 🥩</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Churrasco</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My dad makes barbecue on the weekend"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Tradição brasileira!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. SOUP 🍲</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sopa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The soup has carrots, potatoes, and pasta"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Comida quentinha para dias frios!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2 -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: My Day at Home</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02-my-day-at-home/02-my-day-at-home.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02-my-day-at-home/02-my-day-at-home.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Hi! My name is Ana. Today is Saturday and I <span class="palavra-destaque">stay</span> home all day!</p>
+                        <p>In the morning, my mom <span class="palavra-destaque">wakes</span> me up and <span class="palavra-destaque">says</span>: "Time to get up!" I <span class="palavra-destaque">rub</span> my eyes and <span class="palavra-destaque">yawn</span>. I am still sleepy.</p>
+                        <p>I <span class="palavra-destaque">go</span> to the bathroom. First, I <span class="palavra-destaque">wash</span> my face with cold water. Then, I <span class="palavra-destaque">brush</span> my teeth. My toothbrush is blue.</p>
+                        <p>After that, I <span class="palavra-destaque">take</span> a shower. The water is warm and I <span class="palavra-destaque">use</span> soap and shampoo. I <span class="palavra-destaque">wash</span> my hair and my body. I <span class="palavra-destaque">love</span> taking a shower in the morning!</p>
+                        <p>When I <span class="palavra-destaque">get</span> out of the shower, I <span class="palavra-destaque">dry</span> myself with a towel. Then, I <span class="palavra-destaque">comb</span> my hair in front of the mirror. My hair is curly and hard to comb!</p>
+                        <p>Oh, and I always <span class="palavra-destaque">flush</span> the toilet! My mom <span class="palavra-destaque">says</span> that is very important.</p>
+                        <p>I also <span class="palavra-destaque">wash</span> my hands with soap before eating. My grandmother <span class="palavra-destaque">says</span>: "Clean hands, happy belly!"</p>
+                        <p>After breakfast, I <span class="palavra-destaque">go</span> to play in the backyard. The backyard is big and <span class="palavra-destaque">has</span> grass, trees, and flowers.</p>
+                        <p>Today the sun is <span class="palavra-destaque">shining</span>. The sky is blue and clear. It is hot and I <span class="palavra-destaque">run</span> and <span class="palavra-destaque">jump</span> around.</p>
+                        <p>But the weather <span class="palavra-destaque">changes</span> fast! Suddenly, dark clouds <span class="palavra-destaque">appear</span> in the sky. It <span class="palavra-destaque">starts</span> to rain! The rain is heavy and <span class="palavra-destaque">makes</span> noise on the roof.</p>
+                        <p>I <span class="palavra-destaque">run</span> inside the house. My mom <span class="palavra-destaque">says</span>: "You are all wet!" I <span class="palavra-destaque">laugh</span> and <span class="palavra-destaque">change</span> my clothes.</p>
+                        <p>Through the window, I <span class="palavra-destaque">watch</span> the rain fall. Puddles <span class="palavra-destaque">form</span> on the ground. I <span class="palavra-destaque">want</span> to jump in the puddles, but my mom <span class="palavra-destaque">doesn't let</span> me.</p>
+                        <p>After the rain, the weather <span class="palavra-destaque">gets</span> different. A thin fog <span class="palavra-destaque">covers</span> everything. It <span class="palavra-destaque">looks</span> like magic! I can barely <span class="palavra-destaque">see</span> the neighbor's trees.</p>
+                        <p>My dad <span class="palavra-destaque">says</span> that fog <span class="palavra-destaque">appears</span> when the air is humid and cold. I <span class="palavra-destaque">think</span> it is beautiful.</p>
+                        <p>In the afternoon, the sun <span class="palavra-destaque">comes</span> back. I <span class="palavra-destaque">go</span> to the backyard again. I <span class="palavra-destaque">play</span> with my dog. She <span class="palavra-destaque">runs</span>, <span class="palavra-destaque">jumps</span>, and <span class="palavra-destaque">barks</span>. We <span class="palavra-destaque">have</span> so much fun!</p>
+                        <p>Before dinner, I <span class="palavra-destaque">take</span> another shower. I <span class="palavra-destaque">wash</span> my hands, <span class="palavra-destaque">brush</span> my teeth, and <span class="palavra-destaque">put on</span> my pajamas.</p>
+                        <p>I <span class="palavra-destaque">like</span> Saturdays. I <span class="palavra-destaque">play</span>, <span class="palavra-destaque">take</span> showers, <span class="palavra-destaque">watch</span> the rain, and <span class="palavra-destaque">enjoy</span> the day. Every day is an adventure!</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Oi! Meu nome é Ana. Hoje é sábado e eu <span class="palavra-destaque">fico</span> em casa o dia todo!</p>
+                        <p>De manhã, minha mãe me <span class="palavra-destaque">acorda</span> e <span class="palavra-destaque">diz</span>: "Hora de levantar!" Eu <span class="palavra-destaque">esfrego</span> os olhos e <span class="palavra-destaque">bocejo</span>. Ainda estou com sono.</p>
+                        <p>Eu <span class="palavra-destaque">vou</span> ao banheiro. Primeiro, eu <span class="palavra-destaque">lavo</span> o rosto com água fria. Depois, eu <span class="palavra-destaque">escovo</span> os dentes. Minha escova de dentes é azul.</p>
+                        <p>Depois, eu <span class="palavra-destaque">tomo</span> banho. A água está quentinha e eu <span class="palavra-destaque">uso</span> sabonete e shampoo. Eu <span class="palavra-destaque">lavo</span> o cabelo e o corpo. Eu <span class="palavra-destaque">adoro</span> tomar banho de manhã!</p>
+                        <p>Quando eu <span class="palavra-destaque">saio</span> do banho, eu me <span class="palavra-destaque">seco</span> com a toalha. Depois, eu <span class="palavra-destaque">penteio</span> o cabelo na frente do espelho. Meu cabelo é enrolado e difícil de pentear!</p>
+                        <p>Ah, e eu sempre <span class="palavra-destaque">dou descarga</span> no vaso! Minha mãe <span class="palavra-destaque">diz</span> que isso é muito importante.</p>
+                        <p>Eu também <span class="palavra-destaque">lavo</span> as mãos com sabonete antes de comer. Minha avó <span class="palavra-destaque">diz</span>: "Mãos limpas, barriga feliz!"</p>
+                        <p>Depois do café da manhã, eu <span class="palavra-destaque">vou</span> brincar no quintal. O quintal é grande e <span class="palavra-destaque">tem</span> grama, árvores e flores.</p>
+                        <p>Hoje o sol está <span class="palavra-destaque">brilhando</span>. O céu está azul e limpo. Está quente e eu <span class="palavra-destaque">corro</span> e <span class="palavra-destaque">pulo</span>.</p>
+                        <p>Mas o tempo <span class="palavra-destaque">muda</span> rápido! De repente, nuvens escuras <span class="palavra-destaque">aparecem</span> no céu. <span class="palavra-destaque">Começa</span> a chover! A chuva é forte e <span class="palavra-destaque">faz</span> barulho no telhado.</p>
+                        <p>Eu <span class="palavra-destaque">corro</span> para dentro de casa. Minha mãe <span class="palavra-destaque">diz</span>: "Você está toda molhada!" Eu <span class="palavra-destaque">rio</span> e <span class="palavra-destaque">troco</span> de roupa.</p>
+                        <p>Pela janela, eu <span class="palavra-destaque">vejo</span> a chuva cair. As poças de água <span class="palavra-destaque">ficam</span> no chão. Eu <span class="palavra-destaque">quero</span> pular nas poças, mas minha mãe <span class="palavra-destaque">não deixa</span>.</p>
+                        <p>Depois da chuva, o tempo <span class="palavra-destaque">fica</span> diferente. Uma neblina fina <span class="palavra-destaque">cobre</span> tudo. <span class="palavra-destaque">Parece</span> mágica! Eu quase não consigo <span class="palavra-destaque">ver</span> as árvores do vizinho.</p>
+                        <p>Meu pai <span class="palavra-destaque">diz</span> que a neblina <span class="palavra-destaque">aparece</span> quando o ar está úmido e frio. Eu <span class="palavra-destaque">acho</span> bonito.</p>
+                        <p>De tarde, o sol <span class="palavra-destaque">volta</span>. Eu <span class="palavra-destaque">vou</span> para o quintal de novo. Eu <span class="palavra-destaque">brinco</span> com minha cachorra. Ela <span class="palavra-destaque">corre</span>, <span class="palavra-destaque">pula</span> e <span class="palavra-destaque">late</span>. A gente se <span class="palavra-destaque">diverte</span> muito!</p>
+                        <p>Antes de jantar, eu <span class="palavra-destaque">tomo</span> outro banho. Eu <span class="palavra-destaque">lavo</span> as mãos, <span class="palavra-destaque">escovo</span> os dentes e <span class="palavra-destaque">coloco</span> o pijama.</p>
+                        <p>Eu <span class="palavra-destaque">gosto</span> dos sábados. Eu <span class="palavra-destaque">brinco</span>, <span class="palavra-destaque">tomo</span> banho, <span class="palavra-destaque">vejo</span> a chuva e <span class="palavra-destaque">aproveito</span> o dia. Todo dia é uma aventura!</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Hi! My name is Ana. Today is Saturday and I <span class="palavra-destaque">stay</span> home all day!</div>
+                            <div style="color: #666; font-size: 0.95em;">Oi! Meu nome é Ana. Hoje é sábado e eu <span class="palavra-destaque">fico</span> em casa o dia todo!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the morning, my mom <span class="palavra-destaque">wakes</span> me up and <span class="palavra-destaque">says</span>: "Time to get up!"</div>
+                            <div style="color: #666; font-size: 0.95em;">De manhã, minha mãe me <span class="palavra-destaque">acorda</span> e <span class="palavra-destaque">diz</span>: "Hora de levantar!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">rub</span> my eyes and <span class="palavra-destaque">yawn</span>. I am still sleepy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">esfrego</span> os olhos e <span class="palavra-destaque">bocejo</span>. Ainda estou com sono.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">go</span> to the bathroom. First, I <span class="palavra-destaque">wash</span> my face with cold water.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">vou</span> ao banheiro. Primeiro, eu <span class="palavra-destaque">lavo</span> o rosto com água fria.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then, I <span class="palavra-destaque">brush</span> my teeth. My toothbrush is blue.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois, eu <span class="palavra-destaque">escovo</span> os dentes. Minha escova de dentes é azul.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After that, I <span class="palavra-destaque">take</span> a shower. The water is warm and I <span class="palavra-destaque">use</span> soap and shampoo.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois, eu <span class="palavra-destaque">tomo</span> banho. A água está quentinha e eu <span class="palavra-destaque">uso</span> sabonete e shampoo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">wash</span> my hair and my body. I <span class="palavra-destaque">love</span> taking a shower in the morning!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">lavo</span> o cabelo e o corpo. Eu <span class="palavra-destaque">adoro</span> tomar banho de manhã!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I <span class="palavra-destaque">get</span> out of the shower, I <span class="palavra-destaque">dry</span> myself with a towel.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando eu <span class="palavra-destaque">saio</span> do banho, eu me <span class="palavra-destaque">seco</span> com a toalha.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then, I <span class="palavra-destaque">comb</span> my hair in front of the mirror. My hair is curly and hard to comb!</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois, eu <span class="palavra-destaque">penteio</span> o cabelo na frente do espelho. Meu cabelo é enrolado e difícil de pentear!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Oh, and I always <span class="palavra-destaque">flush</span> the toilet! My mom <span class="palavra-destaque">says</span> that is very important.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ah, e eu sempre <span class="palavra-destaque">dou descarga</span> no vaso! Minha mãe <span class="palavra-destaque">diz</span> que isso é muito importante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also <span class="palavra-destaque">wash</span> my hands with soap before eating.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu também <span class="palavra-destaque">lavo</span> as mãos com sabonete antes de comer.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My grandmother <span class="palavra-destaque">says</span>: "Clean hands, happy belly!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha avó <span class="palavra-destaque">diz</span>: "Mãos limpas, barriga feliz!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After breakfast, I <span class="palavra-destaque">go</span> to play in the backyard.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois do café da manhã, eu <span class="palavra-destaque">vou</span> brincar no quintal.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The backyard is big and <span class="palavra-destaque">has</span> grass, trees, and flowers.</div>
+                            <div style="color: #666; font-size: 0.95em;">O quintal é grande e <span class="palavra-destaque">tem</span> grama, árvores e flores.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today the sun is <span class="palavra-destaque">shining</span>. The sky is blue and clear.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje o sol está <span class="palavra-destaque">brilhando</span>. O céu está azul e limpo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It is hot and I <span class="palavra-destaque">run</span> and <span class="palavra-destaque">jump</span> around.</div>
+                            <div style="color: #666; font-size: 0.95em;">Está quente e eu <span class="palavra-destaque">corro</span> e <span class="palavra-destaque">pulo</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But the weather <span class="palavra-destaque">changes</span> fast! Suddenly, dark clouds <span class="palavra-destaque">appear</span> in the sky.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas o tempo <span class="palavra-destaque">muda</span> rápido! De repente, nuvens escuras <span class="palavra-destaque">aparecem</span> no céu.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It <span class="palavra-destaque">starts</span> to rain! The rain is heavy and <span class="palavra-destaque">makes</span> noise on the roof.</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Começa</span> a chover! A chuva é forte e <span class="palavra-destaque">faz</span> barulho no telhado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">run</span> inside the house. My mom <span class="palavra-destaque">says</span>: "You are all wet!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">corro</span> para dentro de casa. Minha mãe <span class="palavra-destaque">diz</span>: "Você está toda molhada!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">laugh</span> and <span class="palavra-destaque">change</span> my clothes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">rio</span> e <span class="palavra-destaque">troco</span> de roupa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Through the window, I <span class="palavra-destaque">watch</span> the rain fall. Puddles <span class="palavra-destaque">form</span> on the ground.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pela janela, eu <span class="palavra-destaque">vejo</span> a chuva cair. As poças de água <span class="palavra-destaque">ficam</span> no chão.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">want</span> to jump in the puddles, but my mom <span class="palavra-destaque">doesn't let</span> me.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">quero</span> pular nas poças, mas minha mãe <span class="palavra-destaque">não deixa</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the rain, the weather <span class="palavra-destaque">gets</span> different. A thin fog <span class="palavra-destaque">covers</span> everything.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois da chuva, o tempo <span class="palavra-destaque">fica</span> diferente. Uma neblina fina <span class="palavra-destaque">cobre</span> tudo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It <span class="palavra-destaque">looks</span> like magic! I can barely <span class="palavra-destaque">see</span> the neighbor's trees.</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Parece</span> mágica! Eu quase não consigo <span class="palavra-destaque">ver</span> as árvores do vizinho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad <span class="palavra-destaque">says</span> that fog <span class="palavra-destaque">appears</span> when the air is humid and cold.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai <span class="palavra-destaque">diz</span> que a neblina <span class="palavra-destaque">aparece</span> quando o ar está úmido e frio.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">think</span> it is beautiful.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">acho</span> bonito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the afternoon, the sun <span class="palavra-destaque">comes</span> back. I <span class="palavra-destaque">go</span> to the backyard again.</div>
+                            <div style="color: #666; font-size: 0.95em;">De tarde, o sol <span class="palavra-destaque">volta</span>. Eu <span class="palavra-destaque">vou</span> para o quintal de novo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">play</span> with my dog. She <span class="palavra-destaque">runs</span>, <span class="palavra-destaque">jumps</span>, and <span class="palavra-destaque">barks</span>. We <span class="palavra-destaque">have</span> so much fun!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">brinco</span> com minha cachorra. Ela <span class="palavra-destaque">corre</span>, <span class="palavra-destaque">pula</span> e <span class="palavra-destaque">late</span>. A gente se <span class="palavra-destaque">diverte</span> muito!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before dinner, I <span class="palavra-destaque">take</span> another shower. I <span class="palavra-destaque">wash</span> my hands, <span class="palavra-destaque">brush</span> my teeth, and <span class="palavra-destaque">put on</span> my pajamas.</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de jantar, eu <span class="palavra-destaque">tomo</span> outro banho. Eu <span class="palavra-destaque">lavo</span> as mãos, <span class="palavra-destaque">escovo</span> os dentes e <span class="palavra-destaque">coloco</span> o pijama.</div>
+                        </div>
+                        <div style="margin-bottom: 0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">like</span> Saturdays. I <span class="palavra-destaque">play</span>, <span class="palavra-destaque">take</span> showers, <span class="palavra-destaque">watch</span> the rain, and <span class="palavra-destaque">enjoy</span> the day. Every day is an adventure!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">gosto</span> dos sábados. Eu <span class="palavra-destaque">brinco</span>, <span class="palavra-destaque">tomo</span> banho, <span class="palavra-destaque">vejo</span> a chuva e <span class="palavra-destaque">aproveito</span> o dia. Todo dia é uma aventura!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🚿 Palavras Importantes</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. TAKE A SHOWER 🚿</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tomar banho</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I take a shower every morning"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Expressão essencial da rotina!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. BRUSH MY TEETH 🪥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Escovar os dentes</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I brush my teeth after eating"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Higiene diária básica!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. WASH 🧼</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lavar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I wash my face with cold water"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Verbo muito usado no dia a dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. TOWEL 🛁</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Toalha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I dry myself with a towel"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Item essencial do banheiro!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. BACKYARD 🏡</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Quintal</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I go to play in the backyard"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Lugar de brincar em casa!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. SUN ☀️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sol</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The sun is shining"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Palavra básica de clima!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. RAIN 🌧️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Chuva</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It starts to rain!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Clima do dia a dia!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. FOG 🌫️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Neblina</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A thin fog covers everything"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Fenômeno climático interessante!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. CLOUDS ☁️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Nuvens</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Dark clouds appear in the sky"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Para descrever o céu!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. PUDDLES 💧</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Poças de água</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Puddles form on the ground"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Por quê:</strong> Resultado da chuva!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 04 - Tio Binho</strong></p>
+        <p>Cada dia de estudo te aproxima do seu objetivo! 🚀</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
+        let deferredPrompt = null;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone || isInPWAMode) return;
+            if (isMobile && !installPromptShown) {
+                setTimeout(() => { showInstallPrompt(); }, 2000);
+            }
+        }
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner && !installPromptShown) {
+                banner.style.display = 'flex';
+                installPromptShown = true;
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(() => closeInstallPrompt());
+            } else {
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        // Tratamento de erro de áudio cross-browser
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontWeight = '600';
+                    msg.style.marginTop = '10px';
+                    msg.textContent = '⚠️ Erro ao carregar o áudio. Tente recarregar a página.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -10,6 +10,25 @@ function isPaginaDeAula() {
 }
 
 /**
+ * Verifica se o usuário entrou como visitante (anônimo).
+ */
+function isVisitante() {
+  return sessionStorage.getItem('visitante') === 'true';
+}
+
+/**
+ * Entra como visitante sem autenticação.
+ * Simplesmente oculta o login e exibe o conteúdo.
+ */
+function entrarAnonimo() {
+  sessionStorage.setItem('visitante', 'true');
+  const loginOverlay = document.getElementById('loginOverlay');
+  const appContent = document.getElementById('appContent');
+  if (loginOverlay) loginOverlay.style.display = 'none';
+  if (appContent) appContent.style.display = '';
+}
+
+/**
  * Inicializa a autenticação.
  * - Se há sessão ativa: exibe conteúdo, oculta login, exibe usuário na toolbar,
  *   faz upsert do perfil e registra acesso.
@@ -41,7 +60,15 @@ async function initAuth() {
         registrarAcesso(window.location.pathname);
       }
     } else {
-      // Sem sessão
+      // Sem sessão — verificar se é visitante
+      if (isVisitante()) {
+        const loginOverlay = document.getElementById('loginOverlay');
+        const appContent = document.getElementById('appContent');
+        if (loginOverlay) loginOverlay.style.display = 'none';
+        if (appContent) appContent.style.display = '';
+        return;
+      }
+
       if (isPaginaDeAula()) {
         window.location.href = '../index.html';
         return;

@@ -146,3 +146,126 @@ The dogs are named Zara, Lola, and Pipoca. Zara is a little wild, but Lola gives
 Sometimes me and my uncle go to the garden to find worms for the fish. We dig small holes in the ground and look really carefully.
 The other day I found a super crooked, weird-looking worm. I gave her a name: Magali! I think she liked it.
 I love going to Aunt Sula's house. I have so much fun there, and every visit is a new adventure!
+---
+Hi! My name is Ana. I am nine years old.
+
+I love eating! Food is the best part of my day.
+
+In the morning, I have breakfast in the kitchen. I eat bread with butter and drink milk. Sometimes, my mom makes scrambled eggs. They are so tasty!
+
+I also like orange juice. It is sweet and fresh.
+
+At school, I bring my lunchbox. Inside, there is a sandwich, a banana, and a small bottle of water.
+
+My friend Maria always brings cookies. We eat together at snack time and there is always enough for seconds!
+
+At lunch time, I eat at home. My grandmother cooks for us. She makes rice, beans, potatoes, and pot roast. I love pot roast!
+
+My grandmother always says: "You need to eat vegetables!" So I eat a little bit of salad.
+
+Sometimes she makes soup. The soup is hot and has carrots, potatoes, and pasta. I like it when it is cold outside.
+
+In the afternoon, I get hungry again. I eat a fruit — an apple or a pear. My brother prefers strawberries.
+
+At dinner, we eat together. My dad makes barbecue on the weekend. The meat is delicious! He also makes garlic bread.
+
+Before bed, I drink a glass of warm milk. My mom says it helps you sleep better.
+
+I like trying new foods. Last week, I tried sushi for the first time. It was different, but I liked it!
+---
+Hi! My name is Ana. Today is Saturday and I stay home all day!
+
+In the morning, my mom wakes me up and says: "Time to get up!" I rub my eyes and yawn. I am still sleepy.
+
+I go to the bathroom. First, I wash my face with cold water. Then, I brush my teeth. My toothbrush is blue.
+
+After that, I take a shower. The water is warm and I use soap and shampoo. I wash my hair and my body. I love taking a shower in the morning!
+
+When I get out of the shower, I dry myself with a towel. Then, I comb my hair in front of the mirror. My hair is curly and hard to comb!
+
+Oh, and I always flush the toilet! My mom says that is very important.
+
+I also wash my hands with soap before eating. My grandmother says: "Clean hands, happy belly!"
+
+After breakfast, I go to play in the backyard. The backyard is big and has grass, trees, and flowers.
+
+Today the sun is shining. The sky is blue and clear. It is hot and I run and jump around.
+
+But the weather changes fast! Suddenly, dark clouds appear in the sky. It starts to rain! The rain is heavy and makes noise on the roof.
+
+I run inside the house. My mom says: "You are all wet!" I laugh and change my clothes.
+
+Through the window, I watch the rain fall. Puddles form on the ground. I want to jump in the puddles, but my mom doesn't let me.
+
+After the rain, the weather gets different. A thin fog covers everything. It looks like magic! I can barely see the neighbor's trees.
+
+My dad says that fog appears when the air is humid and cold. I think it is beautiful.
+
+In the afternoon, the sun comes back. I go to the backyard again. I play with my dog. She runs, jumps, and barks. We have so much fun!
+
+Before dinner, I take another shower. I wash my hands, brush my teeth, and put on my pajamas.
+
+I like Saturdays. I play, take showers, watch the rain, and enjoy the day. Every day is an adventure!
+
+---
+Hi! My name is Ana. I am nine years old.
+
+I love eating! Food is the best part of my day.
+
+In the morning, I have breakfast in the kitchen. I eat bread with butter and drink milk. Sometimes, my mom makes scrambled eggs. They are so tasty!
+
+I also like orange juice. It is sweet and fresh.
+
+At school, I bring my lunchbox. Inside, there is a sandwich, a banana, and a small bottle of water.
+
+My friend Maria always brings cookies. We eat together at snack time and there is always enough for seconds!
+
+At lunch time, I eat at home. My grandmother cooks for us. She makes rice, beans, potatoes, and pot roast. I love pot roast!
+
+My grandmother always says: "You need to eat vegetables!" So I eat a little bit of salad.
+
+Sometimes she makes soup. The soup is hot and has carrots, potatoes, and pasta. I like it when it is cold outside.
+
+In the afternoon, I get hungry again. I eat a fruit — an apple or a pear. My brother prefers strawberries.
+
+At dinner, we eat together. My dad makes barbecue on the weekend. The meat is delicious! He also makes garlic bread.
+
+Before bed, I drink a glass of warm milk. My mom says it helps you sleep better.
+
+I like trying new foods. Last week, I tried sushi for the first time. It was different, but I liked it!
+
+Food is very important. It gives us energy to play, study, and grow!
+---
+Hi! My name is Ana. Today is Saturday and I stay home all day!
+
+In the morning, my mom wakes me up and says: "Time to get up!" I rub my eyes and yawn. I am still sleepy.
+
+I go to the bathroom. First, I wash my face with cold water. Then, I brush my teeth. My toothbrush is blue.
+
+After that, I take a shower. The water is warm and I use soap and shampoo. I wash my hair and my body. I love taking a shower in the morning!
+
+When I get out of the shower, I dry myself with a towel. Then, I comb my hair in front of the mirror. My hair is curly and hard to comb!
+
+Oh, and I always flush the toilet! My mom says that is very important.
+
+I also wash my hands with soap before eating. My grandmother says: "Clean hands, happy belly!"
+
+After breakfast, I go to play in the backyard. The backyard is big and has grass, trees, and flowers.
+
+Today the sun is shining. The sky is blue and clear. It is hot and I run and jump around.
+
+But the weather changes fast! Suddenly, dark clouds appear in the sky. It starts to rain! The rain is heavy and makes noise on the roof.
+
+I run inside the house. My mom says: "You are all wet!" I laugh and change my clothes.
+
+Through the window, I watch the rain fall. Puddles form on the ground. I want to jump in the puddles, but my mom doesn't let me.
+
+After the rain, the weather gets different. A thin fog covers everything. It looks like magic! I can barely see the neighbor's trees.
+
+My dad says that fog appears when the air is humid and cold. I think it is beautiful.
+
+In the afternoon, the sun comes back. I go to the backyard again. I play with my dog. She runs, jumps, and barks. We have so much fun!
+
+Before dinner, I take another shower. I wash my hands, brush my teeth, and put on my pajamas.
+
+I like Saturdays. I play, take showers, watch the rain, and enjoy the day. Every day is an adventure!
