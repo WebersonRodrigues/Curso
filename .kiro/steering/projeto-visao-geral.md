@@ -88,10 +88,12 @@ Cards de revisão usam `grid-column: 1 / -1` + gradiente roxo (#667eea → #764b
 ## Ao Adicionar Nova Aula — Checklist
 
 1. Criar pasta `Aula-XX/` seguindo `padrao-aulas.md`
-2. Atualizar `index.html`:
-   - Adicionar card na `aulas-grid`
+2. Cada texto DEVE ter um vídeo resumo do YouTube (iframe 16:9) ANTES do player de áudio — usar placeholder `VIDEO_ID_AQUI`
+3. Atualizar `index.html`:
+   - Adicionar card na `aulas-grid` (verificar nth-child no CSS pra gradiente)
    - Atualizar seção Progresso (semanas, histórias, palavras, barra)
-3. Atualizar `Todos-Os-Textos.md` com os textos em inglês
+4. Atualizar `Todos-Os-Textos.md` com os textos em inglês
+5. Atualizar Voyant Tools corpus se necessário
 
 ## Ao Adicionar Nova Revisão — Checklist
 

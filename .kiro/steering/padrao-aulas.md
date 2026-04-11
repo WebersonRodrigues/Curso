@@ -60,12 +60,26 @@ Conteúdo extraído do `Leia-aqui-primeiro.md`. Seções obrigatórias:
 Cada aba de texto DEVE conter, nesta ordem:
 
 1. **Título** - `<h2>` com ícone e nome do texto
-2. **Seção de Áudio** - Player `<audio>` com source apontando para o MP3 + botão de download do PDF (se existir)
-3. **Texto Lado a Lado (side-by-side)** - Duas colunas:
+2. **Vídeo Resumo do YouTube** - Iframe YouTube responsivo 16:9 com placeholder `VIDEO_ID_AQUI` antes do áudio
+
+```html
+<div style="margin-bottom: 20px;">
+    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p style="text-align: center; color: #999; font-size: 0.85em; margin-top: 8px;">⏳ Vídeo será adicionado em breve!</p>
+</div>
+```
+
+IMPORTANTE: Cada texto tem seu próprio vídeo. São 2 vídeos por aula (1 por texto). O `VIDEO_ID_AQUI` será substituído pelo ID real do YouTube quando o vídeo estiver pronto.
+
+3. **Seção de Áudio** - Player `<audio>` com source apontando para o MP3 + botão de download do PDF (se existir)
+4. **Texto Lado a Lado (side-by-side)** - Duas colunas:
    - Coluna esquerda: "US English" - texto completo em inglês
    - Coluna direita: "BR Português" - tradução completa em português
-4. **Linha a Linha** - Cada frase em inglês seguida da tradução, separadas por bordas
-5. **Vocabulário/Explicações** - Cards com as palavras ou verbos importantes do texto, cada um com: nome, significado, exemplo de uso e "por quê"
+5. **Linha a Linha** - Cada frase em inglês seguida da tradução, separadas por bordas
+6. **Vocabulário/Explicações** - Cards com as palavras ou verbos importantes do texto, cada um com: nome, significado, exemplo de uso e "por quê"
 
 ### Palavras em Destaque
 
