@@ -269,3 +269,402 @@ In the afternoon, the sun comes back. I go to the backyard again. I play with my
 Before dinner, I take another shower. I wash my hands, brush my teeth, and put on my pajamas.
 
 I like Saturdays. I play, take showers, watch the rain, and enjoy the day. Every day is an adventure!
+
+---
+Hello!
+I enter a small restaurant near my house.
+The place looks nice and clean.
+
+A waiter comes to my table and smiles.
+He asks, "Good afternoon. How can I help you?"
+
+I answer,
+"Good afternoon. Can I see the menu, please?"
+
+I read the menu slowly.
+There are many options.
+Some dishes sound good, but I need time to decide.
+
+I ask,
+"What do you recommend?"
+
+The waiter explains,
+"Our special today is chicken with rice and salad."
+
+I think for a moment.
+I prefer something simple.
+I choose the chicken.
+
+I say,
+"I would like the chicken, please."
+
+The waiter writes my order.
+He checks if everything is correct.
+He asks,
+"Would you like a drink?"
+
+I order water, but I also want coffee.
+I add,
+"And a coffee, please."
+
+While I wait, I look around.
+Other people talk, laugh, and enjoy their food.
+The atmosphere feels relaxed.
+
+Soon, the waiter brings my food.
+The food smells great!
+
+I taste the chicken.
+It is delicious.
+I eat slowly and enjoy every bite.
+
+After the meal, the waiter returns.
+He asks,
+"Is everything okay?"
+
+I reply,
+"Yes, everything is great. Thank you."
+
+I ask for the bill.
+I check the price.
+It seems fair.
+
+I pay with my card and leave a small tip.
+Before I leave, I say,
+"Thank you. Have a nice day."
+
+I leave the restaurant happy and satisfied.
+I feel more confident speaking English.
+---
+Today is a special day.
+I travel to the United States.
+My destination is Orlando, because I want to visit Disney.
+
+I arrive at the airport early.
+I check my documents: passport, ticket, and boarding pass.
+
+At the check-in counter, an agent greets me and asks:
+"Good morning. Where are you traveling today?"
+
+I answer:
+"Good morning. I am traveling to Orlando."
+
+She asks for my passport.
+I give it to her.
+She types on the computer and prints my boarding pass.
+
+She asks:
+"Do you have luggage to check?"
+
+I reply:
+"Yes, I have one suitcase."
+
+She explains the gate number and the boarding time.
+I listen carefully and say:
+"Thank you."
+
+At security, I wait in line.
+I remove my jacket and place my bag on the belt.
+The process is slow, but everything is fine.
+
+Finally, I board the plane.
+I find my seat and sit down.
+I feel excited and a little nervous.
+
+After many hours, the plane lands in the United States.
+I follow the signs for immigration.
+
+An officer asks me:
+"What is the purpose of your trip?"
+
+I answer calmly:
+"I am on vacation. I want to visit Disney."
+
+He asks how long I will stay.
+I reply:
+"I will stay for ten days."
+
+He stamps my passport and says:
+"Welcome. Enjoy your trip."
+
+I pick up my suitcase and exit the airport.
+Now my vacation really begins.
+
+Outside the airport, I look for transportation.
+I choose a shuttle to my hotel.
+
+The driver asks:
+"Which hotel are you going to?"
+
+I answer with confidence:
+"I am going to a Disney hotel."
+
+I sit comfortably and watch the city through the window.
+Everything looks new and exciting.
+
+When I arrive at the hotel, I enter the lobby.
+The place is big and colorful.
+
+At the front desk, a receptionist smiles and greets me:
+"Welcome! How can I help you?"
+
+I say:
+"Hello. I have a reservation."
+
+She asks for my name and passport.
+I spell my name slowly.
+
+She checks the system and confirms my reservation.
+She explains the room number, breakfast time, and Wi-Fi password.
+
+I receive the key card and thank her.
+I take the elevator and go to my room.
+
+The room is clean and comfortable.
+I unpack my suitcase and rest for a while.
+
+The next day, I wake up early.
+I feel happy and excited.
+
+I take a shuttle to Disney.
+When I enter the park, I see Mickey Mouse.
+Everything feels magical.
+
+I walk, take pictures, and explore the park.
+I ask employees for directions when I need help.
+
+I wait in line for attractions.
+Sometimes the line is long, but I stay patient.
+
+At lunchtime, I order food at a restaurant.
+I understand the menu and choose what I like.
+
+I enjoy the shows, the music, and the atmosphere.
+It is a dream come true.
+
+One day, I lose my way in the park.
+I feel confused, but I don't panic.
+
+I ask a staff member:
+"Excuse me, can you help me?"
+
+They explain slowly and show me the map.
+I thank them and continue my day.
+
+Another day, I forget my room number.
+I go to the front desk and ask for help.
+They solve the problem quickly.
+
+At night, I return to the hotel.
+I feel tired but very happy.
+
+I think about my day and smile.
+I know that my English helps me a lot.
+
+Before sleeping, I say to myself:
+"I can travel. I can communicate. I can enjoy my trip."
+
+Tomorrow, another magical day waits for me.
+---
+Hello!
+I enter a small restaurant near my house.
+The place looks nice and clean.
+
+A waiter comes to my table and smiles.
+He asks, "Good afternoon. How can I help you?"
+
+I answer,
+"Good afternoon. Can I see the menu, please?"
+
+I read the menu slowly.
+There are many options.
+Some dishes sound good, but I need time to decide.
+
+I ask,
+"What do you recommend?"
+
+The waiter explains,
+"Our special today is chicken with rice and salad."
+
+I think for a moment.
+I prefer something simple.
+I choose the chicken.
+
+I say,
+"I would like the chicken, please."
+
+The waiter writes my order.
+He checks if everything is correct.
+He asks,
+"Would you like a drink?"
+
+I order water, but I also want coffee.
+I add,
+"And a coffee, please."
+
+While I wait, I look around.
+Other people talk, laugh, and enjoy their food.
+The atmosphere feels relaxed.
+
+Soon, the waiter brings my food.
+The food smells great! 😋
+
+I taste the chicken.
+It is delicious.
+I eat slowly and enjoy every bite.
+
+After the meal, the waiter returns.
+He asks,
+"Is everything okay?"
+
+I reply,
+"Yes, everything is great. Thank you."
+
+I ask for the bill.
+I check the price.
+It seems fair.
+
+I pay with my card and leave a small tip.
+Before I leave, I say,
+"Thank you. Have a nice day."
+
+I leave the restaurant happy and satisfied.
+I feel more confident speaking English 😊
+---
+✈️ Part 1 – At the Airport
+Today is a special day.
+I travel to the United States.
+My destination is Orlando, because I want to visit Disney 🏰
+
+I arrive at the airport early.
+I check my documents:
+passport, ticket, and boarding pass.
+
+At the check-in counter, an agent greets me and asks:
+"Good morning. Where are you traveling today?"
+
+I answer:
+"Good morning. I am traveling to Orlando."
+
+She asks for my passport.
+I give it to her.
+She types on the computer and prints my boarding pass.
+
+She asks:
+"Do you have luggage to check?"
+
+I reply:
+"Yes, I have one suitcase."
+
+She explains the gate number and the boarding time.
+I listen carefully and say:
+"Thank you."
+
+At security, I wait in line.
+I remove my jacket and place my bag on the belt.
+The process is slow, but everything is fine.
+
+Finally, I board the plane.
+I find my seat and sit down.
+I feel excited and a little nervous.
+
+🛬 Part 2 – Arrival in the USA
+After many hours, the plane lands in the United States.
+I follow the signs for immigration.
+
+An officer asks me:
+"What is the purpose of your trip?"
+
+I answer calmly:
+"I am on vacation. I want to visit Disney."
+
+He asks how long I will stay.
+I reply:
+"I will stay for ten days."
+
+He stamps my passport and says:
+"Welcome. Enjoy your trip."
+
+I pick up my suitcase and exit the airport.
+Now my vacation really begins 😊
+
+🚗 Part 3 – Transportation to the Hotel
+Outside the airport, I look for transportation.
+I choose a shuttle to my hotel.
+
+The driver asks:
+"Which hotel are you going to?"
+
+I answer with confidence:
+"I am going to a Disney hotel."
+
+I sit comfortably and watch the city through the window.
+Everything looks new and exciting.
+
+🏨 Part 4 – At the Hotel
+When I arrive at the hotel, I enter the lobby.
+The place is big and colorful.
+
+At the front desk, a receptionist smiles and greets me:
+"Welcome! How can I help you?"
+
+I say:
+"Hello. I have a reservation."
+
+She asks for my name and passport.
+I spell my name slowly.
+
+She checks the system and confirms my reservation.
+She explains the room number, breakfast time, and Wi-Fi password.
+
+I receive the key card and thank her.
+I take the elevator and go to my room.
+
+The room is clean and comfortable.
+I unpack my suitcase and rest for a while.
+
+🎢 Part 5 – At Disney
+The next day, I wake up early.
+I feel happy and excited.
+
+I take a shuttle to Disney.
+When I enter the park, I see Mickey Mouse 🐭
+Everything feels magical.
+
+I walk, take pictures, and explore the park.
+I ask employees for directions when I need help.
+
+I wait in line for attractions.
+Sometimes the line is long, but I stay patient.
+
+At lunchtime, I order food at a restaurant.
+I understand the menu and choose what I like.
+
+I enjoy the shows, the music, and the atmosphere.
+It is a dream come true.
+
+⚠️ Part 6 – Small Problems (and Solutions)
+One day, I lose my way in the park.
+I feel confused, but I don't panic.
+
+I ask a staff member:
+"Excuse me, can you help me?"
+
+They explain slowly and show me the map.
+I thank them and continue my day.
+
+Another day, I forget my room number.
+I go to the front desk and ask for help.
+They solve the problem quickly.
+
+🌙 Part 7 – End of the Day
+At night, I return to the hotel.
+I feel tired but very happy.
+
+I think about my day and smile.
+I know that my English helps me a lot.
+
+Before sleeping, I say to myself:
+"I can travel. I can communicate. I can enjoy my trip."
+
+Tomorrow, another magical day waits for me ✨

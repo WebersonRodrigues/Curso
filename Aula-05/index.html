@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 05 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 05 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 05</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 05 - Semana 5</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 05</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de restaurante/café e viagem/hotel/aeroporto em situações reais.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ At the Restaurant</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Pedir comida em restaurante, interagir com garçom</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> waiter, menu, order, bill, tip, recommend, special</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ My Trip to Disney</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Viagem completa (aeroporto, imigração, hotel, parque)</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> boarding pass, luggage, passport, immigration, shuttle, reservation, front desk</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~5 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1 -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: At the Restaurant</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01-texto-a1-3-restaurante-cafe/01-texto-a1-3-restaurante-cafe.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01-texto-a1-3-restaurante-cafe/01-texto-a1-3-restaurante-cafe.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Hello!</p>
+                        <p>I <span class="palavra-destaque">enter</span> a small restaurant near my house.</p>
+                        <p>The place <span class="palavra-destaque">looks</span> nice and clean.</p>
+                        <p>A waiter <span class="palavra-destaque">comes</span> to my table and <span class="palavra-destaque">smiles</span>.</p>
+                        <p>He <span class="palavra-destaque">asks</span>, "Good afternoon. How can I help you?"</p>
+                        <p>I <span class="palavra-destaque">answer</span>, "Good afternoon. Can I <span class="palavra-destaque">see</span> the menu, please?"</p>
+                        <p>I <span class="palavra-destaque">read</span> the menu slowly.</p>
+                        <p>There are many <span class="palavra-destaque">options</span>.</p>
+                        <p>Some dishes <span class="palavra-destaque">sound</span> good, but I <span class="palavra-destaque">need</span> time to decide.</p>
+                        <p>I <span class="palavra-destaque">ask</span>, "What do you <span class="palavra-destaque">recommend</span>?"</p>
+                        <p>The waiter <span class="palavra-destaque">explains</span>, "Our special today is chicken with rice and salad."</p>
+                        <p>I <span class="palavra-destaque">think</span> for a moment.</p>
+                        <p>I <span class="palavra-destaque">prefer</span> something simple.</p>
+                        <p>I <span class="palavra-destaque">choose</span> the chicken.</p>
+                        <p>I <span class="palavra-destaque">say</span>, "I would like the chicken, please."</p>
+                        <p>The waiter <span class="palavra-destaque">writes</span> my order.</p>
+                        <p>He <span class="palavra-destaque">checks</span> if everything is correct.</p>
+                        <p>He <span class="palavra-destaque">asks</span>, "Would you like a drink?"</p>
+                        <p>I <span class="palavra-destaque">order</span> water, but I also <span class="palavra-destaque">want</span> coffee.</p>
+                        <p>I <span class="palavra-destaque">add</span>, "And a coffee, please."</p>
+                        <p>While I <span class="palavra-destaque">wait</span>, I <span class="palavra-destaque">look</span> around.</p>
+                        <p>Other people <span class="palavra-destaque">talk</span>, <span class="palavra-destaque">laugh</span>, and <span class="palavra-destaque">enjoy</span> their food.</p>
+                        <p>The atmosphere <span class="palavra-destaque">feels</span> relaxed.</p>
+                        <p>Soon, the waiter <span class="palavra-destaque">brings</span> my food.</p>
+                        <p>The food <span class="palavra-destaque">smells</span> great! 😋</p>
+                        <p>I <span class="palavra-destaque">taste</span> the chicken.</p>
+                        <p>It <span class="palavra-destaque">is</span> delicious.</p>
+                        <p>I <span class="palavra-destaque">eat</span> slowly and <span class="palavra-destaque">enjoy</span> every bite.</p>
+                        <p>After the meal, the waiter <span class="palavra-destaque">returns</span>.</p>
+                        <p>He <span class="palavra-destaque">asks</span>, "Is everything okay?"</p>
+                        <p>I <span class="palavra-destaque">reply</span>, "Yes, everything is great. Thank you."</p>
+                        <p>I <span class="palavra-destaque">ask</span> for the bill.</p>
+                        <p>I <span class="palavra-destaque">check</span> the price.</p>
+                        <p>It <span class="palavra-destaque">seems</span> fair.</p>
+                        <p>I <span class="palavra-destaque">pay</span> with my card and <span class="palavra-destaque">leave</span> a small tip.</p>
+                        <p>Before I <span class="palavra-destaque">leave</span>, I <span class="palavra-destaque">say</span>, "Thank you. Have a nice day."</p>
+                        <p>I <span class="palavra-destaque">leave</span> the restaurant happy and satisfied.</p>
+                        <p>I <span class="palavra-destaque">feel</span> more confident speaking English 😊</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Olá!</p>
+                        <p>Eu <span class="palavra-destaque">entro</span> em um pequeno restaurante perto da minha casa.</p>
+                        <p>O lugar <span class="palavra-destaque">parece</span> bonito e limpo.</p>
+                        <p>Um garçom <span class="palavra-destaque">vem</span> até minha mesa e <span class="palavra-destaque">sorri</span>.</p>
+                        <p>Ele <span class="palavra-destaque">pergunta</span>: "Boa tarde. Como posso ajudar?"</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span>: "Boa tarde. Posso <span class="palavra-destaque">ver</span> o cardápio, por favor?"</p>
+                        <p>Eu <span class="palavra-destaque">leio</span> o cardápio devagar.</p>
+                        <p>Há muitas <span class="palavra-destaque">opções</span>.</p>
+                        <p>Alguns pratos <span class="palavra-destaque">parecem</span> bons, mas eu <span class="palavra-destaque">preciso</span> de tempo para decidir.</p>
+                        <p>Eu <span class="palavra-destaque">pergunto</span>: "O que você <span class="palavra-destaque">recomenda</span>?"</p>
+                        <p>O garçom <span class="palavra-destaque">explica</span>: "O especial de hoje é frango com arroz e salada."</p>
+                        <p>Eu <span class="palavra-destaque">penso</span> por um momento.</p>
+                        <p>Eu <span class="palavra-destaque">prefiro</span> algo simples.</p>
+                        <p>Eu <span class="palavra-destaque">escolho</span> o frango.</p>
+                        <p>Eu <span class="palavra-destaque">digo</span>: "Eu gostaria do frango, por favor."</p>
+                        <p>O garçom <span class="palavra-destaque">anota</span> meu pedido.</p>
+                        <p>Ele <span class="palavra-destaque">confere</span> se está tudo certo.</p>
+                        <p>Ele <span class="palavra-destaque">pergunta</span>: "Você gostaria de uma bebida?"</p>
+                        <p>Eu <span class="palavra-destaque">peço</span> água, mas também <span class="palavra-destaque">quero</span> café.</p>
+                        <p>Eu <span class="palavra-destaque">acrescento</span>: "E um café, por favor."</p>
+                        <p>Enquanto eu <span class="palavra-destaque">espero</span>, eu <span class="palavra-destaque">olho</span> ao redor.</p>
+                        <p>Outras pessoas <span class="palavra-destaque">conversam</span>, <span class="palavra-destaque">riem</span> e <span class="palavra-destaque">aproveitam</span> a comida.</p>
+                        <p>O ambiente <span class="palavra-destaque">parece</span> relaxante.</p>
+                        <p>Logo, o garçom <span class="palavra-destaque">traz</span> minha comida.</p>
+                        <p>A comida <span class="palavra-destaque">cheira</span> muito bem! 😋</p>
+                        <p>Eu <span class="palavra-destaque">experimento</span> o frango.</p>
+                        <p>Está delicioso.</p>
+                        <p>Eu <span class="palavra-destaque">como</span> devagar e <span class="palavra-destaque">aproveito</span> cada pedaço.</p>
+                        <p>Depois da refeição, o garçom <span class="palavra-destaque">volta</span>.</p>
+                        <p>Ele <span class="palavra-destaque">pergunta</span>: "Está tudo bem?"</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span>: "Sim, está tudo ótimo. Obrigado."</p>
+                        <p>Eu <span class="palavra-destaque">peço</span> a conta.</p>
+                        <p>Eu <span class="palavra-destaque">confiro</span> o preço.</p>
+                        <p>Ele <span class="palavra-destaque">parece</span> justo.</p>
+                        <p>Eu <span class="palavra-destaque">pago</span> com cartão e <span class="palavra-destaque">deixo</span> uma pequena gorjeta.</p>
+                        <p>Antes de <span class="palavra-destaque">sair</span>, eu <span class="palavra-destaque">digo</span>: "Obrigado. Tenha um bom dia."</p>
+                        <p>Eu <span class="palavra-destaque">saio</span> do restaurante feliz e satisfeito.</p>
+                        <p>Eu <span class="palavra-destaque">me sinto</span> mais confiante falando inglês 😊</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Hello!</div>
+                            <div style="color: #666; font-size: 0.95em;">Olá!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">enter</span> a small restaurant near my house.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">entro</span> em um pequeno restaurante perto da minha casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The place <span class="palavra-destaque">looks</span> nice and clean.</div>
+                            <div style="color: #666; font-size: 0.95em;">O lugar <span class="palavra-destaque">parece</span> bonito e limpo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">A waiter <span class="palavra-destaque">comes</span> to my table and <span class="palavra-destaque">smiles</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Um garçom <span class="palavra-destaque">vem</span> até minha mesa e <span class="palavra-destaque">sorri</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">asks</span>, "Good afternoon. How can I help you?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">pergunta</span>: "Boa tarde. Como posso ajudar?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">answer</span>, "Good afternoon. Can I <span class="palavra-destaque">see</span> the menu, please?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span>: "Boa tarde. Posso <span class="palavra-destaque">ver</span> o cardápio, por favor?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">read</span> the menu slowly.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">leio</span> o cardápio devagar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">There are many <span class="palavra-destaque">options</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Há muitas <span class="palavra-destaque">opções</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Some dishes <span class="palavra-destaque">sound</span> good, but I <span class="palavra-destaque">need</span> time to decide.</div>
+                            <div style="color: #666; font-size: 0.95em;">Alguns pratos <span class="palavra-destaque">parecem</span> bons, mas eu <span class="palavra-destaque">preciso</span> de tempo para decidir.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">ask</span>, "What do you <span class="palavra-destaque">recommend</span>?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pergunto</span>: "O que você <span class="palavra-destaque">recomenda</span>?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The waiter <span class="palavra-destaque">explains</span>, "Our special today is chicken with rice and salad."</div>
+                            <div style="color: #666; font-size: 0.95em;">O garçom <span class="palavra-destaque">explica</span>: "O especial de hoje é frango com arroz e salada."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">think</span> for a moment.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">penso</span> por um momento.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">prefer</span> something simple.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">prefiro</span> algo simples.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">choose</span> the chicken.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">escolho</span> o frango.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">say</span>, "I would like the chicken, please."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">digo</span>: "Eu gostaria do frango, por favor."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The waiter <span class="palavra-destaque">writes</span> my order.</div>
+                            <div style="color: #666; font-size: 0.95em;">O garçom <span class="palavra-destaque">anota</span> meu pedido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">checks</span> if everything is correct.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">confere</span> se está tudo certo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">asks</span>, "Would you like a drink?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">pergunta</span>: "Você gostaria de uma bebida?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">order</span> water, but I also <span class="palavra-destaque">want</span> coffee.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">peço</span> água, mas também <span class="palavra-destaque">quero</span> café.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">add</span>, "And a coffee, please."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">acrescento</span>: "E um café, por favor."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">While I <span class="palavra-destaque">wait</span>, I <span class="palavra-destaque">look</span> around.</div>
+                            <div style="color: #666; font-size: 0.95em;">Enquanto eu <span class="palavra-destaque">espero</span>, eu <span class="palavra-destaque">olho</span> ao redor.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Other people <span class="palavra-destaque">talk</span>, <span class="palavra-destaque">laugh</span>, and <span class="palavra-destaque">enjoy</span> their food.</div>
+                            <div style="color: #666; font-size: 0.95em;">Outras pessoas <span class="palavra-destaque">conversam</span>, <span class="palavra-destaque">riem</span> e <span class="palavra-destaque">aproveitam</span> a comida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The atmosphere <span class="palavra-destaque">feels</span> relaxed.</div>
+                            <div style="color: #666; font-size: 0.95em;">O ambiente <span class="palavra-destaque">parece</span> relaxante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Soon, the waiter <span class="palavra-destaque">brings</span> my food.</div>
+                            <div style="color: #666; font-size: 0.95em;">Logo, o garçom <span class="palavra-destaque">traz</span> minha comida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The food <span class="palavra-destaque">smells</span> great! 😋</div>
+                            <div style="color: #666; font-size: 0.95em;">A comida <span class="palavra-destaque">cheira</span> muito bem! 😋</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">taste</span> the chicken.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">experimento</span> o frango.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It <span class="palavra-destaque">is</span> delicious.</div>
+                            <div style="color: #666; font-size: 0.95em;">Está delicioso.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">eat</span> slowly and <span class="palavra-destaque">enjoy</span> every bite.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">como</span> devagar e <span class="palavra-destaque">aproveito</span> cada pedaço.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the meal, the waiter <span class="palavra-destaque">returns</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois da refeição, o garçom <span class="palavra-destaque">volta</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">asks</span>, "Is everything okay?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">pergunta</span>: "Está tudo bem?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">reply</span>, "Yes, everything is great. Thank you."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span>: "Sim, está tudo ótimo. Obrigado."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">ask</span> for the bill.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">peço</span> a conta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">check</span> the price.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">confiro</span> o preço.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It <span class="palavra-destaque">seems</span> fair.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">parece</span> justo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">pay</span> with my card and <span class="palavra-destaque">leave</span> a small tip.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pago</span> com cartão e <span class="palavra-destaque">deixo</span> uma pequena gorjeta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before I <span class="palavra-destaque">leave</span>, I <span class="palavra-destaque">say</span>, "Thank you. Have a nice day."</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de <span class="palavra-destaque">sair</span>, eu <span class="palavra-destaque">digo</span>: "Obrigado. Tenha um bom dia."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">leave</span> the restaurant happy and satisfied.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">saio</span> do restaurante feliz e satisfeito.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> more confident speaking English 😊</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">me sinto</span> mais confiante falando inglês 😊</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🗣️ Frases Prontas para Usar</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Can I see the menu, please?</p>
+                            <p style="font-size: 0.9em; color: #666;">Posso ver o cardápio, por favor?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">What do you recommend?</p>
+                            <p style="font-size: 0.9em; color: #666;">O que você recomenda?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I would like the chicken, please.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu gostaria do frango, por favor.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Would you like a drink?</p>
+                            <p style="font-size: 0.9em; color: #666;">Você gostaria de uma bebida?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">And a coffee, please.</p>
+                            <p style="font-size: 0.9em; color: #666;">E um café, por favor.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Is everything okay?</p>
+                            <p style="font-size: 0.9em; color: #666;">Está tudo bem?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Yes, everything is great. Thank you.</p>
+                            <p style="font-size: 0.9em; color: #666;">Sim, está tudo ótimo. Obrigado.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Can I have the bill, please?</p>
+                            <p style="font-size: 0.9em; color: #666;">Posso pegar a conta, por favor?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Have a nice day.</p>
+                            <p style="font-size: 0.9em; color: #666;">Tenha um bom dia.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. WAITER 🍽️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Garçom</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A waiter comes to my table"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Também pode ser "server" nos EUA</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. MENU 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cardápio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Can I see the menu, please?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mesma palavra em inglês!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. RECOMMEND ⭐</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Recomendar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "What do you recommend?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. SPECIAL 🌟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Especial / prato do dia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Our special today is chicken"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "today's special" = prato do dia</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. ORDER 📝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pedido / pedir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The waiter writes my order"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Verbo e substantivo ao mesmo tempo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. BILL 💰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Conta</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I ask for the bill"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Não confundir com "bill" = nota de dinheiro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. TIP 💵</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Gorjeta</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I leave a small tip"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muito comum nos EUA e UK</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. ATMOSPHERE 🌿</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ambiente / atmosfera</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The atmosphere feels relaxed"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. OPTIONS 🔄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Opções</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "There are many options"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. SATISFIED 😊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Satisfeito</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I leave the restaurant happy and satisfied"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2 -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: My Trip to Disney</h2>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02-texto-a1-4-viagem-hotel-disney/02-texto-a1-4-viagem-hotel-disney.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02-texto-a1-4-viagem-hotel-disney/02-texto-a1-4-viagem-hotel-disney.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">✈️ Part 1 – At the Airport</h4>
+                        <p>Today is a special day.</p>
+                        <p>I <span class="palavra-destaque">travel</span> to the United States.</p>
+                        <p>My destination is <span class="palavra-destaque">Orlando</span>, because I want to visit <span class="palavra-destaque">Disney</span> 🏰</p>
+                        <p>I <span class="palavra-destaque">arrive</span> at the airport early.</p>
+                        <p>I <span class="palavra-destaque">check</span> my documents: passport, ticket, and boarding pass.</p>
+                        <p>At the check-in counter, an agent <span class="palavra-destaque">greets</span> me and <span class="palavra-destaque">asks</span>: "Good morning. Where are you traveling today?"</p>
+                        <p>I <span class="palavra-destaque">answer</span>: "Good morning. I am traveling to Orlando."</p>
+                        <p>She <span class="palavra-destaque">asks</span> for my passport.</p>
+                        <p>I <span class="palavra-destaque">give</span> it to her.</p>
+                        <p>She <span class="palavra-destaque">types</span> on the computer and <span class="palavra-destaque">prints</span> my boarding pass.</p>
+                        <p>She <span class="palavra-destaque">asks</span>: "Do you have luggage to check?"</p>
+                        <p>I <span class="palavra-destaque">reply</span>: "Yes, I have one suitcase."</p>
+                        <p>She <span class="palavra-destaque">explains</span> the gate number and the boarding time.</p>
+                        <p>I <span class="palavra-destaque">listen</span> carefully and <span class="palavra-destaque">say</span>: "Thank you."</p>
+                        <p>At security, I <span class="palavra-destaque">wait</span> in line.</p>
+                        <p>I <span class="palavra-destaque">remove</span> my jacket and <span class="palavra-destaque">place</span> my bag on the belt.</p>
+                        <p>The process is slow, but everything is fine.</p>
+                        <p>Finally, I <span class="palavra-destaque">board</span> the plane.</p>
+                        <p>I <span class="palavra-destaque">find</span> my seat and <span class="palavra-destaque">sit</span> down.</p>
+                        <p>I <span class="palavra-destaque">feel</span> excited and a little nervous.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🛬 Part 2 – Arrival in the USA</h4>
+                        <p>After many hours, the plane <span class="palavra-destaque">lands</span> in the United States.</p>
+                        <p>I <span class="palavra-destaque">follow</span> the signs for immigration.</p>
+                        <p>An officer <span class="palavra-destaque">asks</span> me: "What is the purpose of your trip?"</p>
+                        <p>I <span class="palavra-destaque">answer</span> calmly: "I am on vacation. I want to visit Disney."</p>
+                        <p>He <span class="palavra-destaque">asks</span> how long I will stay.</p>
+                        <p>I <span class="palavra-destaque">reply</span>: "I will stay for ten days."</p>
+                        <p>He <span class="palavra-destaque">stamps</span> my passport and <span class="palavra-destaque">says</span>: "Welcome. Enjoy your trip."</p>
+                        <p>I <span class="palavra-destaque">pick up</span> my suitcase and <span class="palavra-destaque">exit</span> the airport.</p>
+                        <p>Now my vacation really <span class="palavra-destaque">begins</span> 😊</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🚗 Part 3 – Transportation to the Hotel</h4>
+                        <p>Outside the airport, I <span class="palavra-destaque">look for</span> transportation.</p>
+                        <p>I <span class="palavra-destaque">choose</span> a shuttle to my hotel.</p>
+                        <p>The driver <span class="palavra-destaque">asks</span>: "Which hotel are you going to?"</p>
+                        <p>I <span class="palavra-destaque">answer</span> with confidence: "I am going to a Disney hotel."</p>
+                        <p>I <span class="palavra-destaque">sit</span> comfortably and <span class="palavra-destaque">watch</span> the city through the window.</p>
+                        <p>Everything <span class="palavra-destaque">looks</span> new and exciting.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🏨 Part 4 – At the Hotel</h4>
+                        <p>When I <span class="palavra-destaque">arrive</span> at the hotel, I <span class="palavra-destaque">enter</span> the lobby.</p>
+                        <p>The place is big and colorful.</p>
+                        <p>At the front desk, a receptionist <span class="palavra-destaque">smiles</span> and <span class="palavra-destaque">greets</span> me: "Welcome! How can I help you?"</p>
+                        <p>I <span class="palavra-destaque">say</span>: "Hello. I have a reservation."</p>
+                        <p>She <span class="palavra-destaque">asks</span> for my name and passport.</p>
+                        <p>I <span class="palavra-destaque">spell</span> my name slowly.</p>
+                        <p>She <span class="palavra-destaque">checks</span> the system and <span class="palavra-destaque">confirms</span> my reservation.</p>
+                        <p>She <span class="palavra-destaque">explains</span> the room number, breakfast time, and Wi-Fi password.</p>
+                        <p>I <span class="palavra-destaque">receive</span> the key card and <span class="palavra-destaque">thank</span> her.</p>
+                        <p>I <span class="palavra-destaque">take</span> the elevator and <span class="palavra-destaque">go</span> to my room.</p>
+                        <p>The room <span class="palavra-destaque">is</span> clean and comfortable.</p>
+                        <p>I <span class="palavra-destaque">unpack</span> my suitcase and <span class="palavra-destaque">rest</span> for a while.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🎢 Part 5 – At Disney</h4>
+                        <p>The next day, I <span class="palavra-destaque">wake up</span> early.</p>
+                        <p>I <span class="palavra-destaque">feel</span> happy and excited.</p>
+                        <p>I <span class="palavra-destaque">take</span> a shuttle to Disney.</p>
+                        <p>When I <span class="palavra-destaque">enter</span> the park, I <span class="palavra-destaque">see</span> Mickey Mouse 🐭</p>
+                        <p>Everything <span class="palavra-destaque">feels</span> magical.</p>
+                        <p>I <span class="palavra-destaque">walk</span>, <span class="palavra-destaque">take pictures</span>, and <span class="palavra-destaque">explore</span> the park.</p>
+                        <p>I <span class="palavra-destaque">ask</span> employees for directions when I need help.</p>
+                        <p>I <span class="palavra-destaque">wait</span> in line for attractions.</p>
+                        <p>Sometimes the line is long, but I <span class="palavra-destaque">stay</span> patient.</p>
+                        <p>At lunchtime, I <span class="palavra-destaque">order</span> food at a restaurant.</p>
+                        <p>I <span class="palavra-destaque">understand</span> the menu and <span class="palavra-destaque">choose</span> what I like.</p>
+                        <p>I <span class="palavra-destaque">enjoy</span> the shows, the music, and the atmosphere.</p>
+                        <p>It is a dream come true.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">⚠️ Part 6 – Small Problems (and Solutions)</h4>
+                        <p>One day, I <span class="palavra-destaque">lose</span> my way in the park.</p>
+                        <p>I <span class="palavra-destaque">feel</span> confused, but I don't panic.</p>
+                        <p>I <span class="palavra-destaque">ask</span> a staff member: "Excuse me, can you help me?"</p>
+                        <p>They <span class="palavra-destaque">explain</span> slowly and <span class="palavra-destaque">show</span> me the map.</p>
+                        <p>I <span class="palavra-destaque">thank</span> them and continue my day.</p>
+                        <p>Another day, I <span class="palavra-destaque">forget</span> my room number.</p>
+                        <p>I <span class="palavra-destaque">go</span> to the front desk and <span class="palavra-destaque">ask</span> for help.</p>
+                        <p>They <span class="palavra-destaque">solve</span> the problem quickly.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🌙 Part 7 – End of the Day</h4>
+                        <p>At night, I <span class="palavra-destaque">return</span> to the hotel.</p>
+                        <p>I <span class="palavra-destaque">feel</span> tired but very happy.</p>
+                        <p>I <span class="palavra-destaque">think</span> about my day and <span class="palavra-destaque">smile</span>.</p>
+                        <p>I <span class="palavra-destaque">know</span> that my English helps me a lot.</p>
+                        <p>Before sleeping, I <span class="palavra-destaque">say</span> to myself: "I can travel. I can communicate. I can enjoy my trip."</p>
+                        <p>Tomorrow, another magical day <span class="palavra-destaque">waits</span> for me ✨</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">✈️ Parte 1 – No Aeroporto</h4>
+                        <p>Hoje é um dia especial.</p>
+                        <p>Eu <span class="palavra-destaque">viajo</span> para os Estados Unidos.</p>
+                        <p>Meu destino é <span class="palavra-destaque">Orlando</span>, porque eu quero visitar a <span class="palavra-destaque">Disney</span> 🏰</p>
+                        <p>Eu <span class="palavra-destaque">chego</span> ao aeroporto cedo.</p>
+                        <p>Eu <span class="palavra-destaque">confiro</span> meus documentos: passaporte, passagem e cartão de embarque.</p>
+                        <p>No balcão de check-in, uma atendente me <span class="palavra-destaque">cumprimenta</span> e <span class="palavra-destaque">pergunta</span>: "Bom dia. Para onde você está viajando hoje?"</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span>: "Bom dia. Estou viajando para Orlando."</p>
+                        <p>Ela <span class="palavra-destaque">pede</span> meu passaporte.</p>
+                        <p>Eu <span class="palavra-destaque">entrego</span> para ela.</p>
+                        <p>Ela <span class="palavra-destaque">digita</span> no computador e <span class="palavra-destaque">imprime</span> meu cartão de embarque.</p>
+                        <p>Ela <span class="palavra-destaque">pergunta</span>: "Você tem bagagem para despachar?"</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span>: "Sim, tenho uma mala."</p>
+                        <p>Ela <span class="palavra-destaque">explica</span> o número do portão e o horário de embarque.</p>
+                        <p>Eu <span class="palavra-destaque">ouço</span> com atenção e <span class="palavra-destaque">digo</span>: "Obrigado."</p>
+                        <p>Na segurança, eu <span class="palavra-destaque">espero</span> na fila.</p>
+                        <p>Eu <span class="palavra-destaque">tiro</span> minha jaqueta e <span class="palavra-destaque">coloco</span> minha bolsa na esteira.</p>
+                        <p>O processo é lento, mas está tudo bem.</p>
+                        <p>Finalmente, eu <span class="palavra-destaque">embarco</span> no avião.</p>
+                        <p>Eu <span class="palavra-destaque">encontro</span> meu assento e <span class="palavra-destaque">sento</span>.</p>
+                        <p>Eu <span class="palavra-destaque">me sinto</span> animado e um pouco nervoso.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🛬 Parte 2 – Chegada nos EUA</h4>
+                        <p>Depois de muitas horas, o avião <span class="palavra-destaque">pousa</span> nos Estados Unidos.</p>
+                        <p>Eu <span class="palavra-destaque">sigo</span> as placas para a imigração.</p>
+                        <p>Um oficial me <span class="palavra-destaque">pergunta</span>: "Qual é o motivo da sua viagem?"</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span> com calma: "Estou de férias. Quero visitar a Disney."</p>
+                        <p>Ele <span class="palavra-destaque">pergunta</span> por quanto tempo eu vou ficar.</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span>: "Vou ficar por dez dias."</p>
+                        <p>Ele <span class="palavra-destaque">carimba</span> meu passaporte e <span class="palavra-destaque">diz</span>: "Bem-vindo. Aproveite sua viagem."</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> minha mala e <span class="palavra-destaque">saio</span> do aeroporto.</p>
+                        <p>Agora minhas férias realmente <span class="palavra-destaque">começam</span> 😊</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🚗 Parte 3 – Transporte para o Hotel</h4>
+                        <p>Do lado de fora do aeroporto, eu <span class="palavra-destaque">procuro</span> transporte.</p>
+                        <p>Eu <span class="palavra-destaque">escolho</span> um shuttle para o meu hotel.</p>
+                        <p>O motorista <span class="palavra-destaque">pergunta</span>: "Para qual hotel você está indo?"</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span> com confiança: "Estou indo para um hotel da Disney."</p>
+                        <p>Eu <span class="palavra-destaque">sento</span> confortavelmente e <span class="palavra-destaque">observo</span> a cidade pela janela.</p>
+                        <p>Tudo <span class="palavra-destaque">parece</span> novo e empolgante.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🏨 Parte 4 – No Hotel</h4>
+                        <p>Quando eu <span class="palavra-destaque">chego</span> ao hotel, eu <span class="palavra-destaque">entro</span> no lobby.</p>
+                        <p>O lugar é grande e colorido.</p>
+                        <p>Na recepção, uma recepcionista <span class="palavra-destaque">sorri</span> e me <span class="palavra-destaque">cumprimenta</span>: "Bem-vindo! Como posso ajudar?"</p>
+                        <p>Eu <span class="palavra-destaque">digo</span>: "Olá. Tenho uma reserva."</p>
+                        <p>Ela <span class="palavra-destaque">pede</span> meu nome e passaporte.</p>
+                        <p>Eu <span class="palavra-destaque">soletro</span> meu nome devagar.</p>
+                        <p>Ela <span class="palavra-destaque">verifica</span> o sistema e <span class="palavra-destaque">confirma</span> minha reserva.</p>
+                        <p>Ela <span class="palavra-destaque">explica</span> o número do quarto, o horário do café da manhã e a senha do Wi-Fi.</p>
+                        <p>Eu <span class="palavra-destaque">recebo</span> o cartão-chave e <span class="palavra-destaque">agradeço</span> a ela.</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> o elevador e <span class="palavra-destaque">vou</span> para o meu quarto.</p>
+                        <p>O quarto <span class="palavra-destaque">é</span> limpo e confortável.</p>
+                        <p>Eu <span class="palavra-destaque">desfaço</span> as malas e <span class="palavra-destaque">descanso</span> um pouco.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🎢 Parte 5 – Na Disney</h4>
+                        <p>No dia seguinte, eu <span class="palavra-destaque">acordo</span> cedo.</p>
+                        <p>Eu <span class="palavra-destaque">me sinto</span> feliz e animado.</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> um shuttle para a Disney.</p>
+                        <p>Quando eu <span class="palavra-destaque">entro</span> no parque, eu <span class="palavra-destaque">vejo</span> o Mickey Mouse 🐭</p>
+                        <p>Tudo <span class="palavra-destaque">parece</span> mágico.</p>
+                        <p>Eu <span class="palavra-destaque">caminho</span>, <span class="palavra-destaque">tiro fotos</span> e <span class="palavra-destaque">exploro</span> o parque.</p>
+                        <p>Eu <span class="palavra-destaque">peço</span> direções aos funcionários quando preciso de ajuda.</p>
+                        <p>Eu <span class="palavra-destaque">espero</span> na fila para as atrações.</p>
+                        <p>Às vezes a fila é longa, mas eu <span class="palavra-destaque">fico</span> paciente.</p>
+                        <p>Na hora do almoço, eu <span class="palavra-destaque">peço</span> comida em um restaurante.</p>
+                        <p>Eu <span class="palavra-destaque">entendo</span> o cardápio e <span class="palavra-destaque">escolho</span> o que gosto.</p>
+                        <p>Eu <span class="palavra-destaque">aproveito</span> os shows, a música e o ambiente.</p>
+                        <p>É um sonho se tornando realidade.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">⚠️ Parte 6 – Pequenos Problemas (e Soluções)</h4>
+                        <p>Um dia, eu <span class="palavra-destaque">me perco</span> no parque.</p>
+                        <p>Eu <span class="palavra-destaque">me sinto</span> confuso, mas não entro em pânico.</p>
+                        <p>Eu <span class="palavra-destaque">pergunto</span> a um funcionário: "Com licença, você pode me ajudar?"</p>
+                        <p>Eles <span class="palavra-destaque">explicam</span> devagar e me <span class="palavra-destaque">mostram</span> o mapa.</p>
+                        <p>Eu <span class="palavra-destaque">agradeço</span> a eles e continuo meu dia.</p>
+                        <p>Em outro dia, eu <span class="palavra-destaque">esqueço</span> o número do meu quarto.</p>
+                        <p>Eu <span class="palavra-destaque">vou</span> à recepção e <span class="palavra-destaque">peço</span> ajuda.</p>
+                        <p>Eles <span class="palavra-destaque">resolvem</span> o problema rapidamente.</p>
+
+                        <h4 style="color: #2563eb; margin-top: 20px; margin-bottom: 15px;">🌙 Parte 7 – Fim do Dia</h4>
+                        <p>À noite, eu <span class="palavra-destaque">volto</span> para o hotel.</p>
+                        <p>Eu <span class="palavra-destaque">me sinto</span> cansado, mas muito feliz.</p>
+                        <p>Eu <span class="palavra-destaque">penso</span> no meu dia e <span class="palavra-destaque">sorrio</span>.</p>
+                        <p>Eu <span class="palavra-destaque">sei</span> que meu inglês me ajuda muito.</p>
+                        <p>Antes de dormir, eu <span class="palavra-destaque">digo</span> para mim mesmo: "Eu consigo viajar. Eu consigo me comunicar. Eu consigo aproveitar minha viagem."</p>
+                        <p>Amanhã, outro dia mágico me <span class="palavra-destaque">espera</span> ✨</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+
+                        <h4 style="color: #2563eb; margin-bottom: 15px; font-weight: 700;">✈️ Part 1 – At the Airport</h4>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today is a special day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje é um dia especial.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">travel</span> to the United States.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">viajo</span> para os Estados Unidos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My destination is Orlando, because I want to visit Disney.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu destino é Orlando, porque eu quero visitar a Disney.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">arrive</span> at the airport early.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">chego</span> ao aeroporto cedo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">check</span> my documents: passport, ticket, and boarding pass.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">confiro</span> meus documentos: passaporte, passagem e cartão de embarque.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the check-in counter, an agent <span class="palavra-destaque">greets</span> me and <span class="palavra-destaque">asks</span>: "Good morning. Where are you traveling today?"</div>
+                            <div style="color: #666; font-size: 0.95em;">No balcão de check-in, uma atendente me <span class="palavra-destaque">cumprimenta</span> e <span class="palavra-destaque">pergunta</span>: "Bom dia. Para onde você está viajando hoje?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">answer</span>: "Good morning. I am traveling to Orlando."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span>: "Bom dia. Estou viajando para Orlando."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">asks</span> for my passport.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">pede</span> meu passaporte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">give</span> it to her.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">entrego</span> para ela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">types</span> on the computer and <span class="palavra-destaque">prints</span> my boarding pass.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">digita</span> no computador e <span class="palavra-destaque">imprime</span> meu cartão de embarque.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">asks</span>: "Do you have luggage to check?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">pergunta</span>: "Você tem bagagem para despachar?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">reply</span>: "Yes, I have one suitcase."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span>: "Sim, tenho uma mala."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">explains</span> the gate number and the boarding time.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">explica</span> o número do portão e o horário de embarque.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">listen</span> carefully and <span class="palavra-destaque">say</span>: "Thank you."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">ouço</span> com atenção e <span class="palavra-destaque">digo</span>: "Obrigado."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At security, I <span class="palavra-destaque">wait</span> in line.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na segurança, eu <span class="palavra-destaque">espero</span> na fila.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">remove</span> my jacket and <span class="palavra-destaque">place</span> my bag on the belt.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">tiro</span> minha jaqueta e <span class="palavra-destaque">coloco</span> minha bolsa na esteira.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The process is slow, but everything is fine.</div>
+                            <div style="color: #666; font-size: 0.95em;">O processo é lento, mas está tudo bem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Finally, I <span class="palavra-destaque">board</span> the plane.</div>
+                            <div style="color: #666; font-size: 0.95em;">Finalmente, eu <span class="palavra-destaque">embarco</span> no avião.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">find</span> my seat and <span class="palavra-destaque">sit</span> down.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">encontro</span> meu assento e <span class="palavra-destaque">sento</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> excited and a little nervous.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">me sinto</span> animado e um pouco nervoso.</div>
+                        </div>
+
+                        <h4 style="color: #2563eb; margin-top: 25px; margin-bottom: 15px; font-weight: 700;">🛬 Part 2 – Arrival in the USA</h4>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After many hours, the plane <span class="palavra-destaque">lands</span> in the United States.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de muitas horas, o avião <span class="palavra-destaque">pousa</span> nos Estados Unidos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">follow</span> the signs for immigration.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">sigo</span> as placas para a imigração.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">An officer <span class="palavra-destaque">asks</span> me: "What is the purpose of your trip?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Um oficial me <span class="palavra-destaque">pergunta</span>: "Qual é o motivo da sua viagem?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">answer</span> calmly: "I am on vacation. I want to visit Disney."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span> com calma: "Estou de férias. Quero visitar a Disney."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">asks</span> how long I will stay.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">pergunta</span> por quanto tempo eu vou ficar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">reply</span>: "I will stay for ten days."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span>: "Vou ficar por dez dias."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">stamps</span> my passport and <span class="palavra-destaque">says</span>: "Welcome. Enjoy your trip."</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">carimba</span> meu passaporte e <span class="palavra-destaque">diz</span>: "Bem-vindo. Aproveite sua viagem."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">pick up</span> my suitcase and <span class="palavra-destaque">exit</span> the airport.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pego</span> minha mala e <span class="palavra-destaque">saio</span> do aeroporto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Now my vacation really <span class="palavra-destaque">begins</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Agora minhas férias realmente <span class="palavra-destaque">começam</span>.</div>
+                        </div>
+
+                        <h4 style="color: #2563eb; margin-top: 25px; margin-bottom: 15px; font-weight: 700;">🚗 Part 3 – Transportation to the Hotel</h4>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Outside the airport, I <span class="palavra-destaque">look for</span> transportation.</div>
+                            <div style="color: #666; font-size: 0.95em;">Do lado de fora do aeroporto, eu <span class="palavra-destaque">procuro</span> transporte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">choose</span> a shuttle to my hotel.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">escolho</span> um shuttle para o meu hotel.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The driver <span class="palavra-destaque">asks</span>: "Which hotel are you going to?"</div>
+                            <div style="color: #666; font-size: 0.95em;">O motorista <span class="palavra-destaque">pergunta</span>: "Para qual hotel você está indo?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">answer</span> with confidence: "I am going to a Disney hotel."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span> com confiança: "Estou indo para um hotel da Disney."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">sit</span> comfortably and <span class="palavra-destaque">watch</span> the city through the window.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">sento</span> confortavelmente e <span class="palavra-destaque">observo</span> a cidade pela janela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everything <span class="palavra-destaque">looks</span> new and exciting.</div>
+                            <div style="color: #666; font-size: 0.95em;">Tudo <span class="palavra-destaque">parece</span> novo e empolgante.</div>
+                        </div>
+
+                        <h4 style="color: #2563eb; margin-top: 25px; margin-bottom: 15px; font-weight: 700;">🏨 Part 4 – At the Hotel</h4>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I <span class="palavra-destaque">arrive</span> at the hotel, I <span class="palavra-destaque">enter</span> the lobby.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando eu <span class="palavra-destaque">chego</span> ao hotel, eu <span class="palavra-destaque">entro</span> no lobby.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The place is big and colorful.</div>
+                            <div style="color: #666; font-size: 0.95em;">O lugar é grande e colorido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the front desk, a receptionist <span class="palavra-destaque">smiles</span> and <span class="palavra-destaque">greets</span> me: "Welcome! How can I help you?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Na recepção, uma recepcionista <span class="palavra-destaque">sorri</span> e me <span class="palavra-destaque">cumprimenta</span>: "Bem-vindo! Como posso ajudar?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">say</span>: "Hello. I have a reservation."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">digo</span>: "Olá. Tenho uma reserva."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">asks</span> for my name and passport.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">pede</span> meu nome e passaporte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">spell</span> my name slowly.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">soletro</span> meu nome devagar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">checks</span> the system and <span class="palavra-destaque">confirms</span> my reservation.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">verifica</span> o sistema e <span class="palavra-destaque">confirma</span> minha reserva.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">explains</span> the room number, breakfast time, and Wi-Fi password.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">explica</span> o número do quarto, o horário do café da manhã e a senha do Wi-Fi.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">receive</span> the key card and <span class="palavra-destaque">thank</span> her.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">recebo</span> o cartão-chave e <span class="palavra-destaque">agradeço</span> a ela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">take</span> the elevator and <span class="palavra-destaque">go</span> to my room.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pego</span> o elevador e <span class="palavra-destaque">vou</span> para o meu quarto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The room <span class="palavra-destaque">is</span> clean and comfortable.</div>
+                            <div style="color: #666; font-size: 0.95em;">O quarto <span class="palavra-destaque">é</span> limpo e confortável.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">unpack</span> my suitcase and <span class="palavra-destaque">rest</span> for a while.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">desfaço</span> as malas e <span class="palavra-destaque">descanso</span> um pouco.</div>
+                        </div>
+
+                        <h4 style="color: #2563eb; margin-top: 25px; margin-bottom: 15px; font-weight: 700;">🎢 Part 5 – At Disney</h4>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The next day, I <span class="palavra-destaque">wake up</span> early.</div>
+                            <div style="color: #666; font-size: 0.95em;">No dia seguinte, eu <span class="palavra-destaque">acordo</span> cedo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> happy and excited.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">me sinto</span> feliz e animado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">take</span> a shuttle to Disney.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pego</span> um shuttle para a Disney.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I <span class="palavra-destaque">enter</span> the park, I <span class="palavra-destaque">see</span> Mickey Mouse.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando eu <span class="palavra-destaque">entro</span> no parque, eu <span class="palavra-destaque">vejo</span> o Mickey Mouse.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everything <span class="palavra-destaque">feels</span> magical.</div>
+                            <div style="color: #666; font-size: 0.95em;">Tudo <span class="palavra-destaque">parece</span> mágico.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">walk</span>, <span class="palavra-destaque">take pictures</span>, and <span class="palavra-destaque">explore</span> the park.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">caminho</span>, <span class="palavra-destaque">tiro fotos</span> e <span class="palavra-destaque">exploro</span> o parque.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">ask</span> employees for directions when I need help.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">peço</span> direções aos funcionários quando preciso de ajuda.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">wait</span> in line for attractions.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">espero</span> na fila para as atrações.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes the line is long, but I <span class="palavra-destaque">stay</span> patient.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes a fila é longa, mas eu <span class="palavra-destaque">fico</span> paciente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At lunchtime, I <span class="palavra-destaque">order</span> food at a restaurant.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na hora do almoço, eu <span class="palavra-destaque">peço</span> comida em um restaurante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">understand</span> the menu and <span class="palavra-destaque">choose</span> what I like.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">entendo</span> o cardápio e <span class="palavra-destaque">escolho</span> o que gosto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">enjoy</span> the shows, the music, and the atmosphere.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">aproveito</span> os shows, a música e o ambiente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It is a dream come true.</div>
+                            <div style="color: #666; font-size: 0.95em;">É um sonho se tornando realidade.</div>
+                        </div>
+
+                        <h4 style="color: #2563eb; margin-top: 25px; margin-bottom: 15px; font-weight: 700;">⚠️ Part 6 – Small Problems (and Solutions)</h4>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">One day, I <span class="palavra-destaque">lose</span> my way in the park.</div>
+                            <div style="color: #666; font-size: 0.95em;">Um dia, eu <span class="palavra-destaque">me perco</span> no parque.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> confused, but I don't panic.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">me sinto</span> confuso, mas não entro em pânico.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">ask</span> a staff member: "Excuse me, can you help me?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pergunto</span> a um funcionário: "Com licença, você pode me ajudar?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">They <span class="palavra-destaque">explain</span> slowly and <span class="palavra-destaque">show</span> me the map.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eles <span class="palavra-destaque">explicam</span> devagar e me <span class="palavra-destaque">mostram</span> o mapa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">thank</span> them and continue my day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">agradeço</span> a eles e continuo meu dia.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Another day, I <span class="palavra-destaque">forget</span> my room number.</div>
+                            <div style="color: #666; font-size: 0.95em;">Em outro dia, eu <span class="palavra-destaque">esqueço</span> o número do meu quarto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">go</span> to the front desk and <span class="palavra-destaque">ask</span> for help.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">vou</span> à recepção e <span class="palavra-destaque">peço</span> ajuda.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">They <span class="palavra-destaque">solve</span> the problem quickly.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eles <span class="palavra-destaque">resolvem</span> o problema rapidamente.</div>
+                        </div>
+
+                        <h4 style="color: #2563eb; margin-top: 25px; margin-bottom: 15px; font-weight: 700;">🌙 Part 7 – End of the Day</h4>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At night, I <span class="palavra-destaque">return</span> to the hotel.</div>
+                            <div style="color: #666; font-size: 0.95em;">À noite, eu <span class="palavra-destaque">volto</span> para o hotel.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> tired but very happy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">me sinto</span> cansado, mas muito feliz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">think</span> about my day and <span class="palavra-destaque">smile</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">penso</span> no meu dia e <span class="palavra-destaque">sorrio</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">know</span> that my English helps me a lot.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">sei</span> que meu inglês me ajuda muito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before sleeping, I <span class="palavra-destaque">say</span> to myself: "I can travel. I can communicate. I can enjoy my trip."</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de dormir, eu <span class="palavra-destaque">digo</span> para mim mesmo: "Eu consigo viajar. Eu consigo me comunicar. Eu consigo aproveitar minha viagem."</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Tomorrow, another magical day <span class="palavra-destaque">waits</span> for me.</div>
+                            <div style="color: #666; font-size: 0.95em;">Amanhã, outro dia mágico me <span class="palavra-destaque">espera</span>.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🗣️ Frases Prontas para Usar</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Where are you traveling today?</p>
+                            <p style="font-size: 0.9em; color: #666;">Para onde você está viajando hoje?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I am traveling to Orlando.</p>
+                            <p style="font-size: 0.9em; color: #666;">Estou viajando para Orlando.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Do you have luggage to check?</p>
+                            <p style="font-size: 0.9em; color: #666;">Você tem bagagem para despachar?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Yes, I have one suitcase.</p>
+                            <p style="font-size: 0.9em; color: #666;">Sim, tenho uma mala.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">What is the purpose of your trip?</p>
+                            <p style="font-size: 0.9em; color: #666;">Qual é o motivo da sua viagem?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I am on vacation.</p>
+                            <p style="font-size: 0.9em; color: #666;">Estou de férias.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I will stay for ten days.</p>
+                            <p style="font-size: 0.9em; color: #666;">Vou ficar por dez dias.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Welcome. Enjoy your trip.</p>
+                            <p style="font-size: 0.9em; color: #666;">Bem-vindo. Aproveite sua viagem.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I have a reservation.</p>
+                            <p style="font-size: 0.9em; color: #666;">Tenho uma reserva.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Excuse me, can you help me?</p>
+                            <p style="font-size: 0.9em; color: #666;">Com licença, você pode me ajudar?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I can travel. I can communicate.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu consigo viajar. Eu consigo me comunicar.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. BOARDING PASS ✈️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cartão de embarque</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She prints my boarding pass"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O papel ou QR code para entrar no avião</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. CHECK-IN COUNTER 🏢</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Balcão de check-in</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At the check-in counter, an agent greets me"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde você registra sua bagagem</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. LUGGAGE / SUITCASE 🧳</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bagagem / mala</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Do you have luggage to check?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Luggage = bagagem em geral; suitcase = mala</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. GATE 🚪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Portão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She explains the gate number"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O número do portão fica no boarding pass</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. IMMIGRATION 🛂</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Imigração</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I follow the signs for immigration"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Controle de passaportes ao entrar no país</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. SHUTTLE 🚐</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Van / ônibus de transfer</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I choose a shuttle to my hotel"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Transporte compartilhado entre aeroporto e hotel</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. LOBBY 🏨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Saguão / hall</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I enter the lobby"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Área de entrada do hotel</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. FRONT DESK 🛎️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Recepção</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At the front desk, a receptionist smiles"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Balcão de atendimento do hotel</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. RESERVATION 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Reserva</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have a reservation"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "I have a reservation" = tenho uma reserva</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. KEY CARD 🔑</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cartão-chave</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I receive the key card"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Cartão magnético que abre o quarto</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">11. UNPACK 📦</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desfazer as malas</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I unpack my suitcase"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Oposto de "pack" = fazer as malas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">12. STAFF MEMBER 👤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Funcionário</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I ask a staff member"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pessoa que trabalha no local</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">13. DREAM COME TRUE ✨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sonho se tornando realidade</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It is a dream come true"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Expressão muito usada em inglês</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">14. PURPOSE OF THE TRIP 🎯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Motivo da viagem</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "What is the purpose of your trip?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pergunta padrão na imigração americana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 05 — Semana 5</strong></p>
+        <p>Cada dia de estudo te aproxima do seu objetivo! 🚀</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
+        let deferredPrompt = null;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone || isInPWAMode) return;
+            if (isMobile && !installPromptShown) {
+                setTimeout(() => { showInstallPrompt(); }, 2000);
+            }
+        }
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner && !installPromptShown) {
+                banner.style.display = 'flex';
+                installPromptShown = true;
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(() => closeInstallPrompt());
+            } else {
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        // Tratamento de erro de áudio cross-browser
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontWeight = '600';
+                    msg.style.marginTop = '10px';
+                    msg.textContent = '⚠️ Erro ao carregar o áudio. Tente recarregar a página.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

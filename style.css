@@ -227,6 +227,17 @@ body {
 .aula-card:nth-child(3) p,
 .aula-card:nth-child(3) .textos { color: #333; }
 .aula-card:nth-child(4) { background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); }
+.aula-card:nth-child(6) { background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%); color: #333; }
+.aula-card:nth-child(6) p,
+.aula-card:nth-child(6) .textos { color: #333; }
+.aula-card:nth-child(7) { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); }
+.aula-card:nth-child(8) { background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); }
+.aula-card:nth-child(9) { background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #333; }
+.aula-card:nth-child(9) p,
+.aula-card:nth-child(9) .textos { color: #333; }
+.aula-card:nth-child(10) { background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); }
+
+.aula-card.revisao-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; }
 
 .aula-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3); }
 
