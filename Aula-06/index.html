@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 06 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 06 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 06</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 06 - Semana 6</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 06</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de banco/finanças e supermercado/compras em situações do dia a dia.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Money, Bills, and the Bank</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Conta bancária, pagamento de contas, caixa eletrônico, economizar</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> bank account, balance, bill, ATM, PIN, cash, savings account</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ A Simple Trip to the Supermarket</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Ida ao supermercado, seções da loja, produtos, pagamento</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> cart, produce section, dairy aisle, checkout, cashier, expiration date, groceries</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1 -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Money, Bills, and the Bank</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/1ZbFe7xLIVQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-Money-Bills-and-the-Bank.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-Money-Bills-and-the-Bank.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Money is something I <span class="palavra-destaque">think</span> about more than I want to.</p>
+                        <p>At the beginning of the month, I <span class="palavra-destaque">check</span> my <span class="palavra-destaque">bank account</span> and my <span class="palavra-destaque">balance</span>.</p>
+                        <p>Sometimes I <span class="palavra-destaque">feel</span> calm. Sometimes I don't.</p>
+                        <p>I <span class="palavra-destaque">open</span> my <span class="palavra-destaque">bank app</span> on my phone and <span class="palavra-destaque">look</span> at my <span class="palavra-destaque">transactions</span>.</p>
+                        <p>I <span class="palavra-destaque">see</span> my <span class="palavra-destaque">salary</span>, my <span class="palavra-destaque">rent</span>, and many small payments I don't <span class="palavra-destaque">remember</span> making.</p>
+                        <p>Every month, I <span class="palavra-destaque">have</span> <span class="palavra-destaque">bills</span> to pay.</p>
+                        <p>There is the <span class="palavra-destaque">electricity bill</span>, the <span class="palavra-destaque">water bill</span>, the <span class="palavra-destaque">internet bill</span>, and the <span class="palavra-destaque">phone bill</span>.</p>
+                        <p>They <span class="palavra-destaque">arrive</span> on time. My money doesn't.</p>
+                        <p>I usually <span class="palavra-destaque">pay</span> my bills <span class="palavra-destaque">online</span>.</p>
+                        <p>I <span class="palavra-destaque">choose</span> the account, <span class="palavra-destaque">type</span> the amount, and <span class="palavra-destaque">press</span> <span class="palavra-destaque">confirm</span>.</p>
+                        <p>For a few seconds, I <span class="palavra-destaque">hold</span> my breath.</p>
+                        <p>Sometimes I <span class="palavra-destaque">need</span> <span class="palavra-destaque">cash</span>.</p>
+                        <p>I <span class="palavra-destaque">go</span> to the <span class="palavra-destaque">ATM</span>, <span class="palavra-destaque">insert</span> my <span class="palavra-destaque">card</span>, and <span class="palavra-destaque">enter</span> my <span class="palavra-destaque">PIN</span>.</p>
+                        <p>The machine <span class="palavra-destaque">thinks</span> for a moment, and then <span class="palavra-destaque">gives</span> me the money.</p>
+                        <p>That moment always <span class="palavra-destaque">feels</span> too long.</p>
+                        <p>When I <span class="palavra-destaque">have</span> questions, I <span class="palavra-destaque">go</span> to the <span class="palavra-destaque">bank branch</span>.</p>
+                        <p>I <span class="palavra-destaque">talk</span> to the <span class="palavra-destaque">bank clerk</span>, <span class="palavra-destaque">explain</span> my problem, and <span class="palavra-destaque">listen</span> carefully.</p>
+                        <p>They <span class="palavra-destaque">use</span> many words, but I <span class="palavra-destaque">understand</span> only half of them.</p>
+                        <p>I <span class="palavra-destaque">try</span> to <span class="palavra-destaque">save money</span>, but life is expensive.</p>
+                        <p>Food, transport, and small pleasures <span class="palavra-destaque">add up</span> quickly.</p>
+                        <p>Still, I <span class="palavra-destaque">move</span> some money to my <span class="palavra-destaque">savings account</span> every month.</p>
+                        <p>Money <span class="palavra-destaque">comes</span> and <span class="palavra-destaque">goes</span>.</p>
+                        <p>I just <span class="palavra-destaque">try</span> to manage it better than last month.</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Dinheiro é algo em que eu <span class="palavra-destaque">penso</span> mais do que gostaria.</p>
+                        <p>No começo do mês, eu <span class="palavra-destaque">confiro</span> minha <span class="palavra-destaque">conta bancária</span> e meu <span class="palavra-destaque">saldo</span>.</p>
+                        <p>Às vezes eu <span class="palavra-destaque">fico</span> tranquilo. Às vezes não.</p>
+                        <p>Eu <span class="palavra-destaque">abro</span> o <span class="palavra-destaque">aplicativo do banco</span> no celular e <span class="palavra-destaque">olho</span> as <span class="palavra-destaque">transações</span>.</p>
+                        <p>Eu <span class="palavra-destaque">vejo</span> meu <span class="palavra-destaque">salário</span>, meu <span class="palavra-destaque">aluguel</span> e muitos pequenos pagamentos que eu não <span class="palavra-destaque">lembro</span> de ter feito.</p>
+                        <p>Todo mês, eu <span class="palavra-destaque">tenho</span> <span class="palavra-destaque">contas</span> para pagar.</p>
+                        <p>Tem a <span class="palavra-destaque">conta de luz</span>, a <span class="palavra-destaque">conta de água</span>, a <span class="palavra-destaque">conta de internet</span> e a <span class="palavra-destaque">conta de telefone</span>.</p>
+                        <p>Elas <span class="palavra-destaque">chegam</span> no prazo. Meu dinheiro não.</p>
+                        <p>Normalmente, eu <span class="palavra-destaque">pago</span> as contas <span class="palavra-destaque">online</span>.</p>
+                        <p>Eu <span class="palavra-destaque">escolho</span> a conta, <span class="palavra-destaque">digito</span> o valor e <span class="palavra-destaque">aperto</span> em <span class="palavra-destaque">confirmar</span>.</p>
+                        <p>Por alguns segundos, eu <span class="palavra-destaque">seguro</span> a respiração.</p>
+                        <p>Às vezes, eu <span class="palavra-destaque">preciso</span> de <span class="palavra-destaque">dinheiro em espécie</span>.</p>
+                        <p>Eu <span class="palavra-destaque">vou</span> ao <span class="palavra-destaque">caixa eletrônico</span>, <span class="palavra-destaque">coloco</span> meu <span class="palavra-destaque">cartão</span> e <span class="palavra-destaque">digito</span> minha <span class="palavra-destaque">senha</span>.</p>
+                        <p>A máquina <span class="palavra-destaque">pensa</span> por um momento e depois <span class="palavra-destaque">entrega</span> o dinheiro.</p>
+                        <p>Esse momento sempre <span class="palavra-destaque">parece</span> longo demais.</p>
+                        <p>Quando eu <span class="palavra-destaque">tenho</span> dúvidas, eu <span class="palavra-destaque">vou</span> até a <span class="palavra-destaque">agência bancária</span>.</p>
+                        <p>Eu <span class="palavra-destaque">falo</span> com o <span class="palavra-destaque">atendente</span>, <span class="palavra-destaque">explico</span> meu problema e <span class="palavra-destaque">escuto</span> com atenção.</p>
+                        <p>Eles <span class="palavra-destaque">usam</span> muitas palavras, mas eu <span class="palavra-destaque">entendo</span> só metade.</p>
+                        <p>Eu <span class="palavra-destaque">tento</span> <span class="palavra-destaque">economizar dinheiro</span>, mas a vida é cara.</p>
+                        <p>Comida, transporte e pequenos prazeres <span class="palavra-destaque">se acumulam</span> rápido.</p>
+                        <p>Mesmo assim, eu <span class="palavra-destaque">transfiro</span> um pouco de dinheiro para minha <span class="palavra-destaque">poupança</span> todo mês.</p>
+                        <p>O dinheiro <span class="palavra-destaque">vem</span> e <span class="palavra-destaque">vai</span>.</p>
+                        <p>Eu só <span class="palavra-destaque">tento</span> cuidar melhor dele do que no mês passado.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Money is something I <span class="palavra-destaque">think</span> about more than I want to.</div>
+                            <div style="color: #666; font-size: 0.95em;">Dinheiro é algo em que eu <span class="palavra-destaque">penso</span> mais do que gostaria.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the beginning of the month, I <span class="palavra-destaque">check</span> my <span class="palavra-destaque">bank account</span> and my <span class="palavra-destaque">balance</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No começo do mês, eu <span class="palavra-destaque">confiro</span> minha <span class="palavra-destaque">conta bancária</span> e meu <span class="palavra-destaque">saldo</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes I <span class="palavra-destaque">feel</span> calm. Sometimes I don't.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes eu <span class="palavra-destaque">fico</span> tranquilo. Às vezes não.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">open</span> my <span class="palavra-destaque">bank app</span> on my phone and <span class="palavra-destaque">look</span> at my <span class="palavra-destaque">transactions</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">abro</span> o <span class="palavra-destaque">aplicativo do banco</span> no celular e <span class="palavra-destaque">olho</span> as <span class="palavra-destaque">transações</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">see</span> my <span class="palavra-destaque">salary</span>, my <span class="palavra-destaque">rent</span>, and many small payments I don't <span class="palavra-destaque">remember</span> making.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">vejo</span> meu <span class="palavra-destaque">salário</span>, meu <span class="palavra-destaque">aluguel</span> e muitos pequenos pagamentos que eu não <span class="palavra-destaque">lembro</span> de ter feito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every month, I <span class="palavra-destaque">have</span> <span class="palavra-destaque">bills</span> to pay.</div>
+                            <div style="color: #666; font-size: 0.95em;">Todo mês, eu <span class="palavra-destaque">tenho</span> <span class="palavra-destaque">contas</span> para pagar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">There is the <span class="palavra-destaque">electricity bill</span>, the <span class="palavra-destaque">water bill</span>, the <span class="palavra-destaque">internet bill</span>, and the <span class="palavra-destaque">phone bill</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Tem a <span class="palavra-destaque">conta de luz</span>, a <span class="palavra-destaque">conta de água</span>, a <span class="palavra-destaque">conta de internet</span> e a <span class="palavra-destaque">conta de telefone</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">They <span class="palavra-destaque">arrive</span> on time. My money doesn't.</div>
+                            <div style="color: #666; font-size: 0.95em;">Elas <span class="palavra-destaque">chegam</span> no prazo. Meu dinheiro não.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I usually <span class="palavra-destaque">pay</span> my bills <span class="palavra-destaque">online</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Normalmente, eu <span class="palavra-destaque">pago</span> as contas <span class="palavra-destaque">online</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">choose</span> the account, <span class="palavra-destaque">type</span> the amount, and <span class="palavra-destaque">press</span> <span class="palavra-destaque">confirm</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">escolho</span> a conta, <span class="palavra-destaque">digito</span> o valor e <span class="palavra-destaque">aperto</span> em <span class="palavra-destaque">confirmar</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">For a few seconds, I <span class="palavra-destaque">hold</span> my breath.</div>
+                            <div style="color: #666; font-size: 0.95em;">Por alguns segundos, eu <span class="palavra-destaque">seguro</span> a respiração.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes I <span class="palavra-destaque">need</span> <span class="palavra-destaque">cash</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes, eu <span class="palavra-destaque">preciso</span> de <span class="palavra-destaque">dinheiro em espécie</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">go</span> to the <span class="palavra-destaque">ATM</span>, <span class="palavra-destaque">insert</span> my <span class="palavra-destaque">card</span>, and <span class="palavra-destaque">enter</span> my <span class="palavra-destaque">PIN</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">vou</span> ao <span class="palavra-destaque">caixa eletrônico</span>, <span class="palavra-destaque">coloco</span> meu <span class="palavra-destaque">cartão</span> e <span class="palavra-destaque">digito</span> minha <span class="palavra-destaque">senha</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The machine <span class="palavra-destaque">thinks</span> for a moment, and then <span class="palavra-destaque">gives</span> me the money.</div>
+                            <div style="color: #666; font-size: 0.95em;">A máquina <span class="palavra-destaque">pensa</span> por um momento e depois <span class="palavra-destaque">entrega</span> o dinheiro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">That moment always <span class="palavra-destaque">feels</span> too long.</div>
+                            <div style="color: #666; font-size: 0.95em;">Esse momento sempre <span class="palavra-destaque">parece</span> longo demais.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I <span class="palavra-destaque">have</span> questions, I <span class="palavra-destaque">go</span> to the <span class="palavra-destaque">bank branch</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando eu <span class="palavra-destaque">tenho</span> dúvidas, eu <span class="palavra-destaque">vou</span> até a <span class="palavra-destaque">agência bancária</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">talk</span> to the <span class="palavra-destaque">bank clerk</span>, <span class="palavra-destaque">explain</span> my problem, and <span class="palavra-destaque">listen</span> carefully.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">falo</span> com o <span class="palavra-destaque">atendente</span>, <span class="palavra-destaque">explico</span> meu problema e <span class="palavra-destaque">escuto</span> com atenção.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">They <span class="palavra-destaque">use</span> many words, but I <span class="palavra-destaque">understand</span> only half of them.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eles <span class="palavra-destaque">usam</span> muitas palavras, mas eu <span class="palavra-destaque">entendo</span> só metade.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">try</span> to <span class="palavra-destaque">save money</span>, but life is expensive.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">tento</span> <span class="palavra-destaque">economizar dinheiro</span>, mas a vida é cara.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Food, transport, and small pleasures <span class="palavra-destaque">add up</span> quickly.</div>
+                            <div style="color: #666; font-size: 0.95em;">Comida, transporte e pequenos prazeres <span class="palavra-destaque">se acumulam</span> rápido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Still, I <span class="palavra-destaque">move</span> some money to my <span class="palavra-destaque">savings account</span> every month.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mesmo assim, eu <span class="palavra-destaque">transfiro</span> um pouco de dinheiro para minha <span class="palavra-destaque">poupança</span> todo mês.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Money <span class="palavra-destaque">comes</span> and <span class="palavra-destaque">goes</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">O dinheiro <span class="palavra-destaque">vem</span> e <span class="palavra-destaque">vai</span>.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I just <span class="palavra-destaque">try</span> to manage it better than last month.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu só <span class="palavra-destaque">tento</span> cuidar melhor dele do que no mês passado.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🗣️ Frases Prontas para Usar</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I need to check my balance.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu preciso conferir meu saldo.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I have bills to pay.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu tenho contas para pagar.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I pay my bills online.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu pago minhas contas online.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I need cash.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu preciso de dinheiro em espécie.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I go to the ATM.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu vou ao caixa eletrônico.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I try to save money.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu tento economizar dinheiro.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Money comes and goes.</p>
+                            <p style="font-size: 0.9em; color: #666;">O dinheiro vem e vai.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Everything adds up quickly.</p>
+                            <p style="font-size: 0.9em; color: #666;">Tudo se acumula rápido.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. BANK ACCOUNT 🏦</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Conta bancária</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I check my bank account"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "account" = conta (bancária ou de acesso)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. BALANCE 💰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Saldo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I check my balance"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Não confundir com "equilíbrio" (outro significado)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. BILL 📄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Conta (a pagar)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have bills to pay"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Não confundir com "bill" = nota de dinheiro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. ATM 🏧</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Caixa eletrônico</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I go to the ATM"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sigla de "Automated Teller Machine"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. PIN 🔢</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Senha (do cartão)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I enter my PIN"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sigla de "Personal Identification Number"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. CASH 💵</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Dinheiro em espécie</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Sometimes I need cash"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "pay in cash" = pagar em dinheiro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. SAVINGS ACCOUNT 🐷</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Poupança</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I move money to my savings account"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "savings" = economias</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. BANK BRANCH 🏢</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Agência bancária</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I go to the bank branch"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "branch" = filial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2 -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: A Simple Trip to the Supermarket</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/VKKwiu8GnP8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-A-Simple-Trip-to-the-Supermarket.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-A-Simple-Trip-to-the-Supermarket.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I don't always <span class="palavra-destaque">enjoy</span> going to the supermarket, but it is part of my routine.</p>
+                        <p>I <span class="palavra-destaque">grab</span> my <span class="palavra-destaque">shopping bag</span>, <span class="palavra-destaque">check</span> my <span class="palavra-destaque">shopping list</span>, and <span class="palavra-destaque">leave</span> the house.</p>
+                        <p>At the entrance, I <span class="palavra-destaque">take</span> a <span class="palavra-destaque">cart</span>, even though I <span class="palavra-destaque">plan</span> to buy only a few things.</p>
+                        <p>That plan never <span class="palavra-destaque">works</span>.</p>
+                        <p>Inside the store, I <span class="palavra-destaque">start</span> in the <span class="palavra-destaque">produce section</span>.</p>
+                        <p>I <span class="palavra-destaque">choose</span> <span class="palavra-destaque">fresh apples</span>, <span class="palavra-destaque">bananas</span>, <span class="palavra-destaque">tomatoes</span>, <span class="palavra-destaque">lettuce</span>, and <span class="palavra-destaque">onions</span>.</p>
+                        <p>Some fruit <span class="palavra-destaque">looks</span> perfect, and some <span class="palavra-destaque">looks</span> tired, just like people on Monday morning.</p>
+                        <p>Next, I <span class="palavra-destaque">walk</span> to the <span class="palavra-destaque">bakery</span>.</p>
+                        <p>The smell of <span class="palavra-destaque">bread</span> is strong and dangerous.</p>
+                        <p>I <span class="palavra-destaque">buy</span> a <span class="palavra-destaque">loaf of bread</span> and <span class="palavra-destaque">promise</span> myself not to eat it all today.</p>
+                        <p>In the <span class="palavra-destaque">dairy aisle</span>, I <span class="palavra-destaque">pick up</span> <span class="palavra-destaque">milk</span>, <span class="palavra-destaque">cheese</span>, <span class="palavra-destaque">yogurt</span>, and <span class="palavra-destaque">butter</span>.</p>
+                        <p>I <span class="palavra-destaque">stop</span> to <span class="palavra-destaque">compare</span> <span class="palavra-destaque">prices</span>, <span class="palavra-destaque">read</span> <span class="palavra-destaque">labels</span>, and <span class="palavra-destaque">check</span> the <span class="palavra-destaque">expiration dates</span>.</p>
+                        <p>Everything <span class="palavra-destaque">seems</span> more expensive than last week.</p>
+                        <p>Then I <span class="palavra-destaque">move</span> to the <span class="palavra-destaque">meat section</span>.</p>
+                        <p>I <span class="palavra-destaque">buy</span> <span class="palavra-destaque">chicken</span>, <span class="palavra-destaque">ground beef</span>, and a small pack of <span class="palavra-destaque">sausages</span>.</p>
+                        <p>I <span class="palavra-destaque">think</span> about healthy food, but the sausages <span class="palavra-destaque">win</span>.</p>
+                        <p>In the <span class="palavra-destaque">frozen food aisle</span>, I <span class="palavra-destaque">look</span> at <span class="palavra-destaque">ice cream</span>, <span class="palavra-destaque">pizza</span>, and <span class="palavra-destaque">frozen vegetables</span>.</p>
+                        <p>I <span class="palavra-destaque">choose</span> the vegetables… and the ice cream.</p>
+                        <p>Before paying, I <span class="palavra-destaque">remember</span> a few things I forgot.</p>
+                        <p>I <span class="palavra-destaque">grab</span> <span class="palavra-destaque">rice</span>, <span class="palavra-destaque">pasta</span>, <span class="palavra-destaque">cooking oil</span>, <span class="palavra-destaque">salt</span>, <span class="palavra-destaque">sugar</span>, and <span class="palavra-destaque">coffee</span>.</p>
+                        <p>The cart is now very full.</p>
+                        <p>At the <span class="palavra-destaque">checkout</span>, I <span class="palavra-destaque">wait</span> in line.</p>
+                        <p>The cashier <span class="palavra-destaque">scans</span> the items, and the screen <span class="palavra-destaque">shows</span> the <span class="palavra-destaque">total price</span>.</p>
+                        <p>I <span class="palavra-destaque">take out</span> my <span class="palavra-destaque">credit card</span> and <span class="palavra-destaque">hope</span> for the best.</p>
+                        <p>I <span class="palavra-destaque">pack</span> my groceries, <span class="palavra-destaque">leave</span> the store, and <span class="palavra-destaque">walk</span> home.</p>
+                        <p>I <span class="palavra-destaque">planned</span> to buy only a few things, but I <span class="palavra-destaque">leave</span> with many bags.</p>
+                        <p>That always <span class="palavra-destaque">happens</span>.</p>
+                    </div>
+
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu nem sempre <span class="palavra-destaque">gosto</span> de ir ao supermercado, mas isso faz parte da minha rotina.</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> minha <span class="palavra-destaque">sacola</span>, <span class="palavra-destaque">confiro</span> a <span class="palavra-destaque">lista de compras</span> e <span class="palavra-destaque">saio</span> de casa.</p>
+                        <p>Na entrada, eu <span class="palavra-destaque">pego</span> um <span class="palavra-destaque">carrinho</span>, mesmo planejando comprar poucas coisas.</p>
+                        <p>Esse plano nunca <span class="palavra-destaque">funciona</span>.</p>
+                        <p>Dentro da loja, eu <span class="palavra-destaque">começo</span> pela <span class="palavra-destaque">seção de frutas e verduras</span>.</p>
+                        <p>Eu <span class="palavra-destaque">escolho</span> <span class="palavra-destaque">maçãs frescas</span>, <span class="palavra-destaque">bananas</span>, <span class="palavra-destaque">tomates</span>, <span class="palavra-destaque">alface</span> e <span class="palavra-destaque">cebolas</span>.</p>
+                        <p>Algumas frutas <span class="palavra-destaque">parecem</span> perfeitas, e outras <span class="palavra-destaque">parecem</span> cansadas, como pessoas na segunda-feira de manhã.</p>
+                        <p>Depois, eu <span class="palavra-destaque">vou</span> até a <span class="palavra-destaque">padaria</span>.</p>
+                        <p>O cheiro de <span class="palavra-destaque">pão</span> é forte e perigoso.</p>
+                        <p>Eu <span class="palavra-destaque">compro</span> um <span class="palavra-destaque">pão</span> e <span class="palavra-destaque">prometo</span> para mim mesmo não comer tudo hoje.</p>
+                        <p>No <span class="palavra-destaque">corredor de laticínios</span>, eu <span class="palavra-destaque">pego</span> <span class="palavra-destaque">leite</span>, <span class="palavra-destaque">queijo</span>, <span class="palavra-destaque">iogurte</span> e <span class="palavra-destaque">manteiga</span>.</p>
+                        <p>Eu <span class="palavra-destaque">paro</span> para <span class="palavra-destaque">comparar</span> <span class="palavra-destaque">preços</span>, <span class="palavra-destaque">ler</span> <span class="palavra-destaque">rótulos</span> e <span class="palavra-destaque">checar</span> as <span class="palavra-destaque">datas de validade</span>.</p>
+                        <p>Tudo <span class="palavra-destaque">parece</span> mais caro do que na semana passada.</p>
+                        <p>Em seguida, eu <span class="palavra-destaque">vou</span> para a <span class="palavra-destaque">seção de carnes</span>.</p>
+                        <p>Eu <span class="palavra-destaque">compro</span> <span class="palavra-destaque">frango</span>, <span class="palavra-destaque">carne moída</span> e um pacote pequeno de <span class="palavra-destaque">linguiça</span>.</p>
+                        <p>Eu <span class="palavra-destaque">penso</span> em comida saudável, mas a linguiça <span class="palavra-destaque">ganha</span>.</p>
+                        <p>No <span class="palavra-destaque">corredor de congelados</span>, eu <span class="palavra-destaque">olho</span> <span class="palavra-destaque">sorvete</span>, <span class="palavra-destaque">pizza</span> e <span class="palavra-destaque">legumes congelados</span>.</p>
+                        <p>Eu <span class="palavra-destaque">escolho</span> os legumes… e o sorvete.</p>
+                        <p>Antes de pagar, eu <span class="palavra-destaque">me lembro</span> de algumas coisas que esqueci.</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> <span class="palavra-destaque">arroz</span>, <span class="palavra-destaque">macarrão</span>, <span class="palavra-destaque">óleo de cozinha</span>, <span class="palavra-destaque">sal</span>, <span class="palavra-destaque">açúcar</span> e <span class="palavra-destaque">café</span>.</p>
+                        <p>O carrinho agora está bem cheio.</p>
+                        <p>No <span class="palavra-destaque">caixa</span>, eu <span class="palavra-destaque">espero</span> na fila.</p>
+                        <p>A atendente <span class="palavra-destaque">passa</span> os produtos, e a tela <span class="palavra-destaque">mostra</span> o <span class="palavra-destaque">valor total</span>.</p>
+                        <p>Eu <span class="palavra-destaque">tiro</span> meu <span class="palavra-destaque">cartão de crédito</span> e <span class="palavra-destaque">torço</span> para dar certo.</p>
+                        <p>Eu <span class="palavra-destaque">guardo</span> as compras, <span class="palavra-destaque">saio</span> da loja e <span class="palavra-destaque">volto</span> para casa.</p>
+                        <p>Eu <span class="palavra-destaque">planejei</span> comprar poucas coisas, mas <span class="palavra-destaque">saio</span> com várias sacolas.</p>
+                        <p>Isso sempre <span class="palavra-destaque">acontece</span>.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I don't always <span class="palavra-destaque">enjoy</span> going to the supermarket, but it is part of my routine.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu nem sempre <span class="palavra-destaque">gosto</span> de ir ao supermercado, mas isso faz parte da minha rotina.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">grab</span> my <span class="palavra-destaque">shopping bag</span>, <span class="palavra-destaque">check</span> my <span class="palavra-destaque">shopping list</span>, and <span class="palavra-destaque">leave</span> the house.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pego</span> minha <span class="palavra-destaque">sacola</span>, <span class="palavra-destaque">confiro</span> a <span class="palavra-destaque">lista de compras</span> e <span class="palavra-destaque">saio</span> de casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the entrance, I <span class="palavra-destaque">take</span> a <span class="palavra-destaque">cart</span>, even though I <span class="palavra-destaque">plan</span> to buy only a few things.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na entrada, eu <span class="palavra-destaque">pego</span> um <span class="palavra-destaque">carrinho</span>, mesmo planejando comprar poucas coisas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">That plan never <span class="palavra-destaque">works</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Esse plano nunca <span class="palavra-destaque">funciona</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Inside the store, I <span class="palavra-destaque">start</span> in the <span class="palavra-destaque">produce section</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Dentro da loja, eu <span class="palavra-destaque">começo</span> pela <span class="palavra-destaque">seção de frutas e verduras</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">choose</span> <span class="palavra-destaque">fresh apples</span>, <span class="palavra-destaque">bananas</span>, <span class="palavra-destaque">tomatoes</span>, <span class="palavra-destaque">lettuce</span>, and <span class="palavra-destaque">onions</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">escolho</span> <span class="palavra-destaque">maçãs frescas</span>, <span class="palavra-destaque">bananas</span>, <span class="palavra-destaque">tomates</span>, <span class="palavra-destaque">alface</span> e <span class="palavra-destaque">cebolas</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Some fruit <span class="palavra-destaque">looks</span> perfect, and some <span class="palavra-destaque">looks</span> tired, just like people on Monday morning.</div>
+                            <div style="color: #666; font-size: 0.95em;">Algumas frutas <span class="palavra-destaque">parecem</span> perfeitas, e outras <span class="palavra-destaque">parecem</span> cansadas, como pessoas na segunda-feira de manhã.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Next, I <span class="palavra-destaque">walk</span> to the <span class="palavra-destaque">bakery</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois, eu <span class="palavra-destaque">vou</span> até a <span class="palavra-destaque">padaria</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The smell of <span class="palavra-destaque">bread</span> is strong and dangerous.</div>
+                            <div style="color: #666; font-size: 0.95em;">O cheiro de <span class="palavra-destaque">pão</span> é forte e perigoso.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">buy</span> a <span class="palavra-destaque">loaf of bread</span> and <span class="palavra-destaque">promise</span> myself not to eat it all today.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">compro</span> um <span class="palavra-destaque">pão</span> e <span class="palavra-destaque">prometo</span> para mim mesmo não comer tudo hoje.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the <span class="palavra-destaque">dairy aisle</span>, I <span class="palavra-destaque">pick up</span> <span class="palavra-destaque">milk</span>, <span class="palavra-destaque">cheese</span>, <span class="palavra-destaque">yogurt</span>, and <span class="palavra-destaque">butter</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No <span class="palavra-destaque">corredor de laticínios</span>, eu <span class="palavra-destaque">pego</span> <span class="palavra-destaque">leite</span>, <span class="palavra-destaque">queijo</span>, <span class="palavra-destaque">iogurte</span> e <span class="palavra-destaque">manteiga</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">stop</span> to <span class="palavra-destaque">compare</span> <span class="palavra-destaque">prices</span>, <span class="palavra-destaque">read</span> <span class="palavra-destaque">labels</span>, and <span class="palavra-destaque">check</span> the <span class="palavra-destaque">expiration dates</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">paro</span> para <span class="palavra-destaque">comparar</span> <span class="palavra-destaque">preços</span>, <span class="palavra-destaque">ler</span> <span class="palavra-destaque">rótulos</span> e <span class="palavra-destaque">checar</span> as <span class="palavra-destaque">datas de validade</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everything <span class="palavra-destaque">seems</span> more expensive than last week.</div>
+                            <div style="color: #666; font-size: 0.95em;">Tudo <span class="palavra-destaque">parece</span> mais caro do que na semana passada.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I <span class="palavra-destaque">move</span> to the <span class="palavra-destaque">meat section</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Em seguida, eu <span class="palavra-destaque">vou</span> para a <span class="palavra-destaque">seção de carnes</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">buy</span> <span class="palavra-destaque">chicken</span>, <span class="palavra-destaque">ground beef</span>, and a small pack of <span class="palavra-destaque">sausages</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">compro</span> <span class="palavra-destaque">frango</span>, <span class="palavra-destaque">carne moída</span> e um pacote pequeno de <span class="palavra-destaque">linguiça</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">think</span> about healthy food, but the sausages <span class="palavra-destaque">win</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">penso</span> em comida saudável, mas a linguiça <span class="palavra-destaque">ganha</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the <span class="palavra-destaque">frozen food aisle</span>, I <span class="palavra-destaque">look</span> at <span class="palavra-destaque">ice cream</span>, <span class="palavra-destaque">pizza</span>, and <span class="palavra-destaque">frozen vegetables</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No <span class="palavra-destaque">corredor de congelados</span>, eu <span class="palavra-destaque">olho</span> <span class="palavra-destaque">sorvete</span>, <span class="palavra-destaque">pizza</span> e <span class="palavra-destaque">legumes congelados</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">choose</span> the vegetables… and the ice cream.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">escolho</span> os legumes… e o sorvete.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before paying, I <span class="palavra-destaque">remember</span> a few things I forgot.</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de pagar, eu <span class="palavra-destaque">me lembro</span> de algumas coisas que esqueci.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">grab</span> <span class="palavra-destaque">rice</span>, <span class="palavra-destaque">pasta</span>, <span class="palavra-destaque">cooking oil</span>, <span class="palavra-destaque">salt</span>, <span class="palavra-destaque">sugar</span>, and <span class="palavra-destaque">coffee</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">pego</span> <span class="palavra-destaque">arroz</span>, <span class="palavra-destaque">macarrão</span>, <span class="palavra-destaque">óleo de cozinha</span>, <span class="palavra-destaque">sal</span>, <span class="palavra-destaque">açúcar</span> e <span class="palavra-destaque">café</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The cart is now very full.</div>
+                            <div style="color: #666; font-size: 0.95em;">O carrinho agora está bem cheio.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the <span class="palavra-destaque">checkout</span>, I <span class="palavra-destaque">wait</span> in line.</div>
+                            <div style="color: #666; font-size: 0.95em;">No <span class="palavra-destaque">caixa</span>, eu <span class="palavra-destaque">espero</span> na fila.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The cashier <span class="palavra-destaque">scans</span> the items, and the screen <span class="palavra-destaque">shows</span> the <span class="palavra-destaque">total price</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">A atendente <span class="palavra-destaque">passa</span> os produtos, e a tela <span class="palavra-destaque">mostra</span> o <span class="palavra-destaque">valor total</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">take out</span> my <span class="palavra-destaque">credit card</span> and <span class="palavra-destaque">hope</span> for the best.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">tiro</span> meu <span class="palavra-destaque">cartão de crédito</span> e <span class="palavra-destaque">torço</span> para dar certo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">pack</span> my groceries, <span class="palavra-destaque">leave</span> the store, and <span class="palavra-destaque">walk</span> home.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">guardo</span> as compras, <span class="palavra-destaque">saio</span> da loja e <span class="palavra-destaque">volto</span> para casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">planned</span> to buy only a few things, but I <span class="palavra-destaque">leave</span> with many bags.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">planejei</span> comprar poucas coisas, mas <span class="palavra-destaque">saio</span> com várias sacolas.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">That always <span class="palavra-destaque">happens</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Isso sempre <span class="palavra-destaque">acontece</span>.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🗣️ Frases Prontas para Usar</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I need to check my shopping list.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu preciso conferir minha lista de compras.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Can I have a bag, please?</p>
+                            <p style="font-size: 0.9em; color: #666;">Posso pegar uma sacola, por favor?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Where is the dairy aisle?</p>
+                            <p style="font-size: 0.9em; color: #666;">Onde fica o corredor de laticínios?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">How much is this?</p>
+                            <p style="font-size: 0.9em; color: #666;">Quanto custa isso?</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I'll pay with my credit card.</p>
+                            <p style="font-size: 0.9em; color: #666;">Vou pagar com cartão de crédito.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">Everything seems more expensive.</p>
+                            <p style="font-size: 0.9em; color: #666;">Tudo parece mais caro.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">I planned to buy only a few things.</p>
+                            <p style="font-size: 0.9em; color: #666;">Eu planejei comprar poucas coisas.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <p style="font-size: 0.95em; margin-bottom: 8px; color: #2563eb; font-weight: 600;">That always happens.</p>
+                            <p style="font-size: 0.9em; color: #666;">Isso sempre acontece.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. CART 🛒</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Carrinho</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I take a cart"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Nos EUA; no UK = "trolley"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. PRODUCE SECTION 🥬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Seção de frutas e verduras</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I start in the produce section"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "produce" = produtos frescos</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. DAIRY AISLE 🥛</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Corredor de laticínios</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "In the dairy aisle, I pick up milk"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "dairy" = laticínio; "aisle" = corredor</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. CHECKOUT 💳</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Caixa (para pagar)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At the checkout, I wait in line"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "check out" = finalizar compra</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. CASHIER 🧑‍💼</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Caixa / atendente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The cashier scans the items"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> A pessoa que atende no caixa</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. EXPIRATION DATE 📅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Data de validade</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I check the expiration dates"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "expire" = vencer</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. GROCERIES 🛍️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Compras / mantimentos</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I pack my groceries"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Tudo que você compra no mercado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. LOAF OF BREAD 🍞</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Um pão inteiro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I buy a loaf of bread"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "loaf" = unidade; "slice" = fatia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 06 — Semana 6</strong></p>
+        <p>Cada dia de estudo te aproxima do seu objetivo! 🚀</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
+        let deferredPrompt = null;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone || isInPWAMode) return;
+            if (isMobile && !installPromptShown) {
+                setTimeout(() => { showInstallPrompt(); }, 2000);
+            }
+        }
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner && !installPromptShown) {
+                banner.style.display = 'flex';
+                installPromptShown = true;
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(() => closeInstallPrompt());
+            } else {
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontWeight = '600';
+                    msg.style.marginTop = '10px';
+                    msg.textContent = '⚠️ Erro ao carregar o áudio. Tente recarregar a página.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
