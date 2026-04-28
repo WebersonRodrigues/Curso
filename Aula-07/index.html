@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 07 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 07 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 07</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 07 - Semana 7</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 07</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a falar sobre planos, rotina de fim de semana, advérbios de frequência e situações comuns ao telefone em inglês.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ My Weekend Plans</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Rotina de fim de semana, fazer planos com amigos, advérbios de frequência</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> usually, sometimes, always, never, maybe, probably, often, rarely, sounds good, I feel like, how about, it depends</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Talking on the Phone</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Ligações telefônicas — reserva em restaurante, número errado, conversa com amigo, caixa postal</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> call, answer, hang up, hold on, speak up, wrong number, voicemail, text message, I was wondering, could you please</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: My Weekend Plans -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: My Weekend Plans</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p style="text-align: center; color: #999; font-size: 0.85em; margin-top: 8px;">⏳ Vídeo será adicionado em breve!</p>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-my-weekend-plans.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-my-weekend-plans.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I <span class="palavra-destaque">usually</span> wake up late on Saturdays. My alarm <span class="palavra-destaque">rings</span>, but I <span class="palavra-destaque">ignore</span> it.</p>
+                        <p>I <span class="palavra-destaque">stay</span> in bed for a few more minutes and <span class="palavra-destaque">check</span> my phone.<br>I <span class="palavra-destaque">scroll</span> through messages and <span class="palavra-destaque">see</span> a text from my friend Lucas.</p>
+                        <p>"Hey! What are you doing today?"</p>
+                        <p><span class="palavra-destaque">I'm not sure</span> what to do. I <span class="palavra-destaque">look</span> at the window.<br><span class="palavra-destaque">It depends</span> on the weather. If it is sunny, I want to go out. If it is rainy, I want to stay home.</p>
+                        <p>Today, the sky is blue. Good.</p>
+                        <p>I <span class="palavra-destaque">get up</span>, <span class="palavra-destaque">take</span> a shower, and <span class="palavra-destaque">make</span> coffee.<br>I <span class="palavra-destaque">rarely</span> cook on weekends, so I <span class="palavra-destaque">eat</span> some bread with butter and call it breakfast.</p>
+                        <p>I <span class="palavra-destaque">text</span> Lucas back: "<span class="palavra-destaque">Maybe</span> we can go to the movies. <span class="palavra-destaque">How about</span> the new action movie?"</p>
+                        <p>He <span class="palavra-destaque">replies</span>: "<span class="palavra-destaque">Sounds good!</span> What time?"</p>
+                        <p>I <span class="palavra-destaque">think</span> for a moment. "<span class="palavra-destaque">Let's see</span>… the movie starts at three. We can meet at two thirty."</p>
+                        <p>"Perfect. <span class="palavra-destaque">By the way</span>, do you want to grab lunch before the movie?"</p>
+                        <p>"<span class="palavra-destaque">I feel like</span> eating pizza," I <span class="palavra-destaque">say</span>.</p>
+                        <p>"Me too! There is a new pizza place near the mall."</p>
+                        <p>So we <span class="palavra-destaque">have</span> a plan. Pizza and a movie. A perfect Saturday.</p>
+                        <p>I <span class="palavra-destaque">sometimes</span> go to the park on Saturday mornings, but today I <span class="palavra-destaque">decide</span> to stay home until lunch.<br>I <span class="palavra-destaque">often</span> watch movies at night, but today I am watching one in the afternoon. That feels different.</p>
+                        <p>After the movie, Lucas and I <span class="palavra-destaque">walk</span> around the mall for a while.<br>We <span class="palavra-destaque">look</span> at some stores, but we don't <span class="palavra-destaque">buy</span> anything.<br>We just <span class="palavra-destaque">talk</span> and <span class="palavra-destaque">laugh</span>.</p>
+                        <p>I <span class="palavra-destaque">get</span> home around seven. I am tired but happy.</p>
+                        <p>On Sundays, I <span class="palavra-destaque">never</span> wake up early. That is my rule.<br>I <span class="palavra-destaque">generally</span> spend the morning reading or watching something on my phone.</p>
+                        <p>In the afternoon, I <span class="palavra-destaque">think</span> about the week ahead.<br>I will <span class="palavra-destaque">probably</span> stay home and <span class="palavra-destaque">prepare</span> for Monday.<br>I <span class="palavra-destaque">clean</span> my room, <span class="palavra-destaque">organize</span> my things, and <span class="palavra-destaque">plan</span> my meals for the week.</p>
+                        <p>I <span class="palavra-destaque">always</span> feel like the weekend is too short.<br>Friday feels far away, and Monday feels too close.</p>
+                        <p>But that's okay. Next weekend will come, and I will <span class="palavra-destaque">probably</span> do the same things again.</p>
+                        <p><span class="palavra-destaque">Generally</span>, my weekends are quiet. And I like them that way.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu <span class="palavra-destaque">geralmente</span> acordo tarde aos sábados. Meu despertador <span class="palavra-destaque">toca</span>, mas eu <span class="palavra-destaque">ignoro</span>.</p>
+                        <p>Eu <span class="palavra-destaque">fico</span> na cama por mais alguns minutos e <span class="palavra-destaque">checo</span> meu celular.<br>Eu <span class="palavra-destaque">rolo</span> pelas mensagens e <span class="palavra-destaque">vejo</span> uma mensagem do meu amigo Lucas.</p>
+                        <p>"Ei! O que você vai fazer hoje?"</p>
+                        <p><span class="palavra-destaque">Não tenho certeza</span> do que fazer. Eu <span class="palavra-destaque">olho</span> pela janela.<br><span class="palavra-destaque">Depende</span> do tempo. Se estiver ensolarado, eu quero sair. Se estiver chuvoso, eu quero ficar em casa.</p>
+                        <p>Hoje, o céu está azul. Bom.</p>
+                        <p>Eu <span class="palavra-destaque">levanto</span>, <span class="palavra-destaque">tomo</span> um banho e <span class="palavra-destaque">faço</span> café.<br>Eu <span class="palavra-destaque">raramente</span> cozinho nos fins de semana, então <span class="palavra-destaque">como</span> um pão com manteiga e chamo isso de café da manhã.</p>
+                        <p>Eu <span class="palavra-destaque">respondo</span> o Lucas: "<span class="palavra-destaque">Talvez</span> a gente possa ir ao cinema. <span class="palavra-destaque">Que tal</span> o novo filme de ação?"</p>
+                        <p>Ele <span class="palavra-destaque">responde</span>: "<span class="palavra-destaque">Parece bom!</span> Que horas?"</p>
+                        <p>Eu <span class="palavra-destaque">penso</span> por um momento. "<span class="palavra-destaque">Vamos ver</span>… o filme começa às três. A gente pode se encontrar às duas e meia."</p>
+                        <p>"Perfeito. <span class="palavra-destaque">A propósito</span>, você quer almoçar antes do filme?"</p>
+                        <p>"<span class="palavra-destaque">Estou com vontade de</span> comer pizza," eu <span class="palavra-destaque">digo</span>.</p>
+                        <p>"Eu também! Tem uma pizzaria nova perto do shopping."</p>
+                        <p>Então nós <span class="palavra-destaque">temos</span> um plano. Pizza e cinema. Um sábado perfeito.</p>
+                        <p>Eu <span class="palavra-destaque">às vezes</span> vou ao parque nas manhãs de sábado, mas hoje eu <span class="palavra-destaque">decido</span> ficar em casa até o almoço.<br>Eu <span class="palavra-destaque">frequentemente</span> assisto filmes à noite, mas hoje estou assistindo um à tarde. Isso parece diferente.</p>
+                        <p>Depois do filme, Lucas e eu <span class="palavra-destaque">andamos</span> pelo shopping por um tempo.<br>Nós <span class="palavra-destaque">olhamos</span> algumas lojas, mas não <span class="palavra-destaque">compramos</span> nada.<br>A gente só <span class="palavra-destaque">conversa</span> e <span class="palavra-destaque">ri</span>.</p>
+                        <p>Eu <span class="palavra-destaque">chego</span> em casa por volta das sete. Estou cansado, mas feliz.</p>
+                        <p>Aos domingos, eu <span class="palavra-destaque">nunca</span> acordo cedo. Essa é minha regra.<br>Eu <span class="palavra-destaque">geralmente</span> passo a manhã lendo ou assistindo algo no celular.</p>
+                        <p>De tarde, eu <span class="palavra-destaque">penso</span> na semana que vem.<br>Eu <span class="palavra-destaque">provavelmente</span> vou ficar em casa e me <span class="palavra-destaque">preparar</span> para segunda-feira.<br>Eu <span class="palavra-destaque">limpo</span> meu quarto, <span class="palavra-destaque">organizo</span> minhas coisas e <span class="palavra-destaque">planejo</span> minhas refeições da semana.</p>
+                        <p>Eu <span class="palavra-destaque">sempre</span> sinto que o fim de semana é curto demais.<br>A sexta parece longe, e a segunda parece perto demais.</p>
+                        <p>Mas tudo bem. O próximo fim de semana vai chegar, e eu <span class="palavra-destaque">provavelmente</span> vou fazer as mesmas coisas de novo.</p>
+                        <p><span class="palavra-destaque">Geralmente</span>, meus fins de semana são tranquilos. E eu gosto deles assim.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">usually</span> wake up late on Saturdays. My alarm <span class="palavra-destaque">rings</span>, but I <span class="palavra-destaque">ignore</span> it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">geralmente</span> acordo tarde aos sábados. Meu despertador <span class="palavra-destaque">toca</span>, mas eu <span class="palavra-destaque">ignoro</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">stay</span> in bed for a few more minutes and <span class="palavra-destaque">check</span> my phone.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">fico</span> na cama por mais alguns minutos e <span class="palavra-destaque">checo</span> meu celular.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">scroll</span> through messages and <span class="palavra-destaque">see</span> a text from my friend Lucas.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">rolo</span> pelas mensagens e <span class="palavra-destaque">vejo</span> uma mensagem do meu amigo Lucas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Hey! What are you doing today?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Ei! O que você vai fazer hoje?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">I'm not sure</span> what to do. I <span class="palavra-destaque">look</span> at the window.</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Não tenho certeza</span> do que fazer. Eu <span class="palavra-destaque">olho</span> pela janela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">It depends</span> on the weather. If it is sunny, I want to go out. If it is rainy, I want to stay home.</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Depende</span> do tempo. Se estiver ensolarado, eu quero sair. Se estiver chuvoso, eu quero ficar em casa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today, the sky is blue. Good.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje, o céu está azul. Bom.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">get up</span>, <span class="palavra-destaque">take</span> a shower, and <span class="palavra-destaque">make</span> coffee.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">levanto</span>, <span class="palavra-destaque">tomo</span> um banho e <span class="palavra-destaque">faço</span> café.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">rarely</span> cook on weekends, so I <span class="palavra-destaque">eat</span> some bread with butter and call it breakfast.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">raramente</span> cozinho nos fins de semana, então <span class="palavra-destaque">como</span> um pão com manteiga e chamo isso de café da manhã.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">text</span> Lucas back: "<span class="palavra-destaque">Maybe</span> we can go to the movies. <span class="palavra-destaque">How about</span> the new action movie?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">respondo</span> o Lucas: "<span class="palavra-destaque">Talvez</span> a gente possa ir ao cinema. <span class="palavra-destaque">Que tal</span> o novo filme de ação?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He <span class="palavra-destaque">replies</span>: "<span class="palavra-destaque">Sounds good!</span> What time?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele <span class="palavra-destaque">responde</span>: "<span class="palavra-destaque">Parece bom!</span> Que horas?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">think</span> for a moment. "<span class="palavra-destaque">Let's see</span>… the movie starts at three. We can meet at two thirty."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">penso</span> por um momento. "<span class="palavra-destaque">Vamos ver</span>… o filme começa às três. A gente pode se encontrar às duas e meia."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Perfect. <span class="palavra-destaque">By the way</span>, do you want to grab lunch before the movie?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Perfeito. <span class="palavra-destaque">A propósito</span>, você quer almoçar antes do filme?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I feel like</span> eating pizza," I <span class="palavra-destaque">say</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">"<span class="palavra-destaque">Estou com vontade de</span> comer pizza," eu <span class="palavra-destaque">digo</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Me too! There is a new pizza place near the mall."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu também! Tem uma pizzaria nova perto do shopping."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">So we <span class="palavra-destaque">have</span> a plan. Pizza and a movie. A perfect Saturday.</div>
+                            <div style="color: #666; font-size: 0.95em;">Então nós <span class="palavra-destaque">temos</span> um plano. Pizza e cinema. Um sábado perfeito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">sometimes</span> go to the park on Saturday mornings, but today I <span class="palavra-destaque">decide</span> to stay home until lunch.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">às vezes</span> vou ao parque nas manhãs de sábado, mas hoje eu <span class="palavra-destaque">decido</span> ficar em casa até o almoço.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">often</span> watch movies at night, but today I am watching one in the afternoon. That feels different.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">frequentemente</span> assisto filmes à noite, mas hoje estou assistindo um à tarde. Isso parece diferente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the movie, Lucas and I <span class="palavra-destaque">walk</span> around the mall for a while.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois do filme, Lucas e eu <span class="palavra-destaque">andamos</span> pelo shopping por um tempo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">look</span> at some stores, but we don't <span class="palavra-destaque">buy</span> anything.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós <span class="palavra-destaque">olhamos</span> algumas lojas, mas não <span class="palavra-destaque">compramos</span> nada.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We just <span class="palavra-destaque">talk</span> and <span class="palavra-destaque">laugh</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">A gente só <span class="palavra-destaque">conversa</span> e <span class="palavra-destaque">ri</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">get</span> home around seven. I am tired but happy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">chego</span> em casa por volta das sete. Estou cansado, mas feliz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On Sundays, I <span class="palavra-destaque">never</span> wake up early. That is my rule.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aos domingos, eu <span class="palavra-destaque">nunca</span> acordo cedo. Essa é minha regra.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">generally</span> spend the morning reading or watching something on my phone.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">geralmente</span> passo a manhã lendo ou assistindo algo no celular.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the afternoon, I <span class="palavra-destaque">think</span> about the week ahead.</div>
+                            <div style="color: #666; font-size: 0.95em;">De tarde, eu <span class="palavra-destaque">penso</span> na semana que vem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I will <span class="palavra-destaque">probably</span> stay home and <span class="palavra-destaque">prepare</span> for Monday.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">provavelmente</span> vou ficar em casa e me <span class="palavra-destaque">preparar</span> para segunda-feira.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">clean</span> my room, <span class="palavra-destaque">organize</span> my things, and <span class="palavra-destaque">plan</span> my meals for the week.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">limpo</span> meu quarto, <span class="palavra-destaque">organizo</span> minhas coisas e <span class="palavra-destaque">planejo</span> minhas refeições da semana.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">always</span> feel like the weekend is too short.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">sempre</span> sinto que o fim de semana é curto demais.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Friday feels far away, and Monday feels too close.</div>
+                            <div style="color: #666; font-size: 0.95em;">A sexta parece longe, e a segunda parece perto demais.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But that's okay. Next weekend will come, and I will <span class="palavra-destaque">probably</span> do the same things again.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas tudo bem. O próximo fim de semana vai chegar, e eu <span class="palavra-destaque">provavelmente</span> vou fazer as mesmas coisas de novo.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Generally</span>, my weekends are quiet. And I like them that way.</div>
+                            <div style="color: #666; font-size: 0.95em;"><span class="palavra-destaque">Geralmente</span>, meus fins de semana são tranquilos. E eu gosto deles assim.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. USUALLY 🔄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Geralmente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I usually wake up late"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Advérbio de frequência — posição antes do verbo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. SOMETIMES ⏰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Às vezes</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I sometimes go to the park"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pode ir no início ou meio da frase</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. ALWAYS ✅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sempre</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I always feel like the weekend is too short"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Posição antes do verbo principal</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. NEVER ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Nunca</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I never wake up early"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Posição antes do verbo — já é negativo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. MAYBE 🤔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Talvez</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Maybe we can go to the movies"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Usado no início da frase para sugestões</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. PROBABLY 🎯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Provavelmente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I will probably stay home"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Posição antes do verbo ou depois de "will"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. OFTEN 📅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Frequentemente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I often watch movies at night"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Posição antes do verbo principal</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. RARELY 💎</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Raramente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I rarely cook on weekends"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Posição antes do verbo — indica quase nunca</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. GENERALLY 🌐</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Geralmente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Generally, my weekends are quiet"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sinônimo de "usually", mais formal</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. WEATHER ☀️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tempo (clima)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It depends on the weather"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Não confundir com "time" (tempo/horas)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Talking on the Phone -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Talking on the Phone</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p style="text-align: center; color: #999; font-size: 0.85em; margin-top: 8px;">⏳ Vídeo será adicionado em breve!</p>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-talking-on-the-phone.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-talking-on-the-phone.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I don't love talking on the phone, but <span class="palavra-destaque">sometimes</span> it is the only way.</p>
+                        <p>Last week, I <span class="palavra-destaque">wanted</span> to have dinner at a nice restaurant.<br>I <span class="palavra-destaque">decided</span> to <span class="palavra-destaque">call</span> and make a reservation.</p>
+                        <p>The phone <span class="palavra-destaque">rang</span> three times. Nobody <span class="palavra-destaque">answered</span>.<br>I <span class="palavra-destaque">hung up</span> and <span class="palavra-destaque">tried</span> again.</p>
+                        <p>This time, someone <span class="palavra-destaque">picked up</span>.</p>
+                        <p>"Good evening. How can I help you?"</p>
+                        <p>"Hi! <span class="palavra-destaque">I was wondering</span> if you have a table for two on Friday night."</p>
+                        <p>"<span class="palavra-destaque">Hold on</span>, please. Let me check."</p>
+                        <p>I <span class="palavra-destaque">waited</span>. There was music playing. Not great music.</p>
+                        <p>"Yes, we have a table at eight. Is that okay?"</p>
+                        <p>"<span class="palavra-destaque">Sure</span>, that works. <span class="palavra-destaque">By the way</span>, what time is dinner over? I mean, how late are you open?"</p>
+                        <p>"We close at eleven."</p>
+                        <p>"Perfect. Thank you!"</p>
+                        <p>"You're welcome. See you Friday!"</p>
+                        <p>That was easy. But phone calls are not <span class="palavra-destaque">always</span> easy.</p>
+                        <p style="text-align: center; color: #ccc; margin: 15px 0;">— — —</p>
+                        <p>Ten minutes later, my phone <span class="palavra-destaque">rang</span> again.</p>
+                        <p>"Hello?"</p>
+                        <p>"Hi, is this Maria?"</p>
+                        <p>"No, <span class="palavra-destaque">sorry about that</span>. <span class="palavra-destaque">Wrong number</span>."</p>
+                        <p>"Oh! Sorry!"</p>
+                        <p>I <span class="palavra-destaque">hung up</span>. It happens.</p>
+                        <p style="text-align: center; color: #ccc; margin: 15px 0;">— — —</p>
+                        <p>Then my friend Ana <span class="palavra-destaque">called</span> me.</p>
+                        <p>"Hey! I'm at the store. Do you need anything?"</p>
+                        <p>"<span class="palavra-destaque">Actually</span>, yes! Can you get me some milk?"</p>
+                        <p>"<span class="palavra-destaque">Sure</span>, <span class="palavra-destaque">no worries</span>. Anything else?"</p>
+                        <p>"Hmm… <span class="palavra-destaque">maybe</span> some bread too."</p>
+                        <p>"Okay. <span class="palavra-destaque">By the way</span>, I saw a great jacket on sale. You would love it."</p>
+                        <p>"Really? <span class="palavra-destaque">How much</span>?"</p>
+                        <p>"I don't know, the signal is bad. <span class="palavra-destaque">Can you speak up?</span> I can barely hear you."</p>
+                        <p>"I SAID, HOW MUCH IS THE JACKET?"</p>
+                        <p>"Oh! Fifty reais."</p>
+                        <p>"That's not bad. <span class="palavra-destaque">Anyway</span>, see you later!"</p>
+                        <p>"Bye!"</p>
+                        <p style="text-align: center; color: #ccc; margin: 15px 0;">— — —</p>
+                        <p>After that, I <span class="palavra-destaque">tried</span> to <span class="palavra-destaque">call</span> my mom.<br>The phone <span class="palavra-destaque">rang</span> and <span class="palavra-destaque">rang</span>, but she didn't <span class="palavra-destaque">answer</span>.</p>
+                        <p>I <span class="palavra-destaque">left</span> a <span class="palavra-destaque">voicemail</span>: "Hi, Mom! It's me. I just wanted to say hi. <span class="palavra-destaque">Call</span> me back when you can. Love you!"</p>
+                        <p>My mom <span class="palavra-destaque">never</span> listens to <span class="palavra-destaque">voicemails</span>.<br>So I <span class="palavra-destaque">sent</span> a <span class="palavra-destaque">text message</span> instead: "Mom, I called you. Call me back 😊"</p>
+                        <p>She <span class="palavra-destaque">replied</span> in two seconds: "I'm here! What happened? Are you okay??"</p>
+                        <p>Moms. They <span class="palavra-destaque">always</span> think something is wrong.</p>
+                        <p>"I'm fine, Mom. I just wanted to talk."</p>
+                        <p>"Oh, okay. <span class="palavra-destaque">Sorry about that</span>. I was watching my show. <span class="palavra-destaque">Could you please</span> call me in ten minutes?"</p>
+                        <p>"<span class="palavra-destaque">Sure</span>, no problem."</p>
+                        <p>I <span class="palavra-destaque">called</span> her back in ten minutes.<br>We <span class="palavra-destaque">talked</span> for an hour.</p>
+                        <p>That <span class="palavra-destaque">always</span> happens too.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu não amo falar no telefone, mas <span class="palavra-destaque">às vezes</span> é o único jeito.</p>
+                        <p>Semana passada, eu <span class="palavra-destaque">queria</span> jantar em um restaurante legal.<br>Eu <span class="palavra-destaque">decidi</span> <span class="palavra-destaque">ligar</span> e fazer uma reserva.</p>
+                        <p>O telefone <span class="palavra-destaque">tocou</span> três vezes. Ninguém <span class="palavra-destaque">atendeu</span>.<br>Eu <span class="palavra-destaque">desliguei</span> e <span class="palavra-destaque">tentei</span> de novo.</p>
+                        <p>Dessa vez, alguém <span class="palavra-destaque">atendeu</span>.</p>
+                        <p>"Boa noite. Como posso ajudá-lo?"</p>
+                        <p>"Oi! <span class="palavra-destaque">Eu estava pensando</span> se vocês têm uma mesa para dois na sexta à noite."</p>
+                        <p>"<span class="palavra-destaque">Espere</span>, por favor. Deixe-me verificar."</p>
+                        <p>Eu <span class="palavra-destaque">esperei</span>. Tinha uma música tocando. Não era uma boa música.</p>
+                        <p>"Sim, temos uma mesa às oito. Está bom?"</p>
+                        <p>"<span class="palavra-destaque">Claro</span>, funciona. <span class="palavra-destaque">A propósito</span>, a que horas termina o jantar? Quer dizer, até que horas vocês ficam abertos?"</p>
+                        <p>"Fechamos às onze."</p>
+                        <p>"Perfeito. Obrigado!"</p>
+                        <p>"De nada. Até sexta!"</p>
+                        <p>Isso foi fácil. Mas ligações nem <span class="palavra-destaque">sempre</span> são fáceis.</p>
+                        <p style="text-align: center; color: #ccc; margin: 15px 0;">— — —</p>
+                        <p>Dez minutos depois, meu telefone <span class="palavra-destaque">tocou</span> de novo.</p>
+                        <p>"Alô?"</p>
+                        <p>"Oi, aqui é a Maria?"</p>
+                        <p>"Não, <span class="palavra-destaque">desculpe</span>. <span class="palavra-destaque">Número errado</span>."</p>
+                        <p>"Oh! Desculpa!"</p>
+                        <p>Eu <span class="palavra-destaque">desliguei</span>. Acontece.</p>
+                        <p style="text-align: center; color: #ccc; margin: 15px 0;">— — —</p>
+                        <p>Então minha amiga Ana me <span class="palavra-destaque">ligou</span>.</p>
+                        <p>"Ei! Estou na loja. Você precisa de alguma coisa?"</p>
+                        <p>"<span class="palavra-destaque">Na verdade</span>, sim! Você pode pegar leite pra mim?"</p>
+                        <p>"<span class="palavra-destaque">Claro</span>, <span class="palavra-destaque">sem problemas</span>. Mais alguma coisa?"</p>
+                        <p>"Hmm… <span class="palavra-destaque">talvez</span> pão também."</p>
+                        <p>"Tá. <span class="palavra-destaque">A propósito</span>, eu vi uma jaqueta ótima em promoção. Você ia adorar."</p>
+                        <p>"Sério? <span class="palavra-destaque">Quanto</span>?"</p>
+                        <p>"Não sei, o sinal está ruim. <span class="palavra-destaque">Pode falar mais alto?</span> Mal consigo te ouvir."</p>
+                        <p>"EU DISSE, QUANTO CUSTA A JAQUETA?"</p>
+                        <p>"Ah! Cinquenta reais."</p>
+                        <p>"Não é caro. <span class="palavra-destaque">De qualquer forma</span>, até mais!"</p>
+                        <p>"Tchau!"</p>
+                        <p style="text-align: center; color: #ccc; margin: 15px 0;">— — —</p>
+                        <p>Depois disso, eu <span class="palavra-destaque">tentei</span> <span class="palavra-destaque">ligar</span> para minha mãe.<br>O telefone <span class="palavra-destaque">tocou</span> e <span class="palavra-destaque">tocou</span>, mas ela não <span class="palavra-destaque">atendeu</span>.</p>
+                        <p>Eu <span class="palavra-destaque">deixei</span> uma mensagem na <span class="palavra-destaque">caixa postal</span>: "Oi, mãe! Sou eu. Só queria dizer oi. Me <span class="palavra-destaque">liga</span> quando puder. Te amo!"</p>
+                        <p>Minha mãe <span class="palavra-destaque">nunca</span> ouve <span class="palavra-destaque">mensagens de voz</span>.<br>Então eu <span class="palavra-destaque">mandei</span> uma <span class="palavra-destaque">mensagem de texto</span>: "Mãe, te liguei. Me liga de volta 😊"</p>
+                        <p>Ela <span class="palavra-destaque">respondeu</span> em dois segundos: "Estou aqui! O que aconteceu? Você está bem??"</p>
+                        <p>Mães. Elas <span class="palavra-destaque">sempre</span> acham que algo está errado.</p>
+                        <p>"Estou bem, mãe. Só queria conversar."</p>
+                        <p>"Ah, tá. <span class="palavra-destaque">Desculpe por isso</span>. Eu estava assistindo minha novela. <span class="palavra-destaque">Você poderia por favor</span> me ligar em dez minutos?"</p>
+                        <p>"<span class="palavra-destaque">Claro</span>, sem problema."</p>
+                        <p>Eu <span class="palavra-destaque">liguei</span> de volta em dez minutos.<br>Nós <span class="palavra-destaque">conversamos</span> por uma hora.</p>
+                        <p>Isso <span class="palavra-destaque">sempre</span> acontece também.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I don't love talking on the phone, but <span class="palavra-destaque">sometimes</span> it is the only way.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu não amo falar no telefone, mas <span class="palavra-destaque">às vezes</span> é o único jeito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last week, I <span class="palavra-destaque">wanted</span> to have dinner at a nice restaurant.</div>
+                            <div style="color: #666; font-size: 0.95em;">Semana passada, eu <span class="palavra-destaque">queria</span> jantar em um restaurante legal.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">decided</span> to <span class="palavra-destaque">call</span> and make a reservation.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">decidi</span> <span class="palavra-destaque">ligar</span> e fazer uma reserva.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The phone <span class="palavra-destaque">rang</span> three times. Nobody <span class="palavra-destaque">answered</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">O telefone <span class="palavra-destaque">tocou</span> três vezes. Ninguém <span class="palavra-destaque">atendeu</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">hung up</span> and <span class="palavra-destaque">tried</span> again.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">desliguei</span> e <span class="palavra-destaque">tentei</span> de novo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">This time, someone <span class="palavra-destaque">picked up</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Dessa vez, alguém <span class="palavra-destaque">atendeu</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Hi! <span class="palavra-destaque">I was wondering</span> if you have a table for two on Friday night."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Oi! <span class="palavra-destaque">Eu estava pensando</span> se vocês têm uma mesa para dois na sexta à noite."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Hold on</span>, please. Let me check."</div>
+                            <div style="color: #666; font-size: 0.95em;">"<span class="palavra-destaque">Espere</span>, por favor. Deixe-me verificar."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Sure</span>, that works. <span class="palavra-destaque">By the way</span>, what time is dinner over?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"<span class="palavra-destaque">Claro</span>, funciona. <span class="palavra-destaque">A propósito</span>, a que horas termina o jantar?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">That was easy. But phone calls are not <span class="palavra-destaque">always</span> easy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Isso foi fácil. Mas ligações nem <span class="palavra-destaque">sempre</span> são fáceis.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"No, <span class="palavra-destaque">sorry about that</span>. <span class="palavra-destaque">Wrong number</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não, <span class="palavra-destaque">desculpe</span>. <span class="palavra-destaque">Número errado</span>."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Actually</span>, yes! Can you get me some milk?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"<span class="palavra-destaque">Na verdade</span>, sim! Você pode pegar leite pra mim?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Sure</span>, <span class="palavra-destaque">no worries</span>. Anything else?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"<span class="palavra-destaque">Claro</span>, <span class="palavra-destaque">sem problemas</span>. Mais alguma coisa?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I don't know, the signal is bad. <span class="palavra-destaque">Can you speak up?</span> I can barely hear you."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não sei, o sinal está ruim. <span class="palavra-destaque">Pode falar mais alto?</span> Mal consigo te ouvir."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"That's not bad. <span class="palavra-destaque">Anyway</span>, see you later!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não é caro. <span class="palavra-destaque">De qualquer forma</span>, até mais!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">left</span> a <span class="palavra-destaque">voicemail</span>: "Hi, Mom! It's me. <span class="palavra-destaque">Call</span> me back when you can."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu <span class="palavra-destaque">deixei</span> uma mensagem na <span class="palavra-destaque">caixa postal</span>: "Oi, mãe! Sou eu. Me <span class="palavra-destaque">liga</span> quando puder."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">never</span> listens to <span class="palavra-destaque">voicemails</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe <span class="palavra-destaque">nunca</span> ouve <span class="palavra-destaque">mensagens de voz</span>.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">replied</span> in two seconds: "I'm here! What happened? Are you okay??"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela <span class="palavra-destaque">respondeu</span> em dois segundos: "Estou aqui! O que aconteceu? Você está bem??"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Moms. They <span class="palavra-destaque">always</span> think something is wrong.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mães. Elas <span class="palavra-destaque">sempre</span> acham que algo está errado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Sorry about that</span>. I was watching my show. <span class="palavra-destaque">Could you please</span> call me in ten minutes?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"<span class="palavra-destaque">Desculpe por isso</span>. Eu estava assistindo minha novela. <span class="palavra-destaque">Você poderia por favor</span> me ligar em dez minutos?"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">talked</span> for an hour. That <span class="palavra-destaque">always</span> happens too.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós <span class="palavra-destaque">conversamos</span> por uma hora. Isso <span class="palavra-destaque">sempre</span> acontece também.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. CALL 📞</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ligar / ligação</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I decided to call and make a reservation"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Verbo e substantivo ao mesmo tempo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. HANG UP 📵</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desligar o telefone</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I hung up and tried again"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Phrasal verb — passado: "hung up"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. PICK UP 📱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Atender o telefone</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "This time, someone picked up"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sinônimo informal de "answer"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. HOLD ON ✋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Espere / aguarde</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Hold on, please. Let me check."</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muito usado no telefone</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. SPEAK UP 🔊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Falar mais alto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Can you speak up? I can barely hear you."</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "speak" + "up" = aumentar o volume da voz</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. WRONG NUMBER ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Número errado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Sorry about that. Wrong number."</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Situação comum em ligações</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. VOICEMAIL 📬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Caixa postal / mensagem de voz</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I left a voicemail"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "voice" + "mail" = correio de voz</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. TEXT MESSAGE 💬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mensagem de texto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I sent a text message instead"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "text" também é verbo: "I texted her"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. RING 🔔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tocar (telefone)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The phone rang three times"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Passado irregular: "rang"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. SIGNAL 📶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sinal (de celular)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The signal is bad"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "bad signal" = sinal ruim</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 07 — Semana 7</strong></p>
+        <p>Cada dia de estudo te aproxima do seu objetivo! 🚀</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
+        let deferredPrompt = null;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function checkIfMobileAndShowBanner() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+            const isInPWAMode = window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone || isInPWAMode) return;
+            if (isMobile && !installPromptShown) {
+                setTimeout(() => { showInstallPrompt(); }, 2000);
+            }
+        }
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner && !installPromptShown) {
+                banner.style.display = 'flex';
+                installPromptShown = true;
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(() => closeInstallPrompt());
+            } else {
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
