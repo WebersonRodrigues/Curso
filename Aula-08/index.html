@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 08 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 08 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 08</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 08 - Semana 8</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 3</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 08</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de saúde e consulta médica, além de direções, transporte e lugares da cidade em inglês.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ At the Doctor's Office</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Consulta médica — sintomas, exame, receita, farmácia</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> headache, sore throat, fever, cough, appointment, prescription, medicine, pill, nurse, patient, pharmacy, thermometer</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Getting Around the City</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Pedir direções, transporte público, lugares da cidade, preposições de lugar</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> go straight, turn right/left, next to, between, near, how far, bus stop, traffic light, pharmacy, post office, library, bakery</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: At the Doctor's Office -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: At the Doctor's Office</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-at-the-doctors-office.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-at-the-doctors-office.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I don't <span class="palavra-destaque">feel</span> well today. My head <span class="palavra-destaque">hurts</span> and my throat is <span class="palavra-destaque">sore</span>.</p>
+                        <p>I <span class="palavra-destaque">wake up</span> in the morning and <span class="palavra-destaque">feel</span> terrible.<br>My mom <span class="palavra-destaque">checks</span> my temperature with a thermometer. It says 38 degrees. I have a <span class="palavra-destaque">fever</span>.</p>
+                        <p>"You are staying home today," my mom <span class="palavra-destaque">says</span>. "I'm taking you to the doctor."</p>
+                        <p>My mom <span class="palavra-destaque">calls</span> the clinic and <span class="palavra-destaque">makes</span> an appointment.<br>She <span class="palavra-destaque">says</span> to me: "We have an appointment at ten. Get dressed."</p>
+                        <p>I <span class="palavra-destaque">get dressed</span> slowly. I feel tired and my body <span class="palavra-destaque">aches</span>.<br>My mom <span class="palavra-destaque">grabs</span> her bag and we <span class="palavra-destaque">take</span> a bus to the clinic.</p>
+                        <p>At the clinic, my mom <span class="palavra-destaque">checks in</span> at the front desk.<br>The receptionist <span class="palavra-destaque">gives</span> her a form to fill out.<br>My mom <span class="palavra-destaque">writes</span> my name, my age, and my symptoms.</p>
+                        <p>We <span class="palavra-destaque">sit</span> in the waiting room. There are other patients there.<br>A woman <span class="palavra-destaque">coughs</span>. A man <span class="palavra-destaque">holds</span> his arm. A little boy <span class="palavra-destaque">cries</span>.</p>
+                        <p>After fifteen minutes, the nurse <span class="palavra-destaque">calls</span> my name.<br>"You can come in now."</p>
+                        <p>I <span class="palavra-destaque">follow</span> her to a small room. My mom <span class="palavra-destaque">comes</span> with me.<br>The nurse <span class="palavra-destaque">checks</span> my temperature again.<br>She <span class="palavra-destaque">asks</span>: "How are you feeling today?"</p>
+                        <p>I <span class="palavra-destaque">say</span>: "My head hurts, my throat hurts, and I feel very tired."</p>
+                        <p>She <span class="palavra-destaque">writes</span> everything down and <span class="palavra-destaque">says</span>: "The doctor will see you in a moment."</p>
+                        <p>The doctor <span class="palavra-destaque">comes in</span> and <span class="palavra-destaque">smiles</span>.<br>"Good morning! What seems to be the problem?"</p>
+                        <p>My mom <span class="palavra-destaque">explains</span>: "He woke up with a fever and a sore throat."</p>
+                        <p>The doctor <span class="palavra-destaque">looks</span> at my throat with a small light.<br>He <span class="palavra-destaque">listens</span> to my chest with a stethoscope.<br>He <span class="palavra-destaque">checks</span> my ears.</p>
+                        <p>"You have a throat infection," he <span class="palavra-destaque">says</span>. "Nothing too serious, but you need rest."</p>
+                        <p>He <span class="palavra-destaque">talks</span> to my mom: "<span class="palavra-destaque">Give</span> him this antibiotic twice a day, after meals. And make sure he <span class="palavra-destaque">drinks</span> plenty of water."</p>
+                        <p>I <span class="palavra-destaque">ask</span>: "How long will it take to get better?"</p>
+                        <p>He <span class="palavra-destaque">answers</span>: "You should feel better in three to five days. If the fever doesn't go away, come back."</p>
+                        <p>My mom <span class="palavra-destaque">thanks</span> him and we <span class="palavra-destaque">leave</span> the room.</p>
+                        <p>At the pharmacy, my mom <span class="palavra-destaque">shows</span> the prescription.<br>The pharmacist <span class="palavra-destaque">gives</span> her the medicine and <span class="palavra-destaque">explains</span> how to take it.</p>
+                        <p>"One pill in the morning and one at night. <span class="palavra-destaque">Don't skip</span> any doses."</p>
+                        <p>We <span class="palavra-destaque">go</span> home. My mom <span class="palavra-destaque">gives</span> me the first pill and <span class="palavra-destaque">makes</span> me some tea.<br>I <span class="palavra-destaque">lie down</span> on the couch and <span class="palavra-destaque">rest</span>.</p>
+                        <p>My mom <span class="palavra-destaque">covers</span> me with a blanket and <span class="palavra-destaque">says</span>: "Sleep a little. You'll feel better soon."</p>
+                        <p>The next day, I <span class="palavra-destaque">feel</span> a little better.<br>My throat still <span class="palavra-destaque">hurts</span>, but the fever is gone.</p>
+                        <p>After three days, I <span class="palavra-destaque">feel</span> much better.<br>I <span class="palavra-destaque">finish</span> all the medicine, just like the doctor <span class="palavra-destaque">said</span>.</p>
+                        <p>I <span class="palavra-destaque">learn</span> something important: when you feel sick, tell your mom or dad. They know what to do!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu não me <span class="palavra-destaque">sinto</span> bem hoje. Minha cabeça <span class="palavra-destaque">dói</span> e minha garganta está <span class="palavra-destaque">dolorida</span>.</p>
+                        <p>Eu <span class="palavra-destaque">acordo</span> de manhã e me <span class="palavra-destaque">sinto</span> péssimo.<br>Minha mãe <span class="palavra-destaque">verifica</span> minha temperatura com um termômetro. Marca 38 graus. Eu estou com <span class="palavra-destaque">febre</span>.</p>
+                        <p>"Você vai ficar em casa hoje," minha mãe <span class="palavra-destaque">diz</span>. "Vou te levar ao médico."</p>
+                        <p>Minha mãe <span class="palavra-destaque">liga</span> para a clínica e <span class="palavra-destaque">marca</span> uma consulta.<br>Ela me <span class="palavra-destaque">diz</span>: "Temos consulta às dez. Se vista."</p>
+                        <p>Eu me <span class="palavra-destaque">visto</span> devagar. Me sinto cansado e meu corpo <span class="palavra-destaque">dói</span>.<br>Minha mãe <span class="palavra-destaque">pega</span> a bolsa e nós <span class="palavra-destaque">pegamos</span> um ônibus para a clínica.</p>
+                        <p>Na clínica, minha mãe <span class="palavra-destaque">faz o check-in</span> na recepção.<br>A recepcionista <span class="palavra-destaque">dá</span> um formulário para ela preencher.<br>Minha mãe <span class="palavra-destaque">escreve</span> meu nome, minha idade e meus sintomas.</p>
+                        <p>Nós <span class="palavra-destaque">sentamos</span> na sala de espera. Há outros pacientes lá.<br>Uma mulher <span class="palavra-destaque">tosse</span>. Um homem <span class="palavra-destaque">segura</span> o braço. Um menino <span class="palavra-destaque">chora</span>.</p>
+                        <p>Depois de quinze minutos, a enfermeira <span class="palavra-destaque">chama</span> meu nome.<br>"Vocês podem entrar agora."</p>
+                        <p>Eu a <span class="palavra-destaque">sigo</span> até uma sala pequena. Minha mãe <span class="palavra-destaque">vem</span> comigo.<br>A enfermeira <span class="palavra-destaque">verifica</span> minha temperatura de novo.<br>Ela <span class="palavra-destaque">pergunta</span>: "Como você está se sentindo hoje?"</p>
+                        <p>Eu <span class="palavra-destaque">digo</span>: "Minha cabeça dói, minha garganta dói, e me sinto muito cansado."</p>
+                        <p>Ela <span class="palavra-destaque">anota</span> tudo e <span class="palavra-destaque">diz</span>: "O médico vai atendê-lo em um momento."</p>
+                        <p>O médico <span class="palavra-destaque">entra</span> e <span class="palavra-destaque">sorri</span>.<br>"Bom dia! Qual parece ser o problema?"</p>
+                        <p>Minha mãe <span class="palavra-destaque">explica</span>: "Ele acordou com febre e dor de garganta."</p>
+                        <p>O médico <span class="palavra-destaque">olha</span> minha garganta com uma luzinha.<br>Ele <span class="palavra-destaque">escuta</span> meu peito com um estetoscópio.<br>Ele <span class="palavra-destaque">examina</span> meus ouvidos.</p>
+                        <p>"Você tem uma infecção na garganta," ele <span class="palavra-destaque">diz</span>. "Nada muito sério, mas você precisa descansar."</p>
+                        <p>Ele <span class="palavra-destaque">fala</span> com minha mãe: "<span class="palavra-destaque">Dê</span> a ele este antibiótico duas vezes ao dia, após as refeições. E garanta que ele <span class="palavra-destaque">beba</span> bastante água."</p>
+                        <p>Eu <span class="palavra-destaque">pergunto</span>: "Quanto tempo vai levar para melhorar?"</p>
+                        <p>Ele <span class="palavra-destaque">responde</span>: "Você deve se sentir melhor em três a cinco dias. Se a febre não passar, voltem."</p>
+                        <p>Minha mãe <span class="palavra-destaque">agradece</span> e nós <span class="palavra-destaque">saímos</span> da sala.</p>
+                        <p>Na farmácia, minha mãe <span class="palavra-destaque">mostra</span> a receita.<br>O farmacêutico <span class="palavra-destaque">dá</span> o remédio e <span class="palavra-destaque">explica</span> como tomar.</p>
+                        <p>"Um comprimido de manhã e um à noite. <span class="palavra-destaque">Não pule</span> nenhuma dose."</p>
+                        <p>Nós <span class="palavra-destaque">vamos</span> para casa. Minha mãe me <span class="palavra-destaque">dá</span> o primeiro comprimido e <span class="palavra-destaque">faz</span> um chá para mim.<br>Eu <span class="palavra-destaque">deito</span> no sofá e <span class="palavra-destaque">descanso</span>.</p>
+                        <p>Minha mãe me <span class="palavra-destaque">cobre</span> com um cobertor e <span class="palavra-destaque">diz</span>: "Dorme um pouco. Você vai melhorar logo."</p>
+                        <p>No dia seguinte, eu me <span class="palavra-destaque">sinto</span> um pouco melhor.<br>Minha garganta ainda <span class="palavra-destaque">dói</span>, mas a febre passou.</p>
+                        <p>Depois de três dias, eu me <span class="palavra-destaque">sinto</span> muito melhor.<br>Eu <span class="palavra-destaque">termino</span> todo o remédio, assim como o médico <span class="palavra-destaque">disse</span>.</p>
+                        <p>Eu <span class="palavra-destaque">aprendo</span> algo importante: quando você se sentir mal, conte para sua mãe ou seu pai. Eles sabem o que fazer!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I don't <span class="palavra-destaque">feel</span> well today. My head <span class="palavra-destaque">hurts</span> and my throat is <span class="palavra-destaque">sore</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu não me sinto bem hoje. Minha cabeça dói e minha garganta está dolorida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">wake up</span> in the morning and <span class="palavra-destaque">feel</span> terrible.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acordo de manhã e me sinto péssimo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">checks</span> my temperature with a thermometer. It says 38 degrees. I have a <span class="palavra-destaque">fever</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe verifica minha temperatura com um termômetro. Marca 38 graus. Eu estou com febre.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"You are staying home today," my mom <span class="palavra-destaque">says</span>. "I'm taking you to the doctor."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Você vai ficar em casa hoje," minha mãe diz. "Vou te levar ao médico."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">calls</span> the clinic and <span class="palavra-destaque">makes</span> an <span class="palavra-destaque">appointment</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe liga para a clínica e marca uma consulta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">get dressed</span> slowly. I feel tired and my body <span class="palavra-destaque">aches</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu me visto devagar. Me sinto cansado e meu corpo dói.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the clinic, my mom <span class="palavra-destaque">checks in</span> at the front desk.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na clínica, minha mãe faz o check-in na recepção.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">sit</span> in the waiting room. There are other patients there.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós sentamos na sala de espera. Há outros pacientes lá.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After fifteen minutes, the <span class="palavra-destaque">nurse</span> calls my name.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de quinze minutos, a enfermeira chama meu nome.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">say</span>: "My head hurts, my throat hurts, and I feel very tired."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu digo: "Minha cabeça dói, minha garganta dói, e me sinto muito cansado."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The doctor comes in and smiles. "Good morning! What seems to be the problem?"</div>
+                            <div style="color: #666; font-size: 0.95em;">O médico entra e sorri. "Bom dia! Qual parece ser o problema?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">explains</span>: "He woke up with a fever and a sore throat."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe explica: "Ele acordou com febre e dor de garganta."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"You have a throat infection," he <span class="palavra-destaque">says</span>. "Nothing too serious, but you need rest."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Você tem uma infecção na garganta," ele diz. "Nada muito sério, mas você precisa descansar."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He talks to my mom: "Give him this antibiotic twice a day, after meals."</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele fala com minha mãe: "Dê a ele este antibiótico duas vezes ao dia, após as refeições."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">ask</span>: "How long will it take to get better?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu pergunto: "Quanto tempo vai levar para melhorar?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the <span class="palavra-destaque">pharmacy</span>, my mom shows the <span class="palavra-destaque">prescription</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na farmácia, minha mãe mostra a receita.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"One pill in the morning and one at night. Don't skip any doses."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Um comprimido de manhã e um à noite. Não pule nenhuma dose."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">covers</span> me with a <span class="palavra-destaque">blanket</span> and says: "Sleep a little. You'll feel better soon."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe me cobre com um cobertor e diz: "Dorme um pouco. Você vai melhorar logo."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After three days, I <span class="palavra-destaque">feel</span> much better. I finish all the medicine, just like the doctor said.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de três dias, eu me sinto muito melhor. Eu termino todo o remédio, assim como o médico disse.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">learn</span> something important: when you feel sick, tell your mom or dad. They know what to do!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu aprendo algo importante: quando você se sentir mal, conte para sua mãe ou seu pai. Eles sabem o que fazer!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Headache 🤕</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Dor de cabeça</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My head hurts"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "head" + "ache" (dor)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Fever 🌡️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Febre</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have a fever"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Sore throat 😷</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Garganta inflamada</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My throat is sore"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "sore" = dolorido/inflamado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Appointment 📅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Consulta / compromisso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We have an appointment at ten"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "make an appointment" = marcar consulta</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Prescription 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Receita médica</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My mom shows the prescription"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O médico "prescribes" (receita)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Medicine 💊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Remédio / medicamento</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Give him this antibiotic twice a day"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Também "medication"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Nurse 👩‍⚕️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Enfermeiro(a)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The nurse calls my name"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Profissional de saúde</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Pharmacy 🏪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Farmácia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At the pharmacy, my mom shows the prescription"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Também "drugstore" nos EUA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Getting Around the City -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Getting Around the City</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-getting-around-the-city.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-getting-around-the-city.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today I <span class="palavra-destaque">go</span> with my grandmother to the city. She <span class="palavra-destaque">needs</span> to do some things, and I <span class="palavra-destaque">want</span> to help.</p>
+                        <p>We <span class="palavra-destaque">leave</span> the house together. The street is busy.<br>Cars, buses, and motorcycles <span class="palavra-destaque">pass</span> by. I <span class="palavra-destaque">hold</span> my grandmother's hand.</p>
+                        <p>First, we need to find the <span class="palavra-destaque">pharmacy</span>.<br>My grandmother <span class="palavra-destaque">stops</span> and <span class="palavra-destaque">asks</span> a woman on the sidewalk:<br>"<span class="palavra-destaque">Excuse me</span>, do you know where the pharmacy is?"</p>
+                        <p>The woman <span class="palavra-destaque">smiles</span> and <span class="palavra-destaque">says</span>:<br>"Sure! <span class="palavra-destaque">Go straight</span> for two blocks, then <span class="palavra-destaque">turn right</span>. It's <span class="palavra-destaque">next to</span> the bakery."</p>
+                        <p>We <span class="palavra-destaque">walk</span> two blocks and <span class="palavra-destaque">turn right</span>.<br>I <span class="palavra-destaque">see</span> the bakery — and right <span class="palavra-destaque">next to</span> it, the pharmacy. I found it!</p>
+                        <p>My grandmother <span class="palavra-destaque">goes inside</span> and <span class="palavra-destaque">buys</span> her medicine. I <span class="palavra-destaque">wait</span> near the door.</p>
+                        <p>Now we need the <span class="palavra-destaque">post office</span>. But where is it?</p>
+                        <p>My grandmother <span class="palavra-destaque">asks</span> a man at the bus stop:<br>"<span class="palavra-destaque">Excuse me</span>, <span class="palavra-destaque">how do I get to</span> the post office?"</p>
+                        <p>He <span class="palavra-destaque">says</span>: "It's a bit far. You should <span class="palavra-destaque">take</span> the bus. The number 42 <span class="palavra-destaque">stops</span> right in front of it."</p>
+                        <p>"<span class="palavra-destaque">How far</span> is it?"<br>"About ten minutes by bus."</p>
+                        <p>We <span class="palavra-destaque">wait</span> for the bus. It <span class="palavra-destaque">arrives</span> in five minutes.<br>We <span class="palavra-destaque">get on</span> and <span class="palavra-destaque">pay</span> the fare. I <span class="palavra-destaque">sit</span> near the window.</p>
+                        <p>I <span class="palavra-destaque">watch</span> the city through the window.<br>I <span class="palavra-destaque">see</span> a <span class="palavra-destaque">gas station</span>, a <span class="palavra-destaque">hospital</span>, a <span class="palavra-destaque">school</span>, and a big <span class="palavra-destaque">park</span> with trees.<br>I <span class="palavra-destaque">point</span> and <span class="palavra-destaque">say</span>: "Look, grandma! That park is huge!"</p>
+                        <p>The bus <span class="palavra-destaque">stops</span>. We <span class="palavra-destaque">get off</span> in front of the post office.</p>
+                        <p>Inside, my grandmother <span class="palavra-destaque">sends</span> a package to my uncle in another city.<br>The clerk <span class="palavra-destaque">asks</span>: "Where is this going?"<br>My grandmother <span class="palavra-destaque">gives</span> the address and <span class="palavra-destaque">pays</span> for the shipping.</p>
+                        <p>Done! Now the last stop: the <span class="palavra-destaque">library</span>.</p>
+                        <p>My grandmother <span class="palavra-destaque">asks</span> a security guard: "<span class="palavra-destaque">Excuse me</span>, is the library <span class="palavra-destaque">near here</span>?"</p>
+                        <p>He <span class="palavra-destaque">points</span> down the street and <span class="palavra-destaque">says</span>:<br>"Yes! <span class="palavra-destaque">Go straight</span> and <span class="palavra-destaque">turn left</span> at the traffic light. It's <span class="palavra-destaque">between</span> the church and the fire station. You can't miss it."</p>
+                        <p>We <span class="palavra-destaque">walk</span> past a <span class="palavra-destaque">restaurant</span>, a <span class="palavra-destaque">hair salon</span>, and a <span class="palavra-destaque">pet shop</span>.<br>I <span class="palavra-destaque">look</span> at the animals in the pet shop window. So cute!</p>
+                        <p>At the <span class="palavra-destaque">traffic light</span>, we <span class="palavra-destaque">turn left</span>.</p>
+                        <p>And there it is — the library, right <span class="palavra-destaque">between</span> the church and the fire station.</p>
+                        <p>We <span class="palavra-destaque">go inside</span>. The library is quiet and cool.<br>My grandmother <span class="palavra-destaque">finds</span> a book for her. I <span class="palavra-destaque">choose</span> a book with pictures.<br>We <span class="palavra-destaque">sit</span> at a table and <span class="palavra-destaque">read</span> together.</p>
+                        <p>On our way home, we <span class="palavra-destaque">walk</span> slowly.<br>We <span class="palavra-destaque">pass</span> by a <span class="palavra-destaque">flower shop</span>, a <span class="palavra-destaque">laundromat</span>, and a <span class="palavra-destaque">parking lot</span>.</p>
+                        <p>I <span class="palavra-destaque">feel</span> happy. I <span class="palavra-destaque">helped</span> my grandmother today.</p>
+                        <p>She <span class="palavra-destaque">smiles</span> and <span class="palavra-destaque">says</span>: "Thank you for coming with me. You are a great helper!"</p>
+                        <p>I <span class="palavra-destaque">learned</span> something today: when you don't know where to go, just <span class="palavra-destaque">ask</span>.<br>People are usually happy to help.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje eu <span class="palavra-destaque">vou</span> com minha avó para a cidade. Ela <span class="palavra-destaque">precisa</span> fazer algumas coisas, e eu <span class="palavra-destaque">quero</span> ajudar.</p>
+                        <p>Nós <span class="palavra-destaque">saímos</span> de casa juntos. A rua está movimentada.<br>Carros, ônibus e motos <span class="palavra-destaque">passam</span>. Eu <span class="palavra-destaque">seguro</span> a mão da minha avó.</p>
+                        <p>Primeiro, precisamos encontrar a <span class="palavra-destaque">farmácia</span>.<br>Minha avó <span class="palavra-destaque">para</span> e <span class="palavra-destaque">pergunta</span> a uma mulher na calçada:<br>"<span class="palavra-destaque">Com licença</span>, você sabe onde fica a farmácia?"</p>
+                        <p>A mulher <span class="palavra-destaque">sorri</span> e <span class="palavra-destaque">diz</span>:<br>"Claro! <span class="palavra-destaque">Siga em frente</span> por dois quarteirões, depois <span class="palavra-destaque">vire à direita</span>. Fica <span class="palavra-destaque">ao lado</span> da padaria."</p>
+                        <p>Nós <span class="palavra-destaque">andamos</span> dois quarteirões e <span class="palavra-destaque">viramos à direita</span>.<br>Eu <span class="palavra-destaque">vejo</span> a padaria — e bem <span class="palavra-destaque">ao lado</span> dela, a farmácia. Eu achei!</p>
+                        <p>Minha avó <span class="palavra-destaque">entra</span> e <span class="palavra-destaque">compra</span> o remédio dela. Eu <span class="palavra-destaque">espero</span> perto da porta.</p>
+                        <p>Agora precisamos do <span class="palavra-destaque">correio</span>. Mas onde fica?</p>
+                        <p>Minha avó <span class="palavra-destaque">pergunta</span> a um homem no ponto de ônibus:<br>"<span class="palavra-destaque">Com licença</span>, <span class="palavra-destaque">como eu chego</span> ao correio?"</p>
+                        <p>Ele <span class="palavra-destaque">diz</span>: "É um pouco longe. Vocês deveriam <span class="palavra-destaque">pegar</span> o ônibus. O 42 <span class="palavra-destaque">para</span> bem na frente."</p>
+                        <p>"<span class="palavra-destaque">Qual a distância</span>?"<br>"Uns dez minutos de ônibus."</p>
+                        <p>Nós <span class="palavra-destaque">esperamos</span> o ônibus. Ele <span class="palavra-destaque">chega</span> em cinco minutos.<br>Nós <span class="palavra-destaque">embarcamos</span> e <span class="palavra-destaque">pagamos</span> a passagem. Eu <span class="palavra-destaque">sento</span> perto da janela.</p>
+                        <p>Eu <span class="palavra-destaque">observo</span> a cidade pela janela.<br>Eu <span class="palavra-destaque">vejo</span> um <span class="palavra-destaque">posto de gasolina</span>, um <span class="palavra-destaque">hospital</span>, uma <span class="palavra-destaque">escola</span> e um grande <span class="palavra-destaque">parque</span> com árvores.<br>Eu <span class="palavra-destaque">aponto</span> e <span class="palavra-destaque">digo</span>: "Olha, vó! Aquele parque é enorme!"</p>
+                        <p>O ônibus <span class="palavra-destaque">para</span>. Nós <span class="palavra-destaque">descemos</span> em frente ao correio.</p>
+                        <p>Dentro, minha avó <span class="palavra-destaque">envia</span> um pacote para meu tio em outra cidade.<br>O atendente <span class="palavra-destaque">pergunta</span>: "Para onde vai?"<br>Minha avó <span class="palavra-destaque">dá</span> o endereço e <span class="palavra-destaque">paga</span> pelo envio.</p>
+                        <p>Pronto! Agora a última parada: a <span class="palavra-destaque">biblioteca</span>.</p>
+                        <p>Minha avó <span class="palavra-destaque">pergunta</span> a um segurança: "<span class="palavra-destaque">Com licença</span>, a biblioteca fica <span class="palavra-destaque">perto daqui</span>?"</p>
+                        <p>Ele <span class="palavra-destaque">aponta</span> rua abaixo e <span class="palavra-destaque">diz</span>:<br>"Sim! <span class="palavra-destaque">Siga em frente</span> e <span class="palavra-destaque">vire à esquerda</span> no semáforo. Fica <span class="palavra-destaque">entre</span> a igreja e o corpo de bombeiros. Não tem como errar."</p>
+                        <p>Nós <span class="palavra-destaque">passamos</span> por um <span class="palavra-destaque">restaurante</span>, um <span class="palavra-destaque">salão de beleza</span> e um <span class="palavra-destaque">pet shop</span>.<br>Eu <span class="palavra-destaque">olho</span> os animais na vitrine do pet shop. Que fofos!</p>
+                        <p>No <span class="palavra-destaque">semáforo</span>, nós <span class="palavra-destaque">viramos à esquerda</span>.</p>
+                        <p>E lá está — a biblioteca, bem <span class="palavra-destaque">entre</span> a igreja e o corpo de bombeiros.</p>
+                        <p>Nós <span class="palavra-destaque">entramos</span>. A biblioteca é silenciosa e fresca.<br>Minha avó <span class="palavra-destaque">encontra</span> um livro para ela. Eu <span class="palavra-destaque">escolho</span> um livro com figuras.<br>Nós <span class="palavra-destaque">sentamos</span> em uma mesa e <span class="palavra-destaque">lemos</span> juntos.</p>
+                        <p>No caminho de casa, nós <span class="palavra-destaque">andamos</span> devagar.<br>Nós <span class="palavra-destaque">passamos</span> por uma <span class="palavra-destaque">floricultura</span>, uma <span class="palavra-destaque">lavanderia</span> e um <span class="palavra-destaque">estacionamento</span>.</p>
+                        <p>Eu me <span class="palavra-destaque">sinto</span> feliz. Eu <span class="palavra-destaque">ajudei</span> minha avó hoje.</p>
+                        <p>Ela <span class="palavra-destaque">sorri</span> e <span class="palavra-destaque">diz</span>: "Obrigada por vir comigo. Você é um ótimo ajudante!"</p>
+                        <p>Hoje eu <span class="palavra-destaque">aprendi</span> algo: quando você não sabe para onde ir, apenas <span class="palavra-destaque">pergunte</span>.<br>As pessoas geralmente ficam felizes em ajudar.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today I <span class="palavra-destaque">go</span> with my <span class="palavra-destaque">grandmother</span> to the city. She needs to do some things, and I want to help.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje eu vou com minha avó para a cidade. Ela precisa fazer algumas coisas, e eu quero ajudar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">leave</span> the house together. The street is busy. I <span class="palavra-destaque">hold</span> my grandmother's hand.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós saímos de casa juntos. A rua está movimentada. Eu seguro a mão da minha avó.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Excuse me, do you know where the pharmacy is?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Com licença, você sabe onde fica a farmácia?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Go straight</span> for two blocks, then <span class="palavra-destaque">turn right</span>. It's <span class="palavra-destaque">next to</span> the bakery."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Siga em frente por dois quarteirões, depois vire à direita. Fica ao lado da padaria."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">see</span> the bakery — and right next to it, the pharmacy. I found it!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu vejo a padaria — e bem ao lado dela, a farmácia. Eu achei!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Excuse me, how do I get to the post office?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Com licença, como eu chego ao correio?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"It's a bit far. You should take the bus. The number 42 <span class="palavra-destaque">stops</span> right in front of it."</div>
+                            <div style="color: #666; font-size: 0.95em;">"É um pouco longe. Vocês deveriam pegar o ônibus. O 42 para bem na frente."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">get on</span> and <span class="palavra-destaque">pay</span> the fare. I <span class="palavra-destaque">sit</span> near the window.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós embarcamos e pagamos a passagem. Eu sento perto da janela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">see</span> a gas station, a hospital, a school, and a big park with trees.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu vejo um posto de gasolina, um hospital, uma escola e um grande parque com árvores.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">point</span> and say: "Look, grandma! That park is huge!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu aponto e digo: "Olha, vó! Aquele parque é enorme!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The bus stops. We <span class="palavra-destaque">get off</span> in front of the post office.</div>
+                            <div style="color: #666; font-size: 0.95em;">O ônibus para. Nós descemos em frente ao correio.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Go straight</span> and <span class="palavra-destaque">turn left</span> at the <span class="palavra-destaque">traffic light</span>. It's <span class="palavra-destaque">between</span> the church and the fire station. You can't miss it."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Siga em frente e vire à esquerda no semáforo. Fica entre a igreja e o corpo de bombeiros. Não tem como errar."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I look at the animals in the pet shop window. So cute!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu olho os animais na vitrine do pet shop. Que fofos!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">And there it is — the <span class="palavra-destaque">library</span>, right <span class="palavra-destaque">between</span> the church and the fire station.</div>
+                            <div style="color: #666; font-size: 0.95em;">E lá está — a biblioteca, bem entre a igreja e o corpo de bombeiros.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My grandmother <span class="palavra-destaque">finds</span> a book for her. I <span class="palavra-destaque">choose</span> a book with pictures. We <span class="palavra-destaque">sit</span> at a table and <span class="palavra-destaque">read</span> together.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha avó encontra um livro para ela. Eu escolho um livro com figuras. Nós sentamos em uma mesa e lemos juntos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">feel</span> happy. I <span class="palavra-destaque">helped</span> my grandmother today.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu me sinto feliz. Eu ajudei minha avó hoje.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">smiles</span> and says: "Thank you for coming with me. You are a great helper!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela sorri e diz: "Obrigada por vir comigo. Você é um ótimo ajudante!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">learned</span> something today: when you don't know where to go, just <span class="palavra-destaque">ask</span>. People are usually happy to help.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje eu aprendi algo: quando você não sabe para onde ir, apenas pergunte. As pessoas geralmente ficam felizes em ajudar.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Go straight ➡️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Siga em frente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Go straight for two blocks"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Comando mais comum para direções</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Turn right/left ↩️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vire à direita/esquerda</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Turn left at the traffic light"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> right = direita, left = esquerda</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Next to 📍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ao lado de</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's next to the bakery"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Preposição de lugar essencial</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Between ↔️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Entre</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's between the church and the fire station"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sempre entre dois lugares</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Library 📚</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Biblioteca</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Is the library near here?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> NÃO é "livraria" (bookstore)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Traffic light 🚦</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Semáforo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Turn left at the traffic light"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "traffic" = trânsito</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Get on / Get off 🚌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Embarcar / Desembarcar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We get on the bus / We get off"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Phrasal verbs para transporte</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Grandmother 👵</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Avó</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I go with my grandmother"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "grand" + "mother" / informal: "grandma"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 3';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 2) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
