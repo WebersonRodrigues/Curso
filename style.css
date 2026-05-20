@@ -219,6 +219,18 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+
+.aula-card .textos {
+    flex: 1;
+}
+
+.aula-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .aula-card:nth-child(1) { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); }
@@ -236,6 +248,7 @@ body {
 .aula-card:nth-child(9) p,
 .aula-card:nth-child(9) .textos { color: #333; }
 .aula-card:nth-child(10) { background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); }
+.aula-card:nth-child(11) { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); }
 
 .aula-card.revisao-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; }
 
