@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 09 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 09 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 09</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 09 - Semana 9</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 09</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender o alfabeto em inglês (sons das letras, como soletrar) e vocabulário de roupas e como se vestir.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ The Alphabet</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Alfabeto em inglês — sons das letras, diferenças do português, como soletrar</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> alphabet, letter, sound, spell, repeat, practice, tricky, confusing, vowel, consonant, silent, taught</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Getting Dressed</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Roupas, se vestir para a escola, clima e peças de roupa</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> shirt, jeans, jacket, coat, hat, socks, sneakers, boots, dress, shorts, hoodie, scarf, umbrella, put on, take off</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p>✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também se possível</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>NOVO! Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">A partir desta semana, adicione <strong>15 minutos de listening por dia</strong> à sua rotina! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist. Não precisa entender tudo — o objetivo é acostumar o ouvido!</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: The Alphabet -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: The Alphabet</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-the-alphabet.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-the-alphabet.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today my teacher <span class="palavra-destaque">taught</span> us the English alphabet. It was so cool!</p>
+                        <p>I already <span class="palavra-destaque">know</span> the alphabet in Portuguese, but in English the letters <span class="palavra-destaque">sound</span> very different.</p>
+                        <p>The English alphabet has 26 letters, just like Portuguese. But the sounds are not the same!</p>
+                        <p>Then she asked us to repeat after her. We all <span class="palavra-destaque">said</span> the letters together.</p>
+                        <p>She started with the letter A. In Portuguese, A sounds like "ah". But in English, A sounds like "ei"!</p>
+                        <p>In Portuguese, E sounds like "eh". But in English, E sounds like "i"! I <span class="palavra-destaque">thought</span> that was so <span class="palavra-destaque">confusing</span>.</p>
+                        <p>And the letter I? In English, I sounds like "ai"! Not like our "i" at all.<br>My friend Lis <span class="palavra-destaque">laughed</span> and said: "So E sounds like I, and I sounds like ai? That's crazy!"</p>
+                        <p>In Portuguese, H is <span class="palavra-destaque">silent</span>. But in English, H sounds like "eitch"!</p>
+                        <p>The letter R was funny too. In English, R sounds like "ar". Very different from our "erre".</p>
+                        <p>This letter is called double-u. We don't use W much in Portuguese, but in English it is very common.</p>
+                        <p>The last <span class="palavra-destaque">tricky</span> letter was Y. In English, Y sounds like "uai".<br>My teacher <span class="palavra-destaque">explained</span> that Y can be a <span class="palavra-destaque">vowel</span> or a consonant.</p>
+                        <p>After learning the tricky letters, my teacher asked me: "Can you <span class="palavra-destaque">spell</span> your name?"<br>My name is Sofia. So I said: "S - O - F - I - A."</p>
+                        <p>Then my friend Lis tried too. She said: "L - I - S."<br>And Ana said: "A - N - A."</p>
+                        <p>She also <span class="palavra-destaque">taught</span> us a useful phrase: "How do you spell that?"</p>
+                        <p>I <span class="palavra-destaque">think</span> the English alphabet is fun. The sounds are different, but with practice, it gets easier.</p>
+                        <p>Now I can spell my name, my city, and even my favorite food: P - I - Z - Z - A!</p>
+                        <p>My mom asked me at home: "What did you learn today?"<br>And I said all 26 letters without stopping. She was so <span class="palavra-destaque">proud</span>!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje minha professora nos <span class="palavra-destaque">ensinou</span> o alfabeto em inglês. Foi muito legal!</p>
+                        <p>Eu já <span class="palavra-destaque">sei</span> o alfabeto em português, mas em inglês as letras <span class="palavra-destaque">soam</span> muito diferente.</p>
+                        <p>O alfabeto em inglês tem 26 letras, assim como o português. Mas os sons não são iguais!</p>
+                        <p>Então ela nos pediu para repetir. Nós todos <span class="palavra-destaque">falamos</span> as letras juntos.</p>
+                        <p>Ela começou com a letra A. Em português, A soa como "ah". Mas em inglês, A soa como "ei"!</p>
+                        <p>Em português, E soa como "eh". Mas em inglês, E soa como "i"! Eu <span class="palavra-destaque">achei</span> isso tão <span class="palavra-destaque">confuso</span>.</p>
+                        <p>E a letra I? Em inglês, I soa como "ai"! Nada parecido com nosso "i".<br>Minha amiga Lis <span class="palavra-destaque">riu</span> e disse: "Então E soa como I, e I soa como ai? Isso é loucura!"</p>
+                        <p>Em português, H é <span class="palavra-destaque">mudo</span>. Mas em inglês, H soa como "eitch"!</p>
+                        <p>A letra R também foi engraçada. Em inglês, R soa como "ar". Muito diferente do nosso "erre".</p>
+                        <p>Essa letra se chama double-u (duplo u). Não usamos muito o W em português, mas em inglês ele é muito comum.</p>
+                        <p>A última letra <span class="palavra-destaque">difícil</span> foi o Y. Em inglês, Y soa como "uai".<br>Minha professora <span class="palavra-destaque">explicou</span> que o Y pode ser <span class="palavra-destaque">vogal</span> ou consoante.</p>
+                        <p>Depois de aprender as letras difíceis, minha professora me perguntou: "Você consegue <span class="palavra-destaque">soletrar</span> seu nome?"<br>Meu nome é Sofia. Então eu disse: "S - O - F - I - A."</p>
+                        <p>Então minha amiga Lis tentou também. Ela disse: "L - I - S."<br>E a Ana disse: "A - N - A."</p>
+                        <p>Ela também nos <span class="palavra-destaque">ensinou</span> uma frase útil: "Como você soletra isso?"</p>
+                        <p>Eu <span class="palavra-destaque">acho</span> que o alfabeto em inglês é divertido. Os sons são diferentes, mas com prática, fica mais fácil.</p>
+                        <p>Agora eu consigo soletrar meu nome, minha cidade, e até minha comida favorita: P - I - Z - Z - A!</p>
+                        <p>Minha mãe me perguntou em casa: "O que você aprendeu hoje?"<br>E eu falei todas as 26 letras sem parar. Ela ficou tão <span class="palavra-destaque">orgulhosa</span>!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today my teacher <span class="palavra-destaque">taught</span> us the English alphabet. It was so cool!</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje minha professora nos ensinou o alfabeto em inglês. Foi muito legal!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I already <span class="palavra-destaque">know</span> the alphabet in Portuguese, but in English the letters <span class="palavra-destaque">sound</span> very different.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu já sei o alfabeto em português, mas em inglês as letras soam muito diferente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The English alphabet has 26 letters, just like Portuguese. But the sounds are not the same!</div>
+                            <div style="color: #666; font-size: 0.95em;">O alfabeto em inglês tem 26 letras, assim como o português. Mas os sons não são iguais!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then she asked us to repeat after her. We all <span class="palavra-destaque">said</span> the letters together.</div>
+                            <div style="color: #666; font-size: 0.95em;">Então ela nos pediu para repetir. Nós todos falamos as letras juntos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She started with the letter A. In Portuguese, A sounds like "ah". But in English, A sounds like "ei"!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela começou com a letra A. Em português, A soa como "ah". Mas em inglês, A soa como "ei"!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In Portuguese, E sounds like "eh". But in English, E sounds like "i"!</div>
+                            <div style="color: #666; font-size: 0.95em;">Em português, E soa como "eh". Mas em inglês, E soa como "i"!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">And the letter I? In English, I sounds like "ai"! Not like our "i" at all.</div>
+                            <div style="color: #666; font-size: 0.95em;">E a letra I? Em inglês, I soa como "ai"! Nada parecido com nosso "i".</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Lis <span class="palavra-destaque">laughed</span> and said: "So E sounds like I, and I sounds like ai? That's crazy!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha amiga Lis riu e disse: "Então E soa como I, e I soa como ai? Isso é loucura!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In Portuguese, H is <span class="palavra-destaque">silent</span>. But in English, H sounds like "eitch"!</div>
+                            <div style="color: #666; font-size: 0.95em;">Em português, H é mudo. Mas em inglês, H soa como "eitch"!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The letter R was funny too. In English, R sounds like "ar". Very different from our "erre".</div>
+                            <div style="color: #666; font-size: 0.95em;">A letra R também foi engraçada. Em inglês, R soa como "ar". Muito diferente do nosso "erre".</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">This letter is called double-u. We don't use W much in Portuguese, but in English it is very common.</div>
+                            <div style="color: #666; font-size: 0.95em;">Essa letra se chama double-u (duplo u). Não usamos muito o W em português, mas em inglês ele é muito comum.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The last <span class="palavra-destaque">tricky</span> letter was Y. In English, Y sounds like "uai".</div>
+                            <div style="color: #666; font-size: 0.95em;">A última letra difícil foi o Y. Em inglês, Y soa como "uai".</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My teacher <span class="palavra-destaque">explained</span> that Y can be a <span class="palavra-destaque">vowel</span> or a consonant.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha professora explicou que o Y pode ser vogal ou consoante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After learning the <span class="palavra-destaque">tricky</span> letters, my teacher asked me: "Can you <span class="palavra-destaque">spell</span> your name?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de aprender as letras difíceis, minha professora me perguntou: "Você consegue soletrar seu nome?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My name is Sofia. So I said: "S - O - F - I - A."</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu nome é Sofia. Então eu disse: "S - O - F - I - A."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">smiled</span> and said: "Perfect! Now you can <span class="palavra-destaque">spell</span> your name in English!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela sorriu e disse: "Perfeito! Agora você sabe soletrar seu nome em inglês!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She also <span class="palavra-destaque">taught</span> us a useful phrase: "How do you <span class="palavra-destaque">spell</span> that?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela também nos ensinou uma frase útil: "Como você soletra isso?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">think</span> the English alphabet is fun. The sounds are different, but with practice, it gets easier.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acho que o alfabeto em inglês é divertido. Os sons são diferentes, mas com prática, fica mais fácil.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Now I can <span class="palavra-destaque">spell</span> my name, my city, and even my favorite food: P - I - Z - Z - A!</div>
+                            <div style="color: #666; font-size: 0.95em;">Agora eu consigo soletrar meu nome, minha cidade, e até minha comida favorita: P - I - Z - Z - A!</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">And I said all 26 letters without stopping. She was so <span class="palavra-destaque">proud</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">E eu falei todas as 26 letras sem parar. Ela ficou tão orgulhosa!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Alphabet 🔤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Alfabeto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The English alphabet has 26 letters"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Letter ✉️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Letra</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "26 letters in the alphabet"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Também significa "carta"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Sound 🔊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Som / soar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The letters sound very different"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Verbo e substantivo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Spell ✍️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Soletrar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "How do you spell that?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muito usado no dia a dia</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Tricky 🤔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Difícil / complicado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The tricky letters"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Algo que engana ou confunde</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Vowel 🅰️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vogal</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Y can be a vowel or a consonant"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> A, E, I, O, U</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Silent 🤫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mudo / silencioso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "In Portuguese, H is silent"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Letra que não tem som</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Taught 👩‍🏫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ensinou (passado de teach)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My teacher taught us the alphabet"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Verbo irregular: teach → taught</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Getting Dressed -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Getting Dressed</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-getting-dressed.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-getting-dressed.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>It is Monday morning. Time for school!</p>
+                        <p>My mom <span class="palavra-destaque">opens</span> my bedroom door and <span class="palavra-destaque">says</span>: "Wake up! You need to <span class="palavra-destaque">get dressed</span>."</p>
+                        <p>I <span class="palavra-destaque">get out</span> of bed and <span class="palavra-destaque">open</span> my closet. I have many clothes inside.</p>
+                        <p>It is cold and cloudy today. My mom says: "<span class="palavra-destaque">Put on</span> something warm."</p>
+                        <p>I <span class="palavra-destaque">pick</span> a long-sleeve shirt. It is blue with white stripes.</p>
+                        <p>I put on my socks. One is white and one is... also white. Good. They match!</p>
+                        <p>I <span class="palavra-destaque">sit</span> on the bed and put on my sneakers. I <span class="palavra-destaque">tie</span> the laces slowly.</p>
+                        <p>My mom <span class="palavra-destaque">comes</span> in and <span class="palavra-destaque">looks</span> at me. "You look nice! But you need a jacket."</p>
+                        <p>She <span class="palavra-destaque">gives</span> me my red jacket. It is warm and has a zipper. I <span class="palavra-destaque">zip</span> it up.</p>
+                        <p>"Don't forget your hat!" she says. I put on my gray hat. Now I am ready!</p>
+                        <p>I look at myself in the mirror. Blue shirt, dark jeans, red jacket, gray hat, white sneakers. I look cool!</p>
+                        <p>My little sister comes out of her room. She is wearing a pink dress with flowers, white tights, and her purple boots.</p>
+                        <p>"I like your dress!" I say. She <span class="palavra-destaque">smiles</span> and says: "I like your hat!"</p>
+                        <p>My mom <span class="palavra-destaque">wears</span> a long black coat and a scarf around her neck.</p>
+                        <p>Before we leave, my mom checks us: "Jacket? Hat? Backpack? Lunchbox?"</p>
+                        <p>We <span class="palavra-destaque">walk</span> to school together. The wind is cold, but I feel warm in my jacket.</p>
+                        <p>My friend Pedro <span class="palavra-destaque">arrives</span> wearing a green hoodie and black shorts. "Aren't you cold?" I ask.</p>
+                        <p>After school, it <span class="palavra-destaque">starts</span> to rain. My mom opens her umbrella.</p>
+                        <p>I <span class="palavra-destaque">take off</span> my wet sneakers at the door and put on my slippers. So comfortable!</p>
+                        <p>I like choosing my clothes every morning. It is like a small adventure before the big adventure of the day!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>É segunda-feira de manhã. Hora da escola!</p>
+                        <p>Minha mãe <span class="palavra-destaque">abre</span> a porta do meu quarto e <span class="palavra-destaque">diz</span>: "Acorda! Você precisa se <span class="palavra-destaque">vestir</span>."</p>
+                        <p>Eu <span class="palavra-destaque">saio</span> da cama e <span class="palavra-destaque">abro</span> meu armário. Tenho muitas roupas dentro.</p>
+                        <p>Está frio e nublado hoje. Minha mãe diz: "<span class="palavra-destaque">Vista</span> algo quente."</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> uma camiseta de manga longa. É azul com listras brancas.</p>
+                        <p>Eu coloco minhas meias. Uma é branca e a outra é... também branca. Bom. Combinam!</p>
+                        <p>Eu <span class="palavra-destaque">sento</span> na cama e coloco meus tênis. Eu <span class="palavra-destaque">amarro</span> os cadarços devagar.</p>
+                        <p>Minha mãe <span class="palavra-destaque">entra</span> e <span class="palavra-destaque">olha</span> pra mim. "Você está bonito! Mas precisa de uma jaqueta."</p>
+                        <p>Ela me <span class="palavra-destaque">dá</span> minha jaqueta vermelha. É quente e tem zíper. Eu <span class="palavra-destaque">fecho</span> o zíper.</p>
+                        <p>"Não esqueça seu gorro!" ela diz. Eu coloco meu gorro cinza. Agora estou pronto!</p>
+                        <p>Eu me olho no espelho. Camiseta azul, jeans escuro, jaqueta vermelha, gorro cinza, tênis branco. Estou estiloso!</p>
+                        <p>Minha irmãzinha sai do quarto dela. Ela está usando um vestido rosa com flores, meia-calça branca e suas botas roxas.</p>
+                        <p>"Gosto do seu vestido!" eu digo. Ela <span class="palavra-destaque">sorri</span> e diz: "Gosto do seu gorro!"</p>
+                        <p>Minha mãe <span class="palavra-destaque">usa</span> um casaco preto longo e um cachecol no pescoço.</p>
+                        <p>Antes de sairmos, minha mãe nos confere: "Jaqueta? Gorro? Mochila? Lancheira?"</p>
+                        <p>Nós <span class="palavra-destaque">andamos</span> para a escola juntos. O vento está frio, mas me sinto quente na minha jaqueta.</p>
+                        <p>Meu amigo Pedro <span class="palavra-destaque">chega</span> usando um moletom verde e bermuda preta. "Você não está com frio?" eu pergunto.</p>
+                        <p>Depois da escola, <span class="palavra-destaque">começa</span> a chover. Minha mãe abre o guarda-chuva.</p>
+                        <p>Eu <span class="palavra-destaque">tiro</span> meus tênis molhados na porta e coloco minhas pantufas. Tão confortável!</p>
+                        <p>Eu gosto de escolher minhas roupas toda manhã. É como uma pequena aventura antes da grande aventura do dia!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It is Monday morning. Time for school!</div>
+                            <div style="color: #666; font-size: 0.95em;">É segunda-feira de manhã. Hora da escola!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">opens</span> my bedroom door and <span class="palavra-destaque">says</span>: "Wake up! You need to <span class="palavra-destaque">get dressed</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe abre a porta do meu quarto e diz: "Acorda! Você precisa se vestir."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">get out</span> of bed and <span class="palavra-destaque">open</span> my closet. I have many clothes inside.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu saio da cama e abro meu armário. Tenho muitas roupas dentro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It is cold and cloudy today. My mom says: "<span class="palavra-destaque">Put on</span> something warm."</div>
+                            <div style="color: #666; font-size: 0.95em;">Está frio e nublado hoje. Minha mãe diz: "Vista algo quente."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">pick</span> a long-sleeve shirt. It is blue with white stripes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu pego uma camiseta de manga longa. É azul com listras brancas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">put on</span> my socks. One is white and one is... also white. Good. They match!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu coloco minhas meias. Uma é branca e a outra é... também branca. Bom. Combinam!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">sit</span> on the bed and <span class="palavra-destaque">put on</span> my sneakers. I <span class="palavra-destaque">tie</span> the laces slowly.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu sento na cama e coloco meus tênis. Eu amarro os cadarços devagar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">comes</span> in and <span class="palavra-destaque">looks</span> at me. "You look nice! But you need a jacket."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe entra e olha pra mim. "Você está bonito! Mas precisa de uma jaqueta."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">gives</span> me my red jacket. It is warm and has a zipper. I zip it up.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela me dá minha jaqueta vermelha. É quente e tem zíper. Eu fecho o zíper.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Don't forget your hat!" she says. I put on my gray hat. Now I am ready!</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não esqueça seu gorro!" ela diz. Eu coloco meu gorro cinza. Agora estou pronto!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I look at myself in the mirror. Blue shirt, dark jeans, red jacket, gray hat, white sneakers. I look cool!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu me olho no espelho. Camiseta azul, jeans escuro, jaqueta vermelha, gorro cinza, tênis branco. Estou estiloso!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My little sister <span class="palavra-destaque">comes</span> out of her room. She is wearing a pink dress with flowers, white tights, and her purple boots.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha irmãzinha sai do quarto dela. Ela está usando um vestido rosa com flores, meia-calça branca e suas botas roxas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I like your dress!" I say. She <span class="palavra-destaque">smiles</span> and says: "I like your hat!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Gosto do seu vestido!" eu digo. Ela sorri e diz: "Gosto do seu gorro!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">wears</span> a long black coat and a scarf around her neck.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe usa um casaco preto longo e um cachecol no pescoço.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before we leave, my mom checks us: "Jacket? Hat? Backpack? Lunchbox?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de sairmos, minha mãe nos confere: "Jaqueta? Gorro? Mochila? Lancheira?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">walk</span> to school together. The wind is cold, but I feel warm in my jacket.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós andamos para a escola juntos. O vento está frio, mas me sinto quente na minha jaqueta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Pedro <span class="palavra-destaque">arrives</span> wearing a green hoodie and black shorts. "Aren't you cold?" I ask.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu amigo Pedro chega usando um moletom verde e bermuda preta. "Você não está com frio?" eu pergunto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After school, it <span class="palavra-destaque">starts</span> to rain. My mom opens her umbrella.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois da escola, começa a chover. Minha mãe abre o guarda-chuva.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">take off</span> my wet sneakers at the door and put on my slippers. So comfortable!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tiro meus tênis molhados na porta e coloco minhas pantufas. Tão confortável!</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I like choosing my clothes every morning. It is like a small adventure before the big adventure of the day!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto de escolher minhas roupas toda manhã. É como uma pequena aventura antes da grande aventura do dia!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Shirt 👕</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Camiseta / camisa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I pick a long-sleeve shirt"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Peça de cima do corpo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Jeans 👖</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Calça jeans</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I grab my favorite jeans"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sempre no plural em inglês</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Jacket 🧥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Jaqueta</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You need a jacket"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Casaco leve com zíper</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Hat 🧢</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Gorro / chapéu</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Don't forget your hat!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Peça para a cabeça</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Sneakers 👟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tênis</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I put on my sneakers"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sapato esportivo (EUA)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Dress 👗</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vestido</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She is wearing a pink dress"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Também verbo: "get dressed" = se vestir</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Hoodie 🧥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Moletom com capuz</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Pedro arrives wearing a green hoodie"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "hood" = capuz</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Put on / Take off 👔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vestir / Tirar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Put on your jacket / Take off your shoes"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Phrasal verbs essenciais para roupas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
