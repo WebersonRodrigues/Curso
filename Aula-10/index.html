@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 10 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 10 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 10</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 10 - Semana 10</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 10</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário do ambiente escolar (objetos da sala de aula, matérias, rotina) e brincadeiras ao ar livre (jogos no recreio, playground, amigos).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: A2</strong> — Você já conhece o básico e agora vai expandir seu vocabulário com situações do dia a dia na escola!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ My Classroom</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Sala de aula — objetos escolares, matérias, rotina do aluno, professora e amigos</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> desk, chair, board, marker, chalk, pencil, pen, eraser, ruler, notebook, pencil case, backpack, bell, recess, playground, math, science, English, art, share, clean</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Playing Outside</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Brincadeiras no recreio — pega-pega, balanço, escorregador, futebol, pular corda, esconde-esconde</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> tag, chase, catch, dodge, swing, slide, climb, kick, ball, team, score, jump rope, trip, hide and seek, hide, blow, grab, run, count</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: My Classroom -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: My Classroom</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-my-classroom.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-my-classroom.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>My classroom is on the second floor. It is big and has many windows.</p>
+                        <p>There are 25 <span class="palavra-destaque">desks</span> in the room. Each desk has a <span class="palavra-destaque">chair</span>. My desk is near the window. I like it there because I can see the trees outside.</p>
+                        <p>At the front of the room, there is a big <span class="palavra-destaque">board</span>. My teacher <span class="palavra-destaque">writes</span> on it with a <span class="palavra-destaque">marker</span>. Sometimes she uses <span class="palavra-destaque">chalk</span> on the old board.</p>
+                        <p>Next to the board, there is a <span class="palavra-destaque">clock</span> on the wall. I always <span class="palavra-destaque">look</span> at it when I am bored!</p>
+                        <p>On my desk, I have my things: a <span class="palavra-destaque">pencil</span>, a <span class="palavra-destaque">pen</span>, an <span class="palavra-destaque">eraser</span>, a <span class="palavra-destaque">ruler</span>, and my <span class="palavra-destaque">notebook</span>. I also have a <span class="palavra-destaque">pencil case</span> where I keep everything.</p>
+                        <p>My <span class="palavra-destaque">backpack</span> is on the floor, next to my chair. Inside, I have my <span class="palavra-destaque">books</span>, my <span class="palavra-destaque">lunchbox</span>, and a bottle of water.</p>
+                        <p>My teacher's name is Miss Clara. She is very nice. She <span class="palavra-destaque">explains</span> things slowly and always <span class="palavra-destaque">helps</span> us when we don't understand.</p>
+                        <p>In the morning, we have <span class="palavra-destaque">math</span> and <span class="palavra-destaque">science</span>. After recess, we have <span class="palavra-destaque">English</span> and <span class="palavra-destaque">art</span>. I like art the most because we can <span class="palavra-destaque">draw</span> and <span class="palavra-destaque">paint</span>.</p>
+                        <p>At 10 o'clock, the <span class="palavra-destaque">bell</span> rings. It is time for <span class="palavra-destaque">recess</span>! We all run to the <span class="palavra-destaque">playground</span>.</p>
+                        <p>My best friend sits next to me. His name is Pedro. Sometimes we <span class="palavra-destaque">share</span> our <span class="palavra-destaque">pencils</span> and <span class="palavra-destaque">erasers</span>.</p>
+                        <p>At the end of the day, we <span class="palavra-destaque">clean</span> our desks, <span class="palavra-destaque">put</span> our things in our backpacks, and <span class="palavra-destaque">wait</span> for the bell.</p>
+                        <p>When the bell rings, we say: "Goodbye, Miss Clara!" and she says: "See you tomorrow!"</p>
+                        <p>I like my classroom. It is where I learn new things every day.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Minha sala de aula fica no segundo andar. É grande e tem muitas janelas.</p>
+                        <p>Há 25 <span class="palavra-destaque">carteiras</span> na sala. Cada carteira tem uma <span class="palavra-destaque">cadeira</span>. Minha carteira fica perto da janela. Gosto de lá porque consigo ver as árvores lá fora.</p>
+                        <p>Na frente da sala, tem um <span class="palavra-destaque">quadro</span> grande. Minha professora <span class="palavra-destaque">escreve</span> nele com um <span class="palavra-destaque">marcador</span>. Às vezes ela usa <span class="palavra-destaque">giz</span> no quadro antigo.</p>
+                        <p>Ao lado do quadro, tem um <span class="palavra-destaque">relógio</span> na parede. Eu sempre <span class="palavra-destaque">olho</span> pra ele quando estou entediado!</p>
+                        <p>Na minha carteira, tenho minhas coisas: um <span class="palavra-destaque">lápis</span>, uma <span class="palavra-destaque">caneta</span>, uma <span class="palavra-destaque">borracha</span>, uma <span class="palavra-destaque">régua</span> e meu <span class="palavra-destaque">caderno</span>. Também tenho um <span class="palavra-destaque">estojo</span> onde guardo tudo.</p>
+                        <p>Minha <span class="palavra-destaque">mochila</span> está no chão, ao lado da minha cadeira. Dentro, tenho meus <span class="palavra-destaque">livros</span>, minha <span class="palavra-destaque">lancheira</span> e uma garrafa de água.</p>
+                        <p>O nome da minha professora é Miss Clara. Ela é muito legal. Ela <span class="palavra-destaque">explica</span> as coisas devagar e sempre nos <span class="palavra-destaque">ajuda</span> quando não entendemos.</p>
+                        <p>De manhã, temos <span class="palavra-destaque">matemática</span> e <span class="palavra-destaque">ciências</span>. Depois do recreio, temos <span class="palavra-destaque">inglês</span> e <span class="palavra-destaque">artes</span>. Eu gosto mais de artes porque podemos <span class="palavra-destaque">desenhar</span> e <span class="palavra-destaque">pintar</span>.</p>
+                        <p>Às 10 horas, o <span class="palavra-destaque">sinal</span> toca. É hora do <span class="palavra-destaque">recreio</span>! Todos nós corremos para o <span class="palavra-destaque">pátio</span>.</p>
+                        <p>Meu melhor amigo senta do meu lado. O nome dele é Pedro. Às vezes nós <span class="palavra-destaque">dividimos</span> nossos <span class="palavra-destaque">lápis</span> e <span class="palavra-destaque">borrachas</span>.</p>
+                        <p>No final do dia, nós <span class="palavra-destaque">limpamos</span> nossas carteiras, <span class="palavra-destaque">colocamos</span> nossas coisas nas mochilas e <span class="palavra-destaque">esperamos</span> o sinal.</p>
+                        <p>Quando o sinal toca, dizemos: "Tchau, Miss Clara!" e ela diz: "Até amanhã!"</p>
+                        <p>Eu gosto da minha sala de aula. É onde aprendo coisas novas todo dia.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My classroom is on the second floor. It is big and has many windows.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha sala de aula fica no segundo andar. É grande e tem muitas janelas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">There are 25 <span class="palavra-destaque">desks</span> in the room. Each desk has a <span class="palavra-destaque">chair</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Há 25 carteiras na sala. Cada carteira tem uma cadeira.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My desk is near the window. I like it there because I can see the trees outside.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha carteira fica perto da janela. Gosto de lá porque consigo ver as árvores lá fora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the front of the room, there is a big <span class="palavra-destaque">board</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na frente da sala, tem um quadro grande.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My teacher <span class="palavra-destaque">writes</span> on it with a <span class="palavra-destaque">marker</span>. Sometimes she uses <span class="palavra-destaque">chalk</span> on the old board.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha professora escreve nele com um marcador. Às vezes ela usa giz no quadro antigo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Next to the board, there is a <span class="palavra-destaque">clock</span> on the wall.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ao lado do quadro, tem um relógio na parede.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I always <span class="palavra-destaque">look</span> at it when I am bored!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu sempre olho pra ele quando estou entediado!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On my desk, I have my things: a <span class="palavra-destaque">pencil</span>, a <span class="palavra-destaque">pen</span>, an <span class="palavra-destaque">eraser</span>, a <span class="palavra-destaque">ruler</span>, and my <span class="palavra-destaque">notebook</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na minha carteira, tenho minhas coisas: um lápis, uma caneta, uma borracha, uma régua e meu caderno.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also have a <span class="palavra-destaque">pencil case</span> where I keep everything.</div>
+                            <div style="color: #666; font-size: 0.95em;">Também tenho um estojo onde guardo tudo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My <span class="palavra-destaque">backpack</span> is on the floor, next to my chair.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mochila está no chão, ao lado da minha cadeira.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Inside, I have my <span class="palavra-destaque">books</span>, my <span class="palavra-destaque">lunchbox</span>, and a bottle of water.</div>
+                            <div style="color: #666; font-size: 0.95em;">Dentro, tenho meus livros, minha lancheira e uma garrafa de água.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My teacher's name is Miss Clara. She is very nice.</div>
+                            <div style="color: #666; font-size: 0.95em;">O nome da minha professora é Miss Clara. Ela é muito legal.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">explains</span> things slowly and always <span class="palavra-destaque">helps</span> us when we don't understand.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela explica as coisas devagar e sempre nos ajuda quando não entendemos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the morning, we have <span class="palavra-destaque">math</span> and <span class="palavra-destaque">science</span>. After recess, we have <span class="palavra-destaque">English</span> and <span class="palavra-destaque">art</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">De manhã, temos matemática e ciências. Depois do recreio, temos inglês e artes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I like art the most because we can <span class="palavra-destaque">draw</span> and <span class="palavra-destaque">paint</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto mais de artes porque podemos desenhar e pintar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At 10 o'clock, the <span class="palavra-destaque">bell</span> rings. It is time for <span class="palavra-destaque">recess</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Às 10 horas, o sinal toca. É hora do recreio!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We all run to the <span class="palavra-destaque">playground</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Todos nós corremos para o pátio.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My best friend sits next to me. His name is Pedro.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu melhor amigo senta do meu lado. O nome dele é Pedro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes we <span class="palavra-destaque">share</span> our <span class="palavra-destaque">pencils</span> and <span class="palavra-destaque">erasers</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes nós dividimos nossos lápis e borrachas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the end of the day, we <span class="palavra-destaque">clean</span> our desks and <span class="palavra-destaque">put</span> our things in our backpacks.</div>
+                            <div style="color: #666; font-size: 0.95em;">No final do dia, nós limpamos nossas carteiras e colocamos nossas coisas nas mochilas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When the bell rings, we say: "Goodbye, Miss Clara!" and she says: "See you tomorrow!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando o sinal toca, dizemos: "Tchau, Miss Clara!" e ela diz: "Até amanhã!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I like my classroom. It is where I learn new things every day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu gosto da minha sala de aula. É onde aprendo coisas novas todo dia.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Desk 🪑</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Carteira (escolar)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "There are 25 desks in the room"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mesa do aluno na escola</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Board 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Quadro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "There is a big board at the front"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde o professor escreve</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Pencil ✏️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lápis</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have a pencil on my desk"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "pencil case" = estojo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Eraser 🧽</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Borracha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We share our erasers"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Apaga o lápis</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Backpack 🎒</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mochila</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My backpack is on the floor"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Leva os materiais escolares</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Bell 🔔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sinal</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The bell rings at 10 o'clock"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Toca no recreio e na saída</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Recess ⏰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Recreio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It is time for recess!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Hora de brincar!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Share 🤝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Dividir / compartilhar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We share our pencils"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dividir com amigos</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Playground 🏫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pátio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We all run to the playground"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde brinca no recreio</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Notebook 📓</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Caderno</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have my notebook on my desk"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde escreve as lições</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Playing Outside -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Playing Outside</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-playing-outside.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-playing-outside.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>The bell rings! Recess time!</p>
+                        <p>I <span class="palavra-destaque">grab</span> my water bottle and <span class="palavra-destaque">run</span> outside with my friends. The <span class="palavra-destaque">playground</span> is big and full of kids.</p>
+                        <p>"What do we play today?" Pedro <span class="palavra-destaque">asks</span>.</p>
+                        <p>"Let's play <span class="palavra-destaque">tag</span>!" I <span class="palavra-destaque">say</span>.</p>
+                        <p>Tag is easy. One person is "it" and <span class="palavra-destaque">chases</span> everyone. If you get <span class="palavra-destaque">touched</span>, you are "it" now!</p>
+                        <p>Pedro is "it" first. He <span class="palavra-destaque">counts</span> to ten: "One, two, three... ten! Ready or not, here I come!"</p>
+                        <p>We all <span class="palavra-destaque">run</span> in different directions. I am fast! Pedro <span class="palavra-destaque">chases</span> Ana, but she is faster. Then he <span class="palavra-destaque">turns</span> and runs after me.</p>
+                        <p>I <span class="palavra-destaque">dodge</span> left, then right. But he <span class="palavra-destaque">catches</span> me! "You're it!" he <span class="palavra-destaque">shouts</span>.</p>
+                        <p>Now I am "it". I <span class="palavra-destaque">chase</span> everyone. I <span class="palavra-destaque">catch</span> Sofia near the <span class="palavra-destaque">slide</span>. "Got you!"</p>
+                        <p>After tag, we go to the <span class="palavra-destaque">swings</span>. I <span class="palavra-destaque">sit</span> on the swing and <span class="palavra-destaque">push</span> with my legs. Higher and higher! The wind <span class="palavra-destaque">blows</span> in my face. It feels like flying!</p>
+                        <p>Sofia goes to the <span class="palavra-destaque">slide</span>. She <span class="palavra-destaque">climbs</span> the ladder and <span class="palavra-destaque">slides</span> down. "Wheee!" she <span class="palavra-destaque">screams</span>.</p>
+                        <p>Pedro and his friends <span class="palavra-destaque">kick</span> a <span class="palavra-destaque">ball</span> on the field. They make two <span class="palavra-destaque">teams</span> and play a small game. Pedro <span class="palavra-destaque">scores</span> a goal! "Goooal!" he <span class="palavra-destaque">celebrates</span>.</p>
+                        <p>Lis <span class="palavra-destaque">jumps</span> rope near the bench. She <span class="palavra-destaque">counts</span> every jump: "One, two, three, four..." She can jump 50 times without stopping!</p>
+                        <p>I try too. I <span class="palavra-destaque">hold</span> the rope and <span class="palavra-destaque">jump</span>. One, two, three... oops! I <span class="palavra-destaque">trip</span> on the rope. Only three! Lis <span class="palavra-destaque">laughs</span> and <span class="palavra-destaque">says</span>: "Practice more!"</p>
+                        <p>Some kids play <span class="palavra-destaque">hide and seek</span>. One person <span class="palavra-destaque">covers</span> their eyes and <span class="palavra-destaque">counts</span>. The others <span class="palavra-destaque">hide</span> behind trees, benches, and walls.</p>
+                        <p>I <span class="palavra-destaque">hear</span> the bell again. Recess is over!</p>
+                        <p>We all <span class="palavra-destaque">walk</span> back to the classroom. I am tired but happy.</p>
+                        <p>"That was fun!" I <span class="palavra-destaque">say</span> to Pedro.</p>
+                        <p>"Tomorrow let's play soccer!" he <span class="palavra-destaque">says</span>.</p>
+                        <p>"Deal!"</p>
+                        <p>I love playing outside. It is the best part of the day!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>O sinal toca! Hora do recreio!</p>
+                        <p>Eu <span class="palavra-destaque">pego</span> minha garrafa de água e <span class="palavra-destaque">corro</span> lá fora com meus amigos. O <span class="palavra-destaque">pátio</span> é grande e cheio de crianças.</p>
+                        <p>"O que a gente brinca hoje?" Pedro <span class="palavra-destaque">pergunta</span>.</p>
+                        <p>"Vamos brincar de <span class="palavra-destaque">pega-pega</span>!" eu <span class="palavra-destaque">digo</span>.</p>
+                        <p>Pega-pega é fácil. Uma pessoa é o "pegador" e <span class="palavra-destaque">persegue</span> todo mundo. Se você for <span class="palavra-destaque">tocado</span>, agora você é o pegador!</p>
+                        <p>Pedro é o pegador primeiro. Ele <span class="palavra-destaque">conta</span> até dez: "Um, dois, três... dez! Pronto ou não, lá vou eu!"</p>
+                        <p>Todos nós <span class="palavra-destaque">corremos</span> em direções diferentes. Eu sou rápido! Pedro <span class="palavra-destaque">persegue</span> a Ana, mas ela é mais rápida. Então ele <span class="palavra-destaque">vira</span> e corre atrás de mim.</p>
+                        <p>Eu <span class="palavra-destaque">desvio</span> pra esquerda, depois pra direita. Mas ele me <span class="palavra-destaque">pega</span>! "Agora é você!" ele <span class="palavra-destaque">grita</span>.</p>
+                        <p>Agora eu sou o pegador. Eu <span class="palavra-destaque">persigo</span> todo mundo. Eu <span class="palavra-destaque">pego</span> a Sofia perto do <span class="palavra-destaque">escorregador</span>. "Peguei!"</p>
+                        <p>Depois do pega-pega, vamos para os <span class="palavra-destaque">balanços</span>. Eu <span class="palavra-destaque">sento</span> no balanço e <span class="palavra-destaque">empurro</span> com as pernas. Cada vez mais alto! O vento <span class="palavra-destaque">sopra</span> no meu rosto. Parece que estou voando!</p>
+                        <p>Sofia vai para o <span class="palavra-destaque">escorregador</span>. Ela <span class="palavra-destaque">sobe</span> a escada e <span class="palavra-destaque">desce</span> escorregando. "Uhuuu!" ela <span class="palavra-destaque">grita</span>.</p>
+                        <p>Pedro e seus amigos <span class="palavra-destaque">chutam</span> uma <span class="palavra-destaque">bola</span> no campo. Eles fazem dois <span class="palavra-destaque">times</span> e jogam uma partida. Pedro <span class="palavra-destaque">marca</span> um gol! "Goool!" ele <span class="palavra-destaque">comemora</span>.</p>
+                        <p>Lis <span class="palavra-destaque">pula</span> corda perto do banco. Ela <span class="palavra-destaque">conta</span> cada pulo: "Um, dois, três, quatro..." Ela consegue pular 50 vezes sem parar!</p>
+                        <p>Eu tento também. Eu <span class="palavra-destaque">seguro</span> a corda e <span class="palavra-destaque">pulo</span>. Um, dois, três... ops! Eu <span class="palavra-destaque">tropeço</span> na corda. Só três! Lis <span class="palavra-destaque">ri</span> e <span class="palavra-destaque">diz</span>: "Pratique mais!"</p>
+                        <p>Algumas crianças brincam de <span class="palavra-destaque">esconde-esconde</span>. Uma pessoa <span class="palavra-destaque">cobre</span> os olhos e <span class="palavra-destaque">conta</span>. Os outros se <span class="palavra-destaque">escondem</span> atrás de árvores, bancos e paredes.</p>
+                        <p>Eu <span class="palavra-destaque">ouço</span> o sinal de novo. O recreio acabou!</p>
+                        <p>Todos nós <span class="palavra-destaque">andamos</span> de volta para a sala. Estou cansado mas feliz.</p>
+                        <p>"Foi divertido!" eu <span class="palavra-destaque">digo</span> pro Pedro.</p>
+                        <p>"Amanhã vamos jogar futebol!" ele <span class="palavra-destaque">diz</span>.</p>
+                        <p>"Combinado!"</p>
+                        <p>Eu amo brincar lá fora. É a melhor parte do dia!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The bell rings! Recess time!</div>
+                            <div style="color: #666; font-size: 0.95em;">O sinal toca! Hora do recreio!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">grab</span> my water bottle and <span class="palavra-destaque">run</span> outside with my friends.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu pego minha garrafa de água e corro lá fora com meus amigos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">playground</span> is big and full of kids.</div>
+                            <div style="color: #666; font-size: 0.95em;">O pátio é grande e cheio de crianças.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"What do we play today?" Pedro <span class="palavra-destaque">asks</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">"O que a gente brinca hoje?" Pedro pergunta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Let's play <span class="palavra-destaque">tag</span>!" I <span class="palavra-destaque">say</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Vamos brincar de pega-pega!" eu digo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Tag is easy. One person is "it" and <span class="palavra-destaque">chases</span> everyone.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pega-pega é fácil. Uma pessoa é o "pegador" e persegue todo mundo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">If you get <span class="palavra-destaque">touched</span>, you are "it" now!</div>
+                            <div style="color: #666; font-size: 0.95em;">Se você for tocado, agora você é o pegador!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pedro is "it" first. He <span class="palavra-destaque">counts</span> to ten.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pedro é o pegador primeiro. Ele conta até dez.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We all <span class="palavra-destaque">run</span> in different directions. I am fast!</div>
+                            <div style="color: #666; font-size: 0.95em;">Todos nós corremos em direções diferentes. Eu sou rápido!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pedro <span class="palavra-destaque">chases</span> Ana, but she is faster.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pedro persegue a Ana, mas ela é mais rápida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">dodge</span> left, then right. But he <span class="palavra-destaque">catches</span> me! "You're it!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu desvio pra esquerda, depois pra direita. Mas ele me pega! "Agora é você!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After tag, we go to the <span class="palavra-destaque">swings</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois do pega-pega, vamos para os balanços.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">sit</span> on the swing and <span class="palavra-destaque">push</span> with my legs. Higher and higher!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu sento no balanço e empurro com as pernas. Cada vez mais alto!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The wind <span class="palavra-destaque">blows</span> in my face. It feels like flying!</div>
+                            <div style="color: #666; font-size: 0.95em;">O vento sopra no meu rosto. Parece que estou voando!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sofia goes to the <span class="palavra-destaque">slide</span>. She <span class="palavra-destaque">climbs</span> the ladder and <span class="palavra-destaque">slides</span> down.</div>
+                            <div style="color: #666; font-size: 0.95em;">Sofia vai para o escorregador. Ela sobe a escada e desce escorregando.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pedro and his friends <span class="palavra-destaque">kick</span> a <span class="palavra-destaque">ball</span> on the field.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pedro e seus amigos chutam uma bola no campo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">They make two <span class="palavra-destaque">teams</span> and play a small game.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eles fazem dois times e jogam uma partida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pedro <span class="palavra-destaque">scores</span> a goal! "Goooal!" he <span class="palavra-destaque">celebrates</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pedro marca um gol! "Goool!" ele comemora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Lis <span class="palavra-destaque">jumps</span> rope near the bench. She <span class="palavra-destaque">counts</span> every jump.</div>
+                            <div style="color: #666; font-size: 0.95em;">Lis pula corda perto do banco. Ela conta cada pulo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She can jump 50 times without stopping!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela consegue pular 50 vezes sem parar!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I try too. I <span class="palavra-destaque">hold</span> the rope and <span class="palavra-destaque">jump</span>. One, two, three... oops! I <span class="palavra-destaque">trip</span> on the rope.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tento também. Eu seguro a corda e pulo. Um, dois, três... ops! Eu tropeço na corda.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Lis <span class="palavra-destaque">laughs</span> and <span class="palavra-destaque">says</span>: "Practice more!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Lis ri e diz: "Pratique mais!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Some kids play <span class="palavra-destaque">hide and seek</span>. One person <span class="palavra-destaque">covers</span> their eyes and <span class="palavra-destaque">counts</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Algumas crianças brincam de esconde-esconde. Uma pessoa cobre os olhos e conta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The others <span class="palavra-destaque">hide</span> behind trees, benches, and walls.</div>
+                            <div style="color: #666; font-size: 0.95em;">Os outros se escondem atrás de árvores, bancos e paredes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">hear</span> the bell again. Recess is over!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu ouço o sinal de novo. O recreio acabou!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We all <span class="palavra-destaque">walk</span> back to the classroom. I am tired but happy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Todos nós andamos de volta para a sala. Estou cansado mas feliz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"That was fun!" I <span class="palavra-destaque">say</span> to Pedro. "Tomorrow let's play soccer!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Foi divertido!" eu digo pro Pedro. "Amanhã vamos jogar futebol!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I love playing outside. It is the best part of the day!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu amo brincar lá fora. É a melhor parte do dia!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Tag 🏃</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pega-pega</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Let's play tag!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Brincadeira de perseguir</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Chase 🏃‍♂️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Perseguir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "One person chases everyone"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Correr atrás de alguém</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Catch 🤲</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pegar / capturar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He catches me!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "I catch you!" = te peguei!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Dodge ↔️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desviar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I dodge left, then right"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Fugir de alguém</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Swing 🎠</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Balanço</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We go to the swings"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Brinquedo do playground</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Slide 🛝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Escorregador</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She climbs the ladder and slides down"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Descer escorregando</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Kick ⚽</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Chutar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "They kick a ball on the field"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "kick the ball" = chutar a bola</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Score ⚽</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Marcar (gol/ponto)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Pedro scores a goal!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "score a goal" = marcar um gol</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Trip 🤕</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tropeçar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I trip on the rope"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Cair por acidente</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Hide and Seek 🙈</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Esconde-esconde</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Some kids play hide and seek"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Brincadeira de se esconder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

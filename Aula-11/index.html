@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 11 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 11 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 11</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 11 - Semana 11</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 11</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de festas de aniversário (decoração, bolo, presentes, brincadeiras) e atividades na praia (areia, ondas, sol, natação, conchas).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: A2</strong> — Você já conhece o básico e agora vai expandir seu vocabulário com situações divertidas do dia a dia!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ My Birthday Party</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Festa de aniversário — decoração, bolo, velas, presentes, amigos, brincadeiras</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> balloon, banner, candle, wish, blow out, gift, wrap, unwrap, ribbon, guest, invite, decorate, frosting, sprinkles, clap, cheer</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ A Day at the Beach</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Dia na praia — areia, ondas, sol, natação, castelo de areia, conchas, protetor solar</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> wave, sand, shell, sunscreen, sunglasses, towel, umbrella, bucket, shovel, sandcastle, seagull, shore, float, collect, rub</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: My Birthday Party -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: My Birthday Party</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-my-birthday-party.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-my-birthday-party.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today is my birthday! I am ten years old!</p>
+                        <p>My mom <span class="palavra-destaque">decorated</span> the living room with <span class="palavra-destaque">balloons</span> and a big <span class="palavra-destaque">banner</span> that says "Happy Birthday!"</p>
+                        <p>There are blue, yellow, and red balloons everywhere. It looks so pretty!</p>
+                        <p>My mom <span class="palavra-destaque">baked</span> a chocolate cake. It has ten <span class="palavra-destaque">candles</span> on top — one for each year. The cake has white <span class="palavra-destaque">frosting</span> and colorful <span class="palavra-destaque">sprinkles</span>.</p>
+                        <p>At three o'clock, my <span class="palavra-destaque">guests</span> start to arrive. I <span class="palavra-destaque">invited</span> my friends from school: Pedro, Sofia, Lis, and Ana.</p>
+                        <p>Each friend <span class="palavra-destaque">brings</span> a <span class="palavra-destaque">gift</span>. The gifts are <span class="palavra-destaque">wrapped</span> in colorful paper with <span class="palavra-destaque">ribbons</span>. I am so excited!</p>
+                        <p>"Don't open them yet!" my mom <span class="palavra-destaque">says</span>. "Wait until after the cake!"</p>
+                        <p>We play games in the backyard. We play musical chairs and pass the parcel. Everyone <span class="palavra-destaque">laughs</span> and has fun.</p>
+                        <p>Then my mom <span class="palavra-destaque">calls</span> us inside. It is time for the cake!</p>
+                        <p>Everyone <span class="palavra-destaque">sings</span>: "Happy birthday to you! Happy birthday to you! Happy birthday dear Sofia! Happy birthday to you!"</p>
+                        <p>My mom <span class="palavra-destaque">lights</span> the candles. The flames are small and bright.</p>
+                        <p>"Make a <span class="palavra-destaque">wish</span>!" everyone <span class="palavra-destaque">says</span>.</p>
+                        <p>I <span class="palavra-destaque">close</span> my eyes and make a wish. I can't tell anyone — it's a secret!</p>
+                        <p>Then I take a deep breath and <span class="palavra-destaque">blow out</span> all ten candles at once! Everyone <span class="palavra-destaque">claps</span> and <span class="palavra-destaque">cheers</span>!</p>
+                        <p>My mom <span class="palavra-destaque">cuts</span> the cake and <span class="palavra-destaque">serves</span> a piece to everyone. It is delicious!</p>
+                        <p>After the cake, it is time to open my <span class="palavra-destaque">gifts</span>!</p>
+                        <p>I <span class="palavra-destaque">unwrap</span> the first one. It is a book about animals! "Thank you, Pedro!"</p>
+                        <p>The second gift is a set of colored pencils. "Thank you, Lis!"</p>
+                        <p>Ana <span class="palavra-destaque">gives</span> me a puzzle with 500 pieces. "Wow, thank you!"</p>
+                        <p>And Sofia gives me a beautiful <span class="palavra-destaque">bracelet</span>. "I love it! Thank you!"</p>
+                        <p>I <span class="palavra-destaque">hug</span> all my friends. This is the best birthday ever!</p>
+                        <p>At the end of the party, my mom <span class="palavra-destaque">gives</span> each guest a small <span class="palavra-destaque">party bag</span> with candy and a toy inside.</p>
+                        <p>"Thank you for coming!" I <span class="palavra-destaque">say</span> to everyone.</p>
+                        <p>"Happy birthday!" they all <span class="palavra-destaque">say</span> as they leave.</p>
+                        <p>I am tired but so happy. Ten years old! I can't wait for next year!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje é meu aniversário! Tenho dez anos!</p>
+                        <p>Minha mãe <span class="palavra-destaque">decorou</span> a sala com <span class="palavra-destaque">balões</span> e uma <span class="palavra-destaque">faixa</span> grande que diz "Feliz Aniversário!"</p>
+                        <p>Tem balões azuis, amarelos e vermelhos por todo lado. Está tão bonito!</p>
+                        <p>Minha mãe <span class="palavra-destaque">assou</span> um bolo de chocolate. Tem dez <span class="palavra-destaque">velas</span> em cima — uma pra cada ano. O bolo tem <span class="palavra-destaque">cobertura</span> branca e <span class="palavra-destaque">granulado</span> colorido.</p>
+                        <p>Às três horas, meus <span class="palavra-destaque">convidados</span> começam a chegar. Eu <span class="palavra-destaque">convidei</span> meus amigos da escola: Pedro, Sofia, Lis e Ana.</p>
+                        <p>Cada amigo <span class="palavra-destaque">traz</span> um <span class="palavra-destaque">presente</span>. Os presentes estão <span class="palavra-destaque">embrulhados</span> em papel colorido com <span class="palavra-destaque">fitas</span>. Estou tão animada!</p>
+                        <p>"Não abra ainda!" minha mãe <span class="palavra-destaque">diz</span>. "Espere até depois do bolo!"</p>
+                        <p>Nós brincamos no quintal. Brincamos de dança das cadeiras e passa o pacote. Todo mundo <span class="palavra-destaque">ri</span> e se diverte.</p>
+                        <p>Então minha mãe nos <span class="palavra-destaque">chama</span> pra dentro. É hora do bolo!</p>
+                        <p>Todo mundo <span class="palavra-destaque">canta</span>: "Parabéns pra você! Parabéns pra você! Parabéns querida Sofia! Parabéns pra você!"</p>
+                        <p>Minha mãe <span class="palavra-destaque">acende</span> as velas. As chamas são pequenas e brilhantes.</p>
+                        <p>"Faça um <span class="palavra-destaque">pedido</span>!" todo mundo <span class="palavra-destaque">diz</span>.</p>
+                        <p>Eu <span class="palavra-destaque">fecho</span> meus olhos e faço um pedido. Não posso contar pra ninguém — é segredo!</p>
+                        <p>Então eu respiro fundo e <span class="palavra-destaque">apago</span> todas as dez velas de uma vez! Todo mundo <span class="palavra-destaque">bate palmas</span> e <span class="palavra-destaque">comemora</span>!</p>
+                        <p>Minha mãe <span class="palavra-destaque">corta</span> o bolo e <span class="palavra-destaque">serve</span> um pedaço pra cada um. Está delicioso!</p>
+                        <p>Depois do bolo, é hora de abrir meus <span class="palavra-destaque">presentes</span>!</p>
+                        <p>Eu <span class="palavra-destaque">desembrulho</span> o primeiro. É um livro sobre animais! "Obrigada, Pedro!"</p>
+                        <p>O segundo presente é um conjunto de lápis de cor. "Obrigada, Lis!"</p>
+                        <p>Ana me <span class="palavra-destaque">dá</span> um quebra-cabeça de 500 peças. "Uau, obrigada!"</p>
+                        <p>E Sofia me dá uma <span class="palavra-destaque">pulseira</span> linda. "Amei! Obrigada!"</p>
+                        <p>Eu <span class="palavra-destaque">abraço</span> todos os meus amigos. Esse é o melhor aniversário de todos!</p>
+                        <p>No final da festa, minha mãe <span class="palavra-destaque">dá</span> a cada convidado uma <span class="palavra-destaque">sacolinha</span> com doces e um brinquedo dentro.</p>
+                        <p>"Obrigada por virem!" eu <span class="palavra-destaque">digo</span> pra todos.</p>
+                        <p>"Feliz aniversário!" todos <span class="palavra-destaque">dizem</span> ao sair.</p>
+                        <p>Estou cansada mas muito feliz. Dez anos! Mal posso esperar pelo ano que vem!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today is my birthday! I am ten years old!</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje é meu aniversário! Tenho dez anos!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">decorated</span> the living room with <span class="palavra-destaque">balloons</span> and a big <span class="palavra-destaque">banner</span> that says "Happy Birthday!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe decorou a sala com balões e uma faixa grande que diz "Feliz Aniversário!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">There are blue, yellow, and red balloons everywhere. It looks so pretty!</div>
+                            <div style="color: #666; font-size: 0.95em;">Tem balões azuis, amarelos e vermelhos por todo lado. Está tão bonito!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">baked</span> a chocolate cake. It has ten <span class="palavra-destaque">candles</span> on top.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe assou um bolo de chocolate. Tem dez velas em cima.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The cake has white <span class="palavra-destaque">frosting</span> and colorful <span class="palavra-destaque">sprinkles</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">O bolo tem cobertura branca e granulado colorido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At three o'clock, my <span class="palavra-destaque">guests</span> start to arrive.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às três horas, meus convidados começam a chegar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">invited</span> my friends from school: Pedro, Sofia, Lis, and Ana.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu convidei meus amigos da escola: Pedro, Sofia, Lis e Ana.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Each friend <span class="palavra-destaque">brings</span> a <span class="palavra-destaque">gift</span>. The gifts are <span class="palavra-destaque">wrapped</span> in colorful paper with <span class="palavra-destaque">ribbons</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Cada amigo traz um presente. Os presentes estão embrulhados em papel colorido com fitas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Don't open them yet!" my mom <span class="palavra-destaque">says</span>. "Wait until after the cake!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não abra ainda!" minha mãe diz. "Espere até depois do bolo!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We play games in the backyard. Everyone <span class="palavra-destaque">laughs</span> and has fun.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós brincamos no quintal. Todo mundo ri e se diverte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then my mom <span class="palavra-destaque">calls</span> us inside. It is time for the cake!</div>
+                            <div style="color: #666; font-size: 0.95em;">Então minha mãe nos chama pra dentro. É hora do bolo!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everyone <span class="palavra-destaque">sings</span>: "Happy birthday to you!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Todo mundo canta: "Parabéns pra você!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">lights</span> the candles. The flames are small and bright.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe acende as velas. As chamas são pequenas e brilhantes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Make a <span class="palavra-destaque">wish</span>!" everyone <span class="palavra-destaque">says</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Faça um pedido!" todo mundo diz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">close</span> my eyes and make a wish. I can't tell anyone — it's a secret!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu fecho meus olhos e faço um pedido. Não posso contar pra ninguém — é segredo!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I take a deep breath and <span class="palavra-destaque">blow out</span> all ten candles at once!</div>
+                            <div style="color: #666; font-size: 0.95em;">Então eu respiro fundo e apago todas as dez velas de uma vez!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everyone <span class="palavra-destaque">claps</span> and <span class="palavra-destaque">cheers</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Todo mundo bate palmas e comemora!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">cuts</span> the cake and <span class="palavra-destaque">serves</span> a piece to everyone.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe corta o bolo e serve um pedaço pra cada um.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the cake, it is time to open my <span class="palavra-destaque">gifts</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois do bolo, é hora de abrir meus presentes!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">unwrap</span> the first one. It is a book about animals! "Thank you, Pedro!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu desembrulho o primeiro. É um livro sobre animais! "Obrigada, Pedro!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the end of the party, my mom <span class="palavra-destaque">gives</span> each guest a small <span class="palavra-destaque">party bag</span> with candy and a toy inside.</div>
+                            <div style="color: #666; font-size: 0.95em;">No final da festa, minha mãe dá a cada convidado uma sacolinha com doces e um brinquedo dentro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Thank you for coming!" I <span class="palavra-destaque">say</span> to everyone.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Obrigada por virem!" eu digo pra todos.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I am tired but so happy. Ten years old! I can't wait for next year!</div>
+                            <div style="color: #666; font-size: 0.95em;">Estou cansada mas muito feliz. Dez anos! Mal posso esperar pelo ano que vem!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Balloon 🎈</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Balão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The living room has balloons everywhere"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Decoração de festa</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Candle 🕯️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vela</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It has ten candles on top"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Uma pra cada ano no bolo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Wish ⭐</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pedido / desejo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Make a wish!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pedido secreto antes de apagar as velas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Blow out 💨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Apagar (soprando)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Blow out all ten candles at once!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "blow out the candles" = apagar as velas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Gift 🎁</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Presente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Each friend brings a gift"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sinônimo: "present"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Wrap / Unwrap 🎀</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Embrulhar / Desembrulhar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I unwrap the first one"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> wrap = embrulhar, unwrap = tirar o papel</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Guest 👥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Convidado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My guests start to arrive"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pessoa que vem à festa</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Clap 👏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bater palmas</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Everyone claps and cheers!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Aplaudir de alegria</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Decorate 🎊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Decorar / enfeitar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My mom decorated the living room"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Enfeitar o lugar pra festa</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Party bag 🛍️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sacolinha de festa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A small party bag with candy and a toy"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Lembrancinha que cada convidado leva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: A Day at the Beach -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: A Day at the Beach</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-a-day-at-the-beach.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-a-day-at-the-beach.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today my family goes to the beach! I am so excited!</p>
+                        <p>My dad <span class="palavra-destaque">drives</span> the car. My mom sits next to him. My sister and I sit in the back.</p>
+                        <p>"Are we there yet?" I <span class="palavra-destaque">ask</span> every five minutes.</p>
+                        <p>"Almost!" my dad <span class="palavra-destaque">says</span>.</p>
+                        <p>When we arrive, I can see the ocean. It is big and blue. The <span class="palavra-destaque">waves</span> are small today. Perfect for swimming!</p>
+                        <p>My mom <span class="palavra-destaque">carries</span> the <span class="palavra-destaque">beach bag</span>. Inside, there is <span class="palavra-destaque">sunscreen</span>, <span class="palavra-destaque">towels</span>, <span class="palavra-destaque">sunglasses</span>, and snacks.</p>
+                        <p>"Put on <span class="palavra-destaque">sunscreen</span> first!" my mom <span class="palavra-destaque">says</span>. She <span class="palavra-destaque">rubs</span> it on my back, my arms, and my face. It feels cold and sticky!</p>
+                        <p>My dad <span class="palavra-destaque">opens</span> the big <span class="palavra-destaque">umbrella</span> and <span class="palavra-destaque">puts</span> it in the <span class="palavra-destaque">sand</span>. Now we have shade!</p>
+                        <p>I <span class="palavra-destaque">take off</span> my shoes and <span class="palavra-destaque">feel</span> the sand between my toes. It is warm and soft.</p>
+                        <p>I <span class="palavra-destaque">run</span> to the water. The first wave <span class="palavra-destaque">touches</span> my feet. It is cold! But I get used to it quickly.</p>
+                        <p>My sister <span class="palavra-destaque">brings</span> her <span class="palavra-destaque">bucket</span> and <span class="palavra-destaque">shovel</span>. We <span class="palavra-destaque">build</span> a <span class="palavra-destaque">sandcastle</span> together. We make towers, walls, and even a little door.</p>
+                        <p>"Look! I found a <span class="palavra-destaque">shell</span>!" my sister <span class="palavra-destaque">shouts</span>. It is pink and white. So pretty!</p>
+                        <p>We <span class="palavra-destaque">collect</span> many shells — big ones, small ones, and one that looks like a star.</p>
+                        <p>My dad <span class="palavra-destaque">swims</span> in the ocean. He goes far! My mom <span class="palavra-destaque">watches</span> from the <span class="palavra-destaque">shore</span> and <span class="palavra-destaque">waves</span> at him.</p>
+                        <p>A <span class="palavra-destaque">seagull</span> flies over our heads. It is looking for food!</p>
+                        <p>After swimming, I <span class="palavra-destaque">float</span> on my back in the water. I look at the sky. The clouds look like animals.</p>
+                        <p>My mom <span class="palavra-destaque">calls</span> us for a snack. We <span class="palavra-destaque">eat</span> sandwiches and <span class="palavra-destaque">drink</span> juice. Sand gets in everything!</p>
+                        <p>Before we leave, I <span class="palavra-destaque">look</span> at the ocean one more time. The sun is going down. The sky is orange and pink.</p>
+                        <p>"Can we come back tomorrow?" I <span class="palavra-destaque">ask</span>.</p>
+                        <p>My mom <span class="palavra-destaque">smiles</span> and <span class="palavra-destaque">says</span>: "We'll see!"</p>
+                        <p>I love the beach. The sand, the waves, the shells — everything is perfect.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje minha família vai à praia! Estou tão animado!</p>
+                        <p>Meu pai <span class="palavra-destaque">dirige</span> o carro. Minha mãe senta do lado dele. Minha irmã e eu sentamos atrás.</p>
+                        <p>"Já chegamos?" eu <span class="palavra-destaque">pergunto</span> a cada cinco minutos.</p>
+                        <p>"Quase!" meu pai <span class="palavra-destaque">diz</span>.</p>
+                        <p>Quando chegamos, consigo ver o oceano. É grande e azul. As <span class="palavra-destaque">ondas</span> estão pequenas hoje. Perfeito pra nadar!</p>
+                        <p>Minha mãe <span class="palavra-destaque">carrega</span> a <span class="palavra-destaque">bolsa de praia</span>. Dentro, tem <span class="palavra-destaque">protetor solar</span>, <span class="palavra-destaque">toalhas</span>, <span class="palavra-destaque">óculos de sol</span> e lanches.</p>
+                        <p>"Passe <span class="palavra-destaque">protetor solar</span> primeiro!" minha mãe <span class="palavra-destaque">diz</span>. Ela <span class="palavra-destaque">passa</span> nas minhas costas, braços e rosto. É frio e grudento!</p>
+                        <p>Meu pai <span class="palavra-destaque">abre</span> o <span class="palavra-destaque">guarda-sol</span> grande e <span class="palavra-destaque">coloca</span> na <span class="palavra-destaque">areia</span>. Agora temos sombra!</p>
+                        <p>Eu <span class="palavra-destaque">tiro</span> meus sapatos e <span class="palavra-destaque">sinto</span> a areia entre os dedos do pé. É quente e macia.</p>
+                        <p>Eu <span class="palavra-destaque">corro</span> até a água. A primeira onda <span class="palavra-destaque">toca</span> meus pés. É fria! Mas me acostumo rápido.</p>
+                        <p>Minha irmã <span class="palavra-destaque">traz</span> o <span class="palavra-destaque">baldinho</span> e a <span class="palavra-destaque">pazinha</span>. Nós <span class="palavra-destaque">construímos</span> um <span class="palavra-destaque">castelo de areia</span> juntos. Fazemos torres, paredes e até uma portinha.</p>
+                        <p>"Olha! Achei uma <span class="palavra-destaque">concha</span>!" minha irmã <span class="palavra-destaque">grita</span>. É rosa e branca. Que linda!</p>
+                        <p>Nós <span class="palavra-destaque">coletamos</span> muitas conchas — grandes, pequenas, e uma que parece uma estrela.</p>
+                        <p>Meu pai <span class="palavra-destaque">nada</span> no oceano. Ele vai longe! Minha mãe <span class="palavra-destaque">observa</span> da <span class="palavra-destaque">beira da praia</span> e <span class="palavra-destaque">acena</span> pra ele.</p>
+                        <p>Uma <span class="palavra-destaque">gaivota</span> voa sobre nossas cabeças. Está procurando comida!</p>
+                        <p>Depois de nadar, eu <span class="palavra-destaque">flutuo</span> de costas na água. Eu olho pro céu. As nuvens parecem animais.</p>
+                        <p>Minha mãe nos <span class="palavra-destaque">chama</span> pro lanche. Comemos sanduíches e bebemos suco. Areia entra em tudo!</p>
+                        <p>Antes de irmos embora, eu <span class="palavra-destaque">olho</span> pro oceano mais uma vez. O sol está se pondo. O céu está laranja e rosa.</p>
+                        <p>"A gente pode voltar amanhã?" eu <span class="palavra-destaque">pergunto</span>.</p>
+                        <p>Minha mãe <span class="palavra-destaque">sorri</span> e <span class="palavra-destaque">diz</span>: "Vamos ver!"</p>
+                        <p>Eu amo a praia. A areia, as ondas, as conchas — tudo é perfeito.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today my family goes to the beach! I am so excited!</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje minha família vai à praia! Estou tão animado!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad <span class="palavra-destaque">drives</span> the car. My mom sits next to him.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai dirige o carro. Minha mãe senta do lado dele.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Are we there yet?" I <span class="palavra-destaque">ask</span> every five minutes.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Já chegamos?" eu pergunto a cada cinco minutos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When we arrive, I can see the ocean. It is big and blue.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando chegamos, consigo ver o oceano. É grande e azul.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">waves</span> are small today. Perfect for swimming!</div>
+                            <div style="color: #666; font-size: 0.95em;">As ondas estão pequenas hoje. Perfeito pra nadar!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">carries</span> the <span class="palavra-destaque">beach bag</span>. Inside, there is <span class="palavra-destaque">sunscreen</span>, <span class="palavra-destaque">towels</span>, and <span class="palavra-destaque">sunglasses</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe carrega a bolsa de praia. Dentro, tem protetor solar, toalhas e óculos de sol.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Put on <span class="palavra-destaque">sunscreen</span> first!" my mom <span class="palavra-destaque">says</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Passe protetor solar primeiro!" minha mãe diz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She <span class="palavra-destaque">rubs</span> it on my back, my arms, and my face. It feels cold and sticky!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela passa nas minhas costas, braços e rosto. É frio e grudento!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad <span class="palavra-destaque">opens</span> the big <span class="palavra-destaque">umbrella</span> and <span class="palavra-destaque">puts</span> it in the <span class="palavra-destaque">sand</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai abre o guarda-sol grande e coloca na areia.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">take off</span> my shoes and <span class="palavra-destaque">feel</span> the sand between my toes. It is warm and soft.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tiro meus sapatos e sinto a areia entre os dedos do pé. É quente e macia.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">run</span> to the water. The first wave <span class="palavra-destaque">touches</span> my feet. It is cold!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu corro até a água. A primeira onda toca meus pés. É fria!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My sister <span class="palavra-destaque">brings</span> her <span class="palavra-destaque">bucket</span> and <span class="palavra-destaque">shovel</span>. We <span class="palavra-destaque">build</span> a <span class="palavra-destaque">sandcastle</span> together.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha irmã traz o baldinho e a pazinha. Nós construímos um castelo de areia juntos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Look! I found a <span class="palavra-destaque">shell</span>!" my sister <span class="palavra-destaque">shouts</span>. It is pink and white.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Olha! Achei uma concha!" minha irmã grita. É rosa e branca.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">collect</span> many shells — big ones, small ones, and one that looks like a star.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós coletamos muitas conchas — grandes, pequenas, e uma que parece uma estrela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad <span class="palavra-destaque">swims</span> in the ocean. He goes far!</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai nada no oceano. Ele vai longe!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">watches</span> from the <span class="palavra-destaque">shore</span> and <span class="palavra-destaque">waves</span> at him.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe observa da beira da praia e acena pra ele.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">A <span class="palavra-destaque">seagull</span> flies over our heads. It is looking for food!</div>
+                            <div style="color: #666; font-size: 0.95em;">Uma gaivota voa sobre nossas cabeças. Está procurando comida!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After swimming, I <span class="palavra-destaque">float</span> on my back in the water.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de nadar, eu flutuo de costas na água.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I look at the sky. The clouds look like animals.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu olho pro céu. As nuvens parecem animais.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before we leave, I <span class="palavra-destaque">look</span> at the ocean one more time. The sun is going down.</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes de irmos embora, eu olho pro oceano mais uma vez. O sol está se pondo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The sky is orange and pink.</div>
+                            <div style="color: #666; font-size: 0.95em;">O céu está laranja e rosa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Can we come back tomorrow?" I <span class="palavra-destaque">ask</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">"A gente pode voltar amanhã?" eu pergunto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">smiles</span> and <span class="palavra-destaque">says</span>: "We'll see!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe sorri e diz: "Vamos ver!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I love the beach. The sand, the waves, the shells — everything is perfect.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu amo a praia. A areia, as ondas, as conchas — tudo é perfeito.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Wave 🌊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Onda</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The waves are small today"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Movimento do mar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Sand 🏖️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Areia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel the sand between my toes"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O chão da praia</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Shell 🐚</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Concha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I found a shell!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Encontrada na areia da praia</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Sunscreen ☀️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Protetor solar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Put on sunscreen first!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Protege a pele do sol</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Sandcastle 🏰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Castelo de areia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We build a sandcastle together"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Construção na praia com balde e pá</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Shore 🏝️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Beira da praia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My mom watches from the shore"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde a água encontra a areia</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Float 🏊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Flutuar / boiar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I float on my back in the water"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ficar boiando na água</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Seagull 🦅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Gaivota</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A seagull flies over our heads"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pássaro da praia que rouba comida!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Bucket & Shovel 🪣</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Baldinho e pazinha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My sister brings her bucket and shovel"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pra brincar e construir na areia</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Collect 🧺</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Colecionar / coletar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We collect many shells"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Juntar coisas interessantes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

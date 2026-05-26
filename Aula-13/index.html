@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 13 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 13 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 13</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 13 - Semana 13</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 13</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a expressar emoções e sentimentos em inglês, e lidar com situações difíceis como dias ruins, erros e conflitos com amigos.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: A2→B1</strong> — Você já domina o básico e agora vai aprender a falar sobre como se sente e como lidar com problemas do dia a dia!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ How I Feel</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Emoções e sentimentos — expressar como você se sente em diferentes situações (passeio escolar, desafios, amizade)</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> happy, sad, angry, scared, excited, nervous, surprised, proud, shy, worried, calm, brave, grateful, lonely, jealous</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ A Bad Day</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Dias ruins — lidar com erros, frustrações, conflitos, pedir desculpas e perdoar</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> upset, frustrated, embarrassed, disappointed, confused, cry, tears, hug, apologize, forgive, mistake, fault, deep breath, calm down, cheer up</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: How I Feel -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: How I Feel</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-how-i-feel.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-how-i-feel.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today is field trip day! I wake up and I feel <span class="palavra-destaque">excited</span>. I love field trips!</p>
+                        <p>I eat breakfast fast. My heart is beating fast too. I am so <span class="palavra-destaque">happy</span>!</p>
+                        <p>My mom says: "Are you okay?" I say: "Yes! I am just excited!"</p>
+                        <p>I get on the school bus. There are many kids. I sit next to my friend Lucas.</p>
+                        <p>But then I feel a little <span class="palavra-destaque">nervous</span>. I think: "What if I don't like the activities?"</p>
+                        <p>Lucas says: "Don't worry! It will be fun!" I feel better now.</p>
+                        <p>We arrive at the nature park. The teacher says: "Today we will climb the big wall!"</p>
+                        <p>I look at the wall. It is very tall! I feel <span class="palavra-destaque">scared</span> for a moment.</p>
+                        <p>But I take a deep breath. I want to be <span class="palavra-destaque">brave</span>. I say: "I can do this!"</p>
+                        <p>I start to climb. My hands hold the rocks. I go up, up, up!</p>
+                        <p>I get to the top! I am <span class="palavra-destaque">surprised</span> — I did it! I feel so <span class="palavra-destaque">proud</span> of myself!</p>
+                        <p>My friends clap for me. I feel <span class="palavra-destaque">happy</span> again.</p>
+                        <p>At lunch, I sit with my friends. We talk and laugh. I don't feel <span class="palavra-destaque">shy</span> today.</p>
+                        <p>After lunch, we do a group activity. I am <span class="palavra-destaque">worried</span> at first because I don't know some kids.</p>
+                        <p>But they are nice! We work together. I feel <span class="palavra-destaque">calm</span> and comfortable.</p>
+                        <p>One boy wins a prize. I feel a little <span class="palavra-destaque">jealous</span>, but then I think: "That's okay. I did my best."</p>
+                        <p>On the bus home, I am tired but not <span class="palavra-destaque">sad</span>. I had a great day!</p>
+                        <p>I feel <span class="palavra-destaque">grateful</span> for my friends and my teacher. They make everything better.</p>
+                        <p>At home, I tell my mom about my day. She says: "I am proud of you!"</p>
+                        <p>I don't feel <span class="palavra-destaque">lonely</span> today. I feel loved.</p>
+                        <p>Some days I feel <span class="palavra-destaque">angry</span> about small things. But today is not one of those days.</p>
+                        <p>Today I feel brave, proud, and grateful. It was a perfect day!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje é dia de passeio escolar! Eu acordo e me sinto <span class="palavra-destaque">animado</span>. Eu amo passeios escolares!</p>
+                        <p>Eu como o café da manhã rápido. Meu coração tá batendo rápido também. Estou tão <span class="palavra-destaque">feliz</span>!</p>
+                        <p>Minha mãe diz: "Você tá bem?" Eu digo: "Sim! Só tô animado!"</p>
+                        <p>Eu entro no ônibus escolar. Tem muitas crianças. Sento do lado do meu amigo Lucas.</p>
+                        <p>Mas aí eu fico um pouco <span class="palavra-destaque">nervoso</span>. Eu penso: "E se eu não gostar das atividades?"</p>
+                        <p>Lucas diz: "Não se preocupa! Vai ser divertido!" Me sinto melhor agora.</p>
+                        <p>Chegamos no parque da natureza. A professora diz: "Hoje vamos escalar o paredão!"</p>
+                        <p>Eu olho pro muro. É muito alto! Fico com <span class="palavra-destaque">medo</span> por um momento.</p>
+                        <p>Mas eu respiro fundo. Eu quero ser <span class="palavra-destaque">corajoso</span>. Eu digo: "Eu consigo!"</p>
+                        <p>Eu começo a escalar. Minhas mãos seguram as pedras. Eu vou subindo, subindo, subindo!</p>
+                        <p>Eu chego no topo! Fico <span class="palavra-destaque">surpreso</span> — eu consegui! Me sinto tão <span class="palavra-destaque">orgulhoso</span> de mim mesmo!</p>
+                        <p>Meus amigos batem palma pra mim. Me sinto <span class="palavra-destaque">feliz</span> de novo.</p>
+                        <p>No almoço, sento com meus amigos. A gente conversa e ri. Não me sinto <span class="palavra-destaque">tímido</span> hoje.</p>
+                        <p>Depois do almoço, fazemos uma atividade em grupo. Fico <span class="palavra-destaque">preocupado</span> no começo porque não conheço algumas crianças.</p>
+                        <p>Mas eles são legais! Trabalhamos juntos. Me sinto <span class="palavra-destaque">calmo</span> e confortável.</p>
+                        <p>Um menino ganha um prêmio. Fico um pouco com <span class="palavra-destaque">ciúmes</span>, mas aí eu penso: "Tudo bem. Eu fiz o meu melhor."</p>
+                        <p>No ônibus pra casa, estou cansado mas não <span class="palavra-destaque">triste</span>. Tive um ótimo dia!</p>
+                        <p>Me sinto <span class="palavra-destaque">grato</span> pelos meus amigos e minha professora. Eles fazem tudo melhor.</p>
+                        <p>Em casa, eu conto pra minha mãe sobre o meu dia. Ela diz: "Estou orgulhosa de você!"</p>
+                        <p>Não me sinto <span class="palavra-destaque">sozinho</span> hoje. Me sinto amado.</p>
+                        <p>Alguns dias fico <span class="palavra-destaque">com raiva</span> por coisas pequenas. Mas hoje não é um desses dias.</p>
+                        <p>Hoje me sinto corajoso, orgulhoso e grato. Foi um dia perfeito!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today is field trip day! I wake up and I feel <span class="palavra-destaque">excited</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje é dia de passeio escolar! Eu acordo e me sinto animado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I eat breakfast fast. My heart is beating fast too. I am so <span class="palavra-destaque">happy</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu como o café da manhã rápido. Meu coração tá batendo rápido também. Estou tão feliz!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I get on the school bus. I sit next to my friend Lucas.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu entro no ônibus escolar. Sento do lado do meu amigo Lucas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But then I feel a little <span class="palavra-destaque">nervous</span>. "What if I don't like the activities?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas aí eu fico um pouco nervoso. "E se eu não gostar das atividades?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Lucas says: "Don't worry! It will be fun!" I feel better now.</div>
+                            <div style="color: #666; font-size: 0.95em;">Lucas diz: "Não se preocupa! Vai ser divertido!" Me sinto melhor agora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The teacher says: "Today we will climb the big wall!"</div>
+                            <div style="color: #666; font-size: 0.95em;">A professora diz: "Hoje vamos escalar o paredão!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I look at the wall. It is very tall! I feel <span class="palavra-destaque">scared</span> for a moment.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu olho pro muro. É muito alto! Fico com medo por um momento.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I want to be <span class="palavra-destaque">brave</span>. I say: "I can do this!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu quero ser corajoso. Eu digo: "Eu consigo!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I get to the top! I am <span class="palavra-destaque">surprised</span> — I did it! I feel so <span class="palavra-destaque">proud</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu chego no topo! Fico surpreso — eu consegui! Me sinto tão orgulhoso!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friends clap for me. I feel <span class="palavra-destaque">happy</span> again.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meus amigos batem palma pra mim. Me sinto feliz de novo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At lunch, I sit with my friends. I don't feel <span class="palavra-destaque">shy</span> today.</div>
+                            <div style="color: #666; font-size: 0.95em;">No almoço, sento com meus amigos. Não me sinto tímido hoje.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We do a group activity. I am <span class="palavra-destaque">worried</span> because I don't know some kids.</div>
+                            <div style="color: #666; font-size: 0.95em;">Fazemos uma atividade em grupo. Fico preocupado porque não conheço algumas crianças.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But they are nice! I feel <span class="palavra-destaque">calm</span> and comfortable.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas eles são legais! Me sinto calmo e confortável.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">One boy wins a prize. I feel a little <span class="palavra-destaque">jealous</span>, but that's okay.</div>
+                            <div style="color: #666; font-size: 0.95em;">Um menino ganha um prêmio. Fico um pouco com ciúmes, mas tudo bem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the bus home, I am tired but not <span class="palavra-destaque">sad</span>. I had a great day!</div>
+                            <div style="color: #666; font-size: 0.95em;">No ônibus pra casa, estou cansado mas não triste. Tive um ótimo dia!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I feel <span class="palavra-destaque">grateful</span> for my friends and my teacher.</div>
+                            <div style="color: #666; font-size: 0.95em;">Me sinto grato pelos meus amigos e minha professora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I don't feel <span class="palavra-destaque">lonely</span> today. I feel loved.</div>
+                            <div style="color: #666; font-size: 0.95em;">Não me sinto sozinho hoje. Me sinto amado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Some days I feel <span class="palavra-destaque">angry</span> about small things. But not today.</div>
+                            <div style="color: #666; font-size: 0.95em;">Alguns dias fico com raiva por coisas pequenas. Mas hoje não.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today I feel brave, proud, and grateful. It was a perfect day!</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje me sinto corajoso, orgulhoso e grato. Foi um dia perfeito!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Happy 😊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Feliz</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel happy"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "I feel happy" = me sinto feliz</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Scared 😨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Com medo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel scared for a moment"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "I feel scared" = estou com medo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Brave 💪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Corajoso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I want to be brave"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando enfrenta o medo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Proud 🏆</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Orgulhoso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel so proud of myself!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando faz algo bem</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Nervous 😰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Nervoso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel a little nervous"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Antes de algo novo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Grateful 🙏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Grato</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel grateful for my friends"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando agradece por algo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Jealous 😤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Com ciúmes</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel a little jealous"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando quer o que outro tem</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Worried 😟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Preocupado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I am worried because I don't know some kids"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando pensa em coisas ruins</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Calm 😌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Calmo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel calm and comfortable"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Tranquilo, relaxado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Excited 🎉</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Animado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel excited"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando algo legal vai acontecer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: A Bad Day -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: A Bad Day</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-a-bad-day.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-a-bad-day.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today is a bad day. Everything goes wrong!</p>
+                        <p>I wake up late. My alarm clock doesn't ring. I am already <span class="palavra-destaque">upset</span>!</p>
+                        <p>I run to the bathroom. I brush my teeth fast. No time for a good breakfast!</p>
+                        <p>At school, the teacher says: "Where is your homework?" Oh no! I forgot it at home!</p>
+                        <p>I feel so <span class="palavra-destaque">embarrassed</span>. My face turns red. I say: "I'm sorry, teacher. I forgot."</p>
+                        <p>She says: "It's okay. Bring it tomorrow." But I still feel bad.</p>
+                        <p>At lunch, I carry my tray to the table. But I trip! The food falls on the floor!</p>
+                        <p>Everyone looks at me. I want to <span class="palavra-destaque">cry</span>. I feel my <span class="palavra-destaque">tears</span> coming.</p>
+                        <p>I am so <span class="palavra-destaque">frustrated</span>! Why is this day so bad?</p>
+                        <p>My friend Sofia comes to help me. She says: "Don't worry! It was just a <span class="palavra-destaque">mistake</span>."</p>
+                        <p>She helps me clean up. I feel a little better.</p>
+                        <p>But then, in class, I get <span class="palavra-destaque">confused</span> with the math problem. I don't understand it.</p>
+                        <p>I ask my friend Pedro for help. He says: "No, do it yourself!" I feel <span class="palavra-destaque">disappointed</span>.</p>
+                        <p>After class, I am <span class="palavra-destaque">upset</span> with Pedro. I say something mean to him.</p>
+                        <p>He looks sad. Now I feel bad. It is not his <span class="palavra-destaque">fault</span>. I made a <span class="palavra-destaque">mistake</span> too.</p>
+                        <p>I take a <span class="palavra-destaque">deep breath</span>. I need to <span class="palavra-destaque">calm down</span>.</p>
+                        <p>I go to Pedro and say: "I'm sorry. I want to <span class="palavra-destaque">apologize</span>. I was mean."</p>
+                        <p>Pedro smiles. He says: "It's okay. I <span class="palavra-destaque">forgive</span> you. I'm sorry too."</p>
+                        <p>He gives me a <span class="palavra-destaque">hug</span>. I feel better now.</p>
+                        <p>Sofia says: "Hey! Let's play together after school! That will <span class="palavra-destaque">cheer</span> you <span class="palavra-destaque">up</span>!"</p>
+                        <p>I smile. Yes! That sounds good.</p>
+                        <p>After school, we play at the park. I laugh a lot. The bad day is over!</p>
+                        <p>At home, my mom gives me a <span class="palavra-destaque">hug</span>. She says: "Bad days are normal. Tomorrow will be better."</p>
+                        <p>She is right. Everyone has bad days. The important thing is to <span class="palavra-destaque">apologize</span> when we are wrong, and to <span class="palavra-destaque">forgive</span> when others make mistakes.</p>
+                        <p>I take a <span class="palavra-destaque">deep breath</span> and smile. Tomorrow is a new day!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje é um dia ruim. Tudo dá errado!</p>
+                        <p>Eu acordo tarde. Meu despertador não toca. Já estou <span class="palavra-destaque">chateado</span>!</p>
+                        <p>Eu corro pro banheiro. Escovo os dentes rápido. Sem tempo pra um café da manhã bom!</p>
+                        <p>Na escola, a professora diz: "Cadê sua lição de casa?" Ah não! Eu esqueci em casa!</p>
+                        <p>Me sinto tão <span class="palavra-destaque">envergonhado</span>. Meu rosto fica vermelho. Eu digo: "Desculpa, professora. Eu esqueci."</p>
+                        <p>Ela diz: "Tudo bem. Traz amanhã." Mas eu ainda me sinto mal.</p>
+                        <p>No almoço, eu levo minha bandeja pra mesa. Mas eu tropeço! A comida cai no chão!</p>
+                        <p>Todo mundo olha pra mim. Eu quero <span class="palavra-destaque">chorar</span>. Sinto minhas <span class="palavra-destaque">lágrimas</span> vindo.</p>
+                        <p>Estou tão <span class="palavra-destaque">frustrado</span>! Por que esse dia é tão ruim?</p>
+                        <p>Minha amiga Sofia vem me ajudar. Ela diz: "Não se preocupa! Foi só um <span class="palavra-destaque">erro</span>."</p>
+                        <p>Ela me ajuda a limpar. Me sinto um pouco melhor.</p>
+                        <p>Mas aí, na aula, fico <span class="palavra-destaque">confuso</span> com o problema de matemática. Não entendo.</p>
+                        <p>Peço ajuda pro meu amigo Pedro. Ele diz: "Não, faz sozinho!" Me sinto <span class="palavra-destaque">decepcionado</span>.</p>
+                        <p>Depois da aula, estou <span class="palavra-destaque">chateado</span> com o Pedro. Falo algo maldoso pra ele.</p>
+                        <p>Ele fica triste. Agora eu me sinto mal. Não é <span class="palavra-destaque">culpa</span> dele. Eu também cometi um <span class="palavra-destaque">erro</span>.</p>
+                        <p>Eu respiro <span class="palavra-destaque">fundo</span>. Preciso me <span class="palavra-destaque">acalmar</span>.</p>
+                        <p>Vou até o Pedro e digo: "Desculpa. Quero <span class="palavra-destaque">pedir desculpas</span>. Fui maldoso."</p>
+                        <p>Pedro sorri. Ele diz: "Tudo bem. Eu te <span class="palavra-destaque">perdoo</span>. Desculpa também."</p>
+                        <p>Ele me dá um <span class="palavra-destaque">abraço</span>. Me sinto melhor agora.</p>
+                        <p>Sofia diz: "Ei! Vamos brincar juntos depois da escola! Isso vai te <span class="palavra-destaque">animar</span>!"</p>
+                        <p>Eu sorrio. Sim! Isso parece bom.</p>
+                        <p>Depois da escola, brincamos no parque. Eu rio muito. O dia ruim acabou!</p>
+                        <p>Em casa, minha mãe me dá um <span class="palavra-destaque">abraço</span>. Ela diz: "Dias ruins são normais. Amanhã vai ser melhor."</p>
+                        <p>Ela tá certa. Todo mundo tem dias ruins. O importante é <span class="palavra-destaque">pedir desculpas</span> quando estamos errados, e <span class="palavra-destaque">perdoar</span> quando os outros cometem erros.</p>
+                        <p>Eu respiro <span class="palavra-destaque">fundo</span> e sorrio. Amanhã é um novo dia!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today is a bad day. Everything goes wrong!</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje é um dia ruim. Tudo dá errado!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I wake up late. My alarm clock doesn't ring. I am already <span class="palavra-destaque">upset</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acordo tarde. Meu despertador não toca. Já estou chateado!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At school, the teacher says: "Where is your homework?" I forgot it at home!</div>
+                            <div style="color: #666; font-size: 0.95em;">Na escola, a professora diz: "Cadê sua lição?" Eu esqueci em casa!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I feel so <span class="palavra-destaque">embarrassed</span>. My face turns red.</div>
+                            <div style="color: #666; font-size: 0.95em;">Me sinto tão envergonhado. Meu rosto fica vermelho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At lunch, I carry my tray to the table. But I trip! The food falls on the floor!</div>
+                            <div style="color: #666; font-size: 0.95em;">No almoço, eu levo minha bandeja pra mesa. Mas eu tropeço! A comida cai no chão!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everyone looks at me. I want to <span class="palavra-destaque">cry</span>. I feel my <span class="palavra-destaque">tears</span> coming.</div>
+                            <div style="color: #666; font-size: 0.95em;">Todo mundo olha pra mim. Eu quero chorar. Sinto minhas lágrimas vindo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I am so <span class="palavra-destaque">frustrated</span>! Why is this day so bad?</div>
+                            <div style="color: #666; font-size: 0.95em;">Estou tão frustrado! Por que esse dia é tão ruim?</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Sofia says: "Don't worry! It was just a <span class="palavra-destaque">mistake</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha amiga Sofia diz: "Não se preocupa! Foi só um erro."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I get <span class="palavra-destaque">confused</span> with the math problem. I don't understand it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Fico confuso com o problema de matemática. Não entendo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I ask Pedro for help. He says: "No, do it yourself!" I feel <span class="palavra-destaque">disappointed</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Peço ajuda pro Pedro. Ele diz: "Não, faz sozinho!" Me sinto decepcionado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I am <span class="palavra-destaque">upset</span> with Pedro. I say something mean to him.</div>
+                            <div style="color: #666; font-size: 0.95em;">Estou chateado com o Pedro. Falo algo maldoso pra ele.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He looks sad. It is not his <span class="palavra-destaque">fault</span>. I made a <span class="palavra-destaque">mistake</span> too.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele fica triste. Não é culpa dele. Eu também cometi um erro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I take a <span class="palavra-destaque">deep breath</span>. I need to <span class="palavra-destaque">calm down</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu respiro fundo. Preciso me acalmar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I say: "I'm sorry. I want to <span class="palavra-destaque">apologize</span>. I was mean."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu digo: "Desculpa. Quero pedir desculpas. Fui maldoso."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pedro says: "It's okay. I <span class="palavra-destaque">forgive</span> you."</div>
+                            <div style="color: #666; font-size: 0.95em;">Pedro diz: "Tudo bem. Eu te perdoo."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He gives me a <span class="palavra-destaque">hug</span>. I feel better now.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele me dá um abraço. Me sinto melhor agora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sofia says: "Let's play together! That will <span class="palavra-destaque">cheer you up</span>!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Sofia diz: "Vamos brincar juntos! Isso vai te animar!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At home, my mom gives me a hug. She says: "Bad days are normal."</div>
+                            <div style="color: #666; font-size: 0.95em;">Em casa, minha mãe me dá um abraço. Ela diz: "Dias ruins são normais."</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I take a <span class="palavra-destaque">deep breath</span> and smile. Tomorrow is a new day!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu respiro fundo e sorrio. Amanhã é um novo dia!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Upset 😤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Chateado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I am already upset!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando algo ruim acontece</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Frustrated 😩</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Frustrado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I am so frustrated!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando nada dá certo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Embarrassed 😳</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Envergonhado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel so embarrassed"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando fica com vergonha</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Apologize 🙏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pedir desculpas</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I want to apologize"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando faz algo errado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Forgive 💛</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Perdoar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I forgive you"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Aceitar o pedido de desculpas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Mistake ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Erro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It was just a mistake"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Algo que fez errado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Hug 🤗</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Abraço</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He gives me a hug"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "give a hug" = dar um abraço</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Calm down 😮‍💨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Se acalmar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I need to calm down"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ficar tranquilo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Cheer up 🌈</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Animar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That will cheer you up!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ficar mais feliz</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Deep breath 🌬️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Respiração funda</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I take a deep breath"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "take a deep breath" = respira fundo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

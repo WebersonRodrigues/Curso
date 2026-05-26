@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 12 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 12 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 12</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 12 - Semana 12</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 12</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário sobre tarefas domésticas (limpar, varrer, aspirar, dobrar roupas) e cuidados com animais de estimação (alimentar, passear, veterinário, brincar).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: A2</strong> — Você já conhece o básico e agora vai expandir seu vocabulário com situações do dia a dia em casa e com seu pet!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Helping at Home</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Tarefas domésticas — lavar louça, varrer, aspirar, dobrar roupas, tirar o pó, levar o lixo, arrumar o quarto</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> chore, sweep, mop, vacuum, dust, fold, iron, hang, dishes, sink, sponge, trash, garbage, tidy up, dry</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ My Pet</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Cuidar de um cachorro — alimentar, passear, brincar, veterinário, carinho, responsabilidades</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> pet, feed, bowl, leash, collar, paw, tail, fur, bark, lick, fetch, vet, treat, walk, cuddle</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: Helping at Home -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Helping at Home</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-helping-at-home.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-helping-at-home.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>It is Saturday morning. I wake up and go to the kitchen.</p>
+                        <p>My mom is there. She says: "Good morning! Today we have a lot of <span class="palavra-destaque">chores</span> to do!"</p>
+                        <p>I say: "Oh no… can I watch TV first?"</p>
+                        <p>"No!" she says. "First we clean, then we rest."</p>
+                        <p>Okay… I start with the kitchen. I wash the <span class="palavra-destaque">dishes</span> in the <span class="palavra-destaque">sink</span>. I use a <span class="palavra-destaque">sponge</span> and soap. There are many plates and cups!</p>
+                        <p>Then I <span class="palavra-destaque">dry</span> the dishes with a towel and put them away.</p>
+                        <p>Next, my mom asks me to <span class="palavra-destaque">sweep</span> the floor. I use the broom and <span class="palavra-destaque">sweep</span> all the dirt into a pile.</p>
+                        <p>After that, she <span class="palavra-destaque">mops</span> the floor with water. Now the kitchen floor is shiny and clean!</p>
+                        <p>In the living room, I <span class="palavra-destaque">dust</span> the shelves and the TV. So much dust! I sneeze two times!</p>
+                        <p>My mom says: "Can you <span class="palavra-destaque">vacuum</span> the carpet, please?" I turn on the <span class="palavra-destaque">vacuum</span> and clean the carpet. It makes a loud noise!</p>
+                        <p>Then I take the <span class="palavra-destaque">trash</span> out. The <span class="palavra-destaque">garbage</span> bag is heavy! I carry it to the big bin outside.</p>
+                        <p>After that, I help my mom with the clothes. I <span class="palavra-destaque">fold</span> the clean shirts and pants. I put them in neat piles.</p>
+                        <p>My mom <span class="palavra-destaque">irons</span> my dad's shirt. She says: "Can you <span class="palavra-destaque">hang</span> these clothes in the closet?"</p>
+                        <p>I hang the shirts and jackets on the hangers. Done!</p>
+                        <p>I also <span class="palavra-destaque">tidy up</span> my room. I put my toys in the box and my books on the shelf.</p>
+                        <p>Finally, we are done! The house looks great!</p>
+                        <p>"Good job!" my mom says. "You are a great helper!"</p>
+                        <p>"Can we watch a movie now?" I ask.</p>
+                        <p>"Yes!" she says. "Let's make popcorn and watch a movie together!"</p>
+                        <p>I am tired, but I feel proud. Helping at home is hard work, but it feels good!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>É sábado de manhã. Eu acordo e vou pra cozinha.</p>
+                        <p>Minha mãe está lá. Ela diz: "Bom dia! Hoje temos muitas <span class="palavra-destaque">tarefas</span> pra fazer!"</p>
+                        <p>Eu digo: "Ah não… posso assistir TV primeiro?"</p>
+                        <p>"Não!" ela diz. "Primeiro a gente limpa, depois descansa."</p>
+                        <p>Tá bom… Eu começo pela cozinha. Eu lavo a <span class="palavra-destaque">louça</span> na <span class="palavra-destaque">pia</span>. Eu uso uma <span class="palavra-destaque">esponja</span> e sabão. Tem muitos pratos e copos!</p>
+                        <p>Depois eu <span class="palavra-destaque">seco</span> a louça com um pano e guardo.</p>
+                        <p>Aí minha mãe me pede pra <span class="palavra-destaque">varrer</span> o chão. Eu uso a vassoura e <span class="palavra-destaque">varro</span> toda a sujeira pra um monte.</p>
+                        <p>Depois disso, ela <span class="palavra-destaque">passa o pano</span> no chão com água. Agora o chão da cozinha tá brilhando e limpo!</p>
+                        <p>Na sala, eu <span class="palavra-destaque">tiro o pó</span> das prateleiras e da TV. Tanto pó! Eu espirro duas vezes!</p>
+                        <p>Minha mãe diz: "Você pode <span class="palavra-destaque">aspirar</span> o tapete, por favor?" Eu ligo o <span class="palavra-destaque">aspirador</span> e limpo o tapete. Faz um barulho alto!</p>
+                        <p>Depois eu levo o <span class="palavra-destaque">lixo</span> pra fora. O saco de <span class="palavra-destaque">lixo</span> tá pesado! Eu carrego até a lixeira grande lá fora.</p>
+                        <p>Depois disso, eu ajudo minha mãe com as roupas. Eu <span class="palavra-destaque">dobro</span> as camisas e calças limpas. Coloco em pilhas organizadas.</p>
+                        <p>Minha mãe <span class="palavra-destaque">passa</span> a camisa do meu pai. Ela diz: "Você pode <span class="palavra-destaque">pendurar</span> essas roupas no armário?"</p>
+                        <p>Eu penduro as camisas e jaquetas nos cabides. Pronto!</p>
+                        <p>Eu também <span class="palavra-destaque">arrumo</span> meu quarto. Coloco meus brinquedos na caixa e meus livros na prateleira.</p>
+                        <p>Finalmente, terminamos! A casa tá ótima!</p>
+                        <p>"Bom trabalho!" minha mãe diz. "Você é um ótimo ajudante!"</p>
+                        <p>"Podemos assistir um filme agora?" eu pergunto.</p>
+                        <p>"Sim!" ela diz. "Vamos fazer pipoca e assistir um filme juntos!"</p>
+                        <p>Estou cansado, mas me sinto orgulhoso. Ajudar em casa dá trabalho, mas é muito bom!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It is Saturday morning. I wake up and go to the kitchen.</div>
+                            <div style="color: #666; font-size: 0.95em;">É sábado de manhã. Eu acordo e vou pra cozinha.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom says: "Today we have a lot of <span class="palavra-destaque">chores</span> to do!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe diz: "Hoje temos muitas tarefas pra fazer!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I say: "Oh no… can I watch TV first?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu digo: "Ah não… posso assistir TV primeiro?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"First we clean, then we rest."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Primeiro a gente limpa, depois descansa."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I wash the <span class="palavra-destaque">dishes</span> in the <span class="palavra-destaque">sink</span>. I use a <span class="palavra-destaque">sponge</span> and soap.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu lavo a louça na pia. Eu uso uma esponja e sabão.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I <span class="palavra-destaque">dry</span> the dishes with a towel and put them away.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois eu seco a louça com um pano e guardo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom asks me to <span class="palavra-destaque">sweep</span> the floor. I use the broom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe me pede pra varrer o chão. Eu uso a vassoura.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After that, she <span class="palavra-destaque">mops</span> the floor with water. Now the floor is shiny!</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois disso, ela passa o pano no chão com água. Agora o chão tá brilhando!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the living room, I <span class="palavra-destaque">dust</span> the shelves and the TV.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na sala, eu tiro o pó das prateleiras e da TV.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom says: "Can you <span class="palavra-destaque">vacuum</span> the carpet, please?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe diz: "Você pode aspirar o tapete, por favor?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I turn on the vacuum and clean the carpet. It makes a loud noise!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu ligo o aspirador e limpo o tapete. Faz um barulho alto!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I take the <span class="palavra-destaque">trash</span> out. The <span class="palavra-destaque">garbage</span> bag is heavy!</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois eu levo o lixo pra fora. O saco de lixo tá pesado!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I carry it to the big bin outside.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu carrego até a lixeira grande lá fora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">fold</span> the clean shirts and pants. I put them in neat piles.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu dobro as camisas e calças limpas. Coloco em pilhas organizadas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom <span class="palavra-destaque">irons</span> my dad's shirt.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe passa a camisa do meu pai.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She says: "Can you <span class="palavra-destaque">hang</span> these clothes in the closet?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela diz: "Você pode pendurar essas roupas no armário?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I hang the shirts and jackets on the hangers. Done!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu penduro as camisas e jaquetas nos cabides. Pronto!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also <span class="palavra-destaque">tidy up</span> my room. I put my toys in the box.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu também arrumo meu quarto. Coloco meus brinquedos na caixa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Finally, we are done! The house looks great!</div>
+                            <div style="color: #666; font-size: 0.95em;">Finalmente, terminamos! A casa tá ótima!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Good job! You are a great helper!" my mom says.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Bom trabalho! Você é um ótimo ajudante!" minha mãe diz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Let's make popcorn and watch a movie together!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Vamos fazer pipoca e assistir um filme juntos!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I am tired, but I feel proud. Helping at home feels good!</div>
+                            <div style="color: #666; font-size: 0.95em;">Estou cansado, mas me sinto orgulhoso. Ajudar em casa é bom!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Chore 🧹</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tarefa doméstica</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Today we have a lot of chores to do!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "do chores" = fazer tarefas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Sweep 🧹</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Varrer</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I sweep the floor with the broom"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Usar a vassoura</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Mop 🪣</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Passar pano (no chão)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She mops the floor with water"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Com água e rodo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Vacuum 🔌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Aspirar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Can you vacuum the carpet?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "vacuum the carpet" = aspirar o tapete</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Dust 🧽</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tirar o pó</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I dust the shelves and the TV"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "dust the shelves" = tirar pó das prateleiras</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Fold 👕</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Dobrar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I fold the clean shirts and pants"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "fold the clothes" = dobrar as roupas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Iron 👔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Passar (roupa)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My mom irons my dad's shirt"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Com ferro de passar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Dishes 🍽️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Louça</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I wash the dishes in the sink"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pratos, copos, talheres</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Trash 🗑️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lixo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I take the trash out"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "take out the trash" = levar o lixo pra fora</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Tidy Up 🧹</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Arrumar / organizar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I tidy up my room"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Organizar o lugar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: My Pet -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: My Pet</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-my-new-pet.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-my-new-pet.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I have a dog. His name is Max. He is my best friend!</p>
+                        <p>Max is a golden retriever. He has soft brown <span class="palavra-destaque">fur</span> and a long <span class="palavra-destaque">tail</span>. His <span class="palavra-destaque">paws</span> are big and his ears are floppy.</p>
+                        <p>He wears a blue <span class="palavra-destaque">collar</span> with his name on it.</p>
+                        <p>Every morning, I <span class="palavra-destaque">feed</span> Max. I put food in his <span class="palavra-destaque">bowl</span> and fresh water in the other bowl. He eats so fast!</p>
+                        <p>After breakfast, I take Max for a <span class="palavra-destaque">walk</span>. I put the <span class="palavra-destaque">leash</span> on his collar and we go outside.</p>
+                        <p>Max loves to walk! He sniffs everything — trees, flowers, other dogs. He wags his <span class="palavra-destaque">tail</span> when he is happy.</p>
+                        <p>At the park, I throw a ball and Max plays <span class="palavra-destaque">fetch</span>. He runs fast and brings the ball back to me. Good boy!</p>
+                        <p>Sometimes Max <span class="palavra-destaque">barks</span> at squirrels. "Woof! Woof!" He never catches them, but he tries every time!</p>
+                        <p>When we come home, Max <span class="palavra-destaque">licks</span> my face. It is wet and funny! I think it means "thank you!"</p>
+                        <p>Max does funny things. One time, he took my dad's sock and ran around the house! We all laughed. Dad said: "Max, give it back!" But Max thought it was a game.</p>
+                        <p>I give Max a <span class="palavra-destaque">treat</span> after he is good. He loves his little snacks! He sits and waits — then I say "Good boy!" and give him the treat.</p>
+                        <p>I love to <span class="palavra-destaque">cuddle</span> with Max on the sofa. His <span class="palavra-destaque">fur</span> is so warm and soft. He puts his head on my lap.</p>
+                        <p>Last month, we took Max to the <span class="palavra-destaque">vet</span>. The vet checked his ears, his teeth, and his heart. Max was scared, but the vet was nice.</p>
+                        <p>"Max is very healthy!" the vet said. I was happy to hear that!</p>
+                        <p>I brush Max's <span class="palavra-destaque">fur</span> every week. He likes it! His tail wags the whole time.</p>
+                        <p>Max is not just a <span class="palavra-destaque">pet</span>. He is family. I love him so much!</p>
+                        <p>Every night, Max sleeps next to my bed. I say: "Good night, Max!" And he wags his tail one more time.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu tenho um cachorro. O nome dele é Max. Ele é meu melhor amigo!</p>
+                        <p>Max é um golden retriever. Ele tem um <span class="palavra-destaque">pelo</span> marrom macio e um <span class="palavra-destaque">rabo</span> longo. As <span class="palavra-destaque">patas</span> dele são grandes e as orelhas são caídas.</p>
+                        <p>Ele usa uma <span class="palavra-destaque">coleira</span> azul com o nome dele.</p>
+                        <p>Toda manhã, eu <span class="palavra-destaque">alimento</span> o Max. Eu coloco comida na <span class="palavra-destaque">tigela</span> dele e água fresca na outra tigela. Ele come super rápido!</p>
+                        <p>Depois do café, eu levo o Max pra <span class="palavra-destaque">passear</span>. Eu coloco a <span class="palavra-destaque">guia</span> na coleira dele e saímos.</p>
+                        <p>Max adora passear! Ele cheira tudo — árvores, flores, outros cachorros. Ele balança o <span class="palavra-destaque">rabo</span> quando está feliz.</p>
+                        <p>No parque, eu jogo uma bola e Max brinca de <span class="palavra-destaque">buscar</span>. Ele corre rápido e traz a bola de volta pra mim. Bom garoto!</p>
+                        <p>Às vezes Max <span class="palavra-destaque">late</span> pra esquilos. "Au! Au!" Ele nunca pega, mas tenta toda vez!</p>
+                        <p>Quando chegamos em casa, Max <span class="palavra-destaque">lambe</span> meu rosto. É molhado e engraçado! Eu acho que significa "obrigado!"</p>
+                        <p>Max faz coisas engraçadas. Uma vez, ele pegou a meia do meu pai e saiu correndo pela casa! Todo mundo riu. Papai disse: "Max, devolve!" Mas o Max achou que era uma brincadeira.</p>
+                        <p>Eu dou um <span class="palavra-destaque">petisco</span> pro Max quando ele se comporta. Ele ama os lanchinhos! Ele senta e espera — aí eu digo "Bom garoto!" e dou o petisco.</p>
+                        <p>Eu amo fazer <span class="palavra-destaque">carinho</span> no Max no sofá. O <span class="palavra-destaque">pelo</span> dele é tão quentinho e macio. Ele coloca a cabeça no meu colo.</p>
+                        <p>Mês passado, levamos o Max ao <span class="palavra-destaque">veterinário</span>. O veterinário checou as orelhas, os dentes e o coração dele. Max ficou com medo, mas o veterinário foi legal.</p>
+                        <p>"Max está muito saudável!" o veterinário disse. Eu fiquei feliz de ouvir isso!</p>
+                        <p>Eu escovo o <span class="palavra-destaque">pelo</span> do Max toda semana. Ele gosta! O rabo dele balança o tempo todo.</p>
+                        <p>Max não é só um <span class="palavra-destaque">bichinho</span>. Ele é família. Eu amo muito ele!</p>
+                        <p>Toda noite, Max dorme do lado da minha cama. Eu digo: "Boa noite, Max!" E ele balança o rabo mais uma vez.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I have a dog. His name is Max. He is my best friend!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tenho um cachorro. O nome dele é Max. Ele é meu melhor amigo!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Max has soft brown <span class="palavra-destaque">fur</span> and a long <span class="palavra-destaque">tail</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Max tem um pelo marrom macio e um rabo longo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">His <span class="palavra-destaque">paws</span> are big and his ears are floppy.</div>
+                            <div style="color: #666; font-size: 0.95em;">As patas dele são grandes e as orelhas são caídas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He wears a blue <span class="palavra-destaque">collar</span> with his name on it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele usa uma coleira azul com o nome dele.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every morning, I <span class="palavra-destaque">feed</span> Max. I put food in his <span class="palavra-destaque">bowl</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Toda manhã, eu alimento o Max. Eu coloco comida na tigela dele.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After breakfast, I take Max for a <span class="palavra-destaque">walk</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois do café, eu levo o Max pra passear.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I put the <span class="palavra-destaque">leash</span> on his collar and we go outside.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu coloco a guia na coleira dele e saímos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Max loves to walk! He wags his <span class="palavra-destaque">tail</span> when he is happy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Max adora passear! Ele balança o rabo quando está feliz.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the park, I throw a ball and Max plays <span class="palavra-destaque">fetch</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No parque, eu jogo uma bola e Max brinca de buscar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He runs fast and brings the ball back to me. Good boy!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele corre rápido e traz a bola de volta pra mim. Bom garoto!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes Max <span class="palavra-destaque">barks</span> at squirrels. "Woof! Woof!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes Max late pra esquilos. "Au! Au!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When we come home, Max <span class="palavra-destaque">licks</span> my face. It is wet and funny!</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando chegamos em casa, Max lambe meu rosto. É molhado e engraçado!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">One time, he took my dad's sock and ran around the house!</div>
+                            <div style="color: #666; font-size: 0.95em;">Uma vez, ele pegou a meia do meu pai e saiu correndo pela casa!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I give Max a <span class="palavra-destaque">treat</span> after he is good. He loves his little snacks!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu dou um petisco pro Max quando ele se comporta. Ele ama os lanchinhos!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I love to <span class="palavra-destaque">cuddle</span> with Max on the sofa. His fur is so warm.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu amo fazer carinho no Max no sofá. O pelo dele é tão quentinho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last month, we took Max to the <span class="palavra-destaque">vet</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mês passado, levamos o Max ao veterinário.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Max is very healthy!" the vet said. I was happy!</div>
+                            <div style="color: #666; font-size: 0.95em;">"Max está muito saudável!" o veterinário disse. Eu fiquei feliz!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I brush Max's <span class="palavra-destaque">fur</span> every week. He likes it!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu escovo o pelo do Max toda semana. Ele gosta!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Max is not just a <span class="palavra-destaque">pet</span>. He is family. I love him so much!</div>
+                            <div style="color: #666; font-size: 0.95em;">Max não é só um bichinho. Ele é família. Eu amo muito ele!</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every night, Max sleeps next to my bed. I say: "Good night, Max!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Toda noite, Max dorme do lado da minha cama. Eu digo: "Boa noite, Max!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Pet 🐾</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bichinho de estimação</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Max is not just a pet. He is family."</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "my pet" = meu bichinho</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Feed 🍖</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Alimentar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Every morning, I feed Max"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "feed the dog" = alimentar o cachorro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Leash 🦮</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Guia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I put the leash on his collar"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pra passear o cachorro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Tail 🐕</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Rabo / cauda</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He wags his tail when he is happy"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "wag the tail" = balançar o rabo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Fur 🧸</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pelo / pelagem</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He has soft brown fur"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pelagem do animal</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Bark 🐶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Latir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Sometimes Max barks at squirrels"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "Woof woof!" = Au au!</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Fetch 🎾</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Buscar (jogo)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Max plays fetch at the park"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Jogo de jogar a bola pro cachorro buscar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Vet 🏥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Veterinário</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We took Max to the vet"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Médico de animais</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Treat 🦴</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Petisco</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I give Max a treat after he is good"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Recompensa pro pet</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Cuddle 🤗</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Fazer carinho / abraçar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I love to cuddle with Max on the sofa"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Abraçar com carinho</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
