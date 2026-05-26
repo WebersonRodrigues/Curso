@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 14 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 14 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 14</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 14 - Semana 14</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 14</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário sobre profissões e sonhos para o futuro, além de vocabulário de teatro e apresentações escolares.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: A2→B1</strong> — Você já domina o básico e agora vai expandir seu vocabulário com temas mais complexos: planos para o futuro e experiências emocionantes como uma peça de teatro!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ My Dream Job</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Profissões e sonhos para o futuro — o que quero ser quando crescer, profissões da família, objetivos de vida</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> dream, job, firefighter, pilot, scientist, artist, engineer, build, discover, invent, design, save, imagine, future, goal</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ The School Play</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Peça de teatro na escola — ensaios, palco, figurinos, nervosismo, apresentação, aplausos</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> stage, audience, costume, rehearse, act, role, script, scene, curtain, applause, backstage, microphone, spotlight, perform, bow</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~3-4 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: My Dream Job -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: My Dream Job</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-my-dream-job.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-my-dream-job.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Sometimes I think about the <span class="palavra-destaque">future</span>. I think about what I want to be when I grow up.</p>
+                        <p>My dad is an <span class="palavra-destaque">engineer</span>. He helps <span class="palavra-destaque">build</span> bridges and buildings. I think that is really cool!</p>
+                        <p>My aunt is a <span class="palavra-destaque">scientist</span>. She works in a laboratory because she loves to <span class="palavra-destaque">discover</span> new things.</p>
+                        <p>I asked my dad: "Why did you become an engineer?" He said: "Because I love to <span class="palavra-destaque">design</span> things and solve problems."</p>
+                        <p>My aunt told me: "I became a scientist because I wanted to understand how the world works."</p>
+                        <p>I have a big <span class="palavra-destaque">dream</span>. I want to find the perfect <span class="palavra-destaque">job</span> for me!</p>
+                        <p>Sometimes I <span class="palavra-destaque">imagine</span> being a <span class="palavra-destaque">pilot</span>. I love planes, so I think flying would be amazing!</p>
+                        <p>When I grow up, I want to fly above the clouds. I believe pilots have the best view in the world!</p>
+                        <p>But I also think about being a <span class="palavra-destaque">firefighter</span>. Firefighters are brave because they <span class="palavra-destaque">save</span> people every day.</p>
+                        <p>I think saving people is very important, so maybe that is my <span class="palavra-destaque">goal</span>.</p>
+                        <p>My friend Sofia wants to be an <span class="palavra-destaque">artist</span>. She loves to draw and paint beautiful things.</p>
+                        <p>She says: "I want to <span class="palavra-destaque">design</span> clothes when I grow up, because fashion is my passion!"</p>
+                        <p>My friend Pedro wants to be a <span class="palavra-destaque">scientist</span> like my aunt. He wants to <span class="palavra-destaque">invent</span> new machines.</p>
+                        <p>He told me: "I want to <span class="palavra-destaque">discover</span> something that helps the world!" I think that is a great goal.</p>
+                        <p>Last week, our teacher asked the class: "What is your dream job?"</p>
+                        <p>Many kids had different answers. Some want to be doctors, some want to be teachers.</p>
+                        <p>I stood up and said: "I want to be a pilot because I love planes and I want to travel everywhere!"</p>
+                        <p>But then I thought: "Wait... I also want to <span class="palavra-destaque">build</span> things like my dad."</p>
+                        <p>And I also want to <span class="palavra-destaque">invent</span> something new, like Pedro.</p>
+                        <p>My mom says: "You don't need to decide now. You are only ten years old!"</p>
+                        <p>She is right. I have time to think about my <span class="palavra-destaque">future</span>.</p>
+                        <p>But I know one thing: I want a job that makes me happy and helps other people.</p>
+                        <p>I believe that when you follow your dreams, good things happen.</p>
+                        <p>So I will keep dreaming, keep learning, and keep imagining.</p>
+                        <p>I don't know my dream job yet, but I have big dreams!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Às vezes eu penso no <span class="palavra-destaque">futuro</span>. Eu penso no que eu quero ser quando crescer.</p>
+                        <p>Meu pai é um <span class="palavra-destaque">engenheiro</span>. Ele ajuda a <span class="palavra-destaque">construir</span> pontes e prédios. Eu acho isso muito legal!</p>
+                        <p>Minha tia é uma <span class="palavra-destaque">cientista</span>. Ela trabalha num laboratório porque ama <span class="palavra-destaque">descobrir</span> coisas novas.</p>
+                        <p>Eu perguntei pro meu pai: "Por que você virou engenheiro?" Ele disse: "Porque eu amo <span class="palavra-destaque">projetar</span> coisas e resolver problemas."</p>
+                        <p>Minha tia me contou: "Eu virei cientista porque queria entender como o mundo funciona."</p>
+                        <p>Eu tenho um grande <span class="palavra-destaque">sonho</span>. Eu quero encontrar o <span class="palavra-destaque">trabalho</span> perfeito pra mim!</p>
+                        <p>Às vezes eu <span class="palavra-destaque">imagino</span> ser um <span class="palavra-destaque">piloto</span>. Eu amo aviões, então acho que voar seria incrível!</p>
+                        <p>Quando eu crescer, quero voar acima das nuvens. Eu acredito que pilotos têm a melhor vista do mundo!</p>
+                        <p>Mas eu também penso em ser um <span class="palavra-destaque">bombeiro</span>. Bombeiros são corajosos porque <span class="palavra-destaque">salvam</span> pessoas todo dia.</p>
+                        <p>Eu acho que salvar pessoas é muito importante, então talvez esse seja meu <span class="palavra-destaque">objetivo</span>.</p>
+                        <p>Minha amiga Sofia quer ser uma <span class="palavra-destaque">artista</span>. Ela ama desenhar e pintar coisas bonitas.</p>
+                        <p>Ela diz: "Eu quero <span class="palavra-destaque">desenhar</span> roupas quando crescer, porque moda é minha paixão!"</p>
+                        <p>Meu amigo Pedro quer ser um <span class="palavra-destaque">cientista</span> como minha tia. Ele quer <span class="palavra-destaque">inventar</span> máquinas novas.</p>
+                        <p>Ele me disse: "Eu quero <span class="palavra-destaque">descobrir</span> algo que ajude o mundo!" Eu acho que é um ótimo objetivo.</p>
+                        <p>Semana passada, nossa professora perguntou pra turma: "Qual é o trabalho dos seus sonhos?"</p>
+                        <p>Muitas crianças tinham respostas diferentes. Alguns querem ser médicos, outros querem ser professores.</p>
+                        <p>Eu levantei e disse: "Quero ser piloto porque amo aviões e quero viajar pra todo lugar!"</p>
+                        <p>Mas aí eu pensei: "Espera... eu também quero <span class="palavra-destaque">construir</span> coisas como meu pai."</p>
+                        <p>E eu também quero <span class="palavra-destaque">inventar</span> algo novo, como o Pedro.</p>
+                        <p>Minha mãe diz: "Você não precisa decidir agora. Você só tem dez anos!"</p>
+                        <p>Ela tá certa. Eu tenho tempo pra pensar no meu <span class="palavra-destaque">futuro</span>.</p>
+                        <p>Mas eu sei de uma coisa: eu quero um trabalho que me faça feliz e ajude outras pessoas.</p>
+                        <p>Eu acredito que quando você segue seus sonhos, coisas boas acontecem.</p>
+                        <p>Então eu vou continuar sonhando, aprendendo e imaginando.</p>
+                        <p>Eu não sei meu trabalho dos sonhos ainda, mas eu tenho grandes sonhos!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes I think about the <span class="palavra-destaque">future</span>. I think about what I want to be when I grow up.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes eu penso no futuro. Eu penso no que eu quero ser quando crescer.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad is an <span class="palavra-destaque">engineer</span>. He helps <span class="palavra-destaque">build</span> bridges and buildings.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai é um engenheiro. Ele ajuda a construir pontes e prédios.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My aunt is a <span class="palavra-destaque">scientist</span>. She loves to <span class="palavra-destaque">discover</span> new things.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha tia é uma cientista. Ela ama descobrir coisas novas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I asked my dad: "Why did you become an engineer?" He said: "Because I love to <span class="palavra-destaque">design</span> things."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu perguntei pro meu pai: "Por que você virou engenheiro?" Ele disse: "Porque eu amo projetar coisas."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I have a big <span class="palavra-destaque">dream</span>. I want to find the perfect <span class="palavra-destaque">job</span> for me!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tenho um grande sonho. Eu quero encontrar o trabalho perfeito pra mim!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes I <span class="palavra-destaque">imagine</span> being a <span class="palavra-destaque">pilot</span>. I love planes, so I think flying would be amazing!</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes eu imagino ser um piloto. Eu amo aviões, então acho que voar seria incrível!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But I also think about being a <span class="palavra-destaque">firefighter</span>. Firefighters <span class="palavra-destaque">save</span> people every day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas eu também penso em ser um bombeiro. Bombeiros salvam pessoas todo dia.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I think saving people is very important, so maybe that is my <span class="palavra-destaque">goal</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acho que salvar pessoas é muito importante, então talvez esse seja meu objetivo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Sofia wants to be an <span class="palavra-destaque">artist</span>. She wants to <span class="palavra-destaque">design</span> clothes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha amiga Sofia quer ser uma artista. Ela quer desenhar roupas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Pedro wants to <span class="palavra-destaque">invent</span> new machines.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu amigo Pedro quer inventar máquinas novas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He told me: "I want to <span class="palavra-destaque">discover</span> something that helps the world!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele me disse: "Eu quero descobrir algo que ajude o mundo!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last week, our teacher asked: "What is your dream job?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Semana passada, nossa professora perguntou: "Qual é o trabalho dos seus sonhos?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I said: "I want to be a pilot because I love planes and I want to travel everywhere!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu disse: "Quero ser piloto porque amo aviões e quero viajar pra todo lugar!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom says: "You don't need to decide now. You are only ten years old!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe diz: "Você não precisa decidir agora. Você só tem dez anos!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I believe that when you follow your dreams, good things happen.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acredito que quando você segue seus sonhos, coisas boas acontecem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">So I will keep dreaming, keep learning, and keep imagining.</div>
+                            <div style="color: #666; font-size: 0.95em;">Então eu vou continuar sonhando, aprendendo e imaginando.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I don't know my dream job yet, but I have big dreams!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu não sei meu trabalho dos sonhos ainda, mas eu tenho grandes sonhos!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Dream 💭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sonho</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I have a big dream"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "dream job" = trabalho dos sonhos</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Job 💼</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Trabalho / emprego</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I want to find the perfect job"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O que você faz pra ganhar dinheiro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Pilot ✈️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Piloto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I imagine being a pilot"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quem voa aviões</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Firefighter 🚒</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bombeiro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I think about being a firefighter"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> fire (fogo) + fighter (lutador)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Engineer 🔧</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Engenheiro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My dad is an engineer"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quem projeta e constrói</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Build 🏗️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Construir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He helps build bridges"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "build a bridge" = construir uma ponte</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Discover 🔍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Descobrir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She loves to discover new things"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Encontrar algo novo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Invent 💡</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Inventar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He wants to invent new machines"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Criar algo que não existia</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Save 🦸</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Salvar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Firefighters save people every day"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "save people" = salvar pessoas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Future 🔮</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Futuro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I think about the future"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O tempo que ainda vai vir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: The School Play -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: The School Play</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-the-school-play.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-the-school-play.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last week, my class did a school play! It was so exciting, and I want to tell you everything.</p>
+                        <p>Our teacher said: "This year, we will <span class="palavra-destaque">perform</span> a play about a magical forest."</p>
+                        <p>First, we had to choose our <span class="palavra-destaque">roles</span>. I wanted to be the brave knight, so I raised my hand fast!</p>
+                        <p>My friend Ana got the <span class="palavra-destaque">role</span> of the queen. She was happy because she loves to <span class="palavra-destaque">act</span>.</p>
+                        <p>Then we received the <span class="palavra-destaque">script</span>. It had all our lines and all the <span class="palavra-destaque">scenes</span> we needed to learn.</p>
+                        <p>We started to <span class="palavra-destaque">rehearse</span> every day after school. At first, I forgot my lines many times!</p>
+                        <p>But after a week, I knew every word. I felt proud because I worked really hard.</p>
+                        <p>The day before the play, we tried on our <span class="palavra-destaque">costumes</span>. My knight costume was silver and blue!</p>
+                        <p>Ana's queen <span class="palavra-destaque">costume</span> had a golden crown. She looked amazing on the <span class="palavra-destaque">stage</span>.</p>
+                        <p>On the big day, I was very nervous <span class="palavra-destaque">backstage</span>. My hands were shaking!</p>
+                        <p>I could hear the <span class="palavra-destaque">audience</span> talking. There were so many people — parents, teachers, and friends!</p>
+                        <p>Then the <span class="palavra-destaque">curtain</span> opened slowly. The <span class="palavra-destaque">spotlight</span> was bright and warm on my face.</p>
+                        <p>I walked onto the <span class="palavra-destaque">stage</span>. I saw my mom and dad in the audience. They were smiling!</p>
+                        <p>I spoke into the <span class="palavra-destaque">microphone</span>. My voice was loud and clear. I felt brave!</p>
+                        <p>The first <span class="palavra-destaque">scene</span> went perfectly. Ana said her lines, and I said mine. We were a great team!</p>
+                        <p>But then, in the second scene, something happened. I forgot one line!</p>
+                        <p>I felt scared for a moment. But Ana whispered the words to me <span class="palavra-destaque">backstage</span>, and I remembered!</p>
+                        <p>After that, everything was perfect. We <span class="palavra-destaque">performed</span> every scene with energy and fun.</p>
+                        <p>When the play ended, the <span class="palavra-destaque">curtain</span> closed. We all hugged backstage!</p>
+                        <p>Then the curtain opened again, and we walked to the front of the stage to <span class="palavra-destaque">bow</span>.</p>
+                        <p>The <span class="palavra-destaque">audience</span> stood up! The <span class="palavra-destaque">applause</span> was so loud! I felt like a real star!</p>
+                        <p>My mom had tears in her eyes. She said: "You were amazing!" I felt so proud.</p>
+                        <p>After the play, we took photos in our costumes. It was the best night of my life!</p>
+                        <p>I was tired but very happy. I told my friends: "I want to do this again!"</p>
+                        <p>Now I love to <span class="palavra-destaque">act</span>. When I think about that night, I smile because it was perfect.</p>
+                        <p>I learned that when you <span class="palavra-destaque">rehearse</span> and believe in yourself, you can do anything!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Semana passada, minha turma fez uma peça de teatro! Foi tão emocionante, e eu quero contar tudo pra vocês.</p>
+                        <p>Nossa professora disse: "Este ano, vamos <span class="palavra-destaque">apresentar</span> uma peça sobre uma floresta mágica."</p>
+                        <p>Primeiro, tivemos que escolher nossos <span class="palavra-destaque">papéis</span>. Eu queria ser o cavaleiro corajoso, então levantei a mão rápido!</p>
+                        <p>Minha amiga Ana ficou com o <span class="palavra-destaque">papel</span> da rainha. Ela ficou feliz porque ama <span class="palavra-destaque">atuar</span>.</p>
+                        <p>Aí recebemos o <span class="palavra-destaque">roteiro</span>. Tinha todas as nossas falas e todas as <span class="palavra-destaque">cenas</span> que precisávamos aprender.</p>
+                        <p>Começamos a <span class="palavra-destaque">ensaiar</span> todo dia depois da aula. No começo, eu esquecia minhas falas muitas vezes!</p>
+                        <p>Mas depois de uma semana, eu sabia cada palavra. Me senti orgulhoso porque me esforcei muito.</p>
+                        <p>No dia antes da peça, experimentamos nossas <span class="palavra-destaque">fantasias</span>. Minha fantasia de cavaleiro era prata e azul!</p>
+                        <p>A <span class="palavra-destaque">fantasia</span> de rainha da Ana tinha uma coroa dourada. Ela ficou incrível no <span class="palavra-destaque">palco</span>.</p>
+                        <p>No grande dia, eu estava muito nervoso nos <span class="palavra-destaque">bastidores</span>. Minhas mãos tremiam!</p>
+                        <p>Eu conseguia ouvir a <span class="palavra-destaque">plateia</span> conversando. Tinha tanta gente — pais, professores e amigos!</p>
+                        <p>Aí a <span class="palavra-destaque">cortina</span> abriu devagar. O <span class="palavra-destaque">holofote</span> era forte e quente no meu rosto.</p>
+                        <p>Eu andei até o <span class="palavra-destaque">palco</span>. Vi minha mãe e meu pai na plateia. Eles estavam sorrindo!</p>
+                        <p>Eu falei no <span class="palavra-destaque">microfone</span>. Minha voz estava alta e clara. Me senti corajoso!</p>
+                        <p>A primeira <span class="palavra-destaque">cena</span> foi perfeita. Ana disse as falas dela, e eu disse as minhas. Éramos um ótimo time!</p>
+                        <p>Mas aí, na segunda cena, algo aconteceu. Eu esqueci uma fala!</p>
+                        <p>Fiquei com medo por um momento. Mas a Ana sussurrou as palavras pra mim dos <span class="palavra-destaque">bastidores</span>, e eu lembrei!</p>
+                        <p>Depois disso, tudo foi perfeito. <span class="palavra-destaque">Apresentamos</span> cada cena com energia e diversão.</p>
+                        <p>Quando a peça acabou, a <span class="palavra-destaque">cortina</span> fechou. Todos nos abraçamos nos bastidores!</p>
+                        <p>Aí a cortina abriu de novo, e andamos até a frente do palco pra fazer <span class="palavra-destaque">reverência</span>.</p>
+                        <p>A <span class="palavra-destaque">plateia</span> levantou! Os <span class="palavra-destaque">aplausos</span> foram tão altos! Me senti como uma estrela de verdade!</p>
+                        <p>Minha mãe estava com lágrimas nos olhos. Ela disse: "Você foi incrível!" Me senti tão orgulhoso.</p>
+                        <p>Depois da peça, tiramos fotos com nossas fantasias. Foi a melhor noite da minha vida!</p>
+                        <p>Eu estava cansado mas muito feliz. Falei pros meus amigos: "Quero fazer isso de novo!"</p>
+                        <p>Agora eu amo <span class="palavra-destaque">atuar</span>. Quando penso naquela noite, eu sorrio porque foi perfeito.</p>
+                        <p>Eu aprendi que quando você <span class="palavra-destaque">ensaia</span> e acredita em si mesmo, você consegue qualquer coisa!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last week, my class did a school play! It was so exciting.</div>
+                            <div style="color: #666; font-size: 0.95em;">Semana passada, minha turma fez uma peça de teatro! Foi tão emocionante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our teacher said: "This year, we will <span class="palavra-destaque">perform</span> a play about a magical forest."</div>
+                            <div style="color: #666; font-size: 0.95em;">Nossa professora disse: "Este ano, vamos apresentar uma peça sobre uma floresta mágica."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">First, we had to choose our <span class="palavra-destaque">roles</span>. I wanted to be the brave knight.</div>
+                            <div style="color: #666; font-size: 0.95em;">Primeiro, tivemos que escolher nossos papéis. Eu queria ser o cavaleiro corajoso.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then we received the <span class="palavra-destaque">script</span>. It had all our lines and all the <span class="palavra-destaque">scenes</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aí recebemos o roteiro. Tinha todas as nossas falas e todas as cenas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We started to <span class="palavra-destaque">rehearse</span> every day after school.</div>
+                            <div style="color: #666; font-size: 0.95em;">Começamos a ensaiar todo dia depois da aula.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The day before the play, we tried on our <span class="palavra-destaque">costumes</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No dia antes da peça, experimentamos nossas fantasias.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the big day, I was very nervous <span class="palavra-destaque">backstage</span>. My hands were shaking!</div>
+                            <div style="color: #666; font-size: 0.95em;">No grande dia, eu estava muito nervoso nos bastidores. Minhas mãos tremiam!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I could hear the <span class="palavra-destaque">audience</span> talking. There were so many people!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu conseguia ouvir a plateia conversando. Tinha tanta gente!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then the <span class="palavra-destaque">curtain</span> opened slowly. The <span class="palavra-destaque">spotlight</span> was bright on my face.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aí a cortina abriu devagar. O holofote era forte no meu rosto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I walked onto the <span class="palavra-destaque">stage</span>. I saw my mom and dad. They were smiling!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu andei até o palco. Vi minha mãe e meu pai. Eles estavam sorrindo!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I spoke into the <span class="palavra-destaque">microphone</span>. My voice was loud and clear.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu falei no microfone. Minha voz estava alta e clara.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But then I forgot one line! I felt scared for a moment.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas aí eu esqueci uma fala! Fiquei com medo por um momento.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Ana whispered the words to me, and I remembered!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ana sussurrou as palavras pra mim, e eu lembrei!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When the play ended, we walked to the front of the stage to <span class="palavra-destaque">bow</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando a peça acabou, andamos até a frente do palco pra fazer reverência.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">audience</span> stood up! The <span class="palavra-destaque">applause</span> was so loud!</div>
+                            <div style="color: #666; font-size: 0.95em;">A plateia levantou! Os aplausos foram tão altos!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom said: "You were amazing!" I felt so proud.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe disse: "Você foi incrível!" Me senti tão orgulhoso.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the play, we took photos in our costumes. It was the best night!</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois da peça, tiramos fotos com nossas fantasias. Foi a melhor noite!</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I learned that when you <span class="palavra-destaque">rehearse</span> and believe in yourself, you can do anything!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu aprendi que quando você ensaia e acredita em si mesmo, você consegue qualquer coisa!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Stage 🎭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Palco</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I walked onto the stage"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde os atores se apresentam</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Audience 👥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Plateia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The audience stood up!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> As pessoas que assistem</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Rehearse 🔄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ensaiar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We started to rehearse every day"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Praticar antes de apresentar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Costume 👗</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Fantasia / figurino</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We tried on our costumes"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Roupa especial para a peça</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Curtain 🎪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cortina</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The curtain opened slowly"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Abre e fecha o palco</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Applause 👏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Aplausos</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The applause was so loud!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando a plateia bate palma</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Backstage 🚪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bastidores</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I was very nervous backstage"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Atrás do palco</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Perform 🎬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Apresentar / atuar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We will perform a play"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Fazer a peça pro público</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Script 📜</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Roteiro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We received the script"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Texto com todas as falas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Bow 🙇</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Reverência</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We walked to the front to bow"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Inclinar o corpo no final</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

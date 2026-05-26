@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 17 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 17 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 17</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 17 - Semana 17</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 17</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de acampamento e natureza (barraca, fogueira, trilha, vida selvagem) e diversidade cultural (amizade, inclusão, adaptação, tradições).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1</strong> — Você chegou ao nível intermediário! Os textos agora são mais longos, com narrativas completas, emoções complexas e vocabulário mais rico.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ A Camping Trip</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Acampamento em família — montar barraca, fogueira, marshmallows, trilha na floresta, vida selvagem, observar estrelas</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> tent, campfire, marshmallow, sleeping bag, flashlight, trail, hike, wildlife, stargazing, compass, firewood, roast, campsite, insect, adventure</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ The New Student</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Aluno novo do Japão — inclusão, amizade, diversidade cultural, adaptação, curiosidade sobre outras culturas</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> foreign, accent, shy, introduce, welcome, culture, tradition, curious, different, similar, friendship, include, translate, struggle, adapt</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: A Camping Trip -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: A Camping Trip</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-a-camping-trip.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-a-camping-trip.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last month, my family went on a camping <span class="palavra-destaque">adventure</span> for the whole weekend, and it was amazing!</p>
+                        <p>On Friday afternoon, we packed the car with everything we needed: a big <span class="palavra-destaque">tent</span>, four <span class="palavra-destaque">sleeping bags</span>, a <span class="palavra-destaque">flashlight</span> for each person, and a <span class="palavra-destaque">compass</span> to help us find our way.</p>
+                        <p>First, we drove for two hours until we arrived at the <span class="palavra-destaque">campsite</span> near a beautiful lake.</p>
+                        <p>My dad said: "Let's set up the <span class="palavra-destaque">tent</span> before it gets dark!" So we all worked together.</p>
+                        <p>I helped my dad put the poles in the ground, and my mom organized the <span class="palavra-destaque">sleeping bags</span> inside.</p>
+                        <p>After that, my little sister and I went to collect <span class="palavra-destaque">firewood</span> for the <span class="palavra-destaque">campfire</span>.</p>
+                        <p>We found many dry sticks and branches on the ground. My sister was excited because she had never been camping before.</p>
+                        <p>Then, my dad built a <span class="palavra-destaque">campfire</span> in the center of our campsite. The flames were warm and orange.</p>
+                        <p>That evening, we decided to <span class="palavra-destaque">roast</span> <span class="palavra-destaque">marshmallows</span> over the fire. I put mine on a long stick and held it close to the flames.</p>
+                        <p>My first marshmallow got too close and turned completely black! I laughed and tried again.</p>
+                        <p>The second one was perfect — golden and soft on the inside. It was the best thing I had ever tasted!</p>
+                        <p>The next morning, we woke up early and went on a <span class="palavra-destaque">hike</span> along a <span class="palavra-destaque">trail</span> through the forest.</p>
+                        <p>My dad used the <span class="palavra-destaque">compass</span> to make sure we were going in the right direction.</p>
+                        <p>During the hike, we saw incredible <span class="palavra-destaque">wildlife</span>. First, we spotted a deer drinking water from a stream.</p>
+                        <p>Then, we heard beautiful birds singing in the trees. My mom took photos of everything.</p>
+                        <p>I was surprised because I had never seen a deer so close before. It looked at us and then ran away quietly.</p>
+                        <p>After the hike, we went back to the campsite and rested. I felt tired but happy.</p>
+                        <p>At night, something scary happened. We heard a loud noise outside the tent!</p>
+                        <p>I grabbed my <span class="palavra-destaque">flashlight</span> and pointed it toward the sound. My heart was beating fast.</p>
+                        <p>However, it was just a raccoon looking for food near our bags! We all laughed because we had been so scared.</p>
+                        <p>After the raccoon left, my dad said: "Let's do some <span class="palavra-destaque">stargazing</span>!" We lay on the grass and looked up.</p>
+                        <p>The sky was full of stars — more than I had ever seen in the city. I could even see the Milky Way!</p>
+                        <p>My dad pointed at different stars and told me their names. It was like a science class, but much better.</p>
+                        <p>I also noticed many <span class="palavra-destaque">insects</span> around us — crickets singing and fireflies glowing in the dark.</p>
+                        <p>On Sunday, we packed everything and drove home. Even though I was tired, I felt so grateful for the experience.</p>
+                        <p>I told my parents: "Can we go camping again next month?" They smiled and said: "Of course!"</p>
+                        <p>I learned that nature is full of surprises, and the best <span class="palavra-destaque">adventures</span> happen when you spend time with your family.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>No mês passado, minha família foi numa <span class="palavra-destaque">aventura</span> de acampamento no fim de semana inteiro, e foi incrível!</p>
+                        <p>Na sexta à tarde, arrumamos o carro com tudo que precisávamos: uma <span class="palavra-destaque">barraca</span> grande, quatro <span class="palavra-destaque">sacos de dormir</span>, uma <span class="palavra-destaque">lanterna</span> pra cada pessoa e uma <span class="palavra-destaque">bússola</span> pra nos ajudar a encontrar o caminho.</p>
+                        <p>Primeiro, dirigimos por duas horas até chegarmos ao <span class="palavra-destaque">acampamento</span> perto de um lago lindo.</p>
+                        <p>Meu pai disse: "Vamos montar a <span class="palavra-destaque">barraca</span> antes de escurecer!" Então todos trabalhamos juntos.</p>
+                        <p>Eu ajudei meu pai a colocar as estacas no chão, e minha mãe organizou os <span class="palavra-destaque">sacos de dormir</span> dentro.</p>
+                        <p>Depois disso, minha irmãzinha e eu fomos coletar <span class="palavra-destaque">lenha</span> para a <span class="palavra-destaque">fogueira</span>.</p>
+                        <p>Encontramos muitos gravetos e galhos secos no chão. Minha irmã estava animada porque nunca tinha acampado antes.</p>
+                        <p>Então, meu pai fez uma <span class="palavra-destaque">fogueira</span> no centro do nosso acampamento. As chamas eram quentes e alaranjadas.</p>
+                        <p>Naquela noite, decidimos <span class="palavra-destaque">assar</span> <span class="palavra-destaque">marshmallows</span> no fogo. Coloquei o meu num graveto comprido e segurei perto das chamas.</p>
+                        <p>Meu primeiro marshmallow chegou perto demais e ficou completamente preto! Eu ri e tentei de novo.</p>
+                        <p>O segundo ficou perfeito — dourado e macio por dentro. Foi a melhor coisa que eu já tinha provado!</p>
+                        <p>Na manhã seguinte, acordamos cedo e fizemos uma <span class="palavra-destaque">caminhada</span> por uma <span class="palavra-destaque">trilha</span> pela floresta.</p>
+                        <p>Meu pai usou a <span class="palavra-destaque">bússola</span> pra ter certeza de que estávamos indo na direção certa.</p>
+                        <p>Durante a caminhada, vimos <span class="palavra-destaque">vida selvagem</span> incrível. Primeiro, avistamos um cervo bebendo água de um riacho.</p>
+                        <p>Depois, ouvimos pássaros lindos cantando nas árvores. Minha mãe tirou fotos de tudo.</p>
+                        <p>Fiquei surpreso porque nunca tinha visto um cervo tão de perto. Ele olhou pra gente e depois saiu correndo quietinho.</p>
+                        <p>Depois da caminhada, voltamos pro acampamento e descansamos. Me senti cansado, mas feliz.</p>
+                        <p>À noite, algo assustador aconteceu. Ouvimos um barulho alto fora da barraca!</p>
+                        <p>Peguei minha <span class="palavra-destaque">lanterna</span> e apontei na direção do som. Meu coração estava batendo rápido.</p>
+                        <p>Porém, era só um guaxinim procurando comida perto das nossas mochilas! Todos rimos porque tínhamos ficado com tanto medo.</p>
+                        <p>Depois que o guaxinim foi embora, meu pai disse: "Vamos observar as <span class="palavra-destaque">estrelas</span>!" Deitamos na grama e olhamos pra cima.</p>
+                        <p>O céu estava cheio de estrelas — mais do que eu já tinha visto na cidade. Dava até pra ver a Via Láctea!</p>
+                        <p>Meu pai apontou pra diferentes estrelas e me disse os nomes delas. Era como uma aula de ciências, mas muito melhor.</p>
+                        <p>Também notei muitos <span class="palavra-destaque">insetos</span> ao nosso redor — grilos cantando e vagalumes brilhando no escuro.</p>
+                        <p>No domingo, arrumamos tudo e voltamos pra casa. Mesmo estando cansado, me senti muito grato pela experiência.</p>
+                        <p>Eu disse pros meus pais: "A gente pode acampar de novo mês que vem?" Eles sorriram e disseram: "Claro!"</p>
+                        <p>Aprendi que a natureza é cheia de surpresas, e as melhores <span class="palavra-destaque">aventuras</span> acontecem quando você passa tempo com a família.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last month, my family went on a camping <span class="palavra-destaque">adventure</span> for the whole weekend, and it was amazing!</div>
+                            <div style="color: #666; font-size: 0.95em;">No mês passado, minha família foi numa aventura de acampamento no fim de semana inteiro, e foi incrível!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We packed the car with everything we needed: a big <span class="palavra-destaque">tent</span>, four <span class="palavra-destaque">sleeping bags</span>, a <span class="palavra-destaque">flashlight</span>, and a <span class="palavra-destaque">compass</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Arrumamos o carro com tudo que precisávamos: uma barraca grande, quatro sacos de dormir, uma lanterna e uma bússola.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">First, we drove for two hours until we arrived at the <span class="palavra-destaque">campsite</span> near a beautiful lake.</div>
+                            <div style="color: #666; font-size: 0.95em;">Primeiro, dirigimos por duas horas até chegarmos ao acampamento perto de um lago lindo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad said: "Let's set up the <span class="palavra-destaque">tent</span> before it gets dark!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai disse: "Vamos montar a barraca antes de escurecer!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I helped my dad put the poles in the ground, and my mom organized the <span class="palavra-destaque">sleeping bags</span> inside.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu ajudei meu pai a colocar as estacas no chão, e minha mãe organizou os sacos de dormir dentro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After that, my little sister and I went to collect <span class="palavra-destaque">firewood</span> for the <span class="palavra-destaque">campfire</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois disso, minha irmãzinha e eu fomos coletar lenha para a fogueira.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then, my dad built a <span class="palavra-destaque">campfire</span> in the center of our campsite.</div>
+                            <div style="color: #666; font-size: 0.95em;">Então, meu pai fez uma fogueira no centro do nosso acampamento.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We decided to <span class="palavra-destaque">roast</span> <span class="palavra-destaque">marshmallows</span> over the fire. I put mine on a long stick.</div>
+                            <div style="color: #666; font-size: 0.95em;">Decidimos assar marshmallows no fogo. Coloquei o meu num graveto comprido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My first marshmallow turned completely black! I laughed and tried again.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu primeiro marshmallow ficou completamente preto! Eu ri e tentei de novo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The next morning, we went on a <span class="palavra-destaque">hike</span> along a <span class="palavra-destaque">trail</span> through the forest.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na manhã seguinte, fizemos uma caminhada por uma trilha pela floresta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">During the hike, we saw incredible <span class="palavra-destaque">wildlife</span> — a deer drinking water from a stream.</div>
+                            <div style="color: #666; font-size: 0.95em;">Durante a caminhada, vimos vida selvagem incrível — um cervo bebendo água de um riacho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I was surprised because I had never seen a deer so close before.</div>
+                            <div style="color: #666; font-size: 0.95em;">Fiquei surpreso porque nunca tinha visto um cervo tão de perto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At night, we heard a loud noise outside the tent! However, it was just a raccoon looking for food.</div>
+                            <div style="color: #666; font-size: 0.95em;">À noite, ouvimos um barulho alto fora da barraca! Porém, era só um guaxinim procurando comida.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the raccoon left, my dad said: "Let's do some <span class="palavra-destaque">stargazing</span>!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois que o guaxinim foi embora, meu pai disse: "Vamos observar as estrelas!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The sky was full of stars — more than I had ever seen in the city.</div>
+                            <div style="color: #666; font-size: 0.95em;">O céu estava cheio de estrelas — mais do que eu já tinha visto na cidade.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also noticed many <span class="palavra-destaque">insects</span> around us — crickets singing and fireflies glowing in the dark.</div>
+                            <div style="color: #666; font-size: 0.95em;">Também notei muitos insetos ao nosso redor — grilos cantando e vagalumes brilhando no escuro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On Sunday, we packed everything and drove home. Even though I was tired, I felt so grateful.</div>
+                            <div style="color: #666; font-size: 0.95em;">No domingo, arrumamos tudo e voltamos pra casa. Mesmo estando cansado, me senti muito grato.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I told my parents: "Can we go camping again next month?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu disse pros meus pais: "A gente pode acampar de novo mês que vem?"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I learned that nature is full of surprises, and the best <span class="palavra-destaque">adventures</span> happen with your family.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aprendi que a natureza é cheia de surpresas, e as melhores aventuras acontecem com a família.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Tent ⛺</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Barraca</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Let's set up the tent"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde você dorme no acampamento</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Campfire 🔥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Fogueira</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My dad built a campfire"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Fogo feito no chão para aquecer</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Sleeping bag 🛏️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Saco de dormir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Four sleeping bags"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "Bolsa" quente pra dormir no chão</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Flashlight 🔦</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lanterna</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I grabbed my flashlight"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Luz portátil que funciona com pilha</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Trail 🥾</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Trilha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A trail through the forest"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Caminho na floresta para caminhar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Hike 🚶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Caminhada</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We went on a hike"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Passeio a pé na natureza</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Wildlife 🦌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vida selvagem</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We saw incredible wildlife"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Animais que vivem livres na natureza</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Stargazing ⭐</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Observação de estrelas</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Let's do some stargazing!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Olhar as estrelas à noite</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Compass 🧭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bússola</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My dad used the compass"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Instrumento que mostra a direção</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Adventure 🌟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Aventura</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The best adventures happen with family"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Experiência emocionante e nova</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: The New Student -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: The New Student</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-the-new-student.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-the-new-student.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last September, something interesting happened at my school — a new student arrived from Japan, and his name was Kenji.</p>
+                        <p>On his first day, our teacher said: "Class, I want to <span class="palavra-destaque">introduce</span> you to Kenji. He is from Tokyo, and this is his first time in Brazil."</p>
+                        <p>Everyone looked at him. He seemed very <span class="palavra-destaque">shy</span> and didn't say much. I noticed that he had a small <span class="palavra-destaque">accent</span> when he spoke English.</p>
+                        <p>Some kids whispered: "He talks <span class="palavra-destaque">different</span>." But I thought his accent was actually really cool.</p>
+                        <p>At lunchtime, Kenji sat alone at a table. I felt bad because I remembered how scary it is to be new somewhere.</p>
+                        <p>I decided to <span class="palavra-destaque">include</span> him, so I walked over and said: "Hi! Do you want to sit with us?"</p>
+                        <p>He looked surprised but smiled and said: "Yes, thank you!" I could tell he was happy that someone talked to him.</p>
+                        <p>During lunch, I was <span class="palavra-destaque">curious</span> about his life in Japan. I asked: "What is school like in Tokyo?"</p>
+                        <p>He told me about his <span class="palavra-destaque">culture</span> and <span class="palavra-destaque">traditions</span>. In Japan, students clean their own classrooms every day!</p>
+                        <p>I was surprised because that is very <span class="palavra-destaque">different</span> from our school. However, some things were <span class="palavra-destaque">similar</span> — he also loved soccer and video games, just like me.</p>
+                        <p>Even though Kenji spoke English well, he sometimes had to <span class="palavra-destaque">struggle</span> with difficult words.</p>
+                        <p>Once, he couldn't remember the word for "borracha" in English. I helped him and said: "It's called an eraser!"</p>
+                        <p>He laughed and taught me the Japanese word: "keshigomu." It was fun to <span class="palavra-destaque">translate</span> words for each other.</p>
+                        <p>After a few weeks, Kenji started to <span class="palavra-destaque">adapt</span> to our school. He made more friends and talked more in class.</p>
+                        <p>One day, he brought Japanese snacks for everyone. He explained that sharing food is an important <span class="palavra-destaque">tradition</span> in his country.</p>
+                        <p>The snacks were delicious! Some had flavors that were very <span class="palavra-destaque">different</span> from what we eat in Brazil, but everyone loved them.</p>
+                        <p>Kenji also taught us how to write our names in Japanese characters. My name looked so cool in Japanese!</p>
+                        <p>I noticed that even though we came from <span class="palavra-destaque">different</span> countries, we had many <span class="palavra-destaque">similar</span> interests and feelings.</p>
+                        <p>He told me: "I was scared to come here because everything was <span class="palavra-destaque">foreign</span> to me. But you made me feel <span class="palavra-destaque">welcome</span>."</p>
+                        <p>That made me feel really good inside. I realized that a small act of kindness can change someone's whole experience.</p>
+                        <p>Our <span class="palavra-destaque">friendship</span> grew stronger every day. We learned from each other — I taught him Portuguese words, and he taught me Japanese.</p>
+                        <p>Even though we had <span class="palavra-destaque">different</span> backgrounds, our <span class="palavra-destaque">friendship</span> showed me that people are more <span class="palavra-destaque">similar</span> than we think.</p>
+                        <p>By the end of the year, Kenji was one of the most popular kids in class. Everyone loved his stories about Japan.</p>
+                        <p>I learned something important: when someone is new and <span class="palavra-destaque">struggling</span> to <span class="palavra-destaque">adapt</span>, all they need is one person to be kind.</p>
+                        <p>Being <span class="palavra-destaque">curious</span> about other <span class="palavra-destaque">cultures</span> doesn't just help others — it makes your own life richer and more interesting.</p>
+                        <p>Our teacher said: "True <span class="palavra-destaque">friendship</span> has no borders." And I think she was absolutely right.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Em setembro passado, algo interessante aconteceu na minha escola — um aluno novo chegou do Japão, e o nome dele era Kenji.</p>
+                        <p>No primeiro dia dele, nossa professora disse: "Turma, quero <span class="palavra-destaque">apresentar</span> o Kenji pra vocês. Ele é de Tóquio, e essa é a primeira vez dele no Brasil."</p>
+                        <p>Todo mundo olhou pra ele. Ele parecia muito <span class="palavra-destaque">tímido</span> e não falava muito. Notei que ele tinha um leve <span class="palavra-destaque">sotaque</span> quando falava inglês.</p>
+                        <p>Algumas crianças sussurraram: "Ele fala <span class="palavra-destaque">diferente</span>." Mas eu achei o sotaque dele muito legal.</p>
+                        <p>Na hora do almoço, Kenji sentou sozinho numa mesa. Me senti mal porque lembrei como é assustador ser novo em algum lugar.</p>
+                        <p>Decidi <span class="palavra-destaque">incluí-lo</span>, então fui até ele e disse: "Oi! Quer sentar com a gente?"</p>
+                        <p>Ele pareceu surpreso, mas sorriu e disse: "Sim, obrigado!" Dava pra perceber que ele ficou feliz que alguém falou com ele.</p>
+                        <p>Durante o almoço, eu estava <span class="palavra-destaque">curioso</span> sobre a vida dele no Japão. Perguntei: "Como é a escola em Tóquio?"</p>
+                        <p>Ele me contou sobre a <span class="palavra-destaque">cultura</span> e as <span class="palavra-destaque">tradições</span> dele. No Japão, os alunos limpam as próprias salas de aula todo dia!</p>
+                        <p>Fiquei surpreso porque isso é muito <span class="palavra-destaque">diferente</span> da nossa escola. Porém, algumas coisas eram <span class="palavra-destaque">parecidas</span> — ele também amava futebol e videogame, igualzinho a mim.</p>
+                        <p>Mesmo o Kenji falando inglês bem, às vezes ele tinha que <span class="palavra-destaque">se esforçar</span> com palavras difíceis.</p>
+                        <p>Uma vez, ele não conseguia lembrar a palavra pra "borracha" em inglês. Eu ajudei e disse: "Se chama eraser!"</p>
+                        <p>Ele riu e me ensinou a palavra em japonês: "keshigomu." Era divertido <span class="palavra-destaque">traduzir</span> palavras um pro outro.</p>
+                        <p>Depois de algumas semanas, Kenji começou a se <span class="palavra-destaque">adaptar</span> à nossa escola. Fez mais amigos e falava mais na aula.</p>
+                        <p>Um dia, ele trouxe lanches japoneses pra todo mundo. Explicou que compartilhar comida é uma <span class="palavra-destaque">tradição</span> importante no país dele.</p>
+                        <p>Os lanches eram deliciosos! Alguns tinham sabores muito <span class="palavra-destaque">diferentes</span> do que a gente come no Brasil, mas todo mundo adorou.</p>
+                        <p>Kenji também nos ensinou a escrever nossos nomes em caracteres japoneses. Meu nome ficou muito legal em japonês!</p>
+                        <p>Notei que, mesmo vindo de países <span class="palavra-destaque">diferentes</span>, tínhamos muitos interesses e sentimentos <span class="palavra-destaque">parecidos</span>.</p>
+                        <p>Ele me disse: "Eu estava com medo de vir pra cá porque tudo era <span class="palavra-destaque">estranho</span> pra mim. Mas você me fez sentir <span class="palavra-destaque">bem-vindo</span>."</p>
+                        <p>Isso me fez sentir muito bem por dentro. Percebi que um pequeno ato de gentileza pode mudar toda a experiência de alguém.</p>
+                        <p>Nossa <span class="palavra-destaque">amizade</span> ficou mais forte a cada dia. Aprendemos um com o outro — eu ensinei palavras em português pra ele, e ele me ensinou japonês.</p>
+                        <p>Mesmo tendo origens <span class="palavra-destaque">diferentes</span>, nossa <span class="palavra-destaque">amizade</span> me mostrou que as pessoas são mais <span class="palavra-destaque">parecidas</span> do que a gente pensa.</p>
+                        <p>No final do ano, Kenji era um dos alunos mais populares da turma. Todo mundo adorava as histórias dele sobre o Japão.</p>
+                        <p>Aprendi algo importante: quando alguém é novo e está <span class="palavra-destaque">lutando</span> pra se <span class="palavra-destaque">adaptar</span>, tudo que essa pessoa precisa é de alguém sendo gentil.</p>
+                        <p>Ser <span class="palavra-destaque">curioso</span> sobre outras <span class="palavra-destaque">culturas</span> não ajuda só os outros — torna a sua própria vida mais rica e interessante.</p>
+                        <p>Nossa professora disse: "A verdadeira <span class="palavra-destaque">amizade</span> não tem fronteiras." E eu acho que ela estava completamente certa.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last September, a new student arrived from Japan, and his name was Kenji.</div>
+                            <div style="color: #666; font-size: 0.95em;">Em setembro passado, um aluno novo chegou do Japão, e o nome dele era Kenji.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our teacher said: "I want to <span class="palavra-destaque">introduce</span> you to Kenji. He is from Tokyo."</div>
+                            <div style="color: #666; font-size: 0.95em;">Nossa professora disse: "Quero apresentar o Kenji pra vocês. Ele é de Tóquio."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He seemed very <span class="palavra-destaque">shy</span> and didn't say much. I noticed that he had a small <span class="palavra-destaque">accent</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele parecia muito tímido e não falava muito. Notei que ele tinha um leve sotaque.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Some kids whispered: "He talks <span class="palavra-destaque">different</span>." But I thought his accent was really cool.</div>
+                            <div style="color: #666; font-size: 0.95em;">Algumas crianças sussurraram: "Ele fala diferente." Mas eu achei o sotaque dele muito legal.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At lunchtime, Kenji sat alone. I decided to <span class="palavra-destaque">include</span> him.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na hora do almoço, Kenji sentou sozinho. Eu decidi incluí-lo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I walked over and said: "Hi! Do you want to sit with us?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Fui até ele e disse: "Oi! Quer sentar com a gente?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I was <span class="palavra-destaque">curious</span> about his life in Japan. He told me about his <span class="palavra-destaque">culture</span> and <span class="palavra-destaque">traditions</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu estava curioso sobre a vida dele no Japão. Ele me contou sobre a cultura e tradições dele.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In Japan, students clean their own classrooms! That is very <span class="palavra-destaque">different</span> from our school.</div>
+                            <div style="color: #666; font-size: 0.95em;">No Japão, os alunos limpam as próprias salas! Isso é muito diferente da nossa escola.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">However, some things were <span class="palavra-destaque">similar</span> — he also loved soccer and video games.</div>
+                            <div style="color: #666; font-size: 0.95em;">Porém, algumas coisas eram parecidas — ele também amava futebol e videogame.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Even though Kenji spoke English well, he sometimes had to <span class="palavra-destaque">struggle</span> with difficult words.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mesmo o Kenji falando inglês bem, às vezes ele tinha que se esforçar com palavras difíceis.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I helped him <span class="palavra-destaque">translate</span> words. He taught me the Japanese word "keshigomu" for eraser.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu ajudei ele a traduzir palavras. Ele me ensinou a palavra japonesa "keshigomu" pra borracha.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After a few weeks, Kenji started to <span class="palavra-destaque">adapt</span> to our school.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de algumas semanas, Kenji começou a se adaptar à nossa escola.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He brought Japanese snacks and explained that sharing food is an important <span class="palavra-destaque">tradition</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele trouxe lanches japoneses e explicou que compartilhar comida é uma tradição importante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He told me: "Everything was <span class="palavra-destaque">foreign</span> to me. But you made me feel <span class="palavra-destaque">welcome</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele me disse: "Tudo era estranho pra mim. Mas você me fez sentir bem-vindo."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our <span class="palavra-destaque">friendship</span> grew stronger every day. We learned from each other.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nossa amizade ficou mais forte a cada dia. Aprendemos um com o outro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Even though we had <span class="palavra-destaque">different</span> backgrounds, people are more <span class="palavra-destaque">similar</span> than we think.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mesmo tendo origens diferentes, as pessoas são mais parecidas do que a gente pensa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When someone is <span class="palavra-destaque">struggling</span> to <span class="palavra-destaque">adapt</span>, all they need is one person to be kind.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando alguém está lutando pra se adaptar, tudo que precisa é uma pessoa ser gentil.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Being <span class="palavra-destaque">curious</span> about other <span class="palavra-destaque">cultures</span> makes your own life richer.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ser curioso sobre outras culturas torna sua própria vida mais rica.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our teacher said: "True <span class="palavra-destaque">friendship</span> has no borders."</div>
+                            <div style="color: #666; font-size: 0.95em;">Nossa professora disse: "A verdadeira amizade não tem fronteiras."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Foreign 🌍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Estrangeiro / desconhecido</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Everything was foreign to me"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Algo de outro país ou lugar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Shy 😊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tímido</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He seemed very shy"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pessoa que tem vergonha de falar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Culture 🎭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cultura</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He told me about his culture"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Costumes e modo de vida de um povo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Tradition 🏮</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tradição</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Sharing food is an important tradition"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Costume passado de geração em geração</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Curious 🤔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Curioso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I was curious about his life"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Com vontade de saber mais</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Friendship 🤝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Amizade</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Our friendship grew stronger"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Relação entre amigos</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Include 🫂</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Incluir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I decided to include him"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Colocar alguém no grupo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Adapt 🔄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Adaptar-se</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Kenji started to adapt"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Se acostumar a algo novo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Translate 🔤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Traduzir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It was fun to translate words"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Passar de um idioma para outro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Welcome 👋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bem-vindo / acolher</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You made me feel welcome"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Fazer alguém se sentir aceito</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 16 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 16 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 16</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 16 - Semana 16</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 16</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de esportes (futebol, torneio, competição) e hobbies criativos (desenho, pintura, arte). Você vai praticar narrativas no passado e comparações.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: A2→B1</strong> — Você está fazendo a transição para o nível intermediário! Os textos agora têm mais detalhes, emoções e estruturas mais complexas.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ The Big Game</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Torneio de futebol escolar — competição, trabalho em equipe, superação, gol da vitória</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> match, opponent, referee, whistle, halftime, score, pass, dribble, shoot, goal, foul, penalty, trophy, champion</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ My Hobby</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Desenho e pintura — hobby criativo, técnicas artísticas, exposição escolar, inspiração</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> hobby, creative, sketch, canvas, brush, palette, watercolor, outline, shade, detail, exhibit, gallery, inspire, talent, improve</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: The Big Game -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: The Big Game</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-the-big-game.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-the-big-game.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last Saturday was the most important day of the year — the final <span class="palavra-destaque">match</span> of our school soccer tournament!</p>
+                        <p>Our team had practiced every week for three months, so we were ready. But I was still very nervous.</p>
+                        <p>The <span class="palavra-destaque">opponent</span> team was strong. They had won every game that season, and their players were taller than us.</p>
+                        <p>Before the game, our coach gathered us in a circle. He said: "I believe in you. Play together, and you will win!"</p>
+                        <p>The <span class="palavra-destaque">referee</span> walked to the center of the field and blew his <span class="palavra-destaque">whistle</span>. The game started!</p>
+                        <p>In the first ten minutes, we played well. I tried to <span class="palavra-destaque">dribble</span> past a defender, but he was faster than me.</p>
+                        <p>My friend Lucas got the ball and tried to <span class="palavra-destaque">pass</span> it to me, but the opponent intercepted it.</p>
+                        <p>Then, something bad happened. Their best player <span class="palavra-destaque">shot</span> the ball from far away, and it went into our goal.</p>
+                        <p>The <span class="palavra-destaque">score</span> was 1-0. I felt worried because we were losing, and the other team was celebrating.</p>
+                        <p>Even though we were behind, our coach shouted: "Keep going! You still have time!"</p>
+                        <p>We tried harder. I ran more than I had ever run before. But every time we got close to their goal, their <span class="palavra-destaque">defense</span> was too strong.</p>
+                        <p>The referee blew the whistle again — it was <span class="palavra-destaque">halftime</span>. The score was still 1-0.</p>
+                        <p>During the break, our coach looked at us and said: "Don't give up!" He told us to stay calm and <span class="palavra-destaque">pass</span> the ball more.</p>
+                        <p>He also said: "Remember — the best teams never stop trying, even when things are difficult."</p>
+                        <p>The second half started, and we played like a different team. We passed the ball faster and communicated better.</p>
+                        <p>In the 25th minute, Lucas made an amazing <span class="palavra-destaque">pass</span> to me. I was alone in front of the goalkeeper!</p>
+                        <p>My heart was beating so fast. I pulled my leg back and <span class="palavra-destaque">shot</span> the ball as hard as I could.</p>
+                        <p>The ball flew into the top corner of the net — <span class="palavra-destaque">GOAL</span>! I scored! The score was 1-1!</p>
+                        <p>I felt so happy that I ran to my teammates, and we all hugged. The crowd was cheering!</p>
+                        <p>But the game was not over. There were still five minutes left, and we wanted to win.</p>
+                        <p>The <span class="palavra-destaque">opponent</span> got a <span class="palavra-destaque">foul</span> near our goal. Everyone was scared, but our goalkeeper saved the <span class="palavra-destaque">penalty</span>!</p>
+                        <p>With two minutes left, I got the ball again. I <span class="palavra-destaque">dribbled</span> past one player, then another.</p>
+                        <p>I could hear my coach shouting: "Shoot! Shoot now!" So I kicked the ball with everything I had.</p>
+                        <p>The ball went in! 2-1! I scored the winning goal! The <span class="palavra-destaque">referee</span> blew the final <span class="palavra-destaque">whistle</span>!</p>
+                        <p>We won the <span class="palavra-destaque">trophy</span>! We were the <span class="palavra-destaque">champions</span>! I felt like the happiest kid in the world.</p>
+                        <p>The coach told us: "I am so proud of you. You never gave up, even though it was hard."</p>
+                        <p>I learned something important that day: even though things seem impossible, you should never stop trying.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>No sábado passado foi o dia mais importante do ano — a <span class="palavra-destaque">partida</span> final do torneio de futebol da escola!</p>
+                        <p>Nosso time treinou toda semana por três meses, então estávamos prontos. Mas eu ainda estava muito nervoso.</p>
+                        <p>O time <span class="palavra-destaque">adversário</span> era forte. Eles tinham vencido todos os jogos naquela temporada, e os jogadores deles eram mais altos que a gente.</p>
+                        <p>Antes do jogo, nosso técnico nos reuniu em círculo. Ele disse: "Eu acredito em vocês. Joguem juntos, e vocês vão vencer!"</p>
+                        <p>O <span class="palavra-destaque">árbitro</span> foi até o centro do campo e soprou o <span class="palavra-destaque">apito</span>. O jogo começou!</p>
+                        <p>Nos primeiros dez minutos, jogamos bem. Eu tentei <span class="palavra-destaque">driblar</span> um defensor, mas ele era mais rápido que eu.</p>
+                        <p>Meu amigo Lucas pegou a bola e tentou me <span class="palavra-destaque">passar</span>, mas o adversário interceptou.</p>
+                        <p>Aí algo ruim aconteceu. O melhor jogador deles <span class="palavra-destaque">chutou</span> a bola de longe, e ela entrou no nosso gol.</p>
+                        <p>O <span class="palavra-destaque">placar</span> era 1-0. Eu me senti preocupado porque estávamos perdendo, e o outro time estava comemorando.</p>
+                        <p>Mesmo estando atrás, nosso técnico gritou: "Continuem! Vocês ainda têm tempo!"</p>
+                        <p>Tentamos mais. Eu corri mais do que já tinha corrido na vida. Mas toda vez que chegávamos perto do gol deles, a <span class="palavra-destaque">defesa</span> era forte demais.</p>
+                        <p>O árbitro soprou o apito de novo — era o <span class="palavra-destaque">intervalo</span>. O placar ainda era 1-0.</p>
+                        <p>Durante o descanso, nosso técnico olhou pra gente e disse: "Não desistam!" Ele nos disse pra ficar calmos e <span class="palavra-destaque">passar</span> mais a bola.</p>
+                        <p>Ele também disse: "Lembrem — os melhores times nunca param de tentar, mesmo quando as coisas são difíceis."</p>
+                        <p>O segundo tempo começou, e jogamos como um time diferente. Passamos a bola mais rápido e nos comunicamos melhor.</p>
+                        <p>No minuto 25, Lucas fez um <span class="palavra-destaque">passe</span> incrível pra mim. Eu estava sozinho na frente do goleiro!</p>
+                        <p>Meu coração estava batendo muito rápido. Puxei a perna pra trás e <span class="palavra-destaque">chutei</span> a bola o mais forte que pude.</p>
+                        <p>A bola voou pro canto alto da rede — <span class="palavra-destaque">GOL</span>! Eu marquei! O placar era 1-1!</p>
+                        <p>Eu fiquei tão feliz que corri pros meus colegas, e todos nos abraçamos. A torcida estava gritando!</p>
+                        <p>Mas o jogo não tinha acabado. Ainda faltavam cinco minutos, e a gente queria vencer.</p>
+                        <p>O <span class="palavra-destaque">adversário</span> fez uma <span class="palavra-destaque">falta</span> perto do nosso gol. Todo mundo ficou com medo, mas nosso goleiro defendeu o <span class="palavra-destaque">pênalti</span>!</p>
+                        <p>Faltando dois minutos, peguei a bola de novo. <span class="palavra-destaque">Driblei</span> um jogador, depois outro.</p>
+                        <p>Eu ouvia meu técnico gritando: "Chuta! Chuta agora!" Então chutei a bola com tudo que eu tinha.</p>
+                        <p>A bola entrou! 2-1! Eu fiz o gol da vitória! O <span class="palavra-destaque">árbitro</span> soprou o <span class="palavra-destaque">apito</span> final!</p>
+                        <p>Ganhamos o <span class="palavra-destaque">troféu</span>! Éramos os <span class="palavra-destaque">campeões</span>! Eu me senti a criança mais feliz do mundo.</p>
+                        <p>O técnico nos disse: "Estou muito orgulhoso de vocês. Vocês nunca desistiram, mesmo sendo difícil."</p>
+                        <p>Eu aprendi algo importante naquele dia: mesmo quando as coisas parecem impossíveis, você nunca deve parar de tentar.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last Saturday was the most important day of the year — the final <span class="palavra-destaque">match</span> of our school soccer tournament!</div>
+                            <div style="color: #666; font-size: 0.95em;">No sábado passado foi o dia mais importante do ano — a partida final do torneio de futebol da escola!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our team had practiced every week for three months, so we were ready. But I was still very nervous.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nosso time treinou toda semana por três meses, então estávamos prontos. Mas eu ainda estava muito nervoso.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">opponent</span> team was strong. They had won every game that season.</div>
+                            <div style="color: #666; font-size: 0.95em;">O time adversário era forte. Eles tinham vencido todos os jogos naquela temporada.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Before the game, our coach gathered us in a circle. He said: "I believe in you."</div>
+                            <div style="color: #666; font-size: 0.95em;">Antes do jogo, nosso técnico nos reuniu em círculo. Ele disse: "Eu acredito em vocês."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">referee</span> walked to the center and blew his <span class="palavra-destaque">whistle</span>. The game started!</div>
+                            <div style="color: #666; font-size: 0.95em;">O árbitro foi até o centro e soprou o apito. O jogo começou!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I tried to <span class="palavra-destaque">dribble</span> past a defender, but he was faster than me.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tentei driblar um defensor, mas ele era mais rápido que eu.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Lucas got the ball and tried to <span class="palavra-destaque">pass</span> it to me, but the opponent intercepted it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu amigo Lucas pegou a bola e tentou me passar, mas o adversário interceptou.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Their best player <span class="palavra-destaque">shot</span> the ball from far away, and it went into our goal.</div>
+                            <div style="color: #666; font-size: 0.95em;">O melhor jogador deles chutou a bola de longe, e ela entrou no nosso gol.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">score</span> was 1-0. I felt worried because we were losing.</div>
+                            <div style="color: #666; font-size: 0.95em;">O placar era 1-0. Eu me senti preocupado porque estávamos perdendo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Even though we were behind, our coach shouted: "Keep going!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Mesmo estando atrás, nosso técnico gritou: "Continuem!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The referee blew the whistle — it was <span class="palavra-destaque">halftime</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">O árbitro soprou o apito — era o intervalo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The coach told us to stay calm and <span class="palavra-destaque">pass</span> the ball more.</div>
+                            <div style="color: #666; font-size: 0.95em;">O técnico nos disse pra ficar calmos e passar mais a bola.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He said: "The best teams never stop trying, even when things are difficult."</div>
+                            <div style="color: #666; font-size: 0.95em;">Ele disse: "Os melhores times nunca param de tentar, mesmo quando as coisas são difíceis."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Lucas made an amazing <span class="palavra-destaque">pass</span> to me. I was alone in front of the goalkeeper!</div>
+                            <div style="color: #666; font-size: 0.95em;">Lucas fez um passe incrível pra mim. Eu estava sozinho na frente do goleiro!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">shot</span> the ball as hard as I could. The ball flew into the top corner — <span class="palavra-destaque">GOAL</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu chutei a bola o mais forte que pude. A bola voou pro canto alto — GOL!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I felt so happy that I ran to my teammates, and we all hugged.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu fiquei tão feliz que corri pros meus colegas, e todos nos abraçamos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The opponent got a <span class="palavra-destaque">foul</span> near our goal. Our goalkeeper saved the <span class="palavra-destaque">penalty</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">O adversário fez uma falta perto do nosso gol. Nosso goleiro defendeu o pênalti!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">dribbled</span> past one player, then another. I kicked the ball with everything I had.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu driblei um jogador, depois outro. Chutei a bola com tudo que eu tinha.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The ball went in! 2-1! The <span class="palavra-destaque">referee</span> blew the final <span class="palavra-destaque">whistle</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">A bola entrou! 2-1! O árbitro soprou o apito final!</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We won the <span class="palavra-destaque">trophy</span>! We were the <span class="palavra-destaque">champions</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ganhamos o troféu! Éramos os campeões!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Match ⚽</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Partida / jogo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The final match of the tournament"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "the final match" = a partida final</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Opponent 🆚</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Adversário</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The opponent team was strong"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O time contra quem você joga</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Referee 👨‍⚖️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Árbitro / juiz</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The referee blew his whistle"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quem aplica as regras do jogo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Whistle 📯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Apito</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He blew his whistle"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O som que o árbitro faz</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Dribble ⚽</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Driblar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I dribbled past one player"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Passar pelo adversário com a bola</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Halftime ⏱️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Intervalo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It was halftime"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pausa no meio do jogo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Foul 🟨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Falta</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The opponent got a foul"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Jogada irregular</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Penalty 🥅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pênalti</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Our goalkeeper saved the penalty"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Cobrança após falta na área</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Trophy 🏆</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Troféu</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We won the trophy!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Prêmio do campeão</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Champion 🏅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Campeão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We were the champions!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quem vence o torneio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: My Hobby -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: My Hobby</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-my-hobby.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-my-hobby.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Everyone has something they love to do. For me, that thing is drawing. It is my favorite <span class="palavra-destaque">hobby</span>!</p>
+                        <p>I have been drawing since I was five years old. My mom gave me my first box of colored pencils, and I never stopped.</p>
+                        <p>What I love about drawing is that I can create anything I <span class="palavra-destaque">imagine</span>. A dragon, a castle, a spaceship — anything!</p>
+                        <p>When I start a new drawing, the first thing I do is make a <span class="palavra-destaque">sketch</span>. I use a pencil to draw the <span class="palavra-destaque">outline</span> of the shapes.</p>
+                        <p>The outline is like a map — it shows me where everything goes. I don't add colors yet because I want to get the shapes right first.</p>
+                        <p>After the sketch is ready, I choose my colors. Sometimes I use colored pencils, but my favorite tool is <span class="palavra-destaque">watercolor</span> paint.</p>
+                        <p>I love watercolors because the colors mix together in a beautiful way. They are more <span class="palavra-destaque">creative</span> than regular markers.</p>
+                        <p>I put the paint on my <span class="palavra-destaque">palette</span> and mix different colors until I find the perfect one.</p>
+                        <p>Then I pick up my <span class="palavra-destaque">brush</span> and start painting on the <span class="palavra-destaque">canvas</span>. I always start with the background because it is easier.</p>
+                        <p>After the background, I add the main subject. I paint carefully and try to add <span class="palavra-destaque">detail</span> to every part.</p>
+                        <p>The hardest part is <span class="palavra-destaque">shading</span>. Shading means making some areas darker so that the drawing looks more real.</p>
+                        <p>I think shading is harder than outlining, but it makes the biggest difference in how the drawing looks.</p>
+                        <p>My family always encourages me. When I finish a drawing, I show it to my parents, and they put it on the fridge.</p>
+                        <p>My dad says: "You have real <span class="palavra-destaque">talent</span>!" That makes me feel proud, although I know I still need to <span class="palavra-destaque">improve</span>.</p>
+                        <p>Last month, my art teacher told me about the school <span class="palavra-destaque">exhibit</span>. She said: "I think you should enter your drawings!"</p>
+                        <p>At first, I felt nervous because I thought my drawings were not good enough. However, my teacher said they were better than I thought.</p>
+                        <p>So I chose three of my best drawings and gave them to my teacher for the <span class="palavra-destaque">exhibit</span>.</p>
+                        <p>On the day of the exhibit, I went to the school <span class="palavra-destaque">gallery</span> with my parents. My drawings were on the wall!</p>
+                        <p>Many people stopped to look at them. A girl from another class said: "These are amazing! You <span class="palavra-destaque">inspire</span> me to draw too!"</p>
+                        <p>I felt so happy when she said that. It was the best compliment I had ever received.</p>
+                        <p>Even though I was nervous, I realized that sharing my art with others is a wonderful feeling.</p>
+                        <p>I want to improve because I believe that practice makes you better every day.</p>
+                        <p>My goal is to keep drawing, keep learning new techniques, and maybe one day become a professional artist.</p>
+                        <p>Drawing makes me feel calm and happy. It is more than a hobby — it is a part of who I am.</p>
+                        <p>In my opinion, everyone should find a hobby they love, because it makes life more colorful and fun!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Todo mundo tem algo que ama fazer. Pra mim, essa coisa é desenhar. É meu <span class="palavra-destaque">hobby</span> favorito!</p>
+                        <p>Eu desenho desde os cinco anos de idade. Minha mãe me deu minha primeira caixa de lápis de cor, e eu nunca parei.</p>
+                        <p>O que eu amo no desenho é que posso criar qualquer coisa que eu <span class="palavra-destaque">imagino</span>. Um dragão, um castelo, uma nave espacial — qualquer coisa!</p>
+                        <p>Quando começo um desenho novo, a primeira coisa que faço é um <span class="palavra-destaque">esboço</span>. Uso um lápis pra desenhar o <span class="palavra-destaque">contorno</span> das formas.</p>
+                        <p>O contorno é como um mapa — me mostra onde tudo vai ficar. Não adiciono cores ainda porque quero acertar as formas primeiro.</p>
+                        <p>Depois que o esboço está pronto, escolho minhas cores. Às vezes uso lápis de cor, mas minha ferramenta favorita é tinta <span class="palavra-destaque">aquarela</span>.</p>
+                        <p>Eu amo aquarela porque as cores se misturam de um jeito lindo. Elas são mais <span class="palavra-destaque">criativas</span> que canetinhas comuns.</p>
+                        <p>Eu coloco a tinta na minha <span class="palavra-destaque">paleta</span> e misturo cores diferentes até achar a perfeita.</p>
+                        <p>Aí pego meu <span class="palavra-destaque">pincel</span> e começo a pintar na <span class="palavra-destaque">tela</span>. Sempre começo pelo fundo porque é mais fácil.</p>
+                        <p>Depois do fundo, adiciono o tema principal. Pinto com cuidado e tento adicionar <span class="palavra-destaque">detalhes</span> em cada parte.</p>
+                        <p>A parte mais difícil é o <span class="palavra-destaque">sombreamento</span>. Sombrear significa deixar algumas áreas mais escuras pra que o desenho pareça mais real.</p>
+                        <p>Eu acho que sombrear é mais difícil que contornar, mas faz a maior diferença na aparência do desenho.</p>
+                        <p>Minha família sempre me incentiva. Quando termino um desenho, mostro pros meus pais, e eles colocam na geladeira.</p>
+                        <p>Meu pai diz: "Você tem <span class="palavra-destaque">talento</span> de verdade!" Isso me faz sentir orgulho, embora eu saiba que ainda preciso <span class="palavra-destaque">melhorar</span>.</p>
+                        <p>Mês passado, minha professora de arte me contou sobre a <span class="palavra-destaque">exposição</span> da escola. Ela disse: "Acho que você deveria inscrever seus desenhos!"</p>
+                        <p>No começo, fiquei nervoso porque achei que meus desenhos não eram bons o suficiente. Porém, minha professora disse que eram melhores do que eu pensava.</p>
+                        <p>Então escolhi três dos meus melhores desenhos e dei pra minha professora pra <span class="palavra-destaque">exposição</span>.</p>
+                        <p>No dia da exposição, fui à <span class="palavra-destaque">galeria</span> da escola com meus pais. Meus desenhos estavam na parede!</p>
+                        <p>Muitas pessoas pararam pra olhar. Uma menina de outra turma disse: "São incríveis! Você me <span class="palavra-destaque">inspira</span> a desenhar também!"</p>
+                        <p>Eu fiquei tão feliz quando ela disse isso. Foi o melhor elogio que já recebi.</p>
+                        <p>Mesmo nervoso, percebi que compartilhar minha arte com os outros é uma sensação maravilhosa.</p>
+                        <p>Eu quero melhorar porque acredito que a prática te faz melhor todo dia.</p>
+                        <p>Meu objetivo é continuar desenhando, aprender técnicas novas, e talvez um dia me tornar um artista profissional.</p>
+                        <p>Desenhar me faz sentir calmo e feliz. É mais que um hobby — é parte de quem eu sou.</p>
+                        <p>Na minha opinião, todos deveriam encontrar um hobby que amam, porque torna a vida mais colorida e divertida!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Everyone has something they love to do. For me, that thing is drawing. It is my favorite <span class="palavra-destaque">hobby</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Todo mundo tem algo que ama fazer. Pra mim, essa coisa é desenhar. É meu hobby favorito!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I have been drawing since I was five years old.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu desenho desde os cinco anos de idade.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">What I love about drawing is that I can create anything I <span class="palavra-destaque">imagine</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">O que eu amo no desenho é que posso criar qualquer coisa que eu imagino.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I start a new drawing, the first thing I do is make a <span class="palavra-destaque">sketch</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando começo um desenho novo, a primeira coisa que faço é um esboço.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I use a pencil to draw the <span class="palavra-destaque">outline</span> of the shapes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu uso um lápis pra desenhar o contorno das formas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the sketch is ready, I choose my colors. My favorite tool is <span class="palavra-destaque">watercolor</span> paint.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois que o esboço está pronto, escolho minhas cores. Minha ferramenta favorita é tinta aquarela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I love watercolors because the colors mix together in a beautiful way.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu amo aquarela porque as cores se misturam de um jeito lindo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I put the paint on my <span class="palavra-destaque">palette</span> and mix different colors until I find the perfect one.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu coloco a tinta na minha paleta e misturo cores diferentes até achar a perfeita.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I pick up my <span class="palavra-destaque">brush</span> and start painting on the <span class="palavra-destaque">canvas</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aí pego meu pincel e começo a pintar na tela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After the background, I add the main subject. I try to add <span class="palavra-destaque">detail</span> to every part.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois do fundo, adiciono o tema principal. Tento adicionar detalhes em cada parte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The hardest part is <span class="palavra-destaque">shading</span>. Shading means making some areas darker.</div>
+                            <div style="color: #666; font-size: 0.95em;">A parte mais difícil é o sombreamento. Sombrear significa deixar algumas áreas mais escuras.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I think shading is harder than outlining, but it makes the biggest difference.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acho que sombrear é mais difícil que contornar, mas faz a maior diferença.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad says: "You have real <span class="palavra-destaque">talent</span>!" That makes me feel proud.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai diz: "Você tem talento de verdade!" Isso me faz sentir orgulho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My art teacher told me about the school <span class="palavra-destaque">exhibit</span>. She said: "I think you should enter your drawings!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha professora de arte me contou sobre a exposição da escola. Ela disse: "Acho que você deveria inscrever seus desenhos!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At first, I felt nervous because I thought my drawings were not good enough.</div>
+                            <div style="color: #666; font-size: 0.95em;">No começo, fiquei nervoso porque achei que meus desenhos não eram bons o suficiente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the day of the exhibit, I went to the school <span class="palavra-destaque">gallery</span> with my parents.</div>
+                            <div style="color: #666; font-size: 0.95em;">No dia da exposição, fui à galeria da escola com meus pais.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">A girl said: "These are amazing! You <span class="palavra-destaque">inspire</span> me to draw too!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Uma menina disse: "São incríveis! Você me inspira a desenhar também!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Even though I was nervous, I realized that sharing my art is a wonderful feeling.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mesmo nervoso, percebi que compartilhar minha arte é uma sensação maravilhosa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I want to <span class="palavra-destaque">improve</span> because I believe that practice makes you better every day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu quero melhorar porque acredito que a prática te faz melhor todo dia.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In my opinion, everyone should find a hobby they love, because it makes life more colorful!</div>
+                            <div style="color: #666; font-size: 0.95em;">Na minha opinião, todos deveriam encontrar um hobby que amam, porque torna a vida mais colorida!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Hobby 🎨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Hobby / passatempo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Drawing is my favorite hobby"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Atividade que você faz por diversão</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Sketch ✏️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Esboço</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I make a sketch first"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Desenho rápido inicial</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Canvas 🖼️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tela (de pintura)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I start painting on the canvas"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Superfície onde se pinta</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Brush 🖌️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pincel</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I pick up my brush"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ferramenta para pintar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Watercolor 💧</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Aquarela</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My favorite tool is watercolor paint"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Tinta que se mistura com água</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Palette 🎨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Paleta</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I put the paint on my palette"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde se mistura as tintas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Shade 🌑</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sombrear</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The hardest part is shading"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Escurecer partes do desenho</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Exhibit 🏛️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Exposição</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The school exhibit"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Evento para mostrar arte</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Inspire ✨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Inspirar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You inspire me to draw too!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Motivar alguém a criar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Improve 📈</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Melhorar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I want to improve"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ficar melhor com prática</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

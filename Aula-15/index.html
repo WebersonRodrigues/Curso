@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 15 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 15 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 15</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 15 - Semana 15</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 15</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender vocabulário de tecnologia do dia a dia (celular, apps, configurações) e comunicação por videochamada (conectar, sinal, compartilhar tela, sentimentos de saudade).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: A2→B1</strong> — Você já domina o básico e agora vai expandir seu vocabulário com situações reais envolvendo tecnologia e comunicação à distância!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ My First Phone</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Primeiro celular — regras de uso, apps, senha, bateria, grupo de conversa, modo avião, responsabilidade</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> smartphone, screen, password, download, app, notification, charge, battery, selfie, emoji, group chat, Wi-Fi, airplane mode, screenshot, settings</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ A Video Call with Grandma</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Videochamada com a avó — saudade, conexão, sinal ruim, compartilhar tela, mudo/desmudo, despedida</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> video call, connect, signal, freeze, lag, mute, unmute, share screen, wave, miss, far away, visit, promise, blow a kiss, hang up</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: My First Phone -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: My First Phone</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-my-first-phone.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-my-first-phone.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last Saturday was my birthday, and I got the best present ever — my first <span class="palavra-destaque">smartphone</span>!</p>
+                        <p>I had been asking my parents for months, so when I opened the box, I couldn't believe it!</p>
+                        <p>The <span class="palavra-destaque">screen</span> was big and shiny, and it already had some <span class="palavra-destaque">apps</span> on it.</p>
+                        <p>My dad helped me set up a <span class="palavra-destaque">password</span> because he told me that nobody should use my phone without permission.</p>
+                        <p>However, my parents also gave me a list of rules. They said: "You are <span class="palavra-destaque">not allowed to</span> use your phone at dinner."</p>
+                        <p>They also told me that I am only <span class="palavra-destaque">allowed to</span> use it for one hour per day on school days.</p>
+                        <p>At first, I thought the rules were too strict, but now I understand that they are important.</p>
+                        <p>The first thing I did was <span class="palavra-destaque">download</span> a game that my friends play. It was more fun than I expected!</p>
+                        <p>Then I took my first <span class="palavra-destaque">selfie</span> with my dog. I added a funny <span class="palavra-destaque">emoji</span> and sent it to my mom.</p>
+                        <p>She replied with a heart emoji, which made me smile.</p>
+                        <p>My best friend Lucas invited me to a <span class="palavra-destaque">group chat</span> with our classmates. Now we can talk about homework and share funny pictures!</p>
+                        <p>I also learned that I need to <span class="palavra-destaque">charge</span> my phone every night because the <span class="palavra-destaque">battery</span> runs out fast.</p>
+                        <p>One day, I forgot to charge it, and the screen went black in the middle of a game. That was so frustrating!</p>
+                        <p>My mom showed me how to turn on <span class="palavra-destaque">airplane mode</span> when I go to sleep, so that <span class="palavra-destaque">notifications</span> don't wake me up.</p>
+                        <p>She also taught me how to take a <span class="palavra-destaque">screenshot</span> when I see something important on the screen.</p>
+                        <p>I discovered that the phone needs <span class="palavra-destaque">Wi-Fi</span> to download new apps. Without Wi-Fi, it uses mobile data, which costs money.</p>
+                        <p>My dad showed me the <span class="palavra-destaque">settings</span> menu, where I can change the brightness and the wallpaper.</p>
+                        <p>I think having a phone is great because I can talk to my friends and learn new things.</p>
+                        <p>Although I love my phone, I try not to use it too much because my parents told me that spending time outside is better than staring at a screen all day.</p>
+                        <p>In my opinion, the best thing about my phone is the group chat, because I feel closer to my friends even when we are not together.</p>
+                        <p>I promised my parents that I will be responsible, and so far, I have kept my promise!</p>
+                        <p>My first phone taught me that technology is amazing, but it is even better when you use it wisely.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>No sábado passado foi meu aniversário, e eu ganhei o melhor presente de todos — meu primeiro <span class="palavra-destaque">smartphone</span>!</p>
+                        <p>Eu vinha pedindo pros meus pais há meses, então quando abri a caixa, não acreditei!</p>
+                        <p>A <span class="palavra-destaque">tela</span> era grande e brilhante, e já tinha alguns <span class="palavra-destaque">aplicativos</span> nele.</p>
+                        <p>Meu pai me ajudou a criar uma <span class="palavra-destaque">senha</span> porque ele me disse que ninguém deveria usar meu celular sem permissão.</p>
+                        <p>Porém, meus pais também me deram uma lista de regras. Eles disseram: "Você <span class="palavra-destaque">não pode</span> usar seu celular no jantar."</p>
+                        <p>Eles também me disseram que eu só <span class="palavra-destaque">posso</span> usar por uma hora por dia em dias de escola.</p>
+                        <p>No começo, eu achei as regras rígidas demais, mas agora eu entendo que são importantes.</p>
+                        <p>A primeira coisa que eu fiz foi <span class="palavra-destaque">baixar</span> um jogo que meus amigos jogam. Foi mais divertido do que eu esperava!</p>
+                        <p>Depois eu tirei minha primeira <span class="palavra-destaque">selfie</span> com meu cachorro. Adicionei um <span class="palavra-destaque">emoji</span> engraçado e mandei pra minha mãe.</p>
+                        <p>Ela respondeu com um emoji de coração, o que me fez sorrir.</p>
+                        <p>Meu melhor amigo Lucas me convidou pra um <span class="palavra-destaque">grupo de conversa</span> com nossos colegas. Agora a gente pode falar sobre dever de casa e compartilhar fotos engraçadas!</p>
+                        <p>Eu também aprendi que preciso <span class="palavra-destaque">carregar</span> meu celular toda noite porque a <span class="palavra-destaque">bateria</span> acaba rápido.</p>
+                        <p>Um dia, esqueci de carregar, e a tela ficou preta no meio de um jogo. Isso foi tão frustrante!</p>
+                        <p>Minha mãe me mostrou como ligar o <span class="palavra-destaque">modo avião</span> quando vou dormir, pra que as <span class="palavra-destaque">notificações</span> não me acordem.</p>
+                        <p>Ela também me ensinou a tirar um <span class="palavra-destaque">print de tela</span> quando vejo algo importante na tela.</p>
+                        <p>Eu descobri que o celular precisa de <span class="palavra-destaque">Wi-Fi</span> pra baixar novos aplicativos. Sem Wi-Fi, ele usa dados móveis, que custam dinheiro.</p>
+                        <p>Meu pai me mostrou o menu de <span class="palavra-destaque">configurações</span>, onde posso mudar o brilho e o papel de parede.</p>
+                        <p>Eu acho que ter um celular é ótimo porque posso falar com meus amigos e aprender coisas novas.</p>
+                        <p>Embora eu ame meu celular, tento não usar demais porque meus pais me disseram que passar tempo ao ar livre é melhor do que ficar olhando pra tela o dia todo.</p>
+                        <p>Na minha opinião, a melhor coisa do meu celular é o grupo de conversa, porque me sinto mais perto dos meus amigos mesmo quando não estamos juntos.</p>
+                        <p>Eu prometi pros meus pais que vou ser responsável, e até agora, cumpri minha promessa!</p>
+                        <p>Meu primeiro celular me ensinou que tecnologia é incrível, mas é ainda melhor quando você usa com sabedoria.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last Saturday was my birthday, and I got the best present ever — my first <span class="palavra-destaque">smartphone</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">No sábado passado foi meu aniversário, e eu ganhei o melhor presente de todos — meu primeiro smartphone!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I had been asking my parents for months, so when I opened the box, I couldn't believe it!</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu vinha pedindo pros meus pais há meses, então quando abri a caixa, não acreditei!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">screen</span> was big and shiny, and it already had some <span class="palavra-destaque">apps</span> on it.</div>
+                            <div style="color: #666; font-size: 0.95em;">A tela era grande e brilhante, e já tinha alguns aplicativos nele.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad helped me set up a <span class="palavra-destaque">password</span> because he told me that nobody should use my phone without permission.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai me ajudou a criar uma senha porque ele me disse que ninguém deveria usar meu celular sem permissão.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">However, my parents also gave me a list of rules.</div>
+                            <div style="color: #666; font-size: 0.95em;">Porém, meus pais também me deram uma lista de regras.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">They said: "You are <span class="palavra-destaque">not allowed to</span> use your phone at dinner."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eles disseram: "Você não pode usar seu celular no jantar."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">They also told me that I am only <span class="palavra-destaque">allowed to</span> use it for one hour per day on school days.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eles também me disseram que eu só posso usar por uma hora por dia em dias de escola.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At first, I thought the rules were too strict, but now I understand that they are important.</div>
+                            <div style="color: #666; font-size: 0.95em;">No começo, eu achei as regras rígidas demais, mas agora eu entendo que são importantes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The first thing I did was <span class="palavra-destaque">download</span> a game that my friends play.</div>
+                            <div style="color: #666; font-size: 0.95em;">A primeira coisa que eu fiz foi baixar um jogo que meus amigos jogam.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I took my first <span class="palavra-destaque">selfie</span> with my dog. I added a funny <span class="palavra-destaque">emoji</span> and sent it to my mom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois eu tirei minha primeira selfie com meu cachorro. Adicionei um emoji engraçado e mandei pra minha mãe.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My best friend Lucas invited me to a <span class="palavra-destaque">group chat</span> with our classmates.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu melhor amigo Lucas me convidou pra um grupo de conversa com nossos colegas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I also learned that I need to <span class="palavra-destaque">charge</span> my phone every night because the <span class="palavra-destaque">battery</span> runs out fast.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu também aprendi que preciso carregar meu celular toda noite porque a bateria acaba rápido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">One day, I forgot to charge it, and the screen went black in the middle of a game.</div>
+                            <div style="color: #666; font-size: 0.95em;">Um dia, esqueci de carregar, e a tela ficou preta no meio de um jogo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom showed me how to turn on <span class="palavra-destaque">airplane mode</span> so that <span class="palavra-destaque">notifications</span> don't wake me up.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe me mostrou como ligar o modo avião pra que as notificações não me acordem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She also taught me how to take a <span class="palavra-destaque">screenshot</span> when I see something important.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela também me ensinou a tirar um print de tela quando vejo algo importante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I discovered that the phone needs <span class="palavra-destaque">Wi-Fi</span> to download new apps.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu descobri que o celular precisa de Wi-Fi pra baixar novos aplicativos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad showed me the <span class="palavra-destaque">settings</span> menu, where I can change the brightness and the wallpaper.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai me mostrou o menu de configurações, onde posso mudar o brilho e o papel de parede.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Although I love my phone, I try not to use it too much because spending time outside is better than staring at a screen.</div>
+                            <div style="color: #666; font-size: 0.95em;">Embora eu ame meu celular, tento não usar demais porque passar tempo ao ar livre é melhor do que ficar olhando pra tela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In my opinion, the best thing about my phone is the <span class="palavra-destaque">group chat</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na minha opinião, a melhor coisa do meu celular é o grupo de conversa.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My first phone taught me that technology is amazing, but it is even better when you use it wisely.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu primeiro celular me ensinou que tecnologia é incrível, mas é ainda melhor quando você usa com sabedoria.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Smartphone 📱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Celular inteligente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I got my first smartphone!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "smart" = inteligente + "phone" = telefone</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Screen 🖥️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tela</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The screen was big and shiny"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> A parte que você toca e vê</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Password 🔑</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Senha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My dad helped me set up a password"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "pass" = passar + "word" = palavra</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Download ⬇️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Baixar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I downloaded a game"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Trazer algo da internet pro celular</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Charge 🔋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Carregar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I need to charge my phone every night"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Colocar energia na bateria</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Battery 🔋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bateria</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The battery runs out fast"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O que dá energia ao celular</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Notification 🔔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Notificação</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Notifications don't wake me up"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Aviso que aparece na tela</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Group Chat 💬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Grupo de conversa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Lucas invited me to a group chat"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Conversa com várias pessoas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Airplane Mode ✈️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Modo avião</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Turn on airplane mode when I go to sleep"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Desliga sinais do celular</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Settings ⚙️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Configurações</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My dad showed me the settings menu"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde você ajusta o celular</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: A Video Call with Grandma -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: A Video Call with Grandma</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-a-video-call-with-grandma.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-a-video-call-with-grandma.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Every Sunday, I make a <span class="palavra-destaque">video call</span> to my grandma because she lives <span class="palavra-destaque">far away</span> in another city.</p>
+                        <p>I <span class="palavra-destaque">miss</span> her so much! I wish I could see her every day, but at least we can talk on the phone.</p>
+                        <p>Today I opened the app and pressed the green button to <span class="palavra-destaque">connect</span>. The phone rang three times before she answered.</p>
+                        <p>"Hi, my love!" she said, <span class="palavra-destaque">waving</span> at the camera. Her smile always makes me feel better.</p>
+                        <p>However, today the <span class="palavra-destaque">signal</span> was not very good. The image started to <span class="palavra-destaque">freeze</span>, and I could only see half of her face.</p>
+                        <p>"Grandma, you are freezing!" I said. She laughed because she thought I meant she was cold!</p>
+                        <p>I told her: "No, grandma! The video is <span class="palavra-destaque">lagging</span>. Your image is not moving!"</p>
+                        <p>She moved closer to the router, and the connection got better than before.</p>
+                        <p>Then she said: "Wait, I want to show you something!" She turned the camera around to show me her garden.</p>
+                        <p>I could see beautiful flowers and tomatoes growing. She told me that she planted them last month.</p>
+                        <p>"I wish I could <span class="palavra-destaque">visit</span> you and see the garden in person," I said. She smiled and replied: "You will, soon!"</p>
+                        <p>After that, I wanted to show her my new drawings. I tried to <span class="palavra-destaque">share</span> my <span class="palavra-destaque">screen</span>, but I pressed the wrong button.</p>
+                        <p>Instead, I pressed <span class="palavra-destaque">mute</span> by accident! She kept talking, but I couldn't hear anything.</p>
+                        <p>"Grandma! I can't hear you!" I said loudly. Then I realized my mistake and pressed <span class="palavra-destaque">unmute</span>.</p>
+                        <p>She was laughing and said: "Technology is funny sometimes, isn't it?"</p>
+                        <p>I finally showed her my drawings by holding them up to the camera. She said they were the best drawings she had ever seen.</p>
+                        <p>Even though I know she says that every time, it still makes me happy because she is always so kind.</p>
+                        <p>We talked for almost an hour. She told me stories about when my dad was a little boy.</p>
+                        <p>At the end, she said: "I miss you so much. I <span class="palavra-destaque">promise</span> we will <span class="palavra-destaque">visit</span> soon."</p>
+                        <p>I said: "I <span class="palavra-destaque">miss</span> you too, grandma. I love you more than anything!"</p>
+                        <p>She blew me a <span class="palavra-destaque">kiss</span> through the screen, and I <span class="palavra-destaque">blew</span> one back.</p>
+                        <p>Then we said goodbye, and I pressed the red button to <span class="palavra-destaque">hang up</span>.</p>
+                        <p>After the call, I felt a little sad because I wanted to hug her. But I also felt happy because video calls make the distance feel shorter.</p>
+                        <p>I think technology is wonderful because it helps families stay close, even when they are far apart.</p>
+                        <p>We <span class="palavra-destaque">promised</span> to call again next Sunday. I can't wait!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Todo domingo, eu faço uma <span class="palavra-destaque">videochamada</span> pra minha avó porque ela mora <span class="palavra-destaque">longe</span>, em outra cidade.</p>
+                        <p>Eu sinto muita <span class="palavra-destaque">saudade</span> dela! Eu queria poder vê-la todo dia, mas pelo menos a gente pode conversar pelo celular.</p>
+                        <p>Hoje eu abri o aplicativo e apertei o botão verde pra <span class="palavra-destaque">conectar</span>. O telefone tocou três vezes antes dela atender.</p>
+                        <p>"Oi, meu amor!" ela disse, <span class="palavra-destaque">acenando</span> pra câmera. O sorriso dela sempre me faz sentir melhor.</p>
+                        <p>Porém, hoje o <span class="palavra-destaque">sinal</span> não estava muito bom. A imagem começou a <span class="palavra-destaque">travar</span>, e eu só conseguia ver metade do rosto dela.</p>
+                        <p>"Vó, você tá travando!" eu disse. Ela riu porque achou que eu quis dizer que ela estava com frio!</p>
+                        <p>Eu disse: "Não, vó! O vídeo tá com <span class="palavra-destaque">atraso</span>. Sua imagem não tá se mexendo!"</p>
+                        <p>Ela se aproximou do roteador, e a conexão ficou melhor do que antes.</p>
+                        <p>Aí ela disse: "Espera, quero te mostrar uma coisa!" Ela virou a câmera pra me mostrar o jardim dela.</p>
+                        <p>Eu pude ver flores lindas e tomates crescendo. Ela me contou que plantou no mês passado.</p>
+                        <p>"Eu queria poder te <span class="palavra-destaque">visitar</span> e ver o jardim pessoalmente," eu disse. Ela sorriu e respondeu: "Você vai, em breve!"</p>
+                        <p>Depois disso, eu quis mostrar meus desenhos novos. Tentei <span class="palavra-destaque">compartilhar</span> minha <span class="palavra-destaque">tela</span>, mas apertei o botão errado.</p>
+                        <p>Em vez disso, apertei <span class="palavra-destaque">mudo</span> sem querer! Ela continuou falando, mas eu não ouvia nada.</p>
+                        <p>"Vó! Não tô te ouvindo!" eu disse alto. Aí percebi meu erro e apertei <span class="palavra-destaque">tirar do mudo</span>.</p>
+                        <p>Ela tava rindo e disse: "Tecnologia é engraçada às vezes, né?"</p>
+                        <p>Eu finalmente mostrei meus desenhos segurando eles na frente da câmera. Ela disse que eram os melhores desenhos que ela já tinha visto.</p>
+                        <p>Mesmo que ela diga isso toda vez, ainda me faz feliz porque ela é sempre tão gentil.</p>
+                        <p>A gente conversou por quase uma hora. Ela me contou histórias de quando meu pai era pequeno.</p>
+                        <p>No final, ela disse: "Sinto muita saudade. Eu <span class="palavra-destaque">prometo</span> que vamos <span class="palavra-destaque">visitar</span> em breve."</p>
+                        <p>Eu disse: "Também sinto sua <span class="palavra-destaque">falta</span>, vó. Te amo mais que tudo!"</p>
+                        <p>Ela me mandou um <span class="palavra-destaque">beijo</span> pela tela, e eu mandei um de volta.</p>
+                        <p>Aí nos despedimos, e eu apertei o botão vermelho pra <span class="palavra-destaque">desligar</span>.</p>
+                        <p>Depois da ligação, fiquei um pouco triste porque queria abraçá-la. Mas também fiquei feliz porque videochamadas fazem a distância parecer menor.</p>
+                        <p>Eu acho que tecnologia é maravilhosa porque ajuda famílias a ficarem perto, mesmo quando estão longe.</p>
+                        <p>Nós <span class="palavra-destaque">prometemos</span> ligar de novo no próximo domingo. Mal posso esperar!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every Sunday, I make a <span class="palavra-destaque">video call</span> to my grandma because she lives <span class="palavra-destaque">far away</span> in another city.</div>
+                            <div style="color: #666; font-size: 0.95em;">Todo domingo, eu faço uma videochamada pra minha avó porque ela mora longe, em outra cidade.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">miss</span> her so much! I wish I could see her every day.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu sinto muita saudade dela! Eu queria poder vê-la todo dia.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today I opened the app and pressed the green button to <span class="palavra-destaque">connect</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje eu abri o aplicativo e apertei o botão verde pra conectar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Hi, my love!" she said, <span class="palavra-destaque">waving</span> at the camera.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Oi, meu amor!" ela disse, acenando pra câmera.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">However, today the <span class="palavra-destaque">signal</span> was not very good. The image started to <span class="palavra-destaque">freeze</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Porém, hoje o sinal não estava muito bom. A imagem começou a travar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Grandma, you are freezing!" I said. She laughed because she thought I meant she was cold!</div>
+                            <div style="color: #666; font-size: 0.95em;">"Vó, você tá travando!" eu disse. Ela riu porque achou que eu quis dizer que ela estava com frio!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I told her: "No, grandma! The video is <span class="palavra-destaque">lagging</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu disse: "Não, vó! O vídeo tá com atraso."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She moved closer to the router, and the connection got better than before.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela se aproximou do roteador, e a conexão ficou melhor do que antes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She turned the camera to show me her garden. I could see flowers and tomatoes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela virou a câmera pra me mostrar o jardim. Eu pude ver flores e tomates.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I wish I could <span class="palavra-destaque">visit</span> you and see the garden in person," I said.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu queria poder te visitar e ver o jardim pessoalmente," eu disse.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I tried to <span class="palavra-destaque">share</span> my <span class="palavra-destaque">screen</span>, but I pressed the wrong button.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tentei compartilhar minha tela, mas apertei o botão errado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Instead, I pressed <span class="palavra-destaque">mute</span> by accident! She kept talking, but I couldn't hear anything.</div>
+                            <div style="color: #666; font-size: 0.95em;">Em vez disso, apertei mudo sem querer! Ela continuou falando, mas eu não ouvia nada.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I realized my mistake and pressed <span class="palavra-destaque">unmute</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aí eu percebi meu erro e apertei tirar do mudo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Even though she says that every time, it still makes me happy because she is always so kind.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mesmo que ela diga isso toda vez, ainda me faz feliz porque ela é sempre tão gentil.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She told me stories about when my dad was a little boy.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela me contou histórias de quando meu pai era pequeno.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the end, she said: "I <span class="palavra-destaque">promise</span> we will <span class="palavra-destaque">visit</span> soon."</div>
+                            <div style="color: #666; font-size: 0.95em;">No final, ela disse: "Eu prometo que vamos visitar em breve."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She blew me a <span class="palavra-destaque">kiss</span> through the screen, and I <span class="palavra-destaque">blew</span> one back.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela me mandou um beijo pela tela, e eu mandei um de volta.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then we said goodbye, and I pressed the red button to <span class="palavra-destaque">hang up</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aí nos despedimos, e eu apertei o botão vermelho pra desligar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I think technology is wonderful because it helps families stay close, even when they are far apart.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acho que tecnologia é maravilhosa porque ajuda famílias a ficarem perto, mesmo quando estão longe.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">promised</span> to call again next Sunday. I can't wait!</div>
+                            <div style="color: #666; font-size: 0.95em;">Nós prometemos ligar de novo no próximo domingo. Mal posso esperar!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Video Call 📹</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Videochamada</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I make a video call to my grandma"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "video" + "call" (ligação)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Connect 🔗</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Conectar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I pressed the button to connect"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Estabelecer ligação</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Signal 📶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sinal</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The signal was not very good"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Qualidade da conexão</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Freeze 🥶</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Travar/congelar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The image started to freeze"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando a imagem para de se mover</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Mute 🔇</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mudo/silenciar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I pressed mute by accident"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Desligar o som</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Unmute 🔊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Tirar do mudo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I pressed unmute"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ligar o som de volta</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Miss (someone) 💔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sentir falta/saudade</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I miss her so much!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "I miss you" = sinto sua falta</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Wave 👋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Acenar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She said hi, waving at the camera"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mover a mão para cumprimentar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Hang Up 📵</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desligar (a ligação)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I pressed the red button to hang up"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Encerrar a chamada</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Promise 🤞</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Prometer</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We promised to call again next Sunday"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dar sua palavra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
