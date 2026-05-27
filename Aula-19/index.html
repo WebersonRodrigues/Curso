@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 19 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 19 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 19</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 19 - Semana 19</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 19</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Desenvolver habilidades de dedução lógica (investigação, pistas, conclusões) e argumentação (debate, opinião, concordar/discordar).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1</strong> — Você já consegue se comunicar em situações do dia a dia e agora vai expandir para temas mais complexos como investigação, dedução e debates estruturados!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ The Mystery of the Missing Backpack</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Investigação e dedução — mistério na escola, pistas, suspeitos, evidências, conclusão</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> mystery, clue, suspect, investigate, evidence, witness, disappear, search, solve, detective, footprint, guilty, innocent, confess, truth</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Should Kids Have Homework?</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Debate em sala de aula — argumentação, opinião, vantagens e desvantagens, equilíbrio</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> opinion, agree, disagree, argument, advantage, disadvantage, debate, fair, unfair, responsibility, balance, pressure, relax, focus, point of view</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: The Mystery of the Missing Backpack -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: The Mystery of the Missing Backpack</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-the-mystery-of-the-missing-backpack.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-the-mystery-of-the-missing-backpack.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last Tuesday, something strange happened at school. When I came back from recess, my backpack had completely <span class="palavra-destaque">disappeared</span> from the classroom!</p>
+                        <p>I looked everywhere — under my desk, behind the door, near the window — but it was gone. That is when I decided to become a <span class="palavra-destaque">detective</span> and <span class="palavra-destaque">solve</span> this <span class="palavra-destaque">mystery</span>.</p>
+                        <p>First, I needed to find <span class="palavra-destaque">clues</span>. I looked carefully at the floor and noticed muddy <span class="palavra-destaque">footprints</span> near the back door of the classroom.</p>
+                        <p>The <span class="palavra-destaque">evidence</span> suggested that someone had walked in from outside while we were at recess. This was my first important <span class="palavra-destaque">clue</span>!</p>
+                        <p>Then I decided to <span class="palavra-destaque">search</span> for a <span class="palavra-destaque">witness</span>. I asked my classmate Ana: "Did you see anyone come into the classroom during recess?"</p>
+                        <p>Ana said: "I saw Pedro come back early because he forgot his water bottle. He was near your desk."</p>
+                        <p>Pedro immediately became my first <span class="palavra-destaque">suspect</span>. I thought it <span class="palavra-destaque">might be</span> Pedro because he was in the classroom alone.</p>
+                        <p>But I needed more <span class="palavra-destaque">evidence</span> before I could say he was <span class="palavra-destaque">guilty</span>. A good detective never accuses someone without proof.</p>
+                        <p>I went to talk to Pedro. He looked surprised and said: "I only came back for my water bottle! I did not touch your backpack, I promise!"</p>
+                        <p>He seemed <span class="palavra-destaque">innocent</span>, but I was not sure yet. I needed to <span class="palavra-destaque">investigate</span> more carefully.</p>
+                        <p>Then I noticed something interesting. The muddy <span class="palavra-destaque">footprints</span> were too big to be Pedro's feet. They looked like adult shoes!</p>
+                        <p>I thought: "It <span class="palavra-destaque">could have been</span> an adult who came into the classroom. But who?"</p>
+                        <p>My friend Lucas said: "I saw Mr. Carlos, the janitor, cleaning near our classroom during recess."</p>
+                        <p>Now I had a new <span class="palavra-destaque">suspect</span>! The <span class="palavra-destaque">evidence</span> pointed to Mr. Carlos because the <span class="palavra-destaque">footprints</span> were adult-sized and he was nearby.</p>
+                        <p>I went to find Mr. Carlos and asked him politely: "Did you go into our classroom during recess?"</p>
+                        <p>He smiled and <span class="palavra-destaque">confessed</span>: "Yes! I found a backpack on the floor near the door. I moved it to the lost and found because I thought someone had forgotten it."</p>
+                        <p><span class="palavra-destaque">It turned out that</span> Mr. Carlos was trying to help! He was not <span class="palavra-destaque">guilty</span> of stealing — he was just doing his job.</p>
+                        <p>I was wrong because I thought someone had taken my backpack on purpose, but the <span class="palavra-destaque">truth</span> was much simpler.</p>
+                        <p>Mr. Carlos took me to the lost and found, and there it was — my blue backpack, safe and sound!</p>
+                        <p>I felt relieved and a little embarrassed. I had been a <span class="palavra-destaque">detective</span> for thirty minutes, and the <span class="palavra-destaque">mystery</span> was just a misunderstanding.</p>
+                        <p>I learned that before you accuse anyone, you should always <span class="palavra-destaque">investigate</span> all the facts and look for the <span class="palavra-destaque">truth</span>.</p>
+                        <p>My teacher laughed and said: "Well done, detective! But next time, hang your backpack on the hook so it does not end up on the floor!"</p>
+                        <p>The whole class laughed, and I promised to be more careful. Case closed!</p>
+                        <p>I <span class="palavra-destaque">might be</span> a good detective one day, but for now, I just need to remember to hang up my backpack!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Na terça-feira passada, algo estranho aconteceu na escola. Quando voltei do recreio, minha mochila tinha <span class="palavra-destaque">desaparecido</span> completamente da sala de aula!</p>
+                        <p>Procurei em todo lugar — embaixo da minha carteira, atrás da porta, perto da janela — mas tinha sumido. Foi aí que decidi virar um <span class="palavra-destaque">detetive</span> e <span class="palavra-destaque">resolver</span> esse <span class="palavra-destaque">mistério</span>.</p>
+                        <p>Primeiro, eu precisava encontrar <span class="palavra-destaque">pistas</span>. Olhei cuidadosamente para o chão e notei <span class="palavra-destaque">pegadas</span> de lama perto da porta dos fundos da sala.</p>
+                        <p>A <span class="palavra-destaque">evidência</span> sugeria que alguém tinha entrado de fora enquanto estávamos no recreio. Essa foi minha primeira <span class="palavra-destaque">pista</span> importante!</p>
+                        <p>Então decidi <span class="palavra-destaque">procurar</span> uma <span class="palavra-destaque">testemunha</span>. Perguntei para minha colega Ana: "Você viu alguém entrar na sala durante o recreio?"</p>
+                        <p>Ana disse: "Eu vi o Pedro voltar mais cedo porque ele esqueceu a garrafa de água. Ele estava perto da sua carteira."</p>
+                        <p>Pedro imediatamente se tornou meu primeiro <span class="palavra-destaque">suspeito</span>. Achei que <span class="palavra-destaque">poderia ser</span> o Pedro porque ele estava na sala sozinho.</p>
+                        <p>Mas eu precisava de mais <span class="palavra-destaque">evidências</span> antes de poder dizer que ele era <span class="palavra-destaque">culpado</span>. Um bom detetive nunca acusa alguém sem provas.</p>
+                        <p>Fui falar com o Pedro. Ele pareceu surpreso e disse: "Eu só voltei pra pegar minha garrafa de água! Não toquei na sua mochila, eu prometo!"</p>
+                        <p>Ele parecia <span class="palavra-destaque">inocente</span>, mas eu ainda não tinha certeza. Precisava <span class="palavra-destaque">investigar</span> com mais cuidado.</p>
+                        <p>Então notei algo interessante. As <span class="palavra-destaque">pegadas</span> de lama eram grandes demais para serem do Pedro. Pareciam sapatos de adulto!</p>
+                        <p>Pensei: "<span class="palavra-destaque">Poderia ter sido</span> um adulto que entrou na sala. Mas quem?"</p>
+                        <p>Meu amigo Lucas disse: "Eu vi o Sr. Carlos, o zelador, limpando perto da nossa sala durante o recreio."</p>
+                        <p>Agora eu tinha um novo <span class="palavra-destaque">suspeito</span>! A <span class="palavra-destaque">evidência</span> apontava para o Sr. Carlos porque as <span class="palavra-destaque">pegadas</span> eram de adulto e ele estava por perto.</p>
+                        <p>Fui procurar o Sr. Carlos e perguntei educadamente: "O senhor entrou na nossa sala durante o recreio?"</p>
+                        <p>Ele sorriu e <span class="palavra-destaque">confessou</span>: "Sim! Encontrei uma mochila no chão perto da porta. Levei para os achados e perdidos porque achei que alguém tinha esquecido."</p>
+                        <p><span class="palavra-destaque">No final das contas</span>, o Sr. Carlos estava tentando ajudar! Ele não era <span class="palavra-destaque">culpado</span> de roubar — estava apenas fazendo seu trabalho.</p>
+                        <p>Eu estava errado porque achei que alguém tinha pegado minha mochila de propósito, mas a <span class="palavra-destaque">verdade</span> era muito mais simples.</p>
+                        <p>O Sr. Carlos me levou aos achados e perdidos, e lá estava — minha mochila azul, sã e salva!</p>
+                        <p>Me senti aliviado e um pouco envergonhado. Tinha sido um <span class="palavra-destaque">detetive</span> por trinta minutos, e o <span class="palavra-destaque">mistério</span> era apenas um mal-entendido.</p>
+                        <p>Aprendi que antes de acusar qualquer pessoa, você deve sempre <span class="palavra-destaque">investigar</span> todos os fatos e procurar a <span class="palavra-destaque">verdade</span>.</p>
+                        <p>Minha professora riu e disse: "Muito bem, detetive! Mas da próxima vez, pendure sua mochila no gancho pra ela não acabar no chão!"</p>
+                        <p>A turma toda riu, e eu prometi ser mais cuidadoso. Caso encerrado!</p>
+                        <p>Eu <span class="palavra-destaque">posso ser</span> um bom detetive um dia, mas por enquanto, só preciso lembrar de pendurar minha mochila!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last Tuesday, something strange happened at school. When I came back from recess, my backpack had completely <span class="palavra-destaque">disappeared</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na terça-feira passada, algo estranho aconteceu na escola. Quando voltei do recreio, minha mochila tinha desaparecido completamente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I looked everywhere — under my desk, behind the door — but it was gone. I decided to become a <span class="palavra-destaque">detective</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Procurei em todo lugar — embaixo da minha carteira, atrás da porta — mas tinha sumido. Decidi virar um detetive.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">First, I needed to find <span class="palavra-destaque">clues</span>. I noticed muddy <span class="palavra-destaque">footprints</span> near the back door.</div>
+                            <div style="color: #666; font-size: 0.95em;">Primeiro, eu precisava encontrar pistas. Notei pegadas de lama perto da porta dos fundos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">evidence</span> suggested that someone had walked in from outside while we were at recess.</div>
+                            <div style="color: #666; font-size: 0.95em;">A evidência sugeria que alguém tinha entrado de fora enquanto estávamos no recreio.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I decided to <span class="palavra-destaque">search</span> for a <span class="palavra-destaque">witness</span> and asked my classmate Ana.</div>
+                            <div style="color: #666; font-size: 0.95em;">Decidi procurar uma testemunha e perguntei para minha colega Ana.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Ana said: "I saw Pedro come back early. He was near your desk."</div>
+                            <div style="color: #666; font-size: 0.95em;">Ana disse: "Eu vi o Pedro voltar mais cedo. Ele estava perto da sua carteira."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pedro became my first <span class="palavra-destaque">suspect</span>. I thought it <span class="palavra-destaque">might be</span> Pedro because he was alone in the classroom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pedro se tornou meu primeiro suspeito. Achei que poderia ser o Pedro porque ele estava sozinho na sala.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But I needed more <span class="palavra-destaque">evidence</span> before I could say he was <span class="palavra-destaque">guilty</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas eu precisava de mais evidências antes de dizer que ele era culpado.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Pedro said: "I did not touch your backpack!" He seemed <span class="palavra-destaque">innocent</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pedro disse: "Eu não toquei na sua mochila!" Ele parecia inocente.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I noticed the muddy <span class="palavra-destaque">footprints</span> were too big to be Pedro's. They looked like adult shoes!</div>
+                            <div style="color: #666; font-size: 0.95em;">Então notei que as pegadas de lama eram grandes demais para ser do Pedro. Pareciam sapatos de adulto!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I thought: "It <span class="palavra-destaque">could have been</span> an adult who came into the classroom."</div>
+                            <div style="color: #666; font-size: 0.95em;">Pensei: "Poderia ter sido um adulto que entrou na sala."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Lucas said he saw Mr. Carlos, the janitor, cleaning near our classroom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu amigo Lucas disse que viu o Sr. Carlos, o zelador, limpando perto da nossa sala.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Now I had a new <span class="palavra-destaque">suspect</span>! The <span class="palavra-destaque">evidence</span> pointed to Mr. Carlos.</div>
+                            <div style="color: #666; font-size: 0.95em;">Agora eu tinha um novo suspeito! A evidência apontava para o Sr. Carlos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I asked Mr. Carlos politely, and he <span class="palavra-destaque">confessed</span>: "I moved it to the lost and found!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Perguntei educadamente ao Sr. Carlos, e ele confessou: "Eu levei para os achados e perdidos!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">It turned out that</span> Mr. Carlos was trying to help! The <span class="palavra-destaque">truth</span> was much simpler.</div>
+                            <div style="color: #666; font-size: 0.95em;">No final das contas, o Sr. Carlos estava tentando ajudar! A verdade era muito mais simples.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I was wrong because I thought someone had taken my backpack on purpose.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu estava errado porque achei que alguém tinha pegado minha mochila de propósito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Mr. Carlos took me to the lost and found, and there it was — my blue backpack!</div>
+                            <div style="color: #666; font-size: 0.95em;">O Sr. Carlos me levou aos achados e perdidos, e lá estava — minha mochila azul!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I felt relieved and a little embarrassed. The <span class="palavra-destaque">mystery</span> was just a misunderstanding.</div>
+                            <div style="color: #666; font-size: 0.95em;">Me senti aliviado e um pouco envergonhado. O mistério era apenas um mal-entendido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I learned that you should always <span class="palavra-destaque">investigate</span> all the facts before accusing anyone.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aprendi que você deve sempre investigar todos os fatos antes de acusar alguém.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My teacher laughed and said: "Next time, hang your backpack on the hook!" Case closed!</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha professora riu e disse: "Da próxima vez, pendure sua mochila no gancho!" Caso encerrado!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Mystery 🔍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mistério</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I decided to solve this mystery"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Algo estranho que precisa ser explicado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Clue 🧩</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pista</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I needed to find clues"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Informação que ajuda a resolver um mistério</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Suspect 🕵️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Suspeito</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Pedro became my first suspect"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pessoa que pode ter feito algo errado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Investigate 🔎</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Investigar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I needed to investigate more carefully"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Procurar informações para descobrir a verdade</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Evidence 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Evidência/prova</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The evidence pointed to Mr. Carlos"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Fatos que mostram o que aconteceu</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Witness 👁️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Testemunha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I decided to search for a witness"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pessoa que viu algo acontecer</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Guilty ⚖️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Culpado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He was not guilty of stealing"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quem fez algo errado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Innocent 😇</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Inocente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He seemed innocent"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quem não fez nada de errado</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Confess 🗣️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Confessar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He confessed: I moved it!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Admitir que fez algo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Truth ✅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Verdade</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The truth was much simpler"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O que realmente aconteceu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Should Kids Have Homework? -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Should Kids Have Homework?</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-should-kids-have-homework.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-should-kids-have-homework.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last week, our teacher organized a <span class="palavra-destaque">debate</span> in class. The topic was: "Should kids have homework?" Everyone had a strong <span class="palavra-destaque">opinion</span> about it!</p>
+                        <p>Our teacher explained the rules: "You need to present <span class="palavra-destaque">arguments</span> for both sides. Think about the <span class="palavra-destaque">advantages</span> and <span class="palavra-destaque">disadvantages</span> before giving your <span class="palavra-destaque">point of view</span>."</p>
+                        <p>I was nervous because I had never done a <span class="palavra-destaque">debate</span> before, but I wanted to share my <span class="palavra-destaque">opinion</span> with the class.</p>
+                        <p>First, I presented the <span class="palavra-destaque">advantages</span> of homework. <span class="palavra-destaque">On one hand</span>, homework helps us practice what we learned in class.</p>
+                        <p>When we do exercises at home, we remember things better. It also teaches us <span class="palavra-destaque">responsibility</span> because we have to manage our time.</p>
+                        <p><span class="palavra-destaque">Some people think</span> that homework makes students get better grades because they study more. My friend Julia said: "<span class="palavra-destaque">I agree</span> with that because my grades improved when I started doing all my homework."</p>
+                        <p>Another <span class="palavra-destaque">argument</span> in favor is that homework helps parents see what their children are learning at school.</p>
+                        <p><span class="palavra-destaque">On the other hand</span>, there are also <span class="palavra-destaque">disadvantages</span>. Kids need time to <span class="palavra-destaque">relax</span> and play after school.</p>
+                        <p>Too much homework can create <span class="palavra-destaque">pressure</span> and make children feel tired and stressed. That is not <span class="palavra-destaque">fair</span> to kids who already spend many hours at school.</p>
+                        <p><span class="palavra-destaque">Some people think</span> homework is good. <span class="palavra-destaque">However, others believe</span> that children need a <span class="palavra-destaque">balance</span> between studying and having fun.</p>
+                        <p>My friend Mateus said: "<span class="palavra-destaque">I disagree</span> with homework every day because I cannot <span class="palavra-destaque">focus</span> when I am too tired. I need time to rest."</p>
+                        <p><span class="palavra-destaque">From my point of view</span>, he has a good <span class="palavra-destaque">point of view</span>. If we are exhausted, we cannot learn well.</p>
+                        <p>Another <span class="palavra-destaque">disadvantage</span> is that some kids do not have help at home. That is <span class="palavra-destaque">unfair</span> because not everyone has the same conditions.</p>
+                        <p>Then our teacher asked: "So what is the solution?" Many students raised their hands.</p>
+                        <p>Sofia said: "<span class="palavra-destaque">In my opinion</span>, teachers should give less homework but make it more interesting. Quality is better than quantity."</p>
+                        <p>Lucas said: "<span class="palavra-destaque">I agree</span> with Sofia <span class="palavra-destaque">because</span> boring homework does not help anyone <span class="palavra-destaque">focus</span> or learn."</p>
+                        <p>I thought about both sides carefully. There were good <span class="palavra-destaque">arguments</span> on each side of the <span class="palavra-destaque">debate</span>.</p>
+                        <p>Finally, it was my turn to speak. I said: "<span class="palavra-destaque">In my opinion</span>, homework is important, but there should be a <span class="palavra-destaque">balance</span>."</p>
+                        <p>I explained: "<span class="palavra-destaque">On one hand</span>, we need practice to learn. <span class="palavra-destaque">On the other hand</span>, we also need time to <span class="palavra-destaque">relax</span> and be kids."</p>
+                        <p>I continued: "I think the best solution is to have homework three times a week, not every day. This way, we have <span class="palavra-destaque">responsibility</span> but also free time."</p>
+                        <p>My teacher smiled and said: "That is a very mature and <span class="palavra-destaque">balanced</span> <span class="palavra-destaque">opinion</span>! You considered both sides before making your decision."</p>
+                        <p>She told us: "In a good <span class="palavra-destaque">debate</span>, you do not just say what you think. You listen to others, consider different <span class="palavra-destaque">arguments</span>, and then form your <span class="palavra-destaque">opinion</span>."</p>
+                        <p>I learned that it is okay to <span class="palavra-destaque">agree</span> with some things and <span class="palavra-destaque">disagree</span> with others. The important thing is to explain why.</p>
+                        <p>I also learned that <span class="palavra-destaque">fair</span> solutions usually come from listening to everyone's <span class="palavra-destaque">point of view</span> and finding a <span class="palavra-destaque">balance</span>.</p>
+                        <p>The <span class="palavra-destaque">debate</span> was really fun! Now I want to have more discussions like this because they help me think clearly and <span class="palavra-destaque">focus</span> on what really matters.</p>
+                        <p>From now on, when someone asks my <span class="palavra-destaque">opinion</span>, I will always try to see both sides before I answer!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Na semana passada, nossa professora organizou um <span class="palavra-destaque">debate</span> na aula. O tema era: "Crianças deveriam ter dever de casa?" Todo mundo tinha uma <span class="palavra-destaque">opinião</span> forte sobre isso!</p>
+                        <p>Nossa professora explicou as regras: "Vocês precisam apresentar <span class="palavra-destaque">argumentos</span> para os dois lados. Pensem nas <span class="palavra-destaque">vantagens</span> e <span class="palavra-destaque">desvantagens</span> antes de dar seu <span class="palavra-destaque">ponto de vista</span>."</p>
+                        <p>Eu estava nervoso porque nunca tinha feito um <span class="palavra-destaque">debate</span> antes, mas queria compartilhar minha <span class="palavra-destaque">opinião</span> com a turma.</p>
+                        <p>Primeiro, apresentei as <span class="palavra-destaque">vantagens</span> do dever de casa. <span class="palavra-destaque">Por um lado</span>, o dever de casa nos ajuda a praticar o que aprendemos na aula.</p>
+                        <p>Quando fazemos exercícios em casa, lembramos melhor das coisas. Também nos ensina <span class="palavra-destaque">responsabilidade</span> porque temos que administrar nosso tempo.</p>
+                        <p><span class="palavra-destaque">Algumas pessoas acham</span> que o dever de casa faz os alunos tirarem notas melhores porque estudam mais. Minha amiga Julia disse: "<span class="palavra-destaque">Eu concordo</span> com isso porque minhas notas melhoraram quando comecei a fazer todo o meu dever."</p>
+                        <p>Outro <span class="palavra-destaque">argumento</span> a favor é que o dever de casa ajuda os pais a verem o que seus filhos estão aprendendo na escola.</p>
+                        <p><span class="palavra-destaque">Por outro lado</span>, também existem <span class="palavra-destaque">desvantagens</span>. Crianças precisam de tempo para <span class="palavra-destaque">relaxar</span> e brincar depois da escola.</p>
+                        <p>Dever de casa demais pode criar <span class="palavra-destaque">pressão</span> e deixar as crianças cansadas e estressadas. Isso não é <span class="palavra-destaque">justo</span> com crianças que já passam muitas horas na escola.</p>
+                        <p><span class="palavra-destaque">Algumas pessoas acham</span> que dever de casa é bom. <span class="palavra-destaque">No entanto, outros acreditam</span> que crianças precisam de um <span class="palavra-destaque">equilíbrio</span> entre estudar e se divertir.</p>
+                        <p>Meu amigo Mateus disse: "<span class="palavra-destaque">Eu discordo</span> de dever de casa todo dia porque não consigo me <span class="palavra-destaque">concentrar</span> quando estou cansado demais. Preciso de tempo para descansar."</p>
+                        <p><span class="palavra-destaque">Do meu ponto de vista</span>, ele tem um bom <span class="palavra-destaque">ponto de vista</span>. Se estamos exaustos, não conseguimos aprender bem.</p>
+                        <p>Outra <span class="palavra-destaque">desvantagem</span> é que algumas crianças não têm ajuda em casa. Isso é <span class="palavra-destaque">injusto</span> porque nem todo mundo tem as mesmas condições.</p>
+                        <p>Então nossa professora perguntou: "Então qual é a solução?" Muitos alunos levantaram a mão.</p>
+                        <p>Sofia disse: "<span class="palavra-destaque">Na minha opinião</span>, professores deveriam dar menos dever de casa mas torná-lo mais interessante. Qualidade é melhor que quantidade."</p>
+                        <p>Lucas disse: "<span class="palavra-destaque">Eu concordo</span> com a Sofia <span class="palavra-destaque">porque</span> dever chato não ajuda ninguém a se <span class="palavra-destaque">concentrar</span> ou aprender."</p>
+                        <p>Pensei nos dois lados com cuidado. Havia bons <span class="palavra-destaque">argumentos</span> em cada lado do <span class="palavra-destaque">debate</span>.</p>
+                        <p>Finalmente, foi minha vez de falar. Eu disse: "<span class="palavra-destaque">Na minha opinião</span>, dever de casa é importante, mas deveria haver um <span class="palavra-destaque">equilíbrio</span>."</p>
+                        <p>Expliquei: "<span class="palavra-destaque">Por um lado</span>, precisamos de prática para aprender. <span class="palavra-destaque">Por outro lado</span>, também precisamos de tempo para <span class="palavra-destaque">relaxar</span> e ser crianças."</p>
+                        <p>Continuei: "Acho que a melhor solução é ter dever de casa três vezes por semana, não todo dia. Assim, temos <span class="palavra-destaque">responsabilidade</span> mas também tempo livre."</p>
+                        <p>Minha professora sorriu e disse: "Essa é uma <span class="palavra-destaque">opinião</span> muito madura e <span class="palavra-destaque">equilibrada</span>! Você considerou os dois lados antes de tomar sua decisão."</p>
+                        <p>Ela nos disse: "Em um bom <span class="palavra-destaque">debate</span>, você não apenas diz o que pensa. Você ouve os outros, considera diferentes <span class="palavra-destaque">argumentos</span>, e então forma sua <span class="palavra-destaque">opinião</span>."</p>
+                        <p>Aprendi que tudo bem <span class="palavra-destaque">concordar</span> com algumas coisas e <span class="palavra-destaque">discordar</span> de outras. O importante é explicar por quê.</p>
+                        <p>Também aprendi que soluções <span class="palavra-destaque">justas</span> geralmente vêm de ouvir o <span class="palavra-destaque">ponto de vista</span> de todos e encontrar um <span class="palavra-destaque">equilíbrio</span>.</p>
+                        <p>O <span class="palavra-destaque">debate</span> foi muito divertido! Agora quero ter mais discussões assim porque elas me ajudam a pensar com clareza e me <span class="palavra-destaque">concentrar</span> no que realmente importa.</p>
+                        <p>De agora em diante, quando alguém pedir minha <span class="palavra-destaque">opinião</span>, vou sempre tentar ver os dois lados antes de responder!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last week, our teacher organized a <span class="palavra-destaque">debate</span> in class. The topic was: "Should kids have homework?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Na semana passada, nossa professora organizou um debate na aula. O tema era: "Crianças deveriam ter dever de casa?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our teacher explained: "Present <span class="palavra-destaque">arguments</span> for both sides. Think about the <span class="palavra-destaque">advantages</span> and <span class="palavra-destaque">disadvantages</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Nossa professora explicou: "Apresentem argumentos para os dois lados. Pensem nas vantagens e desvantagens."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I was nervous because I had never done a <span class="palavra-destaque">debate</span> before, but I wanted to share my <span class="palavra-destaque">opinion</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu estava nervoso porque nunca tinha feito um debate antes, mas queria compartilhar minha opinião.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">On one hand</span>, homework helps us practice what we learned in class.</div>
+                            <div style="color: #666; font-size: 0.95em;">Por um lado, o dever de casa nos ajuda a praticar o que aprendemos na aula.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It also teaches us <span class="palavra-destaque">responsibility</span> because we have to manage our time.</div>
+                            <div style="color: #666; font-size: 0.95em;">Também nos ensina responsabilidade porque temos que administrar nosso tempo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Some people think</span> that homework makes students get better grades.</div>
+                            <div style="color: #666; font-size: 0.95em;">Algumas pessoas acham que o dever de casa faz os alunos tirarem notas melhores.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Julia said: "<span class="palavra-destaque">I agree</span> because my grades improved when I started doing all my homework."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha amiga Julia disse: "Eu concordo porque minhas notas melhoraram quando comecei a fazer todo o dever."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">On the other hand</span>, kids need time to <span class="palavra-destaque">relax</span> and play after school.</div>
+                            <div style="color: #666; font-size: 0.95em;">Por outro lado, crianças precisam de tempo para relaxar e brincar depois da escola.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Too much homework can create <span class="palavra-destaque">pressure</span> and make children feel tired. That is not <span class="palavra-destaque">fair</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Dever de casa demais pode criar pressão e deixar as crianças cansadas. Isso não é justo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">However, others believe</span> that children need a <span class="palavra-destaque">balance</span> between studying and having fun.</div>
+                            <div style="color: #666; font-size: 0.95em;">No entanto, outros acreditam que crianças precisam de um equilíbrio entre estudar e se divertir.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Mateus said: "<span class="palavra-destaque">I disagree</span> with homework every day because I cannot <span class="palavra-destaque">focus</span> when I am tired."</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu amigo Mateus disse: "Eu discordo de dever todo dia porque não consigo me concentrar quando estou cansado."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Another <span class="palavra-destaque">disadvantage</span> is that some kids do not have help at home. That is <span class="palavra-destaque">unfair</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Outra desvantagem é que algumas crianças não têm ajuda em casa. Isso é injusto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sofia said: "<span class="palavra-destaque">In my opinion</span>, teachers should give less homework but make it more interesting."</div>
+                            <div style="color: #666; font-size: 0.95em;">Sofia disse: "Na minha opinião, professores deveriam dar menos dever mas torná-lo mais interessante."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Lucas said: "<span class="palavra-destaque">I agree</span> with Sofia because boring homework does not help anyone <span class="palavra-destaque">focus</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Lucas disse: "Eu concordo com a Sofia porque dever chato não ajuda ninguém a se concentrar."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I said: "<span class="palavra-destaque">In my opinion</span>, homework is important, but there should be a <span class="palavra-destaque">balance</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu disse: "Na minha opinião, dever de casa é importante, mas deveria haver um equilíbrio."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I explained: "<span class="palavra-destaque">On one hand</span>, we need practice. <span class="palavra-destaque">On the other hand</span>, we need time to <span class="palavra-destaque">relax</span> and be kids."</div>
+                            <div style="color: #666; font-size: 0.95em;">Expliquei: "Por um lado, precisamos de prática. Por outro lado, precisamos de tempo para relaxar e ser crianças."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My teacher said: "That is a very mature <span class="palavra-destaque">opinion</span>! You considered both sides."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha professora disse: "Essa é uma opinião muito madura! Você considerou os dois lados."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She told us: "In a good <span class="palavra-destaque">debate</span>, you listen to others and consider different <span class="palavra-destaque">arguments</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela nos disse: "Em um bom debate, você ouve os outros e considera diferentes argumentos."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I learned that it is okay to <span class="palavra-destaque">agree</span> with some things and <span class="palavra-destaque">disagree</span> with others.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aprendi que tudo bem concordar com algumas coisas e discordar de outras.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Fair</span> solutions come from listening to everyone's <span class="palavra-destaque">point of view</span> and finding a <span class="palavra-destaque">balance</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Soluções justas vêm de ouvir o ponto de vista de todos e encontrar um equilíbrio.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Opinion 💭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Opinião</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Everyone had a strong opinion"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O que você pensa sobre algo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Agree 🤝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Concordar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I agree with Sofia"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pensar igual a outra pessoa</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Disagree ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Discordar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I disagree with homework every day"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pensar diferente de outra pessoa</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Debate 🎤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Debate</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Our teacher organized a debate"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Discussão organizada sobre um tema</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Balance ⚖️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Equilíbrio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "There should be a balance"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Meio-termo entre duas coisas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Fair / Unfair ⚖️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Justo / Injusto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That is not fair to kids"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando todos são tratados igualmente (ou não)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Responsibility 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Responsabilidade</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It teaches us responsibility"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dever de cuidar de algo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Pressure 😰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pressão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Too much homework can create pressure"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Estresse causado por cobranças</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Focus 🎯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Concentrar/focar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I cannot focus when I am tired"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Prestar atenção em uma coisa só</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Point of View 👁️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ponto de vista</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "From my point of view..."</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> A forma como alguém vê uma situação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

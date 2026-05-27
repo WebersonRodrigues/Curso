@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 22 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 22 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 22</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 22 - Semana 22</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 22</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Entender como as contrações funcionam no inglês real (I'm, don't, can't, won't) e como americanos encurtam palavras em mensagens de texto (gonna, wanna, gotta, lemme, gimme).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1→B2</strong> — Você já domina o básico e agora vai aprender como nativos realmente falam e escrevem no dia a dia!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ How People Really Talk</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Contrações no inglês real — como nativos juntam palavras ao falar (I'm, they're, don't, can't, won't, wasn't)</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> I'm, you're, he's, she's, we're, they're, it's, don't, doesn't, can't, won't, isn't, aren't, wasn't, weren't</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Texting with My Friend</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Contrações informais em mensagens de texto — gonna, wanna, gotta, lemme, gimme, dunno, kinda, sorta, whatcha, y'all</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> gonna, wanna, gotta, lemme, dunno, kinda, sorta, whatcha, gimme, y'all, coulda, shoulda, woulda, hafta, ain't</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: How People Really Talk -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: How People Really Talk</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-how-people-really-talk.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-how-people-really-talk.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last Saturday, my mom said we could watch an American movie together. I was so excited! But when the movie started, I <span class="palavra-destaque">couldn't</span> understand anything. The people talked so fast!</p>
+                        <p>I looked at my mom and said: "Mom, <span class="palavra-destaque">I'm</span> lost. <span class="palavra-destaque">They're</span> speaking too fast. <span class="palavra-destaque">It's</span> impossible to understand!"</p>
+                        <p>My mom paused the movie and smiled. "<span class="palavra-destaque">Don't</span> worry," she said. "<span class="palavra-destaque">They're</span> using contractions. <span class="palavra-destaque">That's</span> why <span class="palavra-destaque">it's</span> hard to understand."</p>
+                        <p>"Contractions? What are those?" I asked.</p>
+                        <p>"In English, people join two words together," she explained. "Instead of 'I am', they say <span class="palavra-destaque">I'm</span>. Instead of 'you are', they say <span class="palavra-destaque">you're</span>. Instead of 'do not', they say <span class="palavra-destaque">don't</span>."</p>
+                        <p>"Oh! So <span class="palavra-destaque">it's</span> like a shortcut?" I said.</p>
+                        <p>"Exactly! <span class="palavra-destaque">He's</span> happy means 'he is happy'. <span class="palavra-destaque">She's</span> my friend means 'she is my friend'. <span class="palavra-destaque">We're</span> a family means 'we are a family'."</p>
+                        <p>I started to understand. "So when the actor said '<span class="palavra-destaque">I'm</span> not scared', he meant 'I am not scared'?"</p>
+                        <p>"Yes! And when the girl said '<span class="palavra-destaque">They're</span> coming', she meant 'they are coming'. <span class="palavra-destaque">It's</span> the same meaning, just shorter."</p>
+                        <p>We pressed play again. This time, I listened carefully. The hero said: "<span class="palavra-destaque">I can't</span> do this alone. <span class="palavra-destaque">It isn't</span> safe." Now I understood! <span class="palavra-destaque">Can't</span> means 'cannot' and <span class="palavra-destaque">isn't</span> means 'is not'!</p>
+                        <p>Then another character said: "<span class="palavra-destaque">We aren't</span> giving up. <span class="palavra-destaque">He doesn't</span> know our plan. <span class="palavra-destaque">She won't</span> stop us!"</p>
+                        <p>My mom whispered: "<span class="palavra-destaque">Aren't</span> means 'are not'. <span class="palavra-destaque">Doesn't</span> means 'does not'. <span class="palavra-destaque">Won't</span> means 'will not'."</p>
+                        <p>I was getting it! Later, a sad scene came. A boy said: "My dad <span class="palavra-destaque">wasn't</span> there. My friends <span class="palavra-destaque">weren't</span> there either."</p>
+                        <p>I knew those! <span class="palavra-destaque">Wasn't</span> means 'was not' and <span class="palavra-destaque">weren't</span> means 'were not'. I felt so proud!</p>
+                        <p>After the movie, I started noticing contractions everywhere. In my favorite song: "<span class="palavra-destaque">You're</span> my best friend." In a YouTube video: "<span class="palavra-destaque">Don't</span> forget to subscribe!" In a game: "<span class="palavra-destaque">It's</span> game over!"</p>
+                        <p>Now I understand why English sounded so fast before. <span class="palavra-destaque">It's</span> not that people talk too fast — <span class="palavra-destaque">they're</span> just using contractions! And now <span class="palavra-destaque">I'm</span> learning them too.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>No sábado passado, minha mãe disse que a gente podia assistir um filme americano juntos. Eu fiquei muito animado! Mas quando o filme começou, eu <span class="palavra-destaque">não conseguia</span> entender nada. As pessoas falavam tão rápido!</p>
+                        <p>Eu olhei pra minha mãe e disse: "Mãe, <span class="palavra-destaque">eu tô</span> perdido. <span class="palavra-destaque">Eles tão</span> falando rápido demais. <span class="palavra-destaque">É</span> impossível de entender!"</p>
+                        <p>Minha mãe pausou o filme e sorriu. "<span class="palavra-destaque">Não</span> se preocupe," ela disse. "<span class="palavra-destaque">Eles tão</span> usando contrações. <span class="palavra-destaque">É por isso</span> que <span class="palavra-destaque">é</span> difícil de entender."</p>
+                        <p>"Contrações? O que é isso?" eu perguntei.</p>
+                        <p>"Em inglês, as pessoas juntam duas palavras," ela explicou. "Em vez de 'I am', eles falam <span class="palavra-destaque">I'm</span>. Em vez de 'you are', falam <span class="palavra-destaque">you're</span>. Em vez de 'do not', falam <span class="palavra-destaque">don't</span>."</p>
+                        <p>"Ah! Então <span class="palavra-destaque">é</span> tipo um atalho?" eu disse.</p>
+                        <p>"Exatamente! <span class="palavra-destaque">He's</span> happy significa 'ele é feliz'. <span class="palavra-destaque">She's</span> my friend significa 'ela é minha amiga'. <span class="palavra-destaque">We're</span> a family significa 'nós somos uma família'."</p>
+                        <p>Eu comecei a entender. "Então quando o ator disse '<span class="palavra-destaque">I'm</span> not scared', ele quis dizer 'eu não estou com medo'?"</p>
+                        <p>"Sim! E quando a menina disse '<span class="palavra-destaque">They're</span> coming', ela quis dizer 'eles estão vindo'. <span class="palavra-destaque">É</span> o mesmo significado, só que mais curto."</p>
+                        <p>A gente apertou play de novo. Dessa vez, eu prestei atenção. O herói disse: "Eu <span class="palavra-destaque">não consigo</span> fazer isso sozinho. <span class="palavra-destaque">Não é</span> seguro." Agora eu entendi! <span class="palavra-destaque">Can't</span> significa 'cannot' e <span class="palavra-destaque">isn't</span> significa 'is not'!</p>
+                        <p>Então outro personagem disse: "<span class="palavra-destaque">Nós não vamos</span> desistir. <span class="palavra-destaque">Ele não</span> sabe do nosso plano. <span class="palavra-destaque">Ela não vai</span> nos parar!"</p>
+                        <p>Minha mãe sussurrou: "<span class="palavra-destaque">Aren't</span> significa 'are not'. <span class="palavra-destaque">Doesn't</span> significa 'does not'. <span class="palavra-destaque">Won't</span> significa 'will not'."</p>
+                        <p>Eu tava pegando o jeito! Depois, veio uma cena triste. Um menino disse: "Meu pai <span class="palavra-destaque">não estava</span> lá. Meus amigos <span class="palavra-destaque">não estavam</span> lá também."</p>
+                        <p>Eu sabia essas! <span class="palavra-destaque">Wasn't</span> significa 'was not' e <span class="palavra-destaque">weren't</span> significa 'were not'. Eu me senti tão orgulhoso!</p>
+                        <p>Depois do filme, eu comecei a notar contrações em todo lugar. Na minha música favorita: "<span class="palavra-destaque">Você é</span> meu melhor amigo." Num vídeo do YouTube: "<span class="palavra-destaque">Não</span> esqueça de se inscrever!" Num jogo: "<span class="palavra-destaque">É</span> fim de jogo!"</p>
+                        <p>Agora eu entendo por que inglês parecia tão rápido antes. <span class="palavra-destaque">Não é</span> que as pessoas falam rápido demais — <span class="palavra-destaque">elas tão</span> só usando contrações! E agora <span class="palavra-destaque">eu tô</span> aprendendo elas também.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last Saturday, my mom said we could watch an American movie together. I was so excited!</div>
+                            <div style="color: #666; font-size: 0.95em;">No sábado passado, minha mãe disse que a gente podia assistir um filme americano juntos. Eu fiquei muito animado!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But when the movie started, I <span class="palavra-destaque">couldn't</span> understand anything. The people talked so fast!</div>
+                            <div style="color: #666; font-size: 0.95em;">Mas quando o filme começou, eu não conseguia entender nada. As pessoas falavam tão rápido!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I looked at my mom and said: "Mom, <span class="palavra-destaque">I'm</span> lost. <span class="palavra-destaque">They're</span> speaking too fast."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu olhei pra minha mãe e disse: "Mãe, eu tô perdido. Eles tão falando rápido demais."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom paused the movie and smiled. "<span class="palavra-destaque">Don't</span> worry," she said.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe pausou o filme e sorriu. "Não se preocupe," ela disse.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">They're</span> using contractions. <span class="palavra-destaque">That's</span> why <span class="palavra-destaque">it's</span> hard to understand."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eles tão usando contrações. É por isso que é difícil de entender."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Instead of 'I am', they say <span class="palavra-destaque">I'm</span>. Instead of 'you are', they say <span class="palavra-destaque">you're</span>. Instead of 'do not', they say <span class="palavra-destaque">don't</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Em vez de 'I am', eles falam I'm. Em vez de 'you are', falam you're. Em vez de 'do not', falam don't."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The hero said: "<span class="palavra-destaque">I can't</span> do this alone. <span class="palavra-destaque">It isn't</span> safe."</div>
+                            <div style="color: #666; font-size: 0.95em;">O herói disse: "Eu não consigo fazer isso sozinho. Não é seguro."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">We aren't</span> giving up. <span class="palavra-destaque">He doesn't</span> know our plan. <span class="palavra-destaque">She won't</span> stop us!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Nós não vamos desistir. Ele não sabe do nosso plano. Ela não vai nos parar!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">A boy said: "My dad <span class="palavra-destaque">wasn't</span> there. My friends <span class="palavra-destaque">weren't</span> there either."</div>
+                            <div style="color: #666; font-size: 0.95em;">Um menino disse: "Meu pai não estava lá. Meus amigos não estavam lá também."</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">It's</span> not that people talk too fast — <span class="palavra-destaque">they're</span> just using contractions! And now <span class="palavra-destaque">I'm</span> learning them too.</div>
+                            <div style="color: #666; font-size: 0.95em;">Não é que as pessoas falam rápido demais — elas tão só usando contrações! E agora eu tô aprendendo elas também.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. I'm 🗣️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> I am (eu sou/estou)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm ten years old"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Contração mais usada do inglês</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Don't 🚫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Do not (não)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Don't worry"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Negativa mais comum no presente</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Can't ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cannot (não consigo/posso)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I can't do this alone"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muito usada para dizer que não consegue</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Won't 🔮</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Will not (não vai)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She won't stop us"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Forma irregular — vem de "will not"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. They're 👥</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> They are (eles são/estão)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "They're coming"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Diferente de "their" e "there"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. It's ✨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> It is (é/está)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's impossible"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Diferente de "its" (possessivo)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Wasn't ⏪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Was not (não estava/era)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My dad wasn't there"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Passado negativo singular</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Weren't ⏪⏪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Were not (não estavam/eram)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My friends weren't there"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Passado negativo plural</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Doesn't 🙅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Does not (não — 3ª pessoa)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He doesn't know"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Usado com he/she/it</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. You're 👤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> You are (você é/está)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You're my best friend"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Diferente de "your" (seu)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Texting with My Friend -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Texting with My Friend</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-texting-with-my-friend.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-texting-with-my-friend.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I have a pen pal named Jake. He lives in Texas, in the United States. We text each other every day after school. Jake is really cool, but sometimes I don't understand what he writes!</p>
+                        <p>One day, Jake sent me a message: "Hey! <span class="palavra-destaque">Wanna</span> hang out online today?" I didn't know what "wanna" meant. So I asked him.</p>
+                        <p>Jake explained: "<span class="palavra-destaque">Wanna</span> means 'want to'. It's how we text. We make words shorter!"</p>
+                        <p>Then he wrote: "I'm <span class="palavra-destaque">gonna</span> be a little late. <span class="palavra-destaque">Gotta</span> finish my homework first." I was confused again. Jake laughed and said: "<span class="palavra-destaque">Gonna</span> means 'going to'. <span class="palavra-destaque">Gotta</span> means 'got to' — like, I need to do something."</p>
+                        <p>"Oh, that makes sense!" I replied. "In Portuguese we do the same thing. We say 'tô' instead of 'estou'!"</p>
+                        <p>"Exactly! <span class="palavra-destaque">Lemme</span> show you more," Jake typed. "<span class="palavra-destaque">Lemme</span> means 'let me'."</p>
+                        <p>I asked Jake what he wanted to do this weekend. He said: "<span class="palavra-destaque">Dunno</span> yet. <span class="palavra-destaque">Kinda</span> wanna play video games. Or <span class="palavra-destaque">sorta</span> wanna watch a movie. What about you?"</p>
+                        <p>I learned that <span class="palavra-destaque">dunno</span> means 'don't know', <span class="palavra-destaque">kinda</span> means 'kind of', and <span class="palavra-destaque">sorta</span> means 'sort of'. They're all about being unsure!</p>
+                        <p>Jake asked me: "<span class="palavra-destaque">Whatcha</span> doing right now?" I figured it out — <span class="palavra-destaque">whatcha</span> means 'what are you'! I was getting good at this!</p>
+                        <p>"Playing a game," I said. "But it's hard. <span class="palavra-destaque">Gimme</span> a tip!" Jake replied: "Ha! You used <span class="palavra-destaque">gimme</span>! That means 'give me'. You're learning fast!"</p>
+                        <p>Then Jake's older brother joined our chat. He wrote: "<span class="palavra-destaque">Y'all</span> should play together!" Jake explained that <span class="palavra-destaque">y'all</span> means 'you all' — it's very common in Texas.</p>
+                        <p>Jake said: "I <span class="palavra-destaque">coulda</span> won that game yesterday, but I made a mistake. I <span class="palavra-destaque">shoulda</span> practiced more. I <span class="palavra-destaque">woulda</span> been first place!"</p>
+                        <p>I asked what those meant. "<span class="palavra-destaque">Coulda</span> means 'could have'. <span class="palavra-destaque">Shoulda</span> means 'should have'. <span class="palavra-destaque">Woulda</span> means 'would have'. We use them when we talk about things that didn't happen."</p>
+                        <p>Before saying goodbye, Jake wrote: "I <span class="palavra-destaque">hafta</span> go now. Dinner time! Talk tomorrow?" I smiled. <span class="palavra-destaque">Hafta</span> means 'have to'. I understood everything!</p>
+                        <p>Now when Jake texts me, I understand almost all of it. These informal words aren't in my textbook, but they're how real Americans talk and text every day. And that's pretty cool!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu tenho um amigo por correspondência chamado Jake. Ele mora no Texas, nos Estados Unidos. A gente se manda mensagem todo dia depois da escola. Jake é muito legal, mas às vezes eu não entendo o que ele escreve!</p>
+                        <p>Um dia, Jake me mandou uma mensagem: "Ei! <span class="palavra-destaque">Quer</span> ficar online hoje?" Eu não sabia o que "wanna" significava. Então eu perguntei pra ele.</p>
+                        <p>Jake explicou: "<span class="palavra-destaque">Wanna</span> significa 'want to'. É como a gente escreve mensagem. A gente encurta as palavras!"</p>
+                        <p>Aí ele escreveu: "Eu <span class="palavra-destaque">vou</span> me atrasar um pouco. <span class="palavra-destaque">Preciso</span> terminar meu dever primeiro." Eu fiquei confuso de novo. Jake riu e disse: "<span class="palavra-destaque">Gonna</span> significa 'going to'. <span class="palavra-destaque">Gotta</span> significa 'got to' — tipo, eu preciso fazer algo."</p>
+                        <p>"Ah, faz sentido!" eu respondi. "Em português a gente faz a mesma coisa. A gente fala 'tô' em vez de 'estou'!"</p>
+                        <p>"Exatamente! <span class="palavra-destaque">Deixa eu</span> te mostrar mais," Jake digitou. "<span class="palavra-destaque">Lemme</span> significa 'let me'."</p>
+                        <p>Eu perguntei pro Jake o que ele queria fazer no fim de semana. Ele disse: "<span class="palavra-destaque">Sei lá</span> ainda. <span class="palavra-destaque">Meio que</span> quero jogar videogame. Ou <span class="palavra-destaque">mais ou menos</span> quero ver um filme. E você?"</p>
+                        <p>Eu aprendi que <span class="palavra-destaque">dunno</span> significa 'don't know', <span class="palavra-destaque">kinda</span> significa 'kind of', e <span class="palavra-destaque">sorta</span> significa 'sort of'. São todas sobre estar indeciso!</p>
+                        <p>Jake me perguntou: "<span class="palavra-destaque">O que cê tá</span> fazendo agora?" Eu descobri — <span class="palavra-destaque">whatcha</span> significa 'what are you'! Eu tava ficando bom nisso!</p>
+                        <p>"Jogando um jogo," eu disse. "Mas é difícil. <span class="palavra-destaque">Me dá</span> uma dica!" Jake respondeu: "Ha! Você usou <span class="palavra-destaque">gimme</span>! Isso significa 'give me'. Você tá aprendendo rápido!"</p>
+                        <p>Aí o irmão mais velho do Jake entrou no chat. Ele escreveu: "<span class="palavra-destaque">Vocês</span> deviam jogar juntos!" Jake explicou que <span class="palavra-destaque">y'all</span> significa 'you all' — é muito comum no Texas.</p>
+                        <p>Jake disse: "Eu <span class="palavra-destaque">poderia ter</span> ganhado aquele jogo ontem, mas eu errei. Eu <span class="palavra-destaque">deveria ter</span> praticado mais. Eu <span class="palavra-destaque">teria</span> ficado em primeiro lugar!"</p>
+                        <p>Eu perguntei o que aquilo significava. "<span class="palavra-destaque">Coulda</span> significa 'could have'. <span class="palavra-destaque">Shoulda</span> significa 'should have'. <span class="palavra-destaque">Woulda</span> significa 'would have'. A gente usa quando fala de coisas que não aconteceram."</p>
+                        <p>Antes de se despedir, Jake escreveu: "Eu <span class="palavra-destaque">tenho que</span> ir agora. Hora do jantar! Falamos amanhã?" Eu sorri. <span class="palavra-destaque">Hafta</span> significa 'have to'. Eu entendi tudo!</p>
+                        <p>Agora quando Jake me manda mensagem, eu entendo quase tudo. Essas palavras informais não estão no meu livro, mas é assim que americanos de verdade falam e escrevem todo dia. E isso é bem legal!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I have a pen pal named Jake. He lives in Texas, in the United States.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu tenho um amigo por correspondência chamado Jake. Ele mora no Texas, nos Estados Unidos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">One day, Jake sent me a message: "Hey! <span class="palavra-destaque">Wanna</span> hang out online today?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Um dia, Jake me mandou uma mensagem: "Ei! Quer ficar online hoje?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Jake explained: "<span class="palavra-destaque">Wanna</span> means 'want to'. It's how we text. We make words shorter!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Jake explicou: "Wanna significa 'want to'. É como a gente escreve mensagem. A gente encurta as palavras!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I'm <span class="palavra-destaque">gonna</span> be a little late. <span class="palavra-destaque">Gotta</span> finish my homework first."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu vou me atrasar um pouco. Preciso terminar meu dever primeiro."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Dunno</span> yet. <span class="palavra-destaque">Kinda</span> wanna play video games. Or <span class="palavra-destaque">sorta</span> wanna watch a movie."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Sei lá ainda. Meio que quero jogar videogame. Ou mais ou menos quero ver um filme."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Jake asked me: "<span class="palavra-destaque">Whatcha</span> doing right now?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Jake me perguntou: "O que cê tá fazendo agora?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Gimme</span> a tip!" Jake replied: "You used <span class="palavra-destaque">gimme</span>! That means 'give me'."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Me dá uma dica!" Jake respondeu: "Você usou gimme! Isso significa 'give me'."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Y'all</span> should play together!" Jake explained that <span class="palavra-destaque">y'all</span> means 'you all'.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Vocês deviam jogar juntos!" Jake explicou que y'all significa 'you all'.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I <span class="palavra-destaque">coulda</span> won. I <span class="palavra-destaque">shoulda</span> practiced more. I <span class="palavra-destaque">woulda</span> been first place!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu poderia ter ganhado. Eu deveria ter praticado mais. Eu teria ficado em primeiro lugar!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I <span class="palavra-destaque">hafta</span> go now. Dinner time! Talk tomorrow?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu tenho que ir agora. Hora do jantar! Falamos amanhã?"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Gonna 🏃</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Going to (vou/vai)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm gonna eat pizza"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "going to" falado rápido</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Wanna 🙋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Want to (quero)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I wanna play"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "want to" falado rápido</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Gotta ⚡</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Got to / Have to (preciso)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I gotta study"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "got to" falado rápido</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Lemme 🤲</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Let me (deixa eu)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Lemme think"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "let me" falado rápido</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Dunno 🤷</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Don't know (não sei)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I dunno the answer"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "don't know" falado rápido</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Kinda 🤏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Kind of (meio que)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's kinda cold"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Expressa incerteza</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Gimme 🖐️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Give me (me dá)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Gimme that book"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "give me" falado rápido</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Y'all 🤠</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> You all (vocês)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Y'all are invited"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muito comum no Texas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Coulda 💭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Could have (poderia ter)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I coulda won"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Coisas que não aconteceram</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Hafta ⏰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Have to (tenho que)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I hafta leave"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "have to" falado rápido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

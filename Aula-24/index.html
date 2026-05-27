@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 24 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 24 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar"><div class="toolbar-content"><a href="../index.html" class="toolbar-logo"><img src="../icone-192.png" alt="Tio Binho">Inglês com Tio Binho</a><div style="display: flex; gap: 10px;"><a href="../index.html" class="back-btn">← Voltar</a></div></div></div>
+
+    <div class="container">
+        <div id="installBanner"><h3>📱 Instale nosso app!</h3><p>Acesse o curso direto da sua tela inicial</p><div class="install-buttons"><button class="install-btn" onclick="installApp()">Instalar</button><button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button></div></div>
+        <div class="breadcrumb"><a href="../index.html">🏠 Home</a><span>›</span><span>Aula 24</span></div>
+        <div class="content">
+            <div class="header">
+                <div><h1>📚 Aula 24 - Semana 24</h1><div class="tab-progress" id="tabProgress">1 de 4</div></div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 24</h2>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender expressões idiomáticas (idioms) mais usadas em inglês e técnicas para contar histórias engraçadas com suspense e humor.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1→B2</strong> — Você já domina phrasal verbs e filler words, agora vai aprender idioms e storytelling!</p>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ English Idioms Are Crazy!</h4><p style="margin-bottom: 8px;"><strong>Tema:</strong> Expressões idiomáticas — significados figurados que não podem ser traduzidos literalmente</p><p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> a piece of cake, break the ice, hit the nail on the head, under the weather, cost an arm and a leg, let the cat out of the bag, once in a blue moon, spill the beans, bite the bullet, on the same page</p><p style="margin-bottom: 8px;"><strong>Duração:</strong> ~5-6 minutos de áudio</p></div>
+                    <div><h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Telling a Funny Story</h4><p style="margin-bottom: 8px;"><strong>Tema:</strong> Como contar histórias engraçadas — expressões de suspense, humor e narrativa</p><p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> hilarious, embarrassing, awkward, burst out laughing, crack up, punchline, twist, meanwhile, suddenly, out of nowhere, believe it or not, guess what</p><p style="margin-bottom: 8px;"><strong>Duração:</strong> ~5-6 minutos de áudio</p></div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4><p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4><p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p></div>
+                    <div><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4><p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p></div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;"><h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3><p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p><p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p><p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p><p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p><p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p><p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p></div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;"><h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3><p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p><p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p><p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p><p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p><p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p></div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;"><h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3><div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p><p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p></div><div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p><p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p></div><div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p><p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário.</p></div><div><p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p><p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber.</p></div></div>
+            </div>
+
+            <!-- Texto 1: English Idioms Are Crazy! -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: English Idioms Are Crazy!</h2>
+                <div style="margin-bottom: 20px;"><h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3><div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;"><p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p><p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p></div></div>
+                <div class="audio-section">
+                    <audio controls id="audio-1"><source src="./01/01-english-idioms-are-crazy.mp3" type="audio/mpeg"></audio>
+                    <a href="./01/01-english-idioms-are-crazy.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last Sunday, my whole family came over for dinner. My uncle Carlos sat down and said, "That math test was <span class="palavra-destaque">a piece of cake</span>!"</p>
+                        <p>I looked at him and thought… cake? What cake? I didn't see any cake on the table!</p>
+                        <p>My mom laughed and said, "That's an idiom, honey. <span class="palavra-destaque">A piece of cake</span> means something is very easy. It doesn't mean real cake!"</p>
+                        <p>Then my aunt said, "When I started my new job, I had to <span class="palavra-destaque">break the ice</span> with my coworkers."</p>
+                        <p>My dad said, "The mechanic <span class="palavra-destaque">hit the nail on the head</span> when he found the problem with the car."</p>
+                        <p>My grandma looked tired. She said, "I'm feeling <span class="palavra-destaque">under the weather</span> today."</p>
+                        <p>Uncle Carlos said his new phone <span class="palavra-destaque">cost an arm and a leg</span>.</p>
+                        <p>Then my cousin whispered, "Don't tell anyone about the surprise party, or you'll <span class="palavra-destaque">let the cat out of the bag</span>!"</p>
+                        <p>My mom said she <span class="palavra-destaque">once in a blue moon</span> eats fast food.</p>
+                        <p>My little brother <span class="palavra-destaque">spilled the beans</span> about grandma's birthday present!</p>
+                        <p>Dad said he had to <span class="palavra-destaque">bite the bullet</span> and talk to his boss about a raise.</p>
+                        <p>My aunt told my cousin, "I gave you the information. Now <span class="palavra-destaque">the ball is in your court</span>."</p>
+                        <p>Uncle Carlos said, "I went to the bank AND the supermarket in one trip. I <span class="palavra-destaque">killed two birds with one stone</span>!"</p>
+                        <p>Mom asked dad, "Are we <span class="palavra-destaque">on the same page</span> about the vacation plans?"</p>
+                        <p>Grandma said losing her old job was actually <span class="palavra-destaque">a blessing in disguise</span> because she found a much better one.</p>
+                        <p>When my cousin arrived late, grandma smiled and said, "Well, <span class="palavra-destaque">better late than never</span>!"</p>
+                        <p>Finally, my dad looked at me and said, "Remember, son — <span class="palavra-destaque">actions speak louder than words</span>."</p>
+                        <p>English idioms are absolutely insane — the words say one thing but mean something completely different! But now I love them.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>No domingo passado, minha família inteira veio jantar em casa. Meu tio Carlos sentou e disse: "Aquela prova de matemática foi <span class="palavra-destaque">moleza</span>!"</p>
+                        <p>Eu olhei pra ele e pensei… bolo? Que bolo? Eu não vi nenhum bolo na mesa!</p>
+                        <p>Minha mãe riu e disse: "Isso é uma expressão idiomática, querido. <span class="palavra-destaque">A piece of cake</span> significa que algo é muito fácil. Não é um bolo de verdade!"</p>
+                        <p>Então minha tia disse: "Quando comecei no emprego novo, tive que <span class="palavra-destaque">quebrar o gelo</span> com meus colegas."</p>
+                        <p>Meu pai disse: "O mecânico <span class="palavra-destaque">acertou em cheio</span> quando encontrou o problema do carro."</p>
+                        <p>Minha avó parecia cansada. Ela disse: "Estou me sentindo <span class="palavra-destaque">meio doente</span> hoje."</p>
+                        <p>Tio Carlos disse que o celular novo dele <span class="palavra-destaque">custou uma fortuna</span>.</p>
+                        <p>Então minha prima sussurrou: "Não conta pra ninguém da festa surpresa, senão você vai <span class="palavra-destaque">entregar o segredo</span>!"</p>
+                        <p>Minha mãe disse que ela come fast food <span class="palavra-destaque">muito raramente</span>.</p>
+                        <p>Meu irmãozinho <span class="palavra-destaque">entregou o ouro</span> sobre o presente de aniversário da vovó!</p>
+                        <p>Papai disse que teve que <span class="palavra-destaque">criar coragem</span> e falar com o chefe sobre um aumento.</p>
+                        <p>Minha tia disse pra minha prima: "Eu te dei a informação. Agora <span class="palavra-destaque">a decisão é sua</span>."</p>
+                        <p>Tio Carlos disse: "Fui ao banco E ao supermercado numa viagem só. <span class="palavra-destaque">Matei dois coelhos com uma cajadada só</span>!"</p>
+                        <p>Mamãe perguntou pro papai: "Estamos <span class="palavra-destaque">de acordo</span> sobre os planos das férias?"</p>
+                        <p>Vovó disse que perder o emprego antigo foi na verdade <span class="palavra-destaque">um mal que veio para o bem</span> porque ela encontrou um muito melhor.</p>
+                        <p>Quando minha prima chegou atrasada, vovó sorriu e disse: "Bom, <span class="palavra-destaque">antes tarde do que nunca</span>!"</p>
+                        <p>Finalmente, meu pai olhou pra mim e disse: "Lembre-se, filho — <span class="palavra-destaque">ações falam mais alto que palavras</span>."</p>
+                        <p>Expressões idiomáticas em inglês são absolutamente insanas — as palavras dizem uma coisa mas significam algo completamente diferente! Mas agora eu amo elas.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My uncle Carlos sat down and said, "That math test was <span class="palavra-destaque">a piece of cake</span>!"</div><div style="color: #666; font-size: 0.95em;">Meu tio Carlos sentou e disse: "Aquela prova de matemática foi moleza!"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then my aunt said she had to <span class="palavra-destaque">break the ice</span> with her new coworkers.</div><div style="color: #666; font-size: 0.95em;">Então minha tia disse que teve que quebrar o gelo com os colegas novos de trabalho.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad said the mechanic <span class="palavra-destaque">hit the nail on the head</span> when he found the problem.</div><div style="color: #666; font-size: 0.95em;">Meu pai disse que o mecânico acertou em cheio quando encontrou o problema.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My grandma said she's feeling <span class="palavra-destaque">under the weather</span> today.</div><div style="color: #666; font-size: 0.95em;">Minha avó disse que está se sentindo meio doente hoje.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Uncle Carlos said his new phone <span class="palavra-destaque">cost an arm and a leg</span>.</div><div style="color: #666; font-size: 0.95em;">Tio Carlos disse que o celular novo dele custou uma fortuna.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My cousin whispered, "Don't <span class="palavra-destaque">let the cat out of the bag</span>!"</div><div style="color: #666; font-size: 0.95em;">Minha prima sussurrou: "Não conta o segredo!"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Dad said he had to <span class="palavra-destaque">bite the bullet</span> and talk to his boss about a raise.</div><div style="color: #666; font-size: 0.95em;">Papai disse que teve que criar coragem e falar com o chefe sobre um aumento.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Mom asked dad, "Are we <span class="palavra-destaque">on the same page</span> about the vacation?"</div><div style="color: #666; font-size: 0.95em;">Mamãe perguntou pro papai: "Estamos de acordo sobre as férias?"</div></div>
+                        <div><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Dad said, "Remember — <span class="palavra-destaque">actions speak louder than words</span>."</div><div style="color: #666; font-size: 0.95em;">Papai disse: "Lembre-se — ações falam mais alto que palavras."</div></div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. A piece of cake 🍰</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Muito fácil / moleza</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That test was a piece of cake!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Não tem nada a ver com bolo!</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Break the ice 🧊</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Quebrar o gelo</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I told a joke to break the ice"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Igual em português!</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Under the weather 🌧️</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Meio doente</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm feeling under the weather"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Não é sobre clima!</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Cost an arm and a leg 💸</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Muito caro / custou uma fortuna</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That phone cost an arm and a leg!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Exagero para dizer "caríssimo"</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Spill the beans 🫘</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Contar o segredo</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He spilled the beans about the party!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Revelar sem querer</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Bite the bullet 😬</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Criar coragem / enfrentar</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I bit the bullet and talked to my boss"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Fazer algo difícil que evitava</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. On the same page 📄</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> De acordo / em sintonia</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Are we on the same page?"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Concordamos?</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Once in a blue moon 🌙</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Muito raramente</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I eat pizza once in a blue moon"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quase nunca acontece</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Better late than never ⏰</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Antes tarde do que nunca</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You came! Better late than never!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Igual em português!</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Actions speak louder than words 💪</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ações falam mais alto que palavras</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Don't just promise — actions speak louder than words"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O que você faz importa mais</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Telling a Funny Story -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Telling a Funny Story</h2>
+                <div style="margin-bottom: 20px;"><h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3><div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;"><p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p><p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p></div></div>
+                <div class="audio-section">
+                    <audio controls id="audio-2"><source src="./02/02-telling-a-funny-story.mp3" type="audio/mpeg"></audio>
+                    <a href="./02/02-telling-a-funny-story.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Okay, sit down because I need to tell you the most <span class="palavra-destaque">hilarious</span> thing that ever happened to me. <span class="palavra-destaque">You won't believe</span> this. I still laugh every time I think about it.</p>
+                        <p>So last month, we had a big presentation at school. Each student had to present about an animal. I chose dolphins because they're smart and cool. I made a whole PowerPoint with amazing dolphin photos and fun facts. I practiced for days. I was ready!</p>
+                        <p>The day came. I walked to the front of the class with my USB drive. I plugged it into the computer, opened the file, and started talking. "Today I'm going to talk about dolphins," I said, all confident.</p>
+                        <p>I clicked to the first slide and — <span class="palavra-destaque">guess what?</span> It wasn't dolphins. It was a baby photo of ME. In a bathtub. With a rubber duck on my head.</p>
+                        <p><span class="palavra-destaque">Suddenly</span>, the whole class went silent. Then someone in the back started giggling. Then — <span class="palavra-destaque">believe it or not</span> — the ENTIRE class <span class="palavra-destaque">burst out laughing</span>. Even my teacher was trying not to smile!</p>
+                        <p>I looked at the screen and my face turned completely red. It was SO <span class="palavra-destaque">embarrassing</span>! I had grabbed the wrong USB drive — it was my mom's USB with family photos!</p>
+                        <p><span class="palavra-destaque">Meanwhile</span>, I was clicking through the slides trying to find my dolphin presentation. But every click showed another <span class="palavra-destaque">awkward</span> baby photo.</p>
+                        <p><span class="palavra-destaque">The funniest part</span> was when a photo of me as a baby appeared wearing sunglasses and a tiny leather jacket. My friend Lucas yelled, "You looked cooler as a baby!" and everyone <span class="palavra-destaque">cracked up</span> again.</p>
+                        <p>But then — here's the <span class="palavra-destaque">twist</span> — I started laughing too! I couldn't help it.</p>
+                        <p>So I just went with it. I said, "Well, <span class="palavra-destaque">out of nowhere</span>, my presentation turned into a comedy show!" The class laughed even harder.</p>
+                        <p>My teacher said, "That was the best presentation I've ever seen — even without the dolphins!"</p>
+                        <p>The <span class="palavra-destaque">punchline</span>? The next day, I finally gave my real dolphin presentation. But everyone said it was boring compared to the baby photos.</p>
+                        <p><span class="palavra-destaque">I'll never forget</span> that day. It was the most <span class="palavra-destaque">embarrassing</span> five minutes of my life, but also the funniest.</p>
+                        <p>And now, every time I do a presentation, my friends ask: "Did you check the USB this time?" Very funny, guys. Very funny.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Tá, senta aí porque eu preciso te contar a coisa mais <span class="palavra-destaque">hilária</span> que já aconteceu comigo. <span class="palavra-destaque">Você não vai acreditar</span> nisso. Eu ainda rio toda vez que penso nisso.</p>
+                        <p>Então mês passado, a gente teve uma apresentação grande na escola. Cada aluno tinha que apresentar sobre um animal. Eu escolhi golfinhos porque eles são inteligentes e legais. Eu fiz um PowerPoint inteiro com fotos incríveis de golfinhos e curiosidades. Pratiquei por dias. Eu estava pronto!</p>
+                        <p>O dia chegou. Eu fui até a frente da sala com meu pen drive. Conectei no computador, abri o arquivo e comecei a falar. "Hoje eu vou falar sobre golfinhos," eu disse, todo confiante.</p>
+                        <p>Eu cliquei no primeiro slide e — <span class="palavra-destaque">adivinha?</span> Não eram golfinhos. Era uma foto minha de BEBÊ. Na banheira. Com um patinho de borracha na cabeça.</p>
+                        <p><span class="palavra-destaque">De repente</span>, a sala inteira ficou em silêncio. Então alguém lá atrás começou a dar risadinha. Então — <span class="palavra-destaque">acredite ou não</span> — a turma INTEIRA <span class="palavra-destaque">caiu na gargalhada</span>. Até minha professora estava tentando não sorrir!</p>
+                        <p>Eu olhei pra tela e meu rosto ficou completamente vermelho. Foi TÃO <span class="palavra-destaque">constrangedor</span>! Eu tinha pego o pen drive errado — era o da minha mãe com fotos da família!</p>
+                        <p><span class="palavra-destaque">Enquanto isso</span>, eu ficava clicando nos slides tentando achar minha apresentação de golfinhos. Mas cada clique mostrava outra foto de bebê <span class="palavra-destaque">constrangedora</span>.</p>
+                        <p><span class="palavra-destaque">A parte mais engraçada</span> foi quando apareceu uma foto minha de bebê usando óculos escuros e uma jaqueta de couro minúscula. Meu amigo Lucas gritou: "Você era mais estiloso de bebê!" e todo mundo <span class="palavra-destaque">morreu de rir</span> de novo.</p>
+                        <p>Mas então — aqui está a <span class="palavra-destaque">reviravolta</span> — eu comecei a rir também! Eu não consegui me segurar.</p>
+                        <p>Então eu fui na onda. Eu disse: "Bom, <span class="palavra-destaque">do nada</span>, minha apresentação virou um show de comédia!" A turma riu ainda mais.</p>
+                        <p>Minha professora disse: "Essa foi a melhor apresentação que eu já vi — mesmo sem os golfinhos!"</p>
+                        <p>A <span class="palavra-destaque">conclusão da piada</span>? No dia seguinte, eu finalmente fiz minha apresentação de golfinhos de verdade. Mas todo mundo disse que foi chata comparada às fotos de bebê.</p>
+                        <p><span class="palavra-destaque">Eu nunca vou esquecer</span> aquele dia. Foram os cinco minutos mais <span class="palavra-destaque">constrangedores</span> da minha vida, mas também os mais engraçados.</p>
+                        <p>E agora, toda vez que eu faço uma apresentação, meus amigos perguntam: "Você conferiu o pen drive dessa vez?" Muito engraçado, pessoal. Muito engraçado.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">You won't believe</span> this. I still laugh every time I think about it.</div><div style="color: #666; font-size: 0.95em;">Você não vai acreditar nisso. Eu ainda rio toda vez que penso nisso.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I clicked to the first slide and — <span class="palavra-destaque">guess what?</span> It wasn't dolphins.</div><div style="color: #666; font-size: 0.95em;">Eu cliquei no primeiro slide e — adivinha? Não eram golfinhos.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Suddenly</span>, the whole class went silent. Then the ENTIRE class <span class="palavra-destaque">burst out laughing</span>.</div><div style="color: #666; font-size: 0.95em;">De repente, a sala inteira ficou em silêncio. Então a turma INTEIRA caiu na gargalhada.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">It was SO <span class="palavra-destaque">embarrassing</span>! I had grabbed the wrong USB drive.</div><div style="color: #666; font-size: 0.95em;">Foi TÃO constrangedor! Eu tinha pego o pen drive errado.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">The funniest part</span> was when a photo appeared of me wearing sunglasses and a tiny leather jacket.</div><div style="color: #666; font-size: 0.95em;">A parte mais engraçada foi quando apareceu uma foto minha usando óculos escuros e uma jaqueta de couro minúscula.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">But then — here's the <span class="palavra-destaque">twist</span> — I started laughing too!</div><div style="color: #666; font-size: 0.95em;">Mas então — aqui está a reviravolta — eu comecei a rir também!</div></div>
+                        <div><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">I'll never forget</span> that day. It was the most <span class="palavra-destaque">embarrassing</span> five minutes of my life, but also the funniest.</div><div style="color: #666; font-size: 0.95em;">Eu nunca vou esquecer aquele dia. Foram os cinco minutos mais constrangedores da minha vida, mas também os mais engraçados.</div></div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Hilarious 😂</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Hilário / muito engraçado</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That video is hilarious!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mais forte que "funny"</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Embarrassing 😳</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Constrangedor / vergonhoso</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It was so embarrassing!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> NÃO é "embaraçoso" no sentido de grávida!</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Burst out laughing 🤣</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cair na gargalhada</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Everyone burst out laughing!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Rir de repente e forte</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Guess what? 🎉</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Adivinha?</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Guess what? I got an A!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Cria expectativa antes da notícia</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Suddenly ⚡</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> De repente</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Suddenly, everyone went quiet"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Algo inesperado acontece</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Out of nowhere 💨</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Do nada</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Out of nowhere, the lights went off!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sem aviso nenhum</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Twist 🔄</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Reviravolta</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Here's the twist — I liked it!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mudança inesperada na história</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Meanwhile ⏳</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Enquanto isso</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Meanwhile, I was trying to fix it"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Duas coisas ao mesmo tempo</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Crack up 😆</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Morrer de rir (informal)</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That joke made me crack up!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Rir muito forte</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. I'll never forget 🧠</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Eu nunca vou esquecer</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'll never forget that day!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Momento muito marcante</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;"><h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3><p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p></div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;"><h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3><p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p><p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p><p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p><p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p><p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p></div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;"><h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3><p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);"><iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;"><h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3><p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p><p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p><p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p><p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p></div>
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;"><h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3><p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; document.getElementById('installBanner').style.display = 'block'; });
+        function installApp() { if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then((choiceResult) => { deferredPrompt = null; document.getElementById('installBanner').style.display = 'none'; }); } }
+        function closeInstallPrompt() { document.getElementById('installBanner').style.display = 'none'; }
+        function showText(textNumber) { document.getElementById('text-0').classList.add('hidden'); document.getElementById('text-1').classList.add('hidden'); document.getElementById('text-2').classList.add('hidden'); document.getElementById('text-3').classList.add('hidden'); document.getElementById('text-' + textNumber).classList.remove('hidden'); document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active')); document.querySelectorAll('.text-btn')[textNumber].classList.add('active'); document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4'; window.scrollTo(0, 0); }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        window.addEventListener('scroll', function() { const backToTop = document.getElementById('backToTop'); if (window.pageYOffset > 300) { backToTop.classList.add('show'); } else { backToTop.classList.remove('show'); } });
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => { btn.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1); if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1); }); });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { initAuth(); });
+        document.querySelectorAll('audio').forEach(function(audio) { audio.addEventListener('error', function() { var section = audio.closest('.audio-section'); if (section && !section.querySelector('.audio-error-msg')) { var msg = document.createElement('p'); msg.className = 'audio-error-msg'; msg.style.color = '#e63946'; msg.style.fontSize = '0.9em'; msg.style.marginTop = '8px'; msg.textContent = '⚠️ Áudio não disponível no momento.'; section.appendChild(msg); } }); });
+    </script>
+</body>
+</html>

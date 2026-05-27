@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 21 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 21 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 21</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 21 - Semana 21</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 21</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a dar instruções passo a passo e comparar expectativas com realidade usando estruturas como "first, you need to", "make sure you", "be careful not to", "easier than I expected" e "not as... as I thought".</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1→B2</strong> — Você está fazendo a transição para o nível avançado! Os textos agora usam estruturas mais sofisticadas de instrução e comparação.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Teaching My Friend a Game</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Ensinando um amigo a jogar um jogo de cartas — instruções, regras, estratégia, turnos</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> instructions, rule, turn, shuffle, deal, deck, pile, pick up, match, winner, strategy, trick, round</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ My First Time Swimming</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Primeira aula de natação — superar medos, comparar expectativas com realidade, aprender habilidades novas</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> pool, shallow, deep, float, sink, stroke, kick, breathe, instructor, goggles, lane, dive, surface, underwater, confident</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: Teaching My Friend a Game -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Teaching My Friend a Game</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-teaching-my-friend-a-game.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-teaching-my-friend-a-game.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>My friend Lucas came to my house today, and I wanted to teach him how to play my favorite card game. It's called "Color Match" and it's super fun!</p>
+                        <p>I said: "OK, Lucas, I'm going to teach you. It's easy, I promise! <span class="palavra-destaque">First, you need to</span> know the basic <span class="palavra-destaque">rules</span>."</p>
+                        <p>I grabbed the <span class="palavra-destaque">deck</span> of cards and put it on the table. "<span class="palavra-destaque">First, you need to</span> <span class="palavra-destaque">shuffle</span> the cards like this." I mixed them all up. "This makes the game fair."</p>
+                        <p>Lucas tried to shuffle, but cards went everywhere! I laughed and said: "<span class="palavra-destaque">Be careful not to</span> drop them! Hold them tighter."</p>
+                        <p>"OK, <span class="palavra-destaque">the next step is</span> to <span class="palavra-destaque">deal</span> the cards. I'm going to give seven cards to each player." I gave seven to Lucas and seven to me. "<span class="palavra-destaque">Make sure you</span> don't show your cards to the other player!"</p>
+                        <p>Lucas peeked at his cards and smiled. "Got it! What now?"</p>
+                        <p>"Now, I put the rest of the cards in a <span class="palavra-destaque">pile</span> in the middle. This is the draw pile. Then I flip the top card over. See? It's a red five."</p>
+                        <p>"<span class="palavra-destaque">The goal is to</span> get rid of all your cards. On your <span class="palavra-destaque">turn</span>, you need to play a card that <span class="palavra-destaque">matches</span> the color OR the number."</p>
+                        <p>Lucas looked confused. "So if it's a red five, I can play any red card or any five?"</p>
+                        <p>"Exactly! You got it! <span class="palavra-destaque">But be careful not to</span> play a wrong card. If you don't have a <span class="palavra-destaque">match</span>, you have to <span class="palavra-destaque">pick up</span> a card from the pile."</p>
+                        <p>Lucas said: "OK, I think I understand. What about those special cards?"</p>
+                        <p>"Good question! <span class="palavra-destaque">The next step is</span> learning the special cards. If you play a 'Skip' card, the next player loses their <span class="palavra-destaque">turn</span>. If you play a 'Draw Two', the next player has to pick up two cards!"</p>
+                        <p>"That's mean!" Lucas laughed.</p>
+                        <p>"That's the <span class="palavra-destaque">strategy</span>! It's a <span class="palavra-destaque">trick</span> to slow down the other player. <span class="palavra-destaque">Make sure you</span> save your special cards for the right moment."</p>
+                        <p>We started playing. Lucas played a blue three on a blue seven. "Nice! That's a match — same color!"</p>
+                        <p>Then it was my turn. I played a red seven. "See? Same number, different color. That works too."</p>
+                        <p>After a few <span class="palavra-destaque">rounds</span>, Lucas made a mistake. He tried to play a green two on a yellow five.</p>
+                        <p>"Wait! <span class="palavra-destaque">Be careful not to</span> play that. Green two doesn't match yellow five — not the same color, not the same number. You need to <span class="palavra-destaque">pick up</span> from the pile instead."</p>
+                        <p>"Oh, right! Sorry!" He picked up a card.</p>
+                        <p>A few turns later, Lucas had only two cards left. "I'm almost the <span class="palavra-destaque">winner</span>!" he said.</p>
+                        <p>"<span class="palavra-destaque">But make sure you</span> say 'Last card!' when you have one card left. If you forget, you have to pick up two cards as a penalty!"</p>
+                        <p>Lucas remembered. "LAST CARD!" he shouted. Then he played his final card. "I WIN!"</p>
+                        <p>"Great job! You're a fast learner!" I said. "Want to play another <span class="palavra-destaque">round</span>?"</p>
+                        <p>"Definitely! This game is awesome!"</p>
+                        <p>Teaching a friend something new is one of the best feelings. And now I always have someone to play with!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Meu amigo Lucas veio na minha casa hoje, e eu queria ensinar ele a jogar meu jogo de cartas favorito. Se chama "Color Match" e é super divertido!</p>
+                        <p>Eu disse: "OK, Lucas, vou te ensinar. É fácil, prometo! <span class="palavra-destaque">Primeiro, você precisa</span> saber as <span class="palavra-destaque">regras</span> básicas."</p>
+                        <p>Eu peguei o <span class="palavra-destaque">baralho</span> de cartas e coloquei na mesa. "<span class="palavra-destaque">Primeiro, você precisa</span> <span class="palavra-destaque">embaralhar</span> as cartas assim." Eu misturei todas. "Isso deixa o jogo justo."</p>
+                        <p>Lucas tentou embaralhar, mas as cartas voaram para todo lado! Eu ri e disse: "<span class="palavra-destaque">Cuidado para não</span> derrubar! Segure mais firme."</p>
+                        <p>"OK, <span class="palavra-destaque">o próximo passo é</span> <span class="palavra-destaque">distribuir</span> as cartas. Vou dar sete cartas para cada jogador." Dei sete para o Lucas e sete para mim. "<span class="palavra-destaque">Não deixe</span> o outro jogador ver suas cartas!"</p>
+                        <p>Lucas espiou as cartas dele e sorriu. "Entendi! E agora?"</p>
+                        <p>"Agora, eu coloco o resto das cartas em uma <span class="palavra-destaque">pilha</span> no meio. Essa é a pilha de compra. Depois eu viro a carta de cima. Viu? É um cinco vermelho."</p>
+                        <p>"<span class="palavra-destaque">O objetivo é</span> se livrar de todas as suas cartas. Na sua <span class="palavra-destaque">vez</span>, você precisa jogar uma carta que <span class="palavra-destaque">combine</span> com a cor OU o número."</p>
+                        <p>Lucas ficou confuso. "Então se é um cinco vermelho, eu posso jogar qualquer carta vermelha ou qualquer cinco?"</p>
+                        <p>"Exatamente! Você entendeu! <span class="palavra-destaque">Mas cuidado para não</span> jogar uma carta errada. Se você não tiver uma <span class="palavra-destaque">combinação</span>, tem que <span class="palavra-destaque">pegar</span> uma carta da pilha."</p>
+                        <p>Lucas disse: "OK, acho que entendi. E aquelas cartas especiais?"</p>
+                        <p>"Boa pergunta! <span class="palavra-destaque">O próximo passo é</span> aprender as cartas especiais. Se você jogar uma carta 'Pular', o próximo jogador perde a <span class="palavra-destaque">vez</span>. Se você jogar um 'Compre Duas', o próximo jogador tem que pegar duas cartas!"</p>
+                        <p>"Que maldade!" Lucas riu.</p>
+                        <p>"Essa é a <span class="palavra-destaque">estratégia</span>! É um <span class="palavra-destaque">truque</span> para atrasar o outro jogador. <span class="palavra-destaque">Não deixe de</span> guardar suas cartas especiais para o momento certo."</p>
+                        <p>Começamos a jogar. Lucas jogou um três azul em cima de um sete azul. "Boa! Isso combina — mesma cor!"</p>
+                        <p>Depois foi minha vez. Eu joguei um sete vermelho. "Viu? Mesmo número, cor diferente. Isso também vale."</p>
+                        <p>Depois de algumas <span class="palavra-destaque">rodadas</span>, Lucas cometeu um erro. Ele tentou jogar um dois verde em cima de um cinco amarelo.</p>
+                        <p>"Espera! <span class="palavra-destaque">Cuidado para não</span> jogar essa. Dois verde não combina com cinco amarelo — não é a mesma cor, não é o mesmo número. Você precisa <span class="palavra-destaque">pegar</span> da pilha."</p>
+                        <p>"Ah, verdade! Desculpa!" Ele pegou uma carta.</p>
+                        <p>Algumas rodadas depois, Lucas tinha só duas cartas. "Estou quase ganhando!" ele disse.</p>
+                        <p>"<span class="palavra-destaque">Mas não esqueça de</span> dizer 'Última carta!' quando tiver uma carta só. Se esquecer, tem que pegar duas cartas como penalidade!"</p>
+                        <p>Lucas lembrou. "ÚLTIMA CARTA!" ele gritou. Depois jogou sua carta final. "EU GANHEI!"</p>
+                        <p>"Muito bem! Você aprende rápido!" eu disse. "Quer jogar mais uma <span class="palavra-destaque">rodada</span>?"</p>
+                        <p>"Com certeza! Esse jogo é demais!"</p>
+                        <p>Ensinar algo novo para um amigo é uma das melhores sensações. E agora eu sempre tenho alguém para jogar comigo!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Lucas came to my house today, and I wanted to teach him how to play my favorite card game.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu amigo Lucas veio na minha casa hoje, e eu queria ensinar ele a jogar meu jogo de cartas favorito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I said: "I'm going to teach you. It's easy! <span class="palavra-destaque">First, you need to</span> know the basic <span class="palavra-destaque">rules</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu disse: "Vou te ensinar. É fácil! Primeiro, você precisa saber as regras básicas."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I grabbed the <span class="palavra-destaque">deck</span> of cards. "<span class="palavra-destaque">First, you need to</span> <span class="palavra-destaque">shuffle</span> the cards like this."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu peguei o baralho de cartas. "Primeiro, você precisa embaralhar as cartas assim."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Lucas tried to shuffle, but cards went everywhere! "<span class="palavra-destaque">Be careful not to</span> drop them! Hold them tighter."</div>
+                            <div style="color: #666; font-size: 0.95em;">Lucas tentou embaralhar, mas as cartas voaram! "Cuidado para não derrubar! Segure mais firme."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">The next step is</span> to <span class="palavra-destaque">deal</span> the cards. I'm going to give seven cards to each player."</div>
+                            <div style="color: #666; font-size: 0.95em;">"O próximo passo é distribuir as cartas. Vou dar sete cartas para cada jogador."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Make sure you</span> don't show your cards to the other player!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não deixe o outro jogador ver suas cartas!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I put the rest of the cards in a <span class="palavra-destaque">pile</span> in the middle. This is the draw pile."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu coloco o resto das cartas em uma pilha no meio. Essa é a pilha de compra."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">The goal is to</span> get rid of all your cards. On your <span class="palavra-destaque">turn</span>, you need to play a card that <span class="palavra-destaque">matches</span> the color OR the number."</div>
+                            <div style="color: #666; font-size: 0.95em;">"O objetivo é se livrar de todas as suas cartas. Na sua vez, você precisa jogar uma carta que combine com a cor OU o número."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">But be careful not to</span> play a wrong card. If you don't have a <span class="palavra-destaque">match</span>, you have to <span class="palavra-destaque">pick up</span> a card."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Mas cuidado para não jogar uma carta errada. Se você não tiver uma combinação, tem que pegar uma carta."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"If you play a 'Skip' card, the next player loses their <span class="palavra-destaque">turn</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Se você jogar uma carta 'Pular', o próximo jogador perde a vez."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"If you play a 'Draw Two', the next player has to pick up two cards!" — "That's the <span class="palavra-destaque">strategy</span>!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Se você jogar um 'Compre Duas', o próximo jogador tem que pegar duas cartas!" — "Essa é a estratégia!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Make sure you</span> save your special cards for the right moment."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não deixe de guardar suas cartas especiais para o momento certo."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After a few <span class="palavra-destaque">rounds</span>, Lucas made a mistake. "<span class="palavra-destaque">Be careful not to</span> play that. It doesn't match."</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de algumas rodadas, Lucas cometeu um erro. "Cuidado para não jogar essa. Não combina."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">But make sure you</span> say 'Last card!' when you have one card left."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Mas não esqueça de dizer 'Última carta!' quando tiver uma carta só."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Lucas remembered. "LAST CARD!" he shouted. Then he played his final card. "I WIN!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Lucas lembrou. "ÚLTIMA CARTA!" ele gritou. Depois jogou sua carta final. "EU GANHEI!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Great job! You're a fast learner!" Teaching a friend something new is one of the best feelings.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Muito bem! Você aprende rápido!" Ensinar algo novo para um amigo é uma das melhores sensações.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Rule 📏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Regra</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Follow the rules"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "follow the rules" = seguir as regras</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Shuffle 🃏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Embaralhar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Shuffle the cards"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Misturar as cartas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Deal 🎴</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Distribuir (cartas)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Deal the cards"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dar cartas para cada jogador</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Deck 🗂️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Baralho</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A deck of cards"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O conjunto completo de cartas</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Turn 🔄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Vez / turno</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's your turn"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "it's your turn" = é a sua vez</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Match 🎯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Combinação / combinar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That's a match!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando cor ou número é igual</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Pick up ☝️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pegar / puxar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Pick up a card"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "pick up a card" = pegar uma carta</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Strategy 🧠</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Estratégia</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That's the strategy!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Trick 🎩</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Truque / jogada</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's a trick to slow down the other player"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Uma tática esperta</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Round 🔁</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Rodada</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Want to play another round?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Uma partida completa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: My First Time Swimming -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: My First Time Swimming</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-my-first-time-swimming.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-my-first-time-swimming.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>I was always scared of water. Every time my friends talked about the <span class="palavra-destaque">pool</span>, I changed the subject. But last month, my mom signed me up for swimming lessons. I was terrified!</p>
+                        <p>On the first day, I put on my swimsuit and grabbed my <span class="palavra-destaque">goggles</span>. My hands were shaking. I thought the water would be freezing cold and super <span class="palavra-destaque">deep</span>.</p>
+                        <p>When I got to the pool, my <span class="palavra-destaque">instructor</span> smiled and said: "Don't worry! We start in the <span class="palavra-destaque">shallow</span> end. The water is only up to your waist here."</p>
+                        <p>I stepped in slowly. The water was <span class="palavra-destaque">not as cold as I thought</span>! Actually, it felt nice and warm. That was my first surprise.</p>
+                        <p>The instructor said: "Today, we're going to learn how to <span class="palavra-destaque">float</span>. Just relax your body and let the water hold you."</p>
+                        <p>I was scared I would <span class="palavra-destaque">sink</span>, but she held my back gently. I closed my eyes, relaxed, and... I was floating! It was <span class="palavra-destaque">easier than I expected</span>!</p>
+                        <p>"See?" she said. "The water is your friend. It wants to hold you up!"</p>
+                        <p>In the second lesson, we learned how to <span class="palavra-destaque">kick</span>. The instructor said: "Keep your legs straight and kick from your hips, not your knees."</p>
+                        <p>Kicking was <span class="palavra-destaque">not as hard as I imagined</span>. I moved across the <span class="palavra-destaque">shallow</span> end pretty fast! I felt proud of myself.</p>
+                        <p>Then came the <span class="palavra-destaque">breathing</span> part. This was <span class="palavra-destaque">completely different from what I imagined</span>. I thought you just hold your breath the whole time. But the instructor taught us to turn our head to the side and <span class="palavra-destaque">breathe</span> while doing the <span class="palavra-destaque">stroke</span>.</p>
+                        <p>"Breathe in through your mouth when your head is to the side. Breathe out through your nose when your face is in the water."</p>
+                        <p>This was <span class="palavra-destaque">harder than I expected</span>! I kept swallowing water at first. But after practicing many times, I started to get it.</p>
+                        <p>By the third lesson, I could swim a whole <span class="palavra-destaque">lane</span> without stopping! The instructor said: "You're doing amazing! You're much more <span class="palavra-destaque">confident</span> than on day one."</p>
+                        <p>She was right. I felt <span class="palavra-destaque">completely different from</span> the scared kid who walked in on the first day.</p>
+                        <p>In the fourth lesson, we tried the <span class="palavra-destaque">deep</span> end. I was nervous again. But it was <span class="palavra-destaque">not as scary as I thought</span> because I already knew how to float and kick.</p>
+                        <p>The last thing we learned was how to go <span class="palavra-destaque">underwater</span> and come back to the <span class="palavra-destaque">surface</span>. The instructor said: "Take a big breath, go down, touch the bottom, and push yourself back up."</p>
+                        <p>Going underwater was <span class="palavra-destaque">better than I thought it would be</span>! I could see everything clearly through my goggles. It was like a different world down there!</p>
+                        <p>At the end of the course, the instructor asked: "Do you want to try a small <span class="palavra-destaque">dive</span>?"</p>
+                        <p>I took a deep breath and jumped in. The <span class="palavra-destaque">dive</span> was <span class="palavra-destaque">scarier than I expected</span>, but I did it! Everyone clapped!</p>
+                        <p>Now I love swimming. It's <span class="palavra-destaque">completely different from what I imagined</span> at the beginning. I was so scared, but the reality was much better than my fears.</p>
+                        <p>My mom always says: "The things we're afraid of are usually <span class="palavra-destaque">not as bad as we think</span>." She was totally right.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Eu sempre tive medo de água. Toda vez que meus amigos falavam sobre a <span class="palavra-destaque">piscina</span>, eu mudava de assunto. Mas mês passado, minha mãe me matriculou em aulas de natação. Eu estava apavorado!</p>
+                        <p>No primeiro dia, coloquei meu maiô e peguei meus <span class="palavra-destaque">óculos de natação</span>. Minhas mãos estavam tremendo. Achei que a água seria gelada e super <span class="palavra-destaque">funda</span>.</p>
+                        <p>Quando cheguei na piscina, minha <span class="palavra-destaque">instrutora</span> sorriu e disse: "Não se preocupe! Começamos na parte <span class="palavra-destaque">rasa</span>. A água só vai até a cintura aqui."</p>
+                        <p>Entrei devagar. A água <span class="palavra-destaque">não era tão fria quanto eu achava</span>! Na verdade, era quentinha e gostosa. Essa foi minha primeira surpresa.</p>
+                        <p>A instrutora disse: "Hoje vamos aprender a <span class="palavra-destaque">boiar</span>. Apenas relaxe o corpo e deixe a água te segurar."</p>
+                        <p>Eu tinha medo de <span class="palavra-destaque">afundar</span>, mas ela segurou minhas costas gentilmente. Fechei os olhos, relaxei e... estava boiando! Foi <span class="palavra-destaque">mais fácil do que eu esperava</span>!</p>
+                        <p>"Viu?" ela disse. "A água é sua amiga. Ela quer te segurar!"</p>
+                        <p>Na segunda aula, aprendemos a dar <span class="palavra-destaque">chutes</span> na água. A instrutora disse: "Mantenha as pernas retas e chute a partir do quadril, não dos joelhos."</p>
+                        <p>Chutar <span class="palavra-destaque">não era tão difícil quanto eu imaginava</span>. Eu me movi pela parte <span class="palavra-destaque">rasa</span> bem rápido! Me senti orgulhoso de mim mesmo.</p>
+                        <p>Depois veio a parte da <span class="palavra-destaque">respiração</span>. Isso era <span class="palavra-destaque">completamente diferente do que eu imaginava</span>. Achei que era só prender a respiração o tempo todo. Mas a instrutora nos ensinou a virar a cabeça para o lado e <span class="palavra-destaque">respirar</span> enquanto faz a <span class="palavra-destaque">braçada</span>.</p>
+                        <p>"Respire pela boca quando sua cabeça estiver de lado. Solte o ar pelo nariz quando seu rosto estiver na água."</p>
+                        <p>Isso era <span class="palavra-destaque">mais difícil do que eu esperava</span>! Eu ficava engolindo água no começo. Mas depois de praticar muitas vezes, comecei a pegar o jeito.</p>
+                        <p>Na terceira aula, eu conseguia nadar uma <span class="palavra-destaque">raia</span> inteira sem parar! A instrutora disse: "Você está indo super bem! Está muito mais <span class="palavra-destaque">confiante</span> do que no primeiro dia."</p>
+                        <p>Ela estava certa. Eu me sentia <span class="palavra-destaque">completamente diferente</span> da criança assustada que entrou no primeiro dia.</p>
+                        <p>Na quarta aula, tentamos a parte <span class="palavra-destaque">funda</span>. Fiquei nervoso de novo. Mas <span class="palavra-destaque">não era tão assustador quanto eu achava</span> porque eu já sabia boiar e chutar.</p>
+                        <p>A última coisa que aprendemos foi ir para <span class="palavra-destaque">debaixo d'água</span> e voltar à <span class="palavra-destaque">superfície</span>. A instrutora disse: "Respire fundo, desça, toque o fundo e se empurre de volta para cima."</p>
+                        <p>Ir debaixo d'água foi <span class="palavra-destaque">melhor do que eu achava que seria</span>! Eu conseguia ver tudo claramente pelos meus óculos. Era como um mundo diferente lá embaixo!</p>
+                        <p>No final do curso, a instrutora perguntou: "Quer tentar um pequeno <span class="palavra-destaque">mergulho</span>?"</p>
+                        <p>Respirei fundo e pulei. O <span class="palavra-destaque">mergulho</span> foi <span class="palavra-destaque">mais assustador do que eu esperava</span>, mas eu consegui! Todo mundo aplaudiu!</p>
+                        <p>Agora eu amo nadar. É <span class="palavra-destaque">completamente diferente do que eu imaginava</span> no começo. Eu estava tão com medo, mas a realidade foi muito melhor que meus medos.</p>
+                        <p>Minha mãe sempre diz: "As coisas que temos medo geralmente <span class="palavra-destaque">não são tão ruins quanto a gente pensa</span>." Ela estava totalmente certa.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I was always scared of water. But last month, my mom signed me up for swimming lessons.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu sempre tive medo de água. Mas mês passado, minha mãe me matriculou em aulas de natação.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the first day, I put on my swimsuit and grabbed my <span class="palavra-destaque">goggles</span>. I thought the water would be freezing cold and super <span class="palavra-destaque">deep</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No primeiro dia, coloquei meu maiô e peguei meus óculos de natação. Achei que a água seria gelada e super funda.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My <span class="palavra-destaque">instructor</span> said: "We start in the <span class="palavra-destaque">shallow</span> end. The water is only up to your waist here."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha instrutora disse: "Começamos na parte rasa. A água só vai até a cintura aqui."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I stepped in slowly. The water was <span class="palavra-destaque">not as cold as I thought</span>! Actually, it felt nice and warm.</div>
+                            <div style="color: #666; font-size: 0.95em;">Entrei devagar. A água não era tão fria quanto eu achava! Na verdade, era quentinha e gostosa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Today, we're going to learn how to <span class="palavra-destaque">float</span>." I was scared I would <span class="palavra-destaque">sink</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Hoje vamos aprender a boiar." Eu tinha medo de afundar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She held my back gently. I relaxed and... I was floating! It was <span class="palavra-destaque">easier than I expected</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela segurou minhas costas gentilmente. Eu relaxei e... estava boiando! Foi mais fácil do que eu esperava!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the second lesson, we learned how to <span class="palavra-destaque">kick</span>. "Keep your legs straight and kick from your hips."</div>
+                            <div style="color: #666; font-size: 0.95em;">Na segunda aula, aprendemos a dar chutes (na água). "Mantenha as pernas retas e chute a partir do quadril."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Kicking was <span class="palavra-destaque">not as hard as I imagined</span>. I moved across the <span class="palavra-destaque">shallow</span> end pretty fast!</div>
+                            <div style="color: #666; font-size: 0.95em;">Chutar não era tão difícil quanto eu imaginava. Eu me movi pela parte rasa bem rápido!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then came the <span class="palavra-destaque">breathing</span> part. This was <span class="palavra-destaque">completely different from what I imagined</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois veio a parte da respiração. Isso era completamente diferente do que eu imaginava.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Breathe</span> in through your mouth when your head is to the side. Breathe out through your nose when your face is in the water."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Respire pela boca quando sua cabeça estiver de lado. Solte o ar pelo nariz quando seu rosto estiver na água."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">This was <span class="palavra-destaque">harder than I expected</span>! I kept swallowing water at first.</div>
+                            <div style="color: #666; font-size: 0.95em;">Isso era mais difícil do que eu esperava! Eu ficava engolindo água no começo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">By the third lesson, I could swim a whole <span class="palavra-destaque">lane</span> without stopping! I felt much more <span class="palavra-destaque">confident</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na terceira aula, eu conseguia nadar uma raia inteira sem parar! Me senti muito mais confiante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">In the fourth lesson, we tried the <span class="palavra-destaque">deep</span> end. It was <span class="palavra-destaque">not as scary as I thought</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Na quarta aula, tentamos a parte funda. Não era tão assustador quanto eu achava.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We learned to go <span class="palavra-destaque">underwater</span> and come back to the <span class="palavra-destaque">surface</span>. Going underwater was <span class="palavra-destaque">better than I thought it would be</span>!</div>
+                            <div style="color: #666; font-size: 0.95em;">Aprendemos a ir para debaixo d'água e voltar à superfície. Ir debaixo d'água foi melhor do que eu achava que seria!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">dive</span> was <span class="palavra-destaque">scarier than I expected</span>, but I did it! Everyone clapped!</div>
+                            <div style="color: #666; font-size: 0.95em;">O mergulho foi mais assustador do que eu esperava, mas eu consegui! Todo mundo aplaudiu!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Now I love swimming. It's <span class="palavra-destaque">completely different from what I imagined</span>. The reality was much better than my fears.</div>
+                            <div style="color: #666; font-size: 0.95em;">Agora eu amo nadar. É completamente diferente do que eu imaginava. A realidade foi muito melhor que meus medos.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom always says: "The things we're afraid of are usually <span class="palavra-destaque">not as bad as we think</span>." She was totally right.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha mãe sempre diz: "As coisas que temos medo geralmente não são tão ruins quanto a gente pensa." Ela estava totalmente certa.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Pool 🏊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Piscina</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Swimming pool"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "swimming pool" = piscina</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Shallow 🌊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Raso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The shallow end"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O oposto de "deep"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Deep 🌀</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Fundo / profundo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The deep end"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "the deep end" = a parte funda</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Float 🛟</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Boiar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Learn how to float"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ficar na superfície da água</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Sink ⬇️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Afundar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I was scared I would sink"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O oposto de "float"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Kick 🦵</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Chutar / chute</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Kick from your hips"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Movimento das pernas na água</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Breathe 🌬️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Respirar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Take a deep breath"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "take a deep breath" = respire fundo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Dive 🤿</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mergulho / mergulhar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Try a small dive"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pular de cabeça na água</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Underwater 🐠</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Debaixo d'água</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Go underwater"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "under" + "water"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Confident 💪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Confiante</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Much more confident than before"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sentir que você consegue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

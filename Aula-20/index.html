@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 20 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 20 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 20</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 20 - Semana 20</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 20</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a planejar eventos e dar conselhos usando estruturas como "going to", "need to", "make sure", "you should" e "don't be afraid to".</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1</strong> — Você já domina o básico e intermediário! Agora vai trabalhar com textos mais complexos que envolvem planejamento futuro e conselhos de vida.</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Planning a Surprise</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Planejando uma festa surpresa — organização, lista de convidados, decorações, receita, preparativos</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> plan, organize, secret, surprise, prepare, arrange, remind, expect, guest list, decoration, recipe, ingredient, wrap, celebrate</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Advice for My Younger Self</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Carta para o eu mais novo — conselhos, reflexão, crescimento pessoal, confiança</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> advice, mistake, lesson, patience, confidence, effort, improve, compare, accept, courage, overcome, challenge, growth, believe</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: Planning a Surprise -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Planning a Surprise</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-planning-a-surprise.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-planning-a-surprise.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Next Saturday is my mom's birthday, and we're <span class="palavra-destaque">planning</span> a big <span class="palavra-destaque">surprise</span> for her.</p>
+                        <p>My dad said: "We're <span class="palavra-destaque">going to</span> throw a surprise party! But we <span class="palavra-destaque">need to</span> keep it a <span class="palavra-destaque">secret</span>."</p>
+                        <p>My sister and I got so excited! We started to <span class="palavra-destaque">organize</span> everything right away.</p>
+                        <p>First, we made a <span class="palavra-destaque">guest list</span>. I said: "We <span class="palavra-destaque">need to</span> invite Grandma, Uncle Pedro, Aunt Carla, and Mom's best friends."</p>
+                        <p>Dad said: "Good idea! I'm <span class="palavra-destaque">going to</span> call everyone tonight. <span class="palavra-destaque">Make sure</span> you don't tell Mom anything!"</p>
+                        <p>Then we talked about <span class="palavra-destaque">decorations</span>. My sister said: "I'm <span class="palavra-destaque">planning to</span> buy pink and gold balloons. Mom loves those colors."</p>
+                        <p>I said: "And I'm <span class="palavra-destaque">going to</span> make a big sign that says 'Happy Birthday, Mom!' We <span class="palavra-destaque">need to</span> get colored paper and glue."</p>
+                        <p>Dad looked at a <span class="palavra-destaque">recipe</span> for chocolate cake — Mom's favorite. He said: "I'm <span class="palavra-destaque">going to</span> bake the cake on Friday night, after Mom goes to sleep."</p>
+                        <p>I asked: "What <span class="palavra-destaque">ingredients</span> do we need?" Dad checked the recipe: "We <span class="palavra-destaque">need to</span> buy eggs, flour, sugar, butter, and chocolate. Don't forget the chocolate!"</p>
+                        <p>We went to the store together to <span class="palavra-destaque">prepare</span> everything. We bought all the ingredients, the decorations, and a beautiful <span class="palavra-destaque">gift</span> for Mom.</p>
+                        <p>When we got home, I helped <span class="palavra-destaque">wrap</span> the gift in shiny purple paper. I'm not very good at wrapping, but Dad helped me.</p>
+                        <p>Dad said: "<span class="palavra-destaque">Remind</span> me to hide the cake ingredients in the garage. Mom can't see them!"</p>
+                        <p>On Friday night, Dad baked the cake while Mom watched TV. The kitchen smelled amazing!</p>
+                        <p>My sister <span class="palavra-destaque">arranged</span> the flowers in a vase. I blew up all the balloons. We hid everything in the garage.</p>
+                        <p>On Saturday morning, we woke up early. Dad said: "OK, team! I'm <span class="palavra-destaque">going to</span> set up the living room. <span class="palavra-destaque">Make sure</span> you keep Mom in the bedroom!"</p>
+                        <p>My sister said: "I'm <span class="palavra-destaque">planning to</span> bring her breakfast in bed. That will give us time!"</p>
+                        <p>The <span class="palavra-destaque">guests</span> started arriving at 10 AM. Everyone was quiet. We were so nervous!</p>
+                        <p>When Mom came downstairs, we all shouted: "SURPRISE! Happy Birthday!"</p>
+                        <p>Mom's face was priceless! She didn't <span class="palavra-destaque">expect</span> this at all. She hugged everyone and said: "This is the best birthday ever!"</p>
+                        <p>We <span class="palavra-destaque">celebrated</span> all day with cake, music, and dancing. I felt so proud because we <span class="palavra-destaque">organized</span> everything ourselves.</p>
+                        <p>Planning a surprise is hard work, but seeing Mom so happy made it totally worth it.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Sábado que vem é o aniversário da minha mãe, e estamos <span class="palavra-destaque">planejando</span> uma grande <span class="palavra-destaque">surpresa</span> para ela.</p>
+                        <p>Meu pai disse: "Nós <span class="palavra-destaque">vamos</span> fazer uma festa surpresa! Mas <span class="palavra-destaque">precisamos</span> manter em <span class="palavra-destaque">segredo</span>."</p>
+                        <p>Minha irmã e eu ficamos super animados! Começamos a <span class="palavra-destaque">organizar</span> tudo na hora.</p>
+                        <p>Primeiro, fizemos uma <span class="palavra-destaque">lista de convidados</span>. Eu disse: "<span class="palavra-destaque">Precisamos</span> convidar a Vovó, Tio Pedro, Tia Carla e as melhores amigas da Mamãe."</p>
+                        <p>Papai disse: "Boa ideia! Eu <span class="palavra-destaque">vou</span> ligar para todo mundo hoje à noite. <span class="palavra-destaque">Não deixem</span> de esconder da Mamãe!"</p>
+                        <p>Depois falamos sobre <span class="palavra-destaque">decorações</span>. Minha irmã disse: "Estou <span class="palavra-destaque">planejando</span> comprar balões rosa e dourados. Mamãe ama essas cores."</p>
+                        <p>Eu disse: "E eu <span class="palavra-destaque">vou</span> fazer um cartaz grande que diz 'Feliz Aniversário, Mamãe!' <span class="palavra-destaque">Precisamos</span> comprar papel colorido e cola."</p>
+                        <p>Papai olhou uma <span class="palavra-destaque">receita</span> de bolo de chocolate — o favorito da Mamãe. Ele disse: "Eu <span class="palavra-destaque">vou</span> fazer o bolo na sexta à noite, depois que a Mamãe dormir."</p>
+                        <p>Eu perguntei: "Que <span class="palavra-destaque">ingredientes</span> precisamos?" Papai conferiu a receita: "<span class="palavra-destaque">Precisamos</span> comprar ovos, farinha, açúcar, manteiga e chocolate. Não esqueçam o chocolate!"</p>
+                        <p>Fomos à loja juntos para <span class="palavra-destaque">preparar</span> tudo. Compramos todos os ingredientes, as decorações e um lindo <span class="palavra-destaque">presente</span> para a Mamãe.</p>
+                        <p>Quando chegamos em casa, eu ajudei a <span class="palavra-destaque">embrulhar</span> o presente em papel roxo brilhante. Eu não sou muito bom em embrulhar, mas Papai me ajudou.</p>
+                        <p>Papai disse: "<span class="palavra-destaque">Me lembrem</span> de esconder os ingredientes do bolo na garagem. A Mamãe não pode ver!"</p>
+                        <p>Na sexta à noite, Papai fez o bolo enquanto Mamãe assistia TV. A cozinha estava com um cheiro incrível!</p>
+                        <p>Minha irmã <span class="palavra-destaque">arrumou</span> as flores no vaso. Eu enchi todos os balões. Escondemos tudo na garagem.</p>
+                        <p>No sábado de manhã, acordamos cedo. Papai disse: "OK, equipe! Eu <span class="palavra-destaque">vou</span> arrumar a sala. <span class="palavra-destaque">Não deixem</span> a Mamãe sair do quarto!"</p>
+                        <p>Minha irmã disse: "Estou <span class="palavra-destaque">planejando</span> levar café da manhã na cama para ela. Isso vai nos dar tempo!"</p>
+                        <p>Os <span class="palavra-destaque">convidados</span> começaram a chegar às 10 da manhã. Todo mundo ficou quieto. Estávamos tão nervosos!</p>
+                        <p>Quando a Mamãe desceu, todos gritamos: "SURPRESA! Feliz Aniversário!"</p>
+                        <p>A cara da Mamãe não tinha preço! Ela não <span class="palavra-destaque">esperava</span> isso de jeito nenhum. Ela abraçou todo mundo e disse: "Esse é o melhor aniversário da vida!"</p>
+                        <p><span class="palavra-destaque">Comemoramos</span> o dia todo com bolo, música e dança. Eu me senti tão orgulhoso porque <span class="palavra-destaque">organizamos</span> tudo sozinhos.</p>
+                        <p>Planejar uma surpresa dá trabalho, mas ver a Mamãe tão feliz fez valer totalmente a pena.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Next Saturday is my mom's birthday, and we're <span class="palavra-destaque">planning</span> a big <span class="palavra-destaque">surprise</span> for her.</div>
+                            <div style="color: #666; font-size: 0.95em;">Sábado que vem é o aniversário da minha mãe, e estamos planejando uma grande surpresa para ela.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad said: "We're <span class="palavra-destaque">going to</span> throw a surprise party! But we <span class="palavra-destaque">need to</span> keep it a <span class="palavra-destaque">secret</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu pai disse: "Nós vamos fazer uma festa surpresa! Mas precisamos manter em segredo."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My sister and I got so excited! We started to <span class="palavra-destaque">organize</span> everything right away.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha irmã e eu ficamos super animados! Começamos a organizar tudo na hora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">First, we made a <span class="palavra-destaque">guest list</span>. I said: "We <span class="palavra-destaque">need to</span> invite Grandma, Uncle Pedro, Aunt Carla, and Mom's best friends."</div>
+                            <div style="color: #666; font-size: 0.95em;">Primeiro, fizemos uma lista de convidados. Eu disse: "Precisamos convidar a Vovó, Tio Pedro, Tia Carla e as melhores amigas da Mamãe."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Dad said: "Good idea! I'm <span class="palavra-destaque">going to</span> call everyone tonight. <span class="palavra-destaque">Make sure</span> you don't tell Mom anything!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Papai disse: "Boa ideia! Eu vou ligar para todo mundo hoje à noite. Não deixem de esconder da Mamãe!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then we talked about <span class="palavra-destaque">decorations</span>. My sister said: "I'm <span class="palavra-destaque">planning to</span> buy pink and gold balloons."</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois falamos sobre decorações. Minha irmã disse: "Estou planejando comprar balões rosa e dourados."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I said: "And I'm <span class="palavra-destaque">going to</span> make a big sign. We <span class="palavra-destaque">need to</span> get colored paper and glue."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu disse: "E eu vou fazer um cartaz grande. Precisamos comprar papel colorido e cola."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Dad looked at a <span class="palavra-destaque">recipe</span> for chocolate cake. He said: "I'm <span class="palavra-destaque">going to</span> bake the cake on Friday night."</div>
+                            <div style="color: #666; font-size: 0.95em;">Papai olhou uma receita de bolo de chocolate. Ele disse: "Eu vou fazer o bolo na sexta à noite."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I asked: "What <span class="palavra-destaque">ingredients</span> do we need?" Dad checked the recipe: "We <span class="palavra-destaque">need to</span> buy eggs, flour, sugar, butter, and chocolate."</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu perguntei: "Que ingredientes precisamos?" Papai conferiu a receita: "Precisamos comprar ovos, farinha, açúcar, manteiga e chocolate."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We went to the store together to <span class="palavra-destaque">prepare</span> everything. We bought all the ingredients and a beautiful <span class="palavra-destaque">gift</span> for Mom.</div>
+                            <div style="color: #666; font-size: 0.95em;">Fomos à loja juntos para preparar tudo. Compramos todos os ingredientes e um lindo presente para a Mamãe.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When we got home, I helped <span class="palavra-destaque">wrap</span> the gift in shiny purple paper.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando chegamos em casa, eu ajudei a embrulhar o presente em papel roxo brilhante.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Dad said: "<span class="palavra-destaque">Remind</span> me to hide the cake ingredients in the garage. Mom can't see them!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Papai disse: "Me lembrem de esconder os ingredientes do bolo na garagem. A Mamãe não pode ver!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On Friday night, Dad baked the cake while Mom watched TV. The kitchen smelled amazing!</div>
+                            <div style="color: #666; font-size: 0.95em;">Na sexta à noite, Papai fez o bolo enquanto Mamãe assistia TV. A cozinha estava com um cheiro incrível!</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My sister <span class="palavra-destaque">arranged</span> the flowers in a vase. I blew up all the balloons.</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha irmã arrumou as flores no vaso. Eu enchi todos os balões.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On Saturday morning, Dad said: "I'm <span class="palavra-destaque">going to</span> set up the living room. <span class="palavra-destaque">Make sure</span> you keep Mom in the bedroom!"</div>
+                            <div style="color: #666; font-size: 0.95em;">No sábado de manhã, Papai disse: "Eu vou arrumar a sala. Não deixem a Mamãe sair do quarto!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My sister said: "I'm <span class="palavra-destaque">planning to</span> bring her breakfast in bed. That will give us time!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha irmã disse: "Estou planejando levar café da manhã na cama. Isso vai nos dar tempo!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When Mom came downstairs, we all shouted: "SURPRISE! Happy Birthday!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando a Mamãe desceu, todos gritamos: "SURPRESA! Feliz Aniversário!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Mom didn't <span class="palavra-destaque">expect</span> this at all. She hugged everyone and said: "This is the best birthday ever!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Mamãe não esperava isso de jeito nenhum. Ela abraçou todo mundo e disse: "Esse é o melhor aniversário da vida!"</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We <span class="palavra-destaque">celebrated</span> all day with cake, music, and dancing. Planning a surprise is hard work, but seeing Mom happy made it worth it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Comemoramos o dia todo com bolo, música e dança. Planejar uma surpresa dá trabalho, mas ver a Mamãe feliz fez valer a pena.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Plan 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Planejar / plano</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm planning a party"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Decidir o que fazer antes</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Organize 🗂️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Organizar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We organized everything"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Secret 🤫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Segredo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Keep it a secret"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Manter em segredo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Surprise 🎉</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Surpresa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's a surprise party!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Recipe 🍰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Receita (de comida)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Dad looked at a recipe"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pronúncia: "réssipi"</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Ingredient 🥚</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ingrediente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "What ingredients do we need?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Wrap 🎁</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Embrulhar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I helped wrap the gift"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "wrap a gift" = embrulhar um presente</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Remind 🔔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lembrar (alguém)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Remind me to hide the cake"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "remind me" = me lembre</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Expect 🤔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Esperar / ter expectativa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She didn't expect this"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Diferente de "wait" (esperar fisicamente)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Celebrate 🎊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Celebrar / comemorar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We celebrated all day"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Advice for My Younger Self -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Advice for My Younger Self</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-advice-for-my-younger-self.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-advice-for-my-younger-self.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today in class, our teacher asked us to write a letter to our younger selves. She said: "Imagine you could talk to yourself when you were five years old. What <span class="palavra-destaque">advice</span> would you give?"</p>
+                        <p>I thought about it for a minute, and then I started writing.</p>
+                        <p>Dear Little Me,</p>
+                        <p>Hi! I'm you, but older. I'm ten now, and I want to tell you some things I wish I had known.</p>
+                        <p>First, about school: <span class="palavra-destaque">don't be afraid to</span> ask questions. I know you feel shy sometimes, but asking questions is how you <span class="palavra-destaque">improve</span>. Nobody thinks you're silly for asking. Actually, the teacher loves it!</p>
+                        <p><span class="palavra-destaque">You should</span> always try your best, even when things are hard. Some things take <span class="palavra-destaque">patience</span> and <span class="palavra-destaque">effort</span>, but that's OK. You don't need to be perfect.</p>
+                        <p>Here's something important: <span class="palavra-destaque">don't compare</span> yourself to other kids. Everyone is different, and that's a good thing. Some kids are fast at math, some are great at drawing. You have your own special talents.</p>
+                        <p><span class="palavra-destaque">If I were you, I would</span> not worry so much about <span class="palavra-destaque">mistakes</span>. Mistakes are not bad — they're actually <span class="palavra-destaque">lessons</span>. Every time you make a mistake, you <span class="palavra-destaque">grow</span> a little bit. That's how <span class="palavra-destaque">growth</span> works.</p>
+                        <p>About friends: <span class="palavra-destaque">the best thing you can do is</span> be kind. You don't need a hundred friends. A few good friends who really care about you — that's enough.</p>
+                        <p>Sometimes other kids might say mean things. <span class="palavra-destaque">Don't be afraid to</span> walk away. It takes <span class="palavra-destaque">courage</span> to not fight back, and that's something to be proud of.</p>
+                        <p>I wish I had known that <span class="palavra-destaque">confidence</span> doesn't mean being the loudest person in the room. It means <span class="palavra-destaque">believing</span> in yourself, even when things are tough.</p>
+                        <p>You're going to face some <span class="palavra-destaque">challenges</span>. Some days will be hard. But <span class="palavra-destaque">you should</span> remember that hard days don't last forever. You can <span class="palavra-destaque">overcome</span> anything if you keep trying.</p>
+                        <p><span class="palavra-destaque">Accept</span> that not everything will go your way. That's life! But every <span class="palavra-destaque">challenge</span> makes you stronger.</p>
+                        <p>One more thing: <span class="palavra-destaque">don't be afraid to</span> try new things. Some of the best things in my life happened because I said "yes" when I was scared.</p>
+                        <p>I <span class="palavra-destaque">believe</span> in you, Little Me. You're going to be just fine.</p>
+                        <p>Love, Future You.</p>
+                        <p>When I finished the letter, I felt really good. I think the best <span class="palavra-destaque">advice</span> is the advice you give yourself.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje na aula, nossa professora pediu para escrevermos uma carta para nós mesmos mais novos. Ela disse: "Imaginem que vocês pudessem falar com vocês mesmos quando tinham cinco anos. Que <span class="palavra-destaque">conselho</span> dariam?"</p>
+                        <p>Eu pensei por um minuto, e depois comecei a escrever.</p>
+                        <p>Querido Eu Pequeno,</p>
+                        <p>Oi! Sou você, mas mais velho. Tenho dez anos agora, e quero te contar algumas coisas que eu gostaria de ter sabido.</p>
+                        <p>Primeiro, sobre a escola: <span class="palavra-destaque">não tenha medo de</span> fazer perguntas. Eu sei que você se sente tímido às vezes, mas fazer perguntas é como você <span class="palavra-destaque">melhora</span>. Ninguém acha que você é bobo por perguntar. Na verdade, a professora adora!</p>
+                        <p><span class="palavra-destaque">Você deveria</span> sempre dar o seu melhor, mesmo quando as coisas são difíceis. Algumas coisas exigem <span class="palavra-destaque">paciência</span> e <span class="palavra-destaque">esforço</span>, mas tudo bem. Você não precisa ser perfeito.</p>
+                        <p>Aqui vai algo importante: <span class="palavra-destaque">não se compare</span> com outras crianças. Todo mundo é diferente, e isso é uma coisa boa. Algumas crianças são rápidas em matemática, outras são ótimas em desenho. Você tem seus próprios talentos especiais.</p>
+                        <p><span class="palavra-destaque">Se eu fosse você, eu não</span> me preocuparia tanto com <span class="palavra-destaque">erros</span>. Erros não são ruins — eles são na verdade <span class="palavra-destaque">lições</span>. Toda vez que você comete um erro, você <span class="palavra-destaque">cresce</span> um pouquinho. É assim que o <span class="palavra-destaque">crescimento</span> funciona.</p>
+                        <p>Sobre amigos: <span class="palavra-destaque">a melhor coisa que você pode fazer é</span> ser gentil. Você não precisa de cem amigos. Alguns bons amigos que realmente se importam com você — isso é suficiente.</p>
+                        <p>Às vezes outras crianças podem falar coisas maldosas. <span class="palavra-destaque">Não tenha medo de</span> se afastar. É preciso <span class="palavra-destaque">coragem</span> para não revidar, e isso é algo para se orgulhar.</p>
+                        <p>Eu gostaria de ter sabido que <span class="palavra-destaque">confiança</span> não significa ser a pessoa mais barulhenta da sala. Significa <span class="palavra-destaque">acreditar</span> em si mesmo, mesmo quando as coisas estão difíceis.</p>
+                        <p>Você vai enfrentar alguns <span class="palavra-destaque">desafios</span>. Alguns dias vão ser difíceis. Mas <span class="palavra-destaque">você deveria</span> lembrar que dias difíceis não duram para sempre. Você pode <span class="palavra-destaque">superar</span> qualquer coisa se continuar tentando.</p>
+                        <p><span class="palavra-destaque">Aceite</span> que nem tudo vai ser do seu jeito. Isso é a vida! Mas cada <span class="palavra-destaque">desafio</span> te torna mais forte.</p>
+                        <p>Mais uma coisa: <span class="palavra-destaque">não tenha medo de</span> tentar coisas novas. Algumas das melhores coisas da minha vida aconteceram porque eu disse "sim" quando estava com medo.</p>
+                        <p>Eu <span class="palavra-destaque">acredito</span> em você, Eu Pequeno. Você vai ficar bem.</p>
+                        <p>Com amor, Você do Futuro.</p>
+                        <p>Quando terminei a carta, me senti muito bem. Acho que o melhor <span class="palavra-destaque">conselho</span> é o conselho que você dá a si mesmo.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today in class, our teacher asked us to write a letter to our younger selves.</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje na aula, nossa professora pediu para escrevermos uma carta para nós mesmos mais novos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She said: "Imagine you could talk to yourself when you were five years old. What <span class="palavra-destaque">advice</span> would you give?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela disse: "Imaginem que vocês pudessem falar com vocês mesmos quando tinham cinco anos. Que conselho dariam?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Dear Little Me, Hi! I'm you, but older. I want to tell you some things I wish I had known.</div>
+                            <div style="color: #666; font-size: 0.95em;">Querido Eu Pequeno, Oi! Sou você, mas mais velho. Quero te contar algumas coisas que eu gostaria de ter sabido.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Don't be afraid to</span> ask questions. Asking questions is how you <span class="palavra-destaque">improve</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Não tenha medo de fazer perguntas. Fazer perguntas é como você melhora.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">You should</span> always try your best, even when things are hard. Some things take <span class="palavra-destaque">patience</span> and <span class="palavra-destaque">effort</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Você deveria sempre dar o seu melhor, mesmo quando as coisas são difíceis. Algumas coisas exigem paciência e esforço.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Don't compare</span> yourself to other kids. Everyone is different, and that's a good thing.</div>
+                            <div style="color: #666; font-size: 0.95em;">Não se compare com outras crianças. Todo mundo é diferente, e isso é uma coisa boa.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">If I were you, I would</span> not worry so much about <span class="palavra-destaque">mistakes</span>. Mistakes are actually <span class="palavra-destaque">lessons</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Se eu fosse você, eu não me preocuparia tanto com erros. Erros são na verdade lições.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every time you make a mistake, you <span class="palavra-destaque">grow</span> a little bit. That's how <span class="palavra-destaque">growth</span> works.</div>
+                            <div style="color: #666; font-size: 0.95em;">Toda vez que você comete um erro, você cresce um pouquinho. É assim que o crescimento funciona.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">The best thing you can do is</span> be kind. You don't need a hundred friends.</div>
+                            <div style="color: #666; font-size: 0.95em;">A melhor coisa que você pode fazer é ser gentil. Você não precisa de cem amigos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Sometimes other kids might say mean things. <span class="palavra-destaque">Don't be afraid to</span> walk away. It takes <span class="palavra-destaque">courage</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Às vezes outras crianças podem falar coisas maldosas. Não tenha medo de se afastar. Isso exige coragem.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">Confidence</span> doesn't mean being the loudest person in the room. It means <span class="palavra-destaque">believing</span> in yourself.</div>
+                            <div style="color: #666; font-size: 0.95em;">Confiança não significa ser a pessoa mais barulhenta da sala. Significa acreditar em si mesmo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">You're going to face some <span class="palavra-destaque">challenges</span>. But <span class="palavra-destaque">you should</span> remember that hard days don't last forever.</div>
+                            <div style="color: #666; font-size: 0.95em;">Você vai enfrentar alguns desafios. Mas você deveria lembrar que dias difíceis não duram para sempre.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">You can <span class="palavra-destaque">overcome</span> anything if you keep trying. <span class="palavra-destaque">Accept</span> that not everything will go your way.</div>
+                            <div style="color: #666; font-size: 0.95em;">Você pode superar qualquer coisa se continuar tentando. Aceite que nem tudo vai ser do seu jeito.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every <span class="palavra-destaque">challenge</span> makes you stronger. <span class="palavra-destaque">Don't be afraid to</span> try new things.</div>
+                            <div style="color: #666; font-size: 0.95em;">Cada desafio te torna mais forte. Não tenha medo de tentar coisas novas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I <span class="palavra-destaque">believe</span> in you, Little Me. You're going to be just fine.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acredito em você, Eu Pequeno. Você vai ficar bem.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When I finished the letter, I felt really good. The best <span class="palavra-destaque">advice</span> is the advice you give yourself.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando terminei a carta, me senti muito bem. O melhor conselho é o conselho que você dá a si mesmo.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Advice 💬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Conselho</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Give advice"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "give advice" = dar conselho</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Mistake ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Erro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Make a mistake"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "make a mistake" = cometer um erro</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Patience ⏳</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Paciência</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Some things take patience"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Confidence 💪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Confiança</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Feel confident"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "feel confident" = sentir-se confiante</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Effort 💪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Esforço</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It takes effort"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Improve 📈</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Melhorar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I want to improve"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ficar melhor em algo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Courage 🦁</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Coragem</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It takes courage"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Palavra parecida com português</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Overcome 🏔️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Superar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You can overcome anything"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "over" + "come" = passar por cima</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Challenge 🎯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desafio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Every challenge makes you stronger"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Algo difícil que você enfrenta</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Believe ✨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Acreditar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I believe in you"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> "believe in yourself" = acredite em si mesmo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

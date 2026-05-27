@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 23 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 23 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 23</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 23 - Semana 23</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 23</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender os phrasal verbs mais usados no dia a dia (figure out, give up, turn off, pick up, hang out) e expressões para manter uma conversa fluindo (well, you know, I mean, actually, by the way).</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1→B2</strong> — Você já entende contrações e agora vai dominar phrasal verbs e filler words — o segredo para soar natural em inglês!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Phrasal Verbs Are Everywhere</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Phrasal verbs no dia a dia — como nativos usam verbos compostos em vez de palavras formais</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> figure out, give up, look up, turn off, pick up, drop off, come up with, run out of, get along with, look forward to, put up with, show up, hang out, grow up</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Keeping a Conversation Going</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Filler words e expressões para manter conversas fluindo — well, you know, I mean, actually, by the way</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> well, you know, I mean, actually, basically, by the way, anyway, so, right?, really?, that's interesting, what do you mean?, how about you?, tell me more</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4><p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4><p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p></div>
+                    <div><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4><p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p></div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p><p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p></div>
+                    <div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p><p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p></div>
+                    <div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p><p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p></div>
+                    <div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p><p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p></div>
+                    <div><p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p><p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p></div>
+                </div>
+            </div>
+
+            <!-- Texto 1: Phrasal Verbs Are Everywhere -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Phrasal Verbs Are Everywhere</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-phrasal-verbs-are-everywhere.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-phrasal-verbs-are-everywhere.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Yesterday I was watching my favorite show in English, and a character said: "I can't <span class="palavra-destaque">figure out</span> this puzzle!"</p>
+                        <p>I thought: "Why didn't he say 'solve'?" So I asked my English teacher today.</p>
+                        <p>She smiled and said: "Welcome to phrasal verbs! Native speakers use them all the time."</p>
+                        <p>She explained that phrasal verbs are a verb plus a small word like up, out, on, or off — and together they create a new meaning.</p>
+                        <p>I started paying attention, and now I hear them everywhere!</p>
+                        <p>This morning, my mom said: "<span class="palavra-destaque">Turn off</span> the TV and <span class="palavra-destaque">pick up</span> your toys!"</p>
+                        <p>My dad was leaving for work and said: "I need to <span class="palavra-destaque">drop off</span> your sister at school."</p>
+                        <p>At school, my teacher said: "Don't <span class="palavra-destaque">give up</span>! You can do it!"</p>
+                        <p>My friend Lucas couldn't answer a question, so he decided to <span class="palavra-destaque">look up</span> the answer in the dictionary.</p>
+                        <p>During lunch, my friend Sofia said: "I <span class="palavra-destaque">came up with</span> a great idea for our project!"</p>
+                        <p>I told her: "That's awesome! I <span class="palavra-destaque">look forward to</span> hearing it!"</p>
+                        <p>After school, I wanted to <span class="palavra-destaque">hang out</span> with my friends at the park.</p>
+                        <p>My mom said: "Sure, but we <span class="palavra-destaque">ran out of</span> milk, so come home early."</p>
+                        <p>At the park, my friend asked: "Do you <span class="palavra-destaque">get along with</span> your little sister?"</p>
+                        <p>I laughed and said: "Most of the time! But sometimes it's hard to <span class="palavra-destaque">put up with</span> her singing all day!"</p>
+                        <p>We talked about what we want to be when we <span class="palavra-destaque">grow up</span>.</p>
+                        <p>I said: "I want to be a game designer! I need to <span class="palavra-destaque">work out</span> how to make my own games."</p>
+                        <p>Then my friend Pedro finally <span class="palavra-destaque">showed up</span> — he was late, as always!</p>
+                        <p>I went home feeling happy. Now I understand — phrasal verbs are just how people really talk!</p>
+                        <p>They're not difficult. They're like a treasure hunt — once you start looking, you find them everywhere!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Ontem eu estava assistindo meu programa favorito em inglês, e um personagem disse: "Eu não consigo <span class="palavra-destaque">descobrir</span> esse quebra-cabeça!"</p>
+                        <p>Eu pensei: "Por que ele não disse 'solve'?" Então perguntei para minha professora de inglês hoje.</p>
+                        <p>Ela sorriu e disse: "Bem-vindo aos phrasal verbs! Falantes nativos usam eles o tempo todo."</p>
+                        <p>Ela explicou que phrasal verbs são um verbo mais uma palavrinha como up, out, on ou off — e juntos eles criam um significado novo.</p>
+                        <p>Eu comecei a prestar atenção, e agora eu ouço eles em todo lugar!</p>
+                        <p>Hoje de manhã, minha mãe disse: "<span class="palavra-destaque">Desligue</span> a TV e <span class="palavra-destaque">pegue</span> seus brinquedos!"</p>
+                        <p>Meu pai estava saindo pro trabalho e disse: "Eu preciso <span class="palavra-destaque">deixar</span> sua irmã na escola."</p>
+                        <p>Na escola, minha professora disse: "Não <span class="palavra-destaque">desista</span>! Você consegue!"</p>
+                        <p>Meu amigo Lucas não conseguia responder uma pergunta, então ele decidiu <span class="palavra-destaque">procurar</span> a resposta no dicionário.</p>
+                        <p>No almoço, minha amiga Sofia disse: "Eu <span class="palavra-destaque">tive</span> uma ótima ideia pro nosso projeto!"</p>
+                        <p>Eu disse pra ela: "Que legal! Estou <span class="palavra-destaque">ansioso para</span> ouvir!"</p>
+                        <p>Depois da escola, eu queria <span class="palavra-destaque">sair</span> com meus amigos no parque.</p>
+                        <p>Minha mãe disse: "Claro, mas nós <span class="palavra-destaque">ficamos sem</span> leite, então volte cedo pra casa."</p>
+                        <p>No parque, meu amigo perguntou: "Você <span class="palavra-destaque">se dá bem com</span> sua irmã mais nova?"</p>
+                        <p>Eu ri e disse: "Na maioria das vezes! Mas às vezes é difícil <span class="palavra-destaque">aguentar</span> ela cantando o dia todo!"</p>
+                        <p>Nós conversamos sobre o que queremos ser quando <span class="palavra-destaque">crescermos</span>.</p>
+                        <p>Eu disse: "Quero ser designer de jogos! Preciso <span class="palavra-destaque">descobrir</span> como fazer meus próprios jogos."</p>
+                        <p>Então meu amigo Pedro finalmente <span class="palavra-destaque">apareceu</span> — ele estava atrasado, como sempre!</p>
+                        <p>Eu fui pra casa me sentindo feliz. Agora eu entendo — phrasal verbs são apenas como as pessoas realmente falam!</p>
+                        <p>Eles não são difíceis. São como uma caça ao tesouro — quando você começa a procurar, encontra eles em todo lugar!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Yesterday I was watching my favorite show in English, and a character said: "I can't <span class="palavra-destaque">figure out</span> this puzzle!"</div><div style="color: #666; font-size: 0.95em;">Ontem eu estava assistindo meu programa favorito em inglês, e um personagem disse: "Eu não consigo descobrir esse quebra-cabeça!"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She smiled and said: "Welcome to phrasal verbs! Native speakers use them all the time."</div><div style="color: #666; font-size: 0.95em;">Ela sorriu e disse: "Bem-vindo aos phrasal verbs! Falantes nativos usam eles o tempo todo."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">This morning, my mom said: "<span class="palavra-destaque">Turn off</span> the TV and <span class="palavra-destaque">pick up</span> your toys!"</div><div style="color: #666; font-size: 0.95em;">Hoje de manhã, minha mãe disse: "Desligue a TV e pegue seus brinquedos!"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My dad was leaving for work and said: "I need to <span class="palavra-destaque">drop off</span> your sister at school."</div><div style="color: #666; font-size: 0.95em;">Meu pai estava saindo pro trabalho e disse: "Eu preciso deixar sua irmã na escola."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At school, my teacher said: "Don't <span class="palavra-destaque">give up</span>! You can do it!"</div><div style="color: #666; font-size: 0.95em;">Na escola, minha professora disse: "Não desista! Você consegue!"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Lucas couldn't answer a question, so he decided to <span class="palavra-destaque">look up</span> the answer in the dictionary.</div><div style="color: #666; font-size: 0.95em;">Meu amigo Lucas não conseguia responder uma pergunta, então ele decidiu procurar a resposta no dicionário.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">During lunch, my friend Sofia said: "I <span class="palavra-destaque">came up with</span> a great idea for our project!"</div><div style="color: #666; font-size: 0.95em;">No almoço, minha amiga Sofia disse: "Eu tive uma ótima ideia pro nosso projeto!"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After school, I wanted to <span class="palavra-destaque">hang out</span> with my friends at the park.</div><div style="color: #666; font-size: 0.95em;">Depois da escola, eu queria sair com meus amigos no parque.</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My mom said: "Sure, but we <span class="palavra-destaque">ran out of</span> milk, so come home early."</div><div style="color: #666; font-size: 0.95em;">Minha mãe disse: "Claro, mas nós ficamos sem leite, então volte cedo pra casa."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then my friend Pedro finally <span class="palavra-destaque">showed up</span> — he was late, as always!</div><div style="color: #666; font-size: 0.95em;">Então meu amigo Pedro finalmente apareceu — ele estava atrasado, como sempre!</div></div>
+                        <div><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Phrasal verbs are just how people really talk! They're like a treasure hunt — once you start looking, you find them everywhere!</div><div style="color: #666; font-size: 0.95em;">Phrasal verbs são apenas como as pessoas realmente falam! São como uma caça ao tesouro — quando você começa a procurar, encontra eles em todo lugar!</div></div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Figure out 🧩</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Descobrir / resolver</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I can't figure out this problem"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mais natural que "solve" na fala</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Give up 🏳️</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desistir</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Don't give up! You can do it!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muito usado para motivar</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Turn off 📴</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desligar (aparelho)</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Turn off the TV"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Oposto: turn on = ligar</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Pick up 🤲</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pegar / buscar</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Pick up your toys"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pegar do chão ou buscar alguém</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Come up with 💡</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Inventar / ter uma ideia</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She came up with a great plan"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Criar algo novo na mente</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Run out of 🚫</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ficar sem</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We ran out of milk"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Acabou o estoque</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Hang out 🏖️</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sair / passar tempo com</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I like to hang out with friends"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Informal — ficar junto</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Show up 🚶</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Aparecer / chegar</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "He always shows up late"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mais informal que "arrive"</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Look forward to 🤩</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Estar ansioso para</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I look forward to the weekend!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Expectativa positiva</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Grow up 🌱</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Crescer</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "What do you want to be when you grow up?"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Crescer de criança para adulto</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Keeping a Conversation Going -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Keeping a Conversation Going</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-keeping-a-conversation-going.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-keeping-a-conversation-going.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last Saturday, I was at the park with my mom when a tourist came up to us.</p>
+                        <p>He looked at his phone and said: "<span class="palavra-destaque">Well</span>, excuse me... do you know how to get to the beach from here?"</p>
+                        <p>I said: "Sure! <span class="palavra-destaque">Basically</span>, you go straight and turn left at the big tree."</p>
+                        <p>He smiled and said: "Oh, thank you! <span class="palavra-destaque">By the way</span>, my name is Mark. I'm from Canada."</p>
+                        <p>"Nice to meet you! I'm Binho. <span class="palavra-destaque">So</span>, are you here on vacation?"</p>
+                        <p>"Yes! <span class="palavra-destaque">Well, you know</span>, I always wanted to visit Brazil. The food, the music... <span class="palavra-destaque">I mean</span>, everything is amazing here!"</p>
+                        <p>"<span class="palavra-destaque">Really?</span> <span class="palavra-destaque">Tell me more!</span> What's your favorite food so far?"</p>
+                        <p>"<span class="palavra-destaque">Actually</span>, I tried açaí yesterday and I loved it! <span class="palavra-destaque">How about you?</span> Do you eat açaí every day?"</p>
+                        <p>I laughed and said: "Not every day, but I love it too! <span class="palavra-destaque">Anyway</span>, what else do you want to see here?"</p>
+                        <p>"<span class="palavra-destaque">Well</span>, I want to visit the old part of the city. <span class="palavra-destaque">You know</span>, the historic buildings and churches."</p>
+                        <p>"<span class="palavra-destaque">That's interesting!</span> My school went there last month. It's really beautiful."</p>
+                        <p>Mark said something I didn't understand, so I asked: "<span class="palavra-destaque">What do you mean?</span>"</p>
+                        <p>He said: "Oh, sorry! I mean, is it far from here?"</p>
+                        <p>"Not really! It's about twenty minutes by bus."</p>
+                        <p>"Great! <span class="palavra-destaque">By the way</span>, your English is really good!"</p>
+                        <p>"Thank you! <span class="palavra-destaque">Actually</span>, I study with my uncle. He's my English teacher."</p>
+                        <p>Mark said: "<span class="palavra-destaque">Well</span>, I should get going. It was really nice talking to you!"</p>
+                        <p>I looked at my mom and said: "Mom! I just had a real conversation in English!"</p>
+                        <p>She smiled and said: "I'm so proud of you!"</p>
+                        <p>I felt amazing. I didn't need to be perfect — I just needed to keep the conversation going!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>No sábado passado, eu estava no parque com minha mãe quando um turista veio falar com a gente.</p>
+                        <p>Ele olhou pro celular e disse: "<span class="palavra-destaque">Bom</span>, com licença... você sabe como chegar na praia daqui?"</p>
+                        <p>Eu disse: "Claro! <span class="palavra-destaque">Basicamente</span>, você segue em frente e vira à esquerda na árvore grande."</p>
+                        <p>Ele sorriu e disse: "Ah, obrigado! <span class="palavra-destaque">A propósito</span>, meu nome é Mark. Sou do Canadá."</p>
+                        <p>"Prazer! Eu sou o Binho. <span class="palavra-destaque">Então</span>, você está aqui de férias?"</p>
+                        <p>"Sim! <span class="palavra-destaque">Bom, sabe</span>, eu sempre quis visitar o Brasil. A comida, a música... <span class="palavra-destaque">quer dizer</span>, tudo é incrível aqui!"</p>
+                        <p>"<span class="palavra-destaque">Sério?</span> <span class="palavra-destaque">Me conta mais!</span> Qual sua comida favorita até agora?"</p>
+                        <p>"<span class="palavra-destaque">Na verdade</span>, eu experimentei açaí ontem e adorei! <span class="palavra-destaque">E você?</span> Você come açaí todo dia?"</p>
+                        <p>Eu ri e disse: "Não todo dia, mas eu também adoro! <span class="palavra-destaque">Enfim</span>, o que mais você quer ver aqui?"</p>
+                        <p>"<span class="palavra-destaque">Bom</span>, eu quero visitar a parte antiga da cidade. <span class="palavra-destaque">Sabe</span>, os prédios históricos e igrejas."</p>
+                        <p>"<span class="palavra-destaque">Que interessante!</span> Minha escola foi lá mês passado. É muito bonito."</p>
+                        <p>Mark disse algo que eu não entendi, então perguntei: "<span class="palavra-destaque">O que você quer dizer?</span>"</p>
+                        <p>Ele disse: "Ah, desculpa! Quer dizer, é longe daqui?"</p>
+                        <p>"Não muito! São uns vinte minutos de ônibus."</p>
+                        <p>"Ótimo! <span class="palavra-destaque">A propósito</span>, seu inglês é muito bom!"</p>
+                        <p>"Obrigado! <span class="palavra-destaque">Na verdade</span>, eu estudo com meu tio. Ele é meu professor de inglês."</p>
+                        <p>Mark disse: "<span class="palavra-destaque">Bom</span>, eu preciso ir. Foi muito legal conversar com você!"</p>
+                        <p>Eu olhei pra minha mãe e disse: "Mãe! Eu acabei de ter uma conversa de verdade em inglês!"</p>
+                        <p>Ela sorriu e disse: "Estou tão orgulhosa de você!"</p>
+                        <p>Eu me senti incrível. Eu não precisava ser perfeito — só precisava manter a conversa fluindo!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">He looked at his phone and said: "<span class="palavra-destaque">Well</span>, excuse me... do you know how to get to the beach from here?"</div><div style="color: #666; font-size: 0.95em;">Ele olhou pro celular e disse: "Bom, com licença... você sabe como chegar na praia daqui?"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I said: "Sure! <span class="palavra-destaque">Basically</span>, you go straight and turn left at the big tree."</div><div style="color: #666; font-size: 0.95em;">Eu disse: "Claro! Basicamente, você segue em frente e vira à esquerda na árvore grande."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">By the way</span>, my name is Mark. I'm from Canada."</div><div style="color: #666; font-size: 0.95em;">"A propósito, meu nome é Mark. Sou do Canadá."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Well, you know</span>, I always wanted to visit Brazil. <span class="palavra-destaque">I mean</span>, everything is amazing here!"</div><div style="color: #666; font-size: 0.95em;">"Bom, sabe, eu sempre quis visitar o Brasil. Quer dizer, tudo é incrível aqui!"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Really?</span> <span class="palavra-destaque">Tell me more!</span> What's your favorite food so far?"</div><div style="color: #666; font-size: 0.95em;">"Sério? Me conta mais! Qual sua comida favorita até agora?"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Actually</span>, I tried açaí yesterday and I loved it! <span class="palavra-destaque">How about you?</span>"</div><div style="color: #666; font-size: 0.95em;">"Na verdade, eu experimentei açaí ontem e adorei! E você?"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Mark said something I didn't understand, so I asked: "<span class="palavra-destaque">What do you mean?</span>"</div><div style="color: #666; font-size: 0.95em;">Mark disse algo que eu não entendi, então perguntei: "O que você quer dizer?"</div></div>
+                        <div><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I felt amazing. I didn't need to be perfect — I just needed to keep the conversation going!</div><div style="color: #666; font-size: 0.95em;">Eu me senti incrível. Eu não precisava ser perfeito — só precisava manter a conversa fluindo!</div></div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Well 🤔</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bom / Bem (para pensar)</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Well, I think it's a good idea"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ganha tempo para pensar</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. You know 💬</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sabe (conectar ideias)</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You know, Brazil is beautiful"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Torna a fala mais natural</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Actually 💡</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Na verdade</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Actually, I'm from Brazil"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> NÃO é "atualmente"!</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. By the way 🔄</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> A propósito</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "By the way, my name is Mark"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muda de assunto suavemente</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. I mean 🗣️</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Quer dizer</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I mean, it's not far"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Corrige ou explica melhor</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Really? 😮</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sério?</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Really? That's amazing!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mostra surpresa e interesse</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. How about you? 🔁</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> E você?</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I love pizza. How about you?"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Devolve a pergunta</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. What do you mean? ❓</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> O que você quer dizer?</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "What do you mean? I didn't understand"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pede esclarecimento</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Anyway ➡️</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Enfim / De qualquer forma</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Anyway, what were you saying?"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Volta ao assunto principal</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. That's interesting! 🌟</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Que interessante!</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That's interesting! Tell me more"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mostra que está ouvindo</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; document.getElementById('installBanner').style.display = 'block'; });
+        function installApp() { if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then((choiceResult) => { deferredPrompt = null; document.getElementById('installBanner').style.display = 'none'; }); } }
+        function closeInstallPrompt() { document.getElementById('installBanner').style.display = 'none'; }
+        function showText(textNumber) { document.getElementById('text-0').classList.add('hidden'); document.getElementById('text-1').classList.add('hidden'); document.getElementById('text-2').classList.add('hidden'); document.getElementById('text-3').classList.add('hidden'); document.getElementById('text-' + textNumber).classList.remove('hidden'); document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active')); document.querySelectorAll('.text-btn')[textNumber].classList.add('active'); document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4'; window.scrollTo(0, 0); }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        window.addEventListener('scroll', function() { const backToTop = document.getElementById('backToTop'); if (window.pageYOffset > 300) { backToTop.classList.add('show'); } else { backToTop.classList.remove('show'); } });
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => { btn.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1); if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1); }); });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { initAuth(); });
+        document.querySelectorAll('audio').forEach(function(audio) { audio.addEventListener('error', function() { var section = audio.closest('.audio-section'); if (section && !section.querySelector('.audio-error-msg')) { var msg = document.createElement('p'); msg.className = 'audio-error-msg'; msg.style.color = '#e63946'; msg.style.fontSize = '0.9em'; msg.style.marginTop = '8px'; msg.textContent = '⚠️ Áudio não disponível no momento.'; section.appendChild(msg); } }); });
+    </script>
+</body>
+</html>

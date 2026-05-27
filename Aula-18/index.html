@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 18 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 18 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 18</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 18 - Semana 18</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 18</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Desenvolver a habilidade de expressar desejos hipotéticos (Second Conditional) e apresentar resultados científicos com vocabulário acadêmico.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B1</strong> — Você já consegue se comunicar em situações do dia a dia e agora vai expandir para temas mais complexos como hipóteses, viagens imaginárias e método científico!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ If I Could Travel Anywhere</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Viagens imaginárias — destinos dos sonhos, culturas, monumentos, lista de desejos</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> continent, explore, ancient, monument, wonder, landscape, experience, discover, bucket list, journey, destination, abroad, souvenir, heritage, landmark</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ The Science Fair</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Feira de ciências — método científico, hipótese, experimento, dados, conclusão, apresentação</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> experiment, hypothesis, research, result, conclusion, observe, measure, record, data, prove, method, presentation, judge, award, laboratory</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: If I Could Travel Anywhere -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: If I Could Travel Anywhere</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-if-i-could-travel-anywhere.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-if-i-could-travel-anywhere.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today in class, our teacher asked us: "If you could travel anywhere in the world, where would you go?" I started daydreaming immediately!</p>
+                        <p><span class="palavra-destaque">If I could</span> go anywhere, I would visit Egypt because I have always wanted to see the <span class="palavra-destaque">ancient</span> pyramids.</p>
+                        <p>I think the pyramids are the most incredible <span class="palavra-destaque">monument</span> in the world. The reason I want to go there is because they are thousands of years old, and I want to understand how people built them.</p>
+                        <p>Egypt is on the African <span class="palavra-destaque">continent</span>, and I would love to <span class="palavra-destaque">explore</span> the desert <span class="palavra-destaque">landscape</span> around the pyramids.</p>
+                        <p>I imagine it would be an unforgettable <span class="palavra-destaque">experience</span> to stand next to something so old and so enormous.</p>
+                        <p>My second <span class="palavra-destaque">destination</span> would be Japan. I have always wanted to see the cherry blossoms in spring.</p>
+                        <p><span class="palavra-destaque">If I could</span> visit Japan, I would try real sushi, walk through <span class="palavra-destaque">ancient</span> temples, and <span class="palavra-destaque">discover</span> the beautiful gardens.</p>
+                        <p>The Japanese <span class="palavra-destaque">heritage</span> is fascinating to me because it mixes very old traditions with modern technology.</p>
+                        <p>I would buy a special <span class="palavra-destaque">souvenir</span> — maybe a traditional fan or a small lucky cat statue.</p>
+                        <p>My friend Lucas said: "<span class="palavra-destaque">If I could</span> travel <span class="palavra-destaque">abroad</span>, I would go to Italy because I want to see the famous <span class="palavra-destaque">landmarks</span> like the Colosseum."</p>
+                        <p>He told us: "I believe that seeing those places in person is completely different from seeing them in photos."</p>
+                        <p>I agree with him. The reason I think traveling is important is because you learn things that no book can teach you.</p>
+                        <p>Then my friend Sofia surprised everyone. She said: "<span class="palavra-destaque">If I could</span> go anywhere, I would travel to space!"</p>
+                        <p>We all laughed, but she explained: "I would love to see Earth from above because I think the view would change how I see the world."</p>
+                        <p>I thought about it, and she was right. That would be the greatest <span class="palavra-destaque">journey</span> of all!</p>
+                        <p>Our teacher smiled and said: "You all have wonderful <span class="palavra-destaque">bucket lists</span>! A bucket list is a list of things you want to do in your life."</p>
+                        <p>She told us that every great <span class="palavra-destaque">journey</span> starts with a dream and a plan.</p>
+                        <p>I went home and wrote my own bucket list: <span class="palavra-destaque">explore</span> all seven <span class="palavra-destaque">continents</span>, see the <span class="palavra-destaque">wonders</span> of the world, and <span class="palavra-destaque">discover</span> new places.</p>
+                        <p>I also want to learn about different people and their <span class="palavra-destaque">heritage</span> — how they live, what they eat, and what they celebrate.</p>
+                        <p>Even though I cannot travel right now, I know that one day I will visit all these <span class="palavra-destaque">destinations</span>.</p>
+                        <p>My mom always says: "The world is full of <span class="palavra-destaque">wonders</span> waiting for you. Study hard, and your dreams will become real."</p>
+                        <p>I believe that if I study English well, I will be able to communicate with people everywhere I go.</p>
+                        <p>For now, my <span class="palavra-destaque">journey</span> starts with books, maps, and imagination — and that is already a great adventure!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje na aula, nossa professora nos perguntou: "Se vocês pudessem viajar para qualquer lugar do mundo, para onde iriam?" Eu comecei a sonhar acordado na hora!</p>
+                        <p><span class="palavra-destaque">Se eu pudesse</span> ir a qualquer lugar, eu visitaria o Egito porque sempre quis ver as pirâmides <span class="palavra-destaque">antigas</span>.</p>
+                        <p>Eu acho que as pirâmides são o <span class="palavra-destaque">monumento</span> mais incrível do mundo. A razão pela qual quero ir lá é porque elas têm milhares de anos, e eu quero entender como as pessoas as construíram.</p>
+                        <p>O Egito fica no <span class="palavra-destaque">continente</span> africano, e eu adoraria <span class="palavra-destaque">explorar</span> a <span class="palavra-destaque">paisagem</span> do deserto ao redor das pirâmides.</p>
+                        <p>Imagino que seria uma <span class="palavra-destaque">experiência</span> inesquecível ficar ao lado de algo tão antigo e tão enorme.</p>
+                        <p>Meu segundo <span class="palavra-destaque">destino</span> seria o Japão. Sempre quis ver as flores de cerejeira na primavera.</p>
+                        <p><span class="palavra-destaque">Se eu pudesse</span> visitar o Japão, eu experimentaria sushi de verdade, caminharia por templos <span class="palavra-destaque">antigos</span> e <span class="palavra-destaque">descobriria</span> os jardins lindos.</p>
+                        <p>A <span class="palavra-destaque">herança cultural</span> japonesa é fascinante pra mim porque mistura tradições muito antigas com tecnologia moderna.</p>
+                        <p>Eu compraria uma <span class="palavra-destaque">lembrança</span> especial — talvez um leque tradicional ou uma estátua pequena de gato da sorte.</p>
+                        <p>Meu amigo Lucas disse: "<span class="palavra-destaque">Se eu pudesse</span> viajar para o <span class="palavra-destaque">exterior</span>, eu iria para a Itália porque quero ver os <span class="palavra-destaque">marcos</span> famosos como o Coliseu."</p>
+                        <p>Ele nos disse: "Eu acredito que ver esses lugares pessoalmente é completamente diferente de ver em fotos."</p>
+                        <p>Eu concordo com ele. A razão pela qual acho que viajar é importante é porque você aprende coisas que nenhum livro pode ensinar.</p>
+                        <p>Então minha amiga Sofia surpreendeu todo mundo. Ela disse: "<span class="palavra-destaque">Se eu pudesse</span> ir a qualquer lugar, eu viajaria para o espaço!"</p>
+                        <p>Todos rimos, mas ela explicou: "Eu adoraria ver a Terra de cima porque acho que a vista mudaria como eu vejo o mundo."</p>
+                        <p>Pensei sobre isso, e ela tinha razão. Essa seria a maior <span class="palavra-destaque">jornada</span> de todas!</p>
+                        <p>Nossa professora sorriu e disse: "Vocês todos têm <span class="palavra-destaque">listas de desejos</span> maravilhosas! Uma lista de desejos é uma lista de coisas que você quer fazer na vida."</p>
+                        <p>Ela nos disse que toda grande <span class="palavra-destaque">jornada</span> começa com um sonho e um plano.</p>
+                        <p>Fui pra casa e escrevi minha própria lista de desejos: <span class="palavra-destaque">explorar</span> todos os sete <span class="palavra-destaque">continentes</span>, ver as <span class="palavra-destaque">maravilhas</span> do mundo e <span class="palavra-destaque">descobrir</span> lugares novos.</p>
+                        <p>Também quero aprender sobre diferentes pessoas e sua <span class="palavra-destaque">herança cultural</span> — como vivem, o que comem e o que celebram.</p>
+                        <p>Mesmo que eu não possa viajar agora, sei que um dia vou visitar todos esses <span class="palavra-destaque">destinos</span>.</p>
+                        <p>Minha mãe sempre diz: "O mundo está cheio de <span class="palavra-destaque">maravilhas</span> esperando por você. Estude bastante, e seus sonhos vão se tornar realidade."</p>
+                        <p>Eu acredito que se eu estudar inglês bem, vou conseguir me comunicar com pessoas em qualquer lugar que eu for.</p>
+                        <p>Por enquanto, minha <span class="palavra-destaque">jornada</span> começa com livros, mapas e imaginação — e isso já é uma grande aventura!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Today in class, our teacher asked us: "If you could travel anywhere in the world, where would you go?"</div>
+                            <div style="color: #666; font-size: 0.95em;">Hoje na aula, nossa professora nos perguntou: "Se vocês pudessem viajar para qualquer lugar do mundo, para onde iriam?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">If I could</span> go anywhere, I would visit Egypt because I have always wanted to see the <span class="palavra-destaque">ancient</span> pyramids.</div>
+                            <div style="color: #666; font-size: 0.95em;">Se eu pudesse ir a qualquer lugar, eu visitaria o Egito porque sempre quis ver as pirâmides antigas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I think the pyramids are the most incredible <span class="palavra-destaque">monument</span> in the world.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acho que as pirâmides são o monumento mais incrível do mundo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The reason I want to go there is because they are thousands of years old.</div>
+                            <div style="color: #666; font-size: 0.95em;">A razão pela qual quero ir lá é porque elas têm milhares de anos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Egypt is on the African <span class="palavra-destaque">continent</span>, and I would love to <span class="palavra-destaque">explore</span> the desert <span class="palavra-destaque">landscape</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">O Egito fica no continente africano, e eu adoraria explorar a paisagem do deserto.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I imagine it would be an unforgettable <span class="palavra-destaque">experience</span> to stand next to something so old.</div>
+                            <div style="color: #666; font-size: 0.95em;">Imagino que seria uma experiência inesquecível ficar ao lado de algo tão antigo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My second <span class="palavra-destaque">destination</span> would be Japan. I have always wanted to see the cherry blossoms.</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu segundo destino seria o Japão. Sempre quis ver as flores de cerejeira.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">If I could</span> visit Japan, I would try real sushi and <span class="palavra-destaque">discover</span> the beautiful gardens.</div>
+                            <div style="color: #666; font-size: 0.95em;">Se eu pudesse visitar o Japão, eu experimentaria sushi de verdade e descobriria os jardins lindos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The Japanese <span class="palavra-destaque">heritage</span> is fascinating because it mixes old traditions with modern technology.</div>
+                            <div style="color: #666; font-size: 0.95em;">A herança cultural japonesa é fascinante porque mistura tradições antigas com tecnologia moderna.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I would buy a special <span class="palavra-destaque">souvenir</span> — maybe a traditional fan or a small lucky cat statue.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu compraria uma lembrança especial — talvez um leque tradicional ou uma estátua de gato da sorte.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Lucas said: "If I could travel <span class="palavra-destaque">abroad</span>, I would go to Italy."</div>
+                            <div style="color: #666; font-size: 0.95em;">Meu amigo Lucas disse: "Se eu pudesse viajar para o exterior, eu iria para a Itália."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I believe that seeing those places in person is completely different from seeing them in photos.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu acredito que ver esses lugares pessoalmente é completamente diferente de ver em fotos.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The reason I think traveling is important is because you learn things that no book can teach you.</div>
+                            <div style="color: #666; font-size: 0.95em;">A razão pela qual acho que viajar é importante é porque você aprende coisas que nenhum livro pode ensinar.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My friend Sofia said: "If I could go anywhere, I would travel to space!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha amiga Sofia disse: "Se eu pudesse ir a qualquer lugar, eu viajaria para o espaço!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our teacher said: "You all have wonderful <span class="palavra-destaque">bucket lists</span>!"</div>
+                            <div style="color: #666; font-size: 0.95em;">Nossa professora disse: "Vocês todos têm listas de desejos maravilhosas!"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">She told us that every great <span class="palavra-destaque">journey</span> starts with a dream and a plan.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ela nos disse que toda grande jornada começa com um sonho e um plano.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I went home and wrote my own bucket list: <span class="palavra-destaque">explore</span> all seven <span class="palavra-destaque">continents</span> and see the <span class="palavra-destaque">wonders</span> of the world.</div>
+                            <div style="color: #666; font-size: 0.95em;">Fui pra casa e escrevi minha própria lista de desejos: explorar todos os sete continentes e ver as maravilhas do mundo.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Even though I cannot travel right now, I know that one day I will visit all these <span class="palavra-destaque">destinations</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Mesmo que eu não possa viajar agora, sei que um dia vou visitar todos esses destinos.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">For now, my <span class="palavra-destaque">journey</span> starts with books, maps, and imagination — and that is already a great adventure!</div>
+                            <div style="color: #666; font-size: 0.95em;">Por enquanto, minha jornada começa com livros, mapas e imaginação — e isso já é uma grande aventura!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Continent 🌍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Continente</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Egypt is on the African continent"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Grande massa de terra (África, Ásia...)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Explore 🧭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Explorar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I would love to explore the desert"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Visitar e conhecer lugares novos</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Ancient 🏛️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Antigo/milenar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I want to see the ancient pyramids"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muito, muito velho (milhares de anos)</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Journey 🛤️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Jornada/viagem</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Every great journey starts with a dream"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Uma viagem longa ou importante</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Destination ✈️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Destino</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My second destination would be Japan"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O lugar para onde você quer ir</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Heritage 🏺</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Herança cultural</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The Japanese heritage is fascinating"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Tradições e história de um povo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Bucket List 📝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lista de desejos</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You all have wonderful bucket lists!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Coisas que você quer fazer na vida</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Abroad 🌐</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> No exterior</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "If I could travel abroad"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Em outro país</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Landmark 🗽</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Marco/ponto turístico</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Famous landmarks like the Colosseum"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Lugar famoso de uma cidade</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Wonder ✨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Maravilha</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "See the wonders of the world"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Algo extraordinário e impressionante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: The Science Fair -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: The Science Fair</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-the-science-fair.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-the-science-fair.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Last month, our teacher announced that the school was going to have a <span class="palavra-destaque">science fair</span>, and every student needed to create a project.</p>
+                        <p>I was excited because I love science, but I was also nervous because a <span class="palavra-destaque">judge</span> would evaluate our work.</p>
+                        <p>First, I needed to choose a topic for my <span class="palavra-destaque">experiment</span>. I decided to study how sunlight affects plant growth.</p>
+                        <p>My <span class="palavra-destaque">hypothesis</span> was: "I believe that the plant with sunlight will grow faster because plants need light to produce energy."</p>
+                        <p>The reason I chose this topic is because I wanted to <span class="palavra-destaque">prove</span> something that I had learned in class.</p>
+                        <p>My teacher said: "A good <span class="palavra-destaque">experiment</span> always starts with a clear <span class="palavra-destaque">hypothesis</span> and a solid <span class="palavra-destaque">method</span>."</p>
+                        <p>So I planned my <span class="palavra-destaque">method</span> carefully. I took two identical small plants and put them in the same type of soil.</p>
+                        <p>I placed one plant near the window where it would get sunlight every day, and the other one inside a dark closet.</p>
+                        <p>Every day for two weeks, I would <span class="palavra-destaque">observe</span> both plants and <span class="palavra-destaque">measure</span> their height with a ruler.</p>
+                        <p>I used a notebook to <span class="palavra-destaque">record</span> all the <span class="palavra-destaque">data</span> — the height, the color of the leaves, and any changes I noticed.</p>
+                        <p>During my <span class="palavra-destaque">research</span>, I also read articles about photosynthesis to understand the science behind my experiment.</p>
+                        <p>After one week, the <span class="palavra-destaque">results</span> started to become clear. The plant with sunlight was already taller and greener.</p>
+                        <p>The plant in the dark closet was growing very slowly, and its leaves were turning yellow.</p>
+                        <p>I <span class="palavra-destaque">recorded</span> everything carefully because I knew the <span class="palavra-destaque">judge</span> would ask me about my <span class="palavra-destaque">data</span>.</p>
+                        <p>After two weeks, my <span class="palavra-destaque">experiment</span> was complete. The plant with sunlight had grown twelve centimeters, but the plant without light had grown only four centimeters.</p>
+                        <p>My <span class="palavra-destaque">conclusion</span> was: "The <span class="palavra-destaque">results</span> showed that sunlight is essential for healthy plant growth."</p>
+                        <p>I wrote: "My <span class="palavra-destaque">hypothesis</span> was correct because the plant with sunlight grew three times faster than the plant without light."</p>
+                        <p>Then I prepared my <span class="palavra-destaque">presentation</span> for the science fair. I made a poster with photos, graphs, and my <span class="palavra-destaque">data</span>.</p>
+                        <p>On the day of the fair, I set up my project in the school <span class="palavra-destaque">laboratory</span> and waited for the <span class="palavra-destaque">judges</span>.</p>
+                        <p>When the <span class="palavra-destaque">judge</span> came to my table, she asked: "Can you explain your <span class="palavra-destaque">method</span> to me?"</p>
+                        <p>I said: "I <span class="palavra-destaque">observed</span> two plants for two weeks. I <span class="palavra-destaque">measured</span> them every day and <span class="palavra-destaque">recorded</span> the <span class="palavra-destaque">data</span> in my notebook."</p>
+                        <p>She then asked: "What did you learn from this <span class="palavra-destaque">experiment</span>?"</p>
+                        <p>I answered: "I learned that plants need sunlight to grow properly, even though both plants received the same amount of water."</p>
+                        <p>The <span class="palavra-destaque">judge</span> smiled and said: "Excellent <span class="palavra-destaque">research</span>! Your <span class="palavra-destaque">conclusion</span> is well supported by your <span class="palavra-destaque">data</span>."</p>
+                        <p>At the end of the fair, they announced the <span class="palavra-destaque">awards</span>. I could not believe it when they called my name!</p>
+                        <p>I won second place! I was so happy. <span class="palavra-destaque">If I had</span> more time, <span class="palavra-destaque">I would have</span> tested more plants with different amounts of light.</p>
+                        <p>My teacher said: "I am proud of you. You followed the scientific <span class="palavra-destaque">method</span> perfectly."</p>
+                        <p>I learned that science is not just about getting the right answer — it is about asking good questions and <span class="palavra-destaque">proving</span> your ideas with <span class="palavra-destaque">evidence</span>.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>No mês passado, nossa professora anunciou que a escola ia ter uma <span class="palavra-destaque">feira de ciências</span>, e todo aluno precisava criar um projeto.</p>
+                        <p>Eu estava animado porque amo ciências, mas também estava nervoso porque um <span class="palavra-destaque">juiz</span> avaliaria nosso trabalho.</p>
+                        <p>Primeiro, eu precisava escolher um tema para meu <span class="palavra-destaque">experimento</span>. Decidi estudar como a luz do sol afeta o crescimento das plantas.</p>
+                        <p>Minha <span class="palavra-destaque">hipótese</span> era: "Acredito que a planta com luz do sol vai crescer mais rápido porque as plantas precisam de luz para produzir energia."</p>
+                        <p>A razão pela qual escolhi esse tema é porque eu queria <span class="palavra-destaque">provar</span> algo que tinha aprendido na aula.</p>
+                        <p>Minha professora disse: "Um bom <span class="palavra-destaque">experimento</span> sempre começa com uma <span class="palavra-destaque">hipótese</span> clara e um <span class="palavra-destaque">método</span> sólido."</p>
+                        <p>Então planejei meu <span class="palavra-destaque">método</span> com cuidado. Peguei duas plantinhas idênticas e coloquei no mesmo tipo de terra.</p>
+                        <p>Coloquei uma planta perto da janela onde ela receberia luz do sol todo dia, e a outra dentro de um armário escuro.</p>
+                        <p>Todo dia por duas semanas, eu <span class="palavra-destaque">observava</span> as duas plantas e <span class="palavra-destaque">media</span> a altura delas com uma régua.</p>
+                        <p>Usei um caderno para <span class="palavra-destaque">registrar</span> todos os <span class="palavra-destaque">dados</span> — a altura, a cor das folhas e qualquer mudança que eu notasse.</p>
+                        <p>Durante minha <span class="palavra-destaque">pesquisa</span>, também li artigos sobre fotossíntese para entender a ciência por trás do meu experimento.</p>
+                        <p>Depois de uma semana, os <span class="palavra-destaque">resultados</span> começaram a ficar claros. A planta com luz do sol já estava mais alta e mais verde.</p>
+                        <p>A planta no armário escuro estava crescendo muito devagar, e suas folhas estavam ficando amarelas.</p>
+                        <p>Eu <span class="palavra-destaque">registrava</span> tudo com cuidado porque sabia que o <span class="palavra-destaque">juiz</span> me perguntaria sobre meus <span class="palavra-destaque">dados</span>.</p>
+                        <p>Depois de duas semanas, meu <span class="palavra-destaque">experimento</span> estava completo. A planta com luz tinha crescido doze centímetros, mas a planta sem luz tinha crescido apenas quatro centímetros.</p>
+                        <p>Minha <span class="palavra-destaque">conclusão</span> foi: "Os <span class="palavra-destaque">resultados</span> mostraram que a luz do sol é essencial para o crescimento saudável das plantas."</p>
+                        <p>Escrevi: "Minha <span class="palavra-destaque">hipótese</span> estava correta porque a planta com luz do sol cresceu três vezes mais rápido que a planta sem luz."</p>
+                        <p>Então preparei minha <span class="palavra-destaque">apresentação</span> para a feira de ciências. Fiz um cartaz com fotos, gráficos e meus <span class="palavra-destaque">dados</span>.</p>
+                        <p>No dia da feira, montei meu projeto no <span class="palavra-destaque">laboratório</span> da escola e esperei pelos <span class="palavra-destaque">juízes</span>.</p>
+                        <p>Quando a <span class="palavra-destaque">juíza</span> veio até minha mesa, ela perguntou: "Você pode me explicar seu <span class="palavra-destaque">método</span>?"</p>
+                        <p>Eu disse: "Eu <span class="palavra-destaque">observei</span> duas plantas por duas semanas. Eu <span class="palavra-destaque">medi</span> elas todo dia e <span class="palavra-destaque">registrei</span> os <span class="palavra-destaque">dados</span> no meu caderno."</p>
+                        <p>Ela então perguntou: "O que você aprendeu com esse <span class="palavra-destaque">experimento</span>?"</p>
+                        <p>Respondi: "Aprendi que as plantas precisam de luz do sol para crescer bem, mesmo que ambas as plantas tenham recebido a mesma quantidade de água."</p>
+                        <p>A <span class="palavra-destaque">juíza</span> sorriu e disse: "<span class="palavra-destaque">Pesquisa</span> excelente! Sua <span class="palavra-destaque">conclusão</span> é bem fundamentada pelos seus <span class="palavra-destaque">dados</span>."</p>
+                        <p>No final da feira, anunciaram os <span class="palavra-destaque">prêmios</span>. Eu não acreditei quando chamaram meu nome!</p>
+                        <p>Ganhei segundo lugar! Fiquei tão feliz. <span class="palavra-destaque">Se eu tivesse tido</span> mais tempo, <span class="palavra-destaque">eu teria</span> testado mais plantas com diferentes quantidades de luz.</p>
+                        <p>Minha professora disse: "Estou orgulhosa de você. Você seguiu o <span class="palavra-destaque">método</span> científico perfeitamente."</p>
+                        <p>Aprendi que ciência não é só sobre acertar a resposta — é sobre fazer boas perguntas e <span class="palavra-destaque">provar</span> suas ideias com <span class="palavra-destaque">evidências</span>.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Last month, our teacher announced that the school was going to have a <span class="palavra-destaque">science fair</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No mês passado, nossa professora anunciou que a escola ia ter uma feira de ciências.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I was excited because I love science, but I was also nervous because a <span class="palavra-destaque">judge</span> would evaluate our work.</div>
+                            <div style="color: #666; font-size: 0.95em;">Eu estava animado porque amo ciências, mas também nervoso porque um juiz avaliaria nosso trabalho.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I decided to study how sunlight affects plant growth. My <span class="palavra-destaque">hypothesis</span> was: "I believe that the plant with sunlight will grow faster."</div>
+                            <div style="color: #666; font-size: 0.95em;">Decidi estudar como a luz do sol afeta o crescimento das plantas. Minha hipótese era: "Acredito que a planta com luz vai crescer mais rápido."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The reason I chose this topic is because I wanted to <span class="palavra-destaque">prove</span> something I had learned in class.</div>
+                            <div style="color: #666; font-size: 0.95em;">A razão pela qual escolhi esse tema é porque eu queria provar algo que tinha aprendido na aula.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My teacher said: "A good <span class="palavra-destaque">experiment</span> always starts with a clear <span class="palavra-destaque">hypothesis</span> and a solid <span class="palavra-destaque">method</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha professora disse: "Um bom experimento sempre começa com uma hipótese clara e um método sólido."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I took two identical small plants and put them in the same type of soil.</div>
+                            <div style="color: #666; font-size: 0.95em;">Peguei duas plantinhas idênticas e coloquei no mesmo tipo de terra.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I placed one plant near the window and the other one inside a dark closet.</div>
+                            <div style="color: #666; font-size: 0.95em;">Coloquei uma planta perto da janela e a outra dentro de um armário escuro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Every day for two weeks, I would <span class="palavra-destaque">observe</span> both plants and <span class="palavra-destaque">measure</span> their height with a ruler.</div>
+                            <div style="color: #666; font-size: 0.95em;">Todo dia por duas semanas, eu observava as duas plantas e media a altura com uma régua.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I used a notebook to <span class="palavra-destaque">record</span> all the <span class="palavra-destaque">data</span> — the height, the color of the leaves, and any changes.</div>
+                            <div style="color: #666; font-size: 0.95em;">Usei um caderno para registrar todos os dados — a altura, a cor das folhas e qualquer mudança.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">During my <span class="palavra-destaque">research</span>, I also read articles about photosynthesis.</div>
+                            <div style="color: #666; font-size: 0.95em;">Durante minha pesquisa, também li artigos sobre fotossíntese.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After one week, the <span class="palavra-destaque">results</span> started to become clear. The plant with sunlight was already taller and greener.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de uma semana, os resultados começaram a ficar claros. A planta com luz já estava mais alta e mais verde.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The plant in the dark closet was growing very slowly, and its leaves were turning yellow.</div>
+                            <div style="color: #666; font-size: 0.95em;">A planta no armário escuro estava crescendo muito devagar, e suas folhas estavam ficando amarelas.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">After two weeks, the plant with sunlight had grown twelve centimeters, but the plant without light had grown only four.</div>
+                            <div style="color: #666; font-size: 0.95em;">Depois de duas semanas, a planta com luz tinha crescido doze centímetros, mas a sem luz tinha crescido só quatro.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">My <span class="palavra-destaque">conclusion</span> was: "The <span class="palavra-destaque">results</span> showed that sunlight is essential for healthy plant growth."</div>
+                            <div style="color: #666; font-size: 0.95em;">Minha conclusão foi: "Os resultados mostraram que a luz do sol é essencial para o crescimento saudável das plantas."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Then I prepared my <span class="palavra-destaque">presentation</span> for the science fair. I made a poster with photos, graphs, and my <span class="palavra-destaque">data</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Então preparei minha apresentação para a feira de ciências. Fiz um cartaz com fotos, gráficos e meus dados.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">On the day of the fair, I set up my project in the school <span class="palavra-destaque">laboratory</span> and waited for the <span class="palavra-destaque">judges</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">No dia da feira, montei meu projeto no laboratório da escola e esperei pelos juízes.</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">The <span class="palavra-destaque">judge</span> asked: "Can you explain your <span class="palavra-destaque">method</span> to me?"</div>
+                            <div style="color: #666; font-size: 0.95em;">A juíza perguntou: "Você pode me explicar seu método?"</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I answered: "I learned that plants need sunlight to grow properly, even though both plants received the same amount of water."</div>
+                            <div style="color: #666; font-size: 0.95em;">Respondi: "Aprendi que as plantas precisam de luz do sol para crescer bem, mesmo que ambas tenham recebido a mesma quantidade de água."</div>
+                        </div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I won second place! <span class="palavra-destaque">If I had</span> more time, <span class="palavra-destaque">I would have</span> tested more plants with different amounts of light.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ganhei segundo lugar! Se eu tivesse tido mais tempo, eu teria testado mais plantas com diferentes quantidades de luz.</div>
+                        </div>
+                        <div>
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I learned that science is not just about getting the right answer — it is about asking good questions and <span class="palavra-destaque">proving</span> your ideas with <span class="palavra-destaque">evidence</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Aprendi que ciência não é só sobre acertar a resposta — é sobre fazer boas perguntas e provar suas ideias com evidências.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Experiment 🧪</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Experimento</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "A good experiment starts with a hypothesis"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Teste científico para provar algo</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Hypothesis 💡</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Hipótese</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "My hypothesis was correct"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ideia que você quer testar e provar</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Research 🔍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pesquisa</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Excellent research!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Estudar e buscar informações</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Conclusion 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Conclusão</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Your conclusion is well supported"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O que você aprende no final</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Observe 👁️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Observar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I would observe both plants"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Olhar com atenção para notar detalhes</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Measure 📏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Medir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I measured their height with a ruler"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Usar régua, balança etc.</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Data 📊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Dados</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I recorded all the data"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Informações coletadas no experimento</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Method 📝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Método</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Can you explain your method?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> O passo a passo do experimento</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Laboratory 🔬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Laboratório</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I set up my project in the laboratory"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sala especial para experimentos</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Prove ✅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Provar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Proving your ideas with evidence"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mostrar que algo é verdade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
