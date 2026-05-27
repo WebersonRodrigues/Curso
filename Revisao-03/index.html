@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Revisão 03 - Bloco 3 (Semanas 9 a 12) - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Revisão 03 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Revisão 03</span>
+        </div>
+
+        <div class="content">
+            <!-- Header da Revisão -->
+            <div style="text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #2563eb;">
+                <h1 style="color: #333; font-size: 2em; font-weight: 700; margin-bottom: 10px;">📝 Revisão — Bloco 3 (Semanas 9 a 12)</h1>
+                <p style="color: #666; font-size: 1.1em;">8 textos estudados · Nível A2 · 4 semanas</p>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SEÇÃO: Vídeo Resumo do Bloco 3                        -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 40px;">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">🎬 Vídeo Resumo do Bloco 3</h2>
+                <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center;">
+                    <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                    <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste bloco será adicionado em breve.</p>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SEÇÃO: Textos Estudados                                -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <h2 style="color: #333; margin-bottom: 25px; font-size: 1.5em;">📖 Textos Estudados</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                <!-- Aula 09 -->
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #fff;">Aula 09 — Semana 9</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #fff;">📖 <a href="../Aula-09/index.html" style="color: #fff; text-decoration: underline;">The Alphabet</a></p>
+                    <p style="opacity: 0.95; color: #fff;">📖 <a href="../Aula-09/index.html" style="color: #fff; text-decoration: underline;">Getting Dressed</a></p>
+                </div>
+                <!-- Aula 10 -->
+                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #fff;">Aula 10 — Semana 10</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #fff;">📖 <a href="../Aula-10/index.html" style="color: #fff; text-decoration: underline;">My Classroom</a></p>
+                    <p style="opacity: 0.95; color: #fff;">📖 <a href="../Aula-10/index.html" style="color: #fff; text-decoration: underline;">Playing Outside</a></p>
+                </div>
+                <!-- Aula 11 -->
+                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #1a1a1a;">Aula 11 — Semana 11</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #1a1a1a;">📖 <a href="../Aula-11/index.html" style="color: #1a1a1a; text-decoration: underline;">My Birthday Party</a></p>
+                    <p style="opacity: 0.95; color: #1a1a1a;">📖 <a href="../Aula-11/index.html" style="color: #1a1a1a; text-decoration: underline;">A Day at the Beach</a></p>
+                </div>
+                <!-- Aula 12 -->
+                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #fff;">Aula 12 — Semana 12</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #fff;">📖 <a href="../Aula-12/index.html" style="color: #fff; text-decoration: underline;">Helping at Home</a></p>
+                    <p style="opacity: 0.95; color: #fff;">📖 <a href="../Aula-12/index.html" style="color: #fff; text-decoration: underline;">My New Pet</a></p>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SEÇÃO: Vocabulário Consolidado                         -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <h2 style="color: #333; margin-bottom: 25px; font-size: 1.5em;">🧠 Vocabulário Consolidado do Bloco 3</h2>
+
+            <!-- ─── Card 1: Alfabeto e Soletração (Aula 09) ─── -->
+            <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">🔤 Card 1 — Alfabeto e Soletração (Aula 09)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave do texto "The Alphabet"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">spell</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">soletrar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">letter</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">letra</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">pronounce</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">pronunciar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">vowel</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">vogal</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">consonant</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">consoante</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">capital letter</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">letra maiúscula</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; color: #fff;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">repeat</td><td style="padding: 10px 16px; color: #fff;">repetir</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 2: Roupas e Vestimenta (Aula 09) ─── -->
+            <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">👕 Card 2 — Roupas e Vestimenta (Aula 09)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave do texto "Getting Dressed"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">shirt</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">camisa</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">pants</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">calça</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">shoes</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">sapatos</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">jacket</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">jaqueta</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">socks</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">meias</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">dress</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">vestido</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; color: #fff;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">wear</td><td style="padding: 10px 16px; color: #fff;">vestir / usar</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 3: Sala de Aula (Aula 10) ─── -->
+            <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #1a1a1a;">🏫 Card 3 — Sala de Aula (Aula 10)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #1a1a1a;">Palavras-chave do texto "My Classroom"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.15);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">desk</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">carteira / mesa</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">board</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">quadro</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">notebook</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">caderno</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">pencil</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">lápis</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">eraser</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">borracha</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">teacher</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">professor(a)</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; color: #1a1a1a;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #1a1a1a;">classmate</td><td style="padding: 10px 16px; color: #1a1a1a;">colega de classe</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 4: Brincadeiras ao Ar Livre (Aula 10) ─── -->
+            <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">🌳 Card 4 — Brincadeiras ao Ar Livre (Aula 10)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave do texto "Playing Outside"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">playground</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">parquinho</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">swing</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">balanço</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">slide</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">escorregador</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">run</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">correr</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">climb</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">escalar / subir</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">hide and seek</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">esconde-esconde</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; color: #fff;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">catch</td><td style="padding: 10px 16px; color: #fff;">pegar</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 5: Festa de Aniversário (Aula 11) ─── -->
+            <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">🎂 Card 5 — Festa de Aniversário (Aula 11)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave do texto "My Birthday Party"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">birthday</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">aniversário</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">cake</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">bolo</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">candle</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">vela</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">gift</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">presente</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">balloon</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">balão</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">invite</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">convidar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; color: #fff;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">celebrate</td><td style="padding: 10px 16px; color: #fff;">celebrar</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 6: Praia (Aula 11) ─── -->
+            <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">🏖️ Card 6 — Praia (Aula 11)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave do texto "A Day at the Beach"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">sand</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">areia</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">wave</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">onda</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">sunscreen</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">protetor solar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">towel</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">toalha</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">swim</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">nadar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">shell</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">concha</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; color: #fff;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">sandcastle</td><td style="padding: 10px 16px; color: #fff;">castelo de areia</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 7: Tarefas de Casa (Aula 12) ─── -->
+            <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #1a1a1a;">🏠 Card 7 — Tarefas de Casa (Aula 12)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #1a1a1a;">Palavras-chave do texto "Helping at Home"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.15);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">chores</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">tarefas domésticas</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">sweep</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">varrer</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">wash the dishes</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">lavar a louça</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">tidy up</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">arrumar</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">vacuum</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">aspirar</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">laundry</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">roupa para lavar</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; color: #1a1a1a;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #1a1a1a;">take out the trash</td><td style="padding: 10px 16px; color: #1a1a1a;">levar o lixo para fora</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 8: Animais de Estimação (Aula 12) ─── -->
+            <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">🐾 Card 8 — Animais de Estimação (Aula 12)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave do texto "My New Pet"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">pet</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">animal de estimação</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">feed</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">alimentar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">walk</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">passear</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">vet</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">veterinário</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">collar</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">coleira</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">leash</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">guia</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; color: #fff;">7</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">take care of</td><td style="padding: 10px 16px; color: #fff;">cuidar de</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SEÇÃO: Estruturas Gramaticais                          -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <h2 style="color: #333; margin-bottom: 25px; font-size: 1.5em;">📐 Estruturas Gramaticais Praticadas</h2>
+            <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; margin-bottom: 40px; line-height: 1.8;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px;">✅ <strong>Present Continuous</strong> — "I am wearing a blue shirt." / "She is playing outside."</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>There is / There are</strong> — "There are many desks in my classroom."</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Can / Can't</strong> — "I can spell my name." / "She can't swim yet."</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Imperatives</strong> — "Put on your jacket!" / "Don't forget your sunscreen!"</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Past Simple (regular)</strong> — "We played all day." / "I helped my mom."</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Possessives</strong> — "This is my pet." / "Her name is Luna."</li>
+                    <li>✅ <strong>Prepositions of place</strong> — "The book is on the desk." / "We went to the beach."</li>
+                </ul>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SEÇÃO: Dicas de Revisão                                -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3); margin-bottom: 40px; line-height: 1.8;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">💡 Dicas para Revisar o Bloco 3</h3>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Ouça os áudios várias vezes</strong> — quanto mais ouvir, mais natural fica</p>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Leia os textos em voz alta</strong> — ler em voz alta ajuda a internalizar as frases</p>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Faça shadowing dos textos</strong> — repita junto com o áudio, imitando o ritmo e a pronúncia</p>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Revise no Anki todo dia</strong> — a repetição espaçada fixa as frases na memória</p>
+                <p style="color: rgba(255,255,255,0.95);">✅ <strong>Tente descrever seu dia usando as palavras novas</strong> — pratique falar sobre sua rotina, roupas e escola em inglês</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Inglês com Tio Binho</strong></p>
+        <p>Do começo ao fim, juntos a cada passo! 🚀</p>
+        <div class="footer-credit">
+            © 2026 Tio Binho ❤️
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn');
+            if (!btn) return;
+            btn.style.transition = 'transform 0.1s ease';
+            btn.style.transform = 'scale(0.93)';
+            setTimeout(() => btn.style.transform = '', 150);
+        });
+
+        let deferredPrompt = null;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function checkIfMobileAndShowBanner() {
+            if (Platform.isStandalone) return;
+            if (!Platform.isMobile) return;
+            if (Platform.isIOS) {
+                setTimeout(() => showIOSInstallInstructions(), 2000);
+                return;
+            }
+            if (!installPromptShown) {
+                setTimeout(() => showInstallPrompt(), 2000);
+            }
+        }
+
+        function showInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner && !installPromptShown) {
+                banner.style.display = 'flex';
+                installPromptShown = true;
+            }
+        }
+
+        function showIOSInstallInstructions() {
+            const banner = document.getElementById('installBanner');
+            if (!banner || installPromptShown) return;
+            banner.querySelector('h3').textContent = '📱 Instale nosso app!';
+            banner.querySelector('p').innerHTML = 
+                'Toque em <strong>Compartilhar</strong> (ícone ⬆️) → <strong>Adicionar à Tela Inicial</strong>';
+            const installButtons = banner.querySelector('.install-buttons');
+            installButtons.innerHTML = '<button class="install-btn cancel" onclick="closeInstallPrompt()">OK, entendi</button>';
+            banner.style.display = 'flex';
+            installPromptShown = true;
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    closeInstallPrompt();
+                }).catch(() => closeInstallPrompt());
+            } else {
+                alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"');
+            }
+        }
+
+        function closeInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 27 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 27 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 27</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 27 - Semana 27</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 27</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a discordar educadamente, negociar em grupo, e fazer pedidos com diferentes níveis de formalidade.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B2 — Você já consegue se expressar com clareza e agora vai aprender a discordar educadamente, negociar e fazer pedidos formais!</strong></p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ I See Your Point, But...</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Trabalho em grupo — discordando educadamente, negociando e chegando a um acordo</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> group project, due, topic, compromise, combine, research, materials, satellite, section, poster, insist, suggest, include, completely, awesome</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Would You Mind?</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Situações do dia a dia — fazendo pedidos educados com diferentes níveis de formalidade</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> polite, crashed, essay, borrow, return, directions, bother, relieved, grocery bags, elderly, carry, wonderful, raised, feelings, both ways</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: I See Your Point, But... -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: I See Your Point, But...</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-i-see-your-point-but.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-i-see-your-point-but.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Our teacher just told us we have a group project due next Friday. I'm working with my friends Sofia, Pedro, and Mateus. The problem? We all have different ideas.</p>
+                        <p>"Okay, so we need to pick a topic," I say. "<span class="palavra-destaque">How about we</span> do something about animals?"</p>
+                        <p>Pedro shakes his head. "<span class="palavra-destaque">I see your point, but</span> I think animals are too basic. <span class="palavra-destaque">What if we tried</span> something about space?"</p>
+                        <p>"Space is cool, but it's really hard to find materials," Sofia says. "<span class="palavra-destaque">I'd prefer to</span> do something about the ocean. It's interesting AND easy to research."</p>
+                        <p>"<span class="palavra-destaque">I respect your opinion, however,</span> I still think space is more exciting," Pedro insists.</p>
+                        <p>Mateus has been quiet. "Guys, <span class="palavra-destaque">I partly agree</span> with everyone. All the ideas are good. But <span class="palavra-destaque">could we compromise?</span>"</p>
+                        <p>"What do you mean?" I ask.</p>
+                        <p>"Well, <span class="palavra-destaque">what if we tried</span> combining two ideas? We could do our project about animals that live in the ocean!"</p>
+                        <p>"<span class="palavra-destaque">That's a good point!</span>" Sofia says, smiling. "Ocean animals — like dolphins, sharks, and sea turtles!"</p>
+                        <p>Pedro thinks for a moment. "Hmm, <span class="palavra-destaque">I understand what you're saying, but</span> I really wanted to include something about space."</p>
+                        <p>"<span class="palavra-destaque">How about we</span> add a small section about how scientists use satellites to study ocean animals?" I suggest.</p>
+                        <p>Pedro's eyes light up. "Oh! <span class="palavra-destaque">That works for me!</span> We get ocean animals AND space technology!"</p>
+                        <p>"<span class="palavra-destaque">Let's find a middle ground,</span>" Mateus says. "Sofia does the ocean part, Pedro does the satellite part, I do the animal facts, and Lucas puts it all together."</p>
+                        <p>"<span class="palavra-destaque">Would you mind if</span> I also make the poster?" I ask. "I love drawing."</p>
+                        <p>"<span class="palavra-destaque">Not at all!</span> Go ahead," everyone says.</p>
+                        <p>Sofia adds: "<span class="palavra-destaque">I'd appreciate it if</span> we could meet after school tomorrow to start working."</p>
+                        <p>"<span class="palavra-destaque">Fair enough.</span> Tomorrow works for me," Pedro agrees.</p>
+                        <p>"<span class="palavra-destaque">I'm okay with that,</span>" Mateus says.</p>
+                        <p>I smile. "See? We all had different ideas, but we found a way to include everyone's. <span class="palavra-destaque">Let's agree to disagree</span> on small things and focus on making this awesome!"</p>
+                        <p>"Deal!" everyone says together.</p>
+                        <p>This is going to be the best project ever. And the best part? Nobody had to give up their idea completely. We just had to listen to each other.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Nossa professora acabou de nos dizer que temos um trabalho em grupo pra entregar na sexta que vem. Estou trabalhando com meus amigos Sofia, Pedro e Mateus. O problema? Todos nós temos ideias diferentes.</p>
+                        <p>"Tá, então precisamos escolher um tema," eu digo. "<span class="palavra-destaque">Que tal a gente</span> fazer algo sobre animais?"</p>
+                        <p>Pedro balança a cabeça. "<span class="palavra-destaque">Entendo seu ponto, mas</span> acho que animais é muito básico. <span class="palavra-destaque">E se a gente tentasse</span> algo sobre o espaço?"</p>
+                        <p>"Espaço é legal, mas é muito difícil achar materiais," Sofia diz. "<span class="palavra-destaque">Eu preferiria</span> fazer algo sobre o oceano. É interessante E fácil de pesquisar."</p>
+                        <p>"<span class="palavra-destaque">Respeito sua opinião, porém,</span> ainda acho que espaço é mais empolgante," Pedro insiste.</p>
+                        <p>Mateus ficou quieto. "Gente, <span class="palavra-destaque">concordo em parte</span> com todo mundo. Todas as ideias são boas. Mas <span class="palavra-destaque">a gente poderia chegar num acordo?</span>"</p>
+                        <p>"Como assim?" eu pergunto.</p>
+                        <p>"Bom, <span class="palavra-destaque">e se a gente tentasse</span> combinar duas ideias? A gente podia fazer o trabalho sobre animais que vivem no oceano!"</p>
+                        <p>"<span class="palavra-destaque">Boa ideia!</span>" Sofia diz, sorrindo. "Animais marinhos — tipo golfinhos, tubarões e tartarugas marinhas!"</p>
+                        <p>Pedro pensa por um momento. "Hmm, <span class="palavra-destaque">entendo o que você tá dizendo, mas</span> eu queria muito incluir algo sobre espaço."</p>
+                        <p>"<span class="palavra-destaque">Que tal a gente</span> adicionar uma pequena seção sobre como cientistas usam satélites pra estudar animais marinhos?" eu sugiro.</p>
+                        <p>Os olhos do Pedro brilham. "Ah! <span class="palavra-destaque">Pra mim funciona!</span> A gente tem animais marinhos E tecnologia espacial!"</p>
+                        <p>"<span class="palavra-destaque">Vamos achar um meio-termo,</span>" Mateus diz. "Sofia faz a parte do oceano, Pedro faz a parte dos satélites, eu faço os fatos sobre animais, e Lucas junta tudo."</p>
+                        <p>"<span class="palavra-destaque">Vocês se importam se</span> eu também fizer o cartaz?" eu pergunto. "Adoro desenhar."</p>
+                        <p>"<span class="palavra-destaque">De jeito nenhum!</span> Pode fazer," todo mundo diz.</p>
+                        <p>Sofia acrescenta: "<span class="palavra-destaque">Eu agradeceria se</span> a gente pudesse se encontrar depois da aula amanhã pra começar."</p>
+                        <p>"<span class="palavra-destaque">Justo.</span> Amanhã funciona pra mim," Pedro concorda.</p>
+                        <p>"<span class="palavra-destaque">Tô de boa com isso,</span>" Mateus diz.</p>
+                        <p>Eu sorrio. "Viram? Todos nós tínhamos ideias diferentes, mas achamos um jeito de incluir a de todo mundo. <span class="palavra-destaque">Vamos concordar em discordar</span> nas coisas pequenas e focar em fazer isso ficar incrível!"</p>
+                        <p>"Fechado!" todo mundo diz junto.</p>
+                        <p>Esse vai ser o melhor trabalho de todos. E a melhor parte? Ninguém teve que desistir da sua ideia completamente. A gente só precisou ouvir uns aos outros.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">How about we</span> do something about animals?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Que tal a gente fazer algo sobre animais?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I see your point, but</span> I think animals are too basic."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Entendo seu ponto, mas acho que animais é muito básico."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">What if we tried</span> something about space?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"E se a gente tentasse algo sobre o espaço?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'd prefer to</span> do something about the ocean."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu preferiria fazer algo sobre o oceano."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Could we compromise?</span>"</div>
+                            <div style="color: #666; font-size: 0.95em;">"A gente poderia chegar num acordo?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">That works for me!</span> We get ocean animals AND space technology!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Pra mim funciona! A gente tem animais marinhos E tecnologia espacial!"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Let's find a middle ground,</span>" Mateus says.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Vamos achar um meio-termo," Mateus diz.</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'd appreciate it if</span> we could meet after school tomorrow."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu agradeceria se a gente pudesse se encontrar depois da aula amanhã."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Fair enough.</span> Tomorrow works for me."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Justo. Amanhã funciona pra mim."</div>
+                        </div>
+
+                        <div style="">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Let's agree to disagree</span> on small things!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Vamos concordar em discordar nas coisas pequenas!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. I see your point 👁️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Entendo seu ponto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I see your point, but I think animals are too basic"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Discordar educadamente</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Compromise 🤝</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Chegar num acordo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Could we compromise?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ceder dos dois lados</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. What if we tried 💡</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> E se a gente tentasse</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "What if we tried combining two ideas?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sugestão educada e hipotética</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. That works for me ✅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pra mim funciona</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "That works for me!"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Aceitar uma proposta</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Middle ground ⚖️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Meio-termo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Let's find a middle ground"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Solução que agrada todos</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Fair enough 👍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Justo</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Fair enough. Tomorrow works for me"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Aceitar o argumento do outro</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. I'd prefer to 🎯</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Eu preferiria</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'd prefer to do something about the ocean"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Forma educada de preferência</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Agree to disagree 🕊️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Concordar em discordar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Let's agree to disagree on small things"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Aceitar opiniões diferentes</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Research 🔍</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pesquisar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's easy to research"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Buscar informações</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Suggest 💬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Sugerir</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I suggest we add a section"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dar uma ideia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Would You Mind? -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Would You Mind?</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-would-you-mind.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-would-you-mind.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Today was a day full of situations where I had to be extra polite. Let me tell you about it.</p>
+                        <p>It started at school. I didn't finish my homework because my computer crashed last night. I walked up to my teacher and said: "<span class="palavra-destaque">I was wondering if</span> you could give me one more day to finish my essay. My computer stopped working."</p>
+                        <p>She smiled. "<span class="palavra-destaque">Of course!</span> Just bring it tomorrow, okay?"</p>
+                        <p>"Thank you so much! <span class="palavra-destaque">I really appreciate it.</span>"</p>
+                        <p>At lunch, I realized I forgot my water bottle at home. I turned to the girl sitting next to me and asked: "<span class="palavra-destaque">Would you mind</span> if I borrowed your extra water bottle? I forgot mine today."</p>
+                        <p>"<span class="palavra-destaque">Not at all!</span> Here you go," she said, handing it to me.</p>
+                        <p>"Thanks! <span class="palavra-destaque">I'd be happy to</span> return it after lunch."</p>
+                        <p>After school, I was walking home when I got lost. I saw a woman at the bus stop and asked: "<span class="palavra-destaque">Excuse me, could I possibly</span> ask you for directions? <span class="palavra-destaque">Is it alright if</span> I bother you for a second?"</p>
+                        <p>"<span class="palavra-destaque">Go ahead!</span> Where are you trying to go?"</p>
+                        <p>"I need to get to Maple Street. <span class="palavra-destaque">Do you mind if</span> I look at your phone map?"</p>
+                        <p>"<span class="palavra-destaque">Feel free!</span> Here, let me show you. It's just two blocks that way."</p>
+                        <p>When I got to my street, I saw my elderly neighbor Mrs. Santos trying to carry heavy grocery bags. I ran over and said: "<span class="palavra-destaque">Would you mind if</span> I helped you with those bags?"</p>
+                        <p>She looked relieved. "Oh! <span class="palavra-destaque">By all means!</span> That would be wonderful, dear."</p>
+                        <p>"<span class="palavra-destaque">No problem at all!</span> I'm happy to help."</p>
+                        <p>I carried the bags to her door. She said: "<span class="palavra-destaque">Would it be okay if</span> I gave you some cookies as a thank you?"</p>
+                        <p>"<span class="palavra-destaque">Sure thing!</span> I love cookies!"</p>
+                        <p>She laughed. "You're such a polite young man. Your parents raised you well!"</p>
+                        <p>At home, my mom was cooking dinner. I asked: "<span class="palavra-destaque">Is it alright if</span> I use the computer now? I need to finish my essay."</p>
+                        <p>"<span class="palavra-destaque">Go ahead,</span> honey. Dinner will be ready in an hour."</p>
+                        <p>Being polite isn't hard — it just means thinking about other people's feelings. And you know what? People are always nicer to you when you're polite to them. It works both ways!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Hoje foi um dia cheio de situações onde eu tive que ser extra educado. Deixa eu te contar.</p>
+                        <p>Começou na escola. Eu não terminei minha lição porque meu computador travou ontem à noite. Fui até minha professora e disse: "<span class="palavra-destaque">Eu queria saber se</span> você poderia me dar mais um dia pra terminar minha redação. Meu computador parou de funcionar."</p>
+                        <p>Ela sorriu. "<span class="palavra-destaque">Claro!</span> Só traga amanhã, tá?"</p>
+                        <p>"Muito obrigado! <span class="palavra-destaque">Eu agradeço muito.</span>"</p>
+                        <p>Na hora do almoço, percebi que esqueci minha garrafa d'água em casa. Virei pra menina sentada do meu lado e perguntei: "<span class="palavra-destaque">Você se importaria</span> se eu pegasse emprestada sua garrafa d'água extra? Esqueci a minha hoje."</p>
+                        <p>"<span class="palavra-destaque">De jeito nenhum!</span> Aqui está," ela disse, me entregando.</p>
+                        <p>"Valeu! <span class="palavra-destaque">Fico feliz em</span> devolver depois do almoço."</p>
+                        <p>Depois da aula, eu estava andando pra casa quando me perdi. Vi uma mulher no ponto de ônibus e perguntei: "<span class="palavra-destaque">Com licença, será que eu poderia</span> te pedir uma informação? <span class="palavra-destaque">Tudo bem se</span> eu te incomodar por um segundo?"</p>
+                        <p>"<span class="palavra-destaque">Pode falar!</span> Pra onde você tá tentando ir?"</p>
+                        <p>"Preciso chegar na Rua Maple. <span class="palavra-destaque">Você se importa se</span> eu olhar o mapa do seu celular?"</p>
+                        <p>"<span class="palavra-destaque">Fique à vontade!</span> Aqui, deixa eu te mostrar. São só dois quarteirões naquela direção."</p>
+                        <p>Quando cheguei na minha rua, vi minha vizinha idosa, Dona Santos, tentando carregar sacolas pesadas de compras. Corri até ela e disse: "<span class="palavra-destaque">A senhora se importaria se</span> eu ajudasse com essas sacolas?"</p>
+                        <p>Ela pareceu aliviada. "Ah! <span class="palavra-destaque">Com certeza!</span> Isso seria maravilhoso, querido."</p>
+                        <p>"<span class="palavra-destaque">Sem problema nenhum!</span> Fico feliz em ajudar."</p>
+                        <p>Carreguei as sacolas até a porta dela. Ela disse: "<span class="palavra-destaque">Tudo bem se</span> eu te der uns biscoitos como agradecimento?"</p>
+                        <p>"<span class="palavra-destaque">Com certeza!</span> Adoro biscoitos!"</p>
+                        <p>Ela riu. "Você é um rapazinho tão educado. Seus pais te criaram bem!"</p>
+                        <p>Em casa, minha mãe estava fazendo o jantar. Perguntei: "<span class="palavra-destaque">Tudo bem se</span> eu usar o computador agora? Preciso terminar minha redação."</p>
+                        <p>"<span class="palavra-destaque">Pode usar,</span> querido. O jantar fica pronto em uma hora."</p>
+                        <p>Ser educado não é difícil — só significa pensar nos sentimentos das outras pessoas. E sabe o quê? As pessoas sempre são mais legais com você quando você é educado com elas. Funciona nos dois sentidos!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I was wondering if</span> you could give me one more day to finish my essay."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu queria saber se você poderia me dar mais um dia pra terminar minha redação."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Would you mind</span> if I borrowed your extra water bottle?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Você se importaria se eu pegasse emprestada sua garrafa d'água extra?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Not at all!</span> Here you go."</div>
+                            <div style="color: #666; font-size: 0.95em;">"De jeito nenhum! Aqui está."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'd be happy to</span> return it after lunch."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Fico feliz em devolver depois do almoço."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Excuse me, could I possibly</span> ask you for directions?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Com licença, será que eu poderia te pedir uma informação?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Do you mind if</span> I look at your phone map?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Você se importa se eu olhar o mapa do seu celular?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Would you mind if</span> I helped you with those bags?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"A senhora se importaria se eu ajudasse com essas sacolas?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">By all means!</span> That would be wonderful, dear."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Com certeza! Isso seria maravilhoso, querido."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Would it be okay if</span> I gave you some cookies?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Tudo bem se eu te der uns biscoitos?"</div>
+                        </div>
+
+                        <div style="">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Being polite isn't hard — it just means thinking about other people's feelings.</div>
+                            <div style="color: #666; font-size: 0.95em;">Ser educado não é difícil — só significa pensar nos sentimentos das outras pessoas.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Would you mind 🙏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Você se importaria</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Would you mind if I helped you?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pedido muito educado</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. I was wondering if 💭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Eu queria saber se</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I was wondering if you could help me"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Super educado — usa passado</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Go ahead 👉</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pode falar / Pode fazer</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Go ahead! Where are you trying to go?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Resposta casual e amigável</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Not at all 😊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> De jeito nenhum (= pode fazer)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Not at all! Here you go"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Resposta positiva a 'do you mind'</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. I'd be happy to 😄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Fico feliz em</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'd be happy to return it after lunch"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Oferecer ajuda educadamente</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. By all means ✨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Com certeza / Claro que sim</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "By all means! That would be wonderful"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Resposta muito positiva</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Polite 🎩</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Educado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You're such a polite young man"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Ter boas maneiras</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Borrow 🔄</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pegar emprestado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Could I borrow your water bottle?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Usar e devolver</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Relieved 😌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Aliviada</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She looked relieved"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sentir alívio</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Appreciate 🙏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Agradecer / Valorizar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I really appreciate it"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mais forte que 'thank you'</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

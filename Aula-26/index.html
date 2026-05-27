@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 26 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 26 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 26</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 26 - Semana 26</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 26</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a expressar diferentes níveis de certeza e dúvida, e falar sobre planos futuros com diferentes graus de compromisso.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B2 — Você já domina conversas do dia a dia e agora vai aprender a expressar nuances de certeza/incerteza e a falar sobre o futuro de forma natural e variada!</strong></p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ I'm Pretty Sure</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Show de talentos da escola — expressando certeza, dúvida e possibilidade sobre eventos futuros</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> talent show, perform, cafeteria, principal, rehearse, auditorium, backstage, comedy, magic tricks, card tricks, surprise guest, anniversary, guess, disagree, excited</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ What Are You Going to Do?</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Planos de férias de verão — diferentes formas de falar sobre o futuro com vários níveis de certeza</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> summer vacation, schoolyard, ocean, farm, schedule, cousin, museum, skateboard, camping, tent, bugs, swimming team, guitar, bell, wave goodbye</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: I'm Pretty Sure -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: I'm Pretty Sure</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-im-pretty-sure.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-im-pretty-sure.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Next week is the school talent show, and everyone is talking about it. My friends and I are sitting in the cafeteria, guessing what's going to happen.</p>
+                        <p>"Are you going to perform, Lucas?" my friend Sofia asks me.</p>
+                        <p>"<span class="palavra-destaque">I'm definitely</span> going to sing. I've been practicing every day. <span class="palavra-destaque">I'm certain</span> I'm ready!"</p>
+                        <p>Sofia smiles. "That's great! What about Pedro? Is he coming?"</p>
+                        <p>"<span class="palavra-destaque">I'm not sure</span> if Pedro will come. He said his family might travel this weekend. <span class="palavra-destaque">Maybe</span> he'll be back in time."</p>
+                        <p>My friend Mateus joins us. "Hey, do you think the principal will do something at the show?"</p>
+                        <p>I laugh. "<span class="palavra-destaque">I doubt it.</span> Can you imagine Mr. Silva dancing? <span class="palavra-destaque">It's unlikely.</span>"</p>
+                        <p>Sofia disagrees. "Actually, <span class="palavra-destaque">I think so.</span> Last year he played guitar. <span class="palavra-destaque">There's a chance</span> he'll do it again."</p>
+                        <p>"Really? <span class="palavra-destaque">I'm pretty sure</span> he only did that because it was the school's anniversary. <span class="palavra-destaque">I don't think</span> he'll do it this year."</p>
+                        <p>Mateus asks: "What about the fifth graders? Are they doing a play?"</p>
+                        <p>"<span class="palavra-destaque">Probably.</span> They've been rehearsing something in the auditorium. <span class="palavra-destaque">I'm pretty sure</span> it's a short comedy."</p>
+                        <p>"<span class="palavra-destaque">Who knows?</span> <span class="palavra-destaque">It might</span> be a musical. I heard someone singing backstage yesterday," Sofia says.</p>
+                        <p>"<span class="palavra-destaque">Maybe.</span> But <span class="palavra-destaque">I'm sure</span> about one thing — Ana is going to do magic tricks. She told me herself."</p>
+                        <p>"<span class="palavra-destaque">Definitely!</span> She's been showing everyone card tricks all week," Mateus agrees.</p>
+                        <p>Sofia looks at her phone. "Oh! Guess what — the art teacher posted that there will be a surprise guest!"</p>
+                        <p>"A surprise guest? <span class="palavra-destaque">It's possible</span> it's that singer from the radio. Remember, she visited our school last year."</p>
+                        <p>"<span class="palavra-destaque">I doubt it.</span> She's famous now. <span class="palavra-destaque">It's unlikely</span> she'd come to a school show."</p>
+                        <p>"<span class="palavra-destaque">Who knows?</span> Anything can happen! <span class="palavra-destaque">Maybe</span> it's someone even cooler."</p>
+                        <p>I feel excited. "Well, <span class="palavra-destaque">I'm certain</span> about one thing — it's going to be an amazing show. <span class="palavra-destaque">I'm sure</span> of it!"</p>
+                        <p>"<span class="palavra-destaque">Definitely!</span>" my friends say together.</p>
+                        <p>We can't wait for next week!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Semana que vem é o show de talentos da escola, e todo mundo está falando sobre isso. Meus amigos e eu estamos sentados no refeitório, tentando adivinhar o que vai acontecer.</p>
+                        <p>"Você vai se apresentar, Lucas?" minha amiga Sofia me pergunta.</p>
+                        <p>"<span class="palavra-destaque">Com certeza</span> vou cantar. Estou praticando todo dia. <span class="palavra-destaque">Tenho certeza</span> de que estou pronto!"</p>
+                        <p>Sofia sorri. "Que legal! E o Pedro? Ele vem?"</p>
+                        <p>"<span class="palavra-destaque">Não tenho certeza</span> se o Pedro vai vir. Ele disse que a família dele pode viajar neste fim de semana. <span class="palavra-destaque">Talvez</span> ele volte a tempo."</p>
+                        <p>Meu amigo Mateus se junta a nós. "Vocês acham que o diretor vai fazer algo no show?"</p>
+                        <p>Eu rio. "<span class="palavra-destaque">Duvido.</span> Consegue imaginar o Sr. Silva dançando? <span class="palavra-destaque">É improvável.</span>"</p>
+                        <p>Sofia discorda. "Na verdade, <span class="palavra-destaque">acho que sim.</span> Ano passado ele tocou violão. <span class="palavra-destaque">Tem uma chance</span> de ele fazer de novo."</p>
+                        <p>"Sério? <span class="palavra-destaque">Tenho quase certeza</span> de que ele só fez aquilo porque era o aniversário da escola. <span class="palavra-destaque">Acho que</span> ele não vai fazer isso este ano."</p>
+                        <p>Mateus pergunta: "E os alunos do quinto ano? Eles vão fazer uma peça?"</p>
+                        <p>"<span class="palavra-destaque">Provavelmente.</span> Eles estão ensaiando algo no auditório. <span class="palavra-destaque">Tenho quase certeza</span> de que é uma comédia curta."</p>
+                        <p>"<span class="palavra-destaque">Quem sabe?</span> <span class="palavra-destaque">Pode ser</span> um musical. Eu ouvi alguém cantando nos bastidores ontem," Sofia diz.</p>
+                        <p>"<span class="palavra-destaque">Talvez.</span> Mas <span class="palavra-destaque">tenho certeza</span> de uma coisa — a Ana vai fazer truques de mágica. Ela mesma me disse."</p>
+                        <p>"<span class="palavra-destaque">Com certeza!</span> Ela está mostrando truques de carta pra todo mundo a semana inteira," Mateus concorda.</p>
+                        <p>Sofia olha o celular. "Ah! Adivinha — a professora de artes postou que vai ter um convidado surpresa!"</p>
+                        <p>"Um convidado surpresa? <span class="palavra-destaque">É possível</span> que seja aquela cantora do rádio. Lembra, ela visitou nossa escola ano passado."</p>
+                        <p>"<span class="palavra-destaque">Duvido.</span> Ela é famosa agora. <span class="palavra-destaque">É improvável</span> que ela viesse a um show escolar."</p>
+                        <p>"<span class="palavra-destaque">Quem sabe?</span> Tudo pode acontecer! <span class="palavra-destaque">Talvez</span> seja alguém ainda mais legal."</p>
+                        <p>Eu fico animado. "Bom, <span class="palavra-destaque">tenho certeza</span> de uma coisa — vai ser um show incrível. <span class="palavra-destaque">Tenho certeza</span> disso!"</p>
+                        <p>"<span class="palavra-destaque">Com certeza!</span>" meus amigos dizem juntos.</p>
+                        <p>Mal podemos esperar pela semana que vem!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Next week is the school talent show, and everyone is talking about it.</div>
+                            <div style="color: #666; font-size: 0.95em;">Semana que vem é o show de talentos da escola, e todo mundo está falando sobre isso.</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm definitely</span> going to sing. <span class="palavra-destaque">I'm certain</span> I'm ready!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Com certeza vou cantar. Tenho certeza de que estou pronto!"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm not sure</span> if Pedro will come. <span class="palavra-destaque">Maybe</span> he'll be back in time."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não tenho certeza se o Pedro vai vir. Talvez ele volte a tempo."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I doubt it.</span> Can you imagine Mr. Silva dancing? <span class="palavra-destaque">It's unlikely.</span>"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Duvido. Consegue imaginar o Sr. Silva dançando? É improvável."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I think so.</span> Last year he played guitar. <span class="palavra-destaque">There's a chance</span> he'll do it again."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Acho que sim. Ano passado ele tocou violão. Tem uma chance de ele fazer de novo."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm pretty sure</span> he only did that because it was the school's anniversary."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Tenho quase certeza de que ele só fez aquilo porque era o aniversário da escola."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Probably.</span> They've been rehearsing something in the auditorium."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Provavelmente. Eles estão ensaiando algo no auditório."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Who knows?</span> <span class="palavra-destaque">It might</span> be a musical."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Quem sabe? Pode ser um musical."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm sure</span> about one thing — Ana is going to do magic tricks."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Tenho certeza de uma coisa — a Ana vai fazer truques de mágica."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">It's possible</span> it's that singer from the radio."</div>
+                            <div style="color: #666; font-size: 0.95em;">"É possível que seja aquela cantora do rádio."</div>
+                        </div>
+
+                        <div style="">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm certain</span> about one thing — it's going to be an amazing show!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Tenho certeza de uma coisa — vai ser um show incrível!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Definitely ✅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Com certeza / Sem dúvida</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm definitely going to sing"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> 100% de certeza</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. I doubt it 🤔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Duvido</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I doubt it — it's unlikely"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Expressa descrença educada</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Pretty sure 💭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Quase certeza</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm pretty sure it's a comedy"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> 80% de certeza</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Maybe 🤷</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Talvez</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Maybe he'll be back in time"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> 50% de certeza</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Unlikely ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Improvável</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's unlikely she'd come"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pouca chance de acontecer</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Rehearse 🎭</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ensaiar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "They've been rehearsing in the auditorium"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Praticar antes de apresentar</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Perform 🎤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Se apresentar</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Are you going to perform?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Fazer algo no palco</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Principal 👔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Diretor(a) da escola</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Do you think the principal will do something?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Falso cognato parcial</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Backstage 🎬</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bastidores</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I heard someone singing backstage"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Atrás do palco</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Excited 🎉</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Animado / Empolgado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I feel excited"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sentimento positivo de expectativa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: What Are You Going to Do? -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: What Are You Going to Do?</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-what-are-you-going-to-do.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-what-are-you-going-to-do.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>It's the last day of school before summer vacation! Everyone is happy and talking about their plans. My friends and I are sitting under the big tree in the schoolyard.</p>
+                        <p>"So, what are you going to do this summer?" Sofia asks the group.</p>
+                        <p>"<span class="palavra-destaque">I'm definitely going to</span> the beach with my family," I say. "We go every year. <span class="palavra-destaque">I can't wait to</span> swim in the ocean again!"</p>
+                        <p>"Lucky! <span class="palavra-destaque">I'm planning to</span> stay at my grandma's farm for two weeks," Mateus says. "<span class="palavra-destaque">I'm looking forward to</span> riding horses and playing in the river."</p>
+                        <p>Sofia thinks for a moment. "<span class="palavra-destaque">I'm not sure yet.</span> <span class="palavra-destaque">It depends on</span> my mom's work schedule. <span class="palavra-destaque">I might</span> go to my cousin's house in São Paulo."</p>
+                        <p>"That would be cool! What would you do there?" I ask.</p>
+                        <p>"<span class="palavra-destaque">I'm hoping to</span> visit some museums and go to the movies. <span class="palavra-destaque">I'm thinking about</span> taking a drawing class too."</p>
+                        <p>Pedro joins us. "Hey guys! What are we talking about?"</p>
+                        <p>"Summer plans! What about you, Pedro?"</p>
+                        <p>"<span class="palavra-destaque">I've decided to</span> learn how to skateboard this summer. My older brother said he'll teach me. <span class="palavra-destaque">I'll probably</span> fall a lot at first, but <span class="palavra-destaque">I'm planning to</span> practice every day."</p>
+                        <p>"Nice! Are you going anywhere?" Sofia asks.</p>
+                        <p>"<span class="palavra-destaque">We'll see.</span> My dad said <span class="palavra-destaque">we might</span> go camping, but <span class="palavra-destaque">it depends on</span> the weather. <span class="palavra-destaque">I'm hoping to</span> go — I love sleeping in a tent!"</p>
+                        <p>Mateus laughs. "<span class="palavra-destaque">There's no way I'm going to</span> sleep outside with all the bugs! I prefer my grandma's house."</p>
+                        <p>"What about you, Sofia? Any other plans?" I ask.</p>
+                        <p>"Well, <span class="palavra-destaque">I'm considering</span> joining a swimming team. <span class="palavra-destaque">I'm thinking about</span> it, but I haven't decided yet."</p>
+                        <p>"You should! You're a great swimmer," Pedro says.</p>
+                        <p>"Thanks! <span class="palavra-destaque">I'll probably</span> try it. And <span class="palavra-destaque">I'm looking forward to</span> reading a lot of books. I made a list of ten books I want to read!"</p>
+                        <p>"Ten books?! <span class="palavra-destaque">I'm going to</span> read maybe two," Mateus jokes.</p>
+                        <p>I smile. "<span class="palavra-destaque">I'm planning to</span> learn some new songs on my guitar. And <span class="palavra-destaque">I'm hoping to</span> make a video for my pen pal Jake showing him the beach."</p>
+                        <p>The school bell rings. It's time to go home.</p>
+                        <p>"Well, whatever we do, <span class="palavra-destaque">I'm looking forward to</span> a great summer!" I say.</p>
+                        <p>"Me too! <span class="palavra-destaque">I can't wait!</span>" everyone says.</p>
+                        <p>We wave goodbye. Summer, here we come!</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>É o último dia de aula antes das férias de verão! Todo mundo está feliz e falando sobre seus planos. Meus amigos e eu estamos sentados debaixo da árvore grande no pátio da escola.</p>
+                        <p>"Então, o que vocês vão fazer neste verão?" Sofia pergunta ao grupo.</p>
+                        <p>"<span class="palavra-destaque">Com certeza vou</span> à praia com minha família," eu digo. "A gente vai todo ano. <span class="palavra-destaque">Mal posso esperar para</span> nadar no mar de novo!"</p>
+                        <p>"Que sorte! <span class="palavra-destaque">Estou planejando</span> ficar na fazenda da minha avó por duas semanas," Mateus diz. "<span class="palavra-destaque">Estou ansioso para</span> andar a cavalo e brincar no rio."</p>
+                        <p>Sofia pensa por um momento. "<span class="palavra-destaque">Ainda não tenho certeza.</span> <span class="palavra-destaque">Depende</span> do horário de trabalho da minha mãe. <span class="palavra-destaque">Talvez eu vá</span> para a casa da minha prima em São Paulo."</p>
+                        <p>"Que legal! O que você faria lá?" eu pergunto.</p>
+                        <p>"<span class="palavra-destaque">Espero</span> visitar alguns museus e ir ao cinema. <span class="palavra-destaque">Estou pensando em</span> fazer uma aula de desenho também."</p>
+                        <p>Pedro se junta a nós. "E aí, pessoal! Sobre o que estamos falando?"</p>
+                        <p>"Planos de verão! E você, Pedro?"</p>
+                        <p>"<span class="palavra-destaque">Decidi</span> aprender a andar de skate neste verão. Meu irmão mais velho disse que vai me ensinar. <span class="palavra-destaque">Provavelmente vou</span> cair muito no começo, mas <span class="palavra-destaque">estou planejando</span> praticar todo dia."</p>
+                        <p>"Legal! Você vai viajar?" Sofia pergunta.</p>
+                        <p>"<span class="palavra-destaque">Vamos ver.</span> Meu pai disse que <span class="palavra-destaque">talvez a gente vá</span> acampar, mas <span class="palavra-destaque">depende</span> do tempo. <span class="palavra-destaque">Espero</span> ir — adoro dormir em barraca!"</p>
+                        <p>Mateus ri. "<span class="palavra-destaque">De jeito nenhum vou</span> dormir lá fora com todos aqueles insetos! Prefiro a casa da minha avó."</p>
+                        <p>"E você, Sofia? Mais algum plano?" eu pergunto.</p>
+                        <p>"Bom, <span class="palavra-destaque">estou considerando</span> entrar num time de natação. <span class="palavra-destaque">Estou pensando</span> nisso, mas ainda não decidi."</p>
+                        <p>"Você deveria! Você nada super bem," Pedro diz.</p>
+                        <p>"Obrigada! <span class="palavra-destaque">Provavelmente vou</span> tentar. E <span class="palavra-destaque">estou ansiosa para</span> ler muitos livros. Fiz uma lista de dez livros que quero ler!"</p>
+                        <p>"Dez livros?! <span class="palavra-destaque">Eu vou</span> ler talvez dois," Mateus brinca.</p>
+                        <p>Eu sorrio. "<span class="palavra-destaque">Estou planejando</span> aprender algumas músicas novas no violão. E <span class="palavra-destaque">espero</span> fazer um vídeo pro meu amigo por correspondência Jake mostrando a praia."</p>
+                        <p>O sinal da escola toca. É hora de ir pra casa.</p>
+                        <p>"Bom, faça o que fizer, <span class="palavra-destaque">estou ansioso por</span> um verão incrível!" eu digo.</p>
+                        <p>"Eu também! <span class="palavra-destaque">Mal posso esperar!</span>" todo mundo diz.</p>
+                        <p>A gente se despede acenando. Verão, aí vamos nós!</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"So, what are you going to do this summer?" Sofia asks.</div>
+                            <div style="color: #666; font-size: 0.95em;">"Então, o que vocês vão fazer neste verão?" Sofia pergunta.</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm definitely going to</span> the beach with my family."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Com certeza vou à praia com minha família."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm planning to</span> stay at my grandma's farm for two weeks."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Estou planejando ficar na fazenda da minha avó por duas semanas."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm not sure yet.</span> <span class="palavra-destaque">It depends on</span> my mom's work schedule."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Ainda não tenho certeza. Depende do horário de trabalho da minha mãe."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I've decided to</span> learn how to skateboard this summer."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Decidi aprender a andar de skate neste verão."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">We'll see.</span> My dad said <span class="palavra-destaque">we might</span> go camping."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Vamos ver. Meu pai disse que talvez a gente vá acampar."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">There's no way I'm going to</span> sleep outside with all the bugs!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"De jeito nenhum vou dormir lá fora com todos aqueles insetos!"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm considering</span> joining a swimming team."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Estou considerando entrar num time de natação."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm looking forward to</span> reading a lot of books."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Estou ansiosa para ler muitos livros."</div>
+                        </div>
+
+                        <div style="">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I'm looking forward to</span> a great summer!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Estou ansioso por um verão incrível!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. I'm planning to 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Estou planejando</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm planning to stay at my grandma's farm"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Plano organizado (85% certeza)</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. I'm looking forward to 😊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Estou ansioso para</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'm looking forward to riding horses"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Sempre seguido de -ING ou substantivo</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. It depends on ⚖️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Depende de</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It depends on my mom's work schedule"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Condicional — algo incerto</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. I might 🤔</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Talvez eu</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I might go to my cousin's house"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> 40% de certeza</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. I've decided to ✊</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Decidi</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I've decided to learn how to skateboard"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Decisão já tomada</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. I can't wait to 🎉</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Mal posso esperar para</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I can't wait to swim in the ocean"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Muita animação</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. There's no way 🚫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> De jeito nenhum</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "There's no way I'm going to sleep outside"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Recusa enfática</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Schedule 📅</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Horário / Agenda</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It depends on my mom's work schedule"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pronúncia: skédiul</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Camping ⛺</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Acampamento</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We might go camping"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dormir na natureza</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Wave goodbye 👋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Acenar tchau</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We wave goodbye"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Gesto de despedida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

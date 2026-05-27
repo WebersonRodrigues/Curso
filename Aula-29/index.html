@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 29 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 29 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Aula 29</span>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div>
+                    <h1>📚 Aula 29 - Semana 29</h1>
+                    <div class="tab-progress" id="tabProgress">1 de 4</div>
+                </div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 29</h2>
+                
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Praticar inglês em situações reais de viagem internacional — aeroporto, hotel, restaurante — e aprender a resolver problemas comuns durante uma viagem.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B2 — Você já consegue se comunicar com confiança e agora vai praticar situações reais de viagem — aeroporto, hotel, restaurante e resolver problemas!</strong></p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Our Family Trip</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Viagem em família aos EUA — aeroporto, imigração, hotel, restaurante, vocabulário de viagem</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> boarding gate, layover, customs, declare, luggage belt, currency exchange, check-in counter, room key, front desk, menu, waiter, tip, receipt, taxi, boarding pass</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Things Went Wrong</h4>
+                        <p style="margin-bottom: 8px;"><strong>Tema:</strong> Problemas durante a viagem — voo atrasado, mala perdida, hotel lotado, se perder na cidade</p>
+                        <p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> delayed, cancelled, lost luggage, claim, complaint, refund, overbooked, GPS, lost, emergency, police, insurance, solve, directions, landmark</p>
+                        <p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4>
+                        <p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p>
+                    </div>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3>
+                    <p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p>
+                    <p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p>
+                </div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p>
+                    <p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário. É essencial para dominar todas as frases que aprender nos textos!</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <p style="margin-bottom: 8px;"><strong>P: Preciso fazer shadowing perfeito?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Não! O objetivo é treinar pronúncia e ritmo, não ser perfeito. Faça o seu melhor!</p>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p>
+                        <p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber. Continue assistindo e com o tempo vai entender cada vez mais!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 1: Our Family Trip -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Our Family Trip</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-1">
+                        <source src="./01/01-our-family-trip.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./01/01-our-family-trip.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>My name is Lucas, and today is the best day ever — we are flying to the United States!</p>
+                        <p>Dad drives us to the airport early in the morning. Mom checks our passports one more time.</p>
+                        <p>At the <span class="palavra-destaque">check-in counter</span>, Dad gives our passports and tickets to the lady. She prints our <span class="palavra-destaque">boarding passes</span> and puts tags on our <span class="palavra-destaque">luggage</span>.</p>
+                        <p>I help Dad carry the boarding passes. I feel important!</p>
+                        <p>"Your flight leaves from <span class="palavra-destaque">boarding gate</span> 14," she says. "Have a nice trip!"</p>
+                        <p>We go through security and wait near the gate. Our flight has a <span class="palavra-destaque">layover</span> in Panama City.</p>
+                        <p>On the plane, I sit by the window. Mom sits next to me, and Dad is across the aisle.</p>
+                        <p>After six hours, we land in Miami. Now we need to go through <span class="palavra-destaque">immigration</span>.</p>
+                        <p>The officer looks at our passports and asks Dad: "What is the purpose of your visit?"</p>
+                        <p>Dad answers: "We are here on vacation, for two weeks."</p>
+                        <p>The officer looks at me and smiles: "What's your name, buddy?"</p>
+                        <p>I say proudly: "My name is Lucas. I'm ten years old!"</p>
+                        <p>He stamps our passports and says: "Welcome to the United States. Enjoy your trip!"</p>
+                        <p>We pick up our bags at the <span class="palavra-destaque">luggage belt</span> and walk through <span class="palavra-destaque">customs</span>. We have nothing to <span class="palavra-destaque">declare</span>.</p>
+                        <p>Mom finds a <span class="palavra-destaque">currency exchange</span> place and gets some dollars. Now we need a <span class="palavra-destaque">taxi</span> to the hotel.</p>
+                        <p>At the hotel <span class="palavra-destaque">front desk</span>, Mom says: "We have a reservation under the name Silva."</p>
+                        <p>The receptionist gives us our <span class="palavra-destaque">room key</span> and says: "Third floor, room 312. Enjoy your stay!"</p>
+                        <p>I ask her: "Excuse me, does the hotel have a pool?"</p>
+                        <p>She smiles and says: "Yes! The pool is on the second floor. It's open until 10 PM."</p>
+                        <p>We go to our room, leave our bags, and change clothes. Time for the pool!</p>
+                        <p>Later, we go to a restaurant for dinner. The <span class="palavra-destaque">waiter</span> brings us a <span class="palavra-destaque">menu</span>.</p>
+                        <p>I look at the menu and choose by myself for the first time: "I'd like a cheeseburger and a lemonade, please."</p>
+                        <p>The waiter says: "Great choice!" Mom and Dad order pasta and steak.</p>
+                        <p>After dinner, Dad asks for the <span class="palavra-destaque">receipt</span>, leaves a <span class="palavra-destaque">tip</span>, and we walk back to the hotel.</p>
+                        <p>I look at the city lights and think: "I can't believe I'm really here. And I spoke English the whole time!"</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Meu nome é Lucas, e hoje é o melhor dia de todos — nós vamos voar para os Estados Unidos!</p>
+                        <p>Papai nos leva de carro ao aeroporto bem cedo. Mamãe confere nossos passaportes mais uma vez.</p>
+                        <p>No <span class="palavra-destaque">balcão de check-in</span>, papai entrega nossos passaportes e passagens para a moça. Ela imprime nossos <span class="palavra-destaque">cartões de embarque</span> e coloca etiquetas na nossa <span class="palavra-destaque">bagagem</span>.</p>
+                        <p>Eu ajudo o papai a carregar os cartões de embarque. Me sinto importante!</p>
+                        <p>"O voo de vocês sai do <span class="palavra-destaque">portão de embarque</span> 14," ela diz. "Tenham uma boa viagem!"</p>
+                        <p>Passamos pela segurança e esperamos perto do portão. Nosso voo tem uma <span class="palavra-destaque">escala</span> na Cidade do Panamá.</p>
+                        <p>No avião, eu sento na janela. Mamãe senta do meu lado, e papai fica do outro lado do corredor.</p>
+                        <p>Depois de seis horas, pousamos em Miami. Agora precisamos passar pela <span class="palavra-destaque">imigração</span>.</p>
+                        <p>O oficial olha nossos passaportes e pergunta ao papai: "Qual é o motivo da sua visita?"</p>
+                        <p>Papai responde: "Estamos aqui de férias, por duas semanas."</p>
+                        <p>O oficial olha pra mim e sorri: "Qual é o seu nome, amigão?"</p>
+                        <p>Eu digo com orgulho: "Meu nome é Lucas. Tenho dez anos!"</p>
+                        <p>Ele carimba nossos passaportes e diz: "Bem-vindos aos Estados Unidos. Aproveitem a viagem!"</p>
+                        <p>Pegamos nossas malas na <span class="palavra-destaque">esteira de bagagem</span> e passamos pela <span class="palavra-destaque">alfândega</span>. Não temos nada para <span class="palavra-destaque">declarar</span>.</p>
+                        <p>Mamãe encontra um lugar de <span class="palavra-destaque">câmbio</span> e pega alguns dólares. Agora precisamos de um <span class="palavra-destaque">táxi</span> para o hotel.</p>
+                        <p>Na <span class="palavra-destaque">recepção</span> do hotel, mamãe diz: "Temos uma reserva no nome Silva."</p>
+                        <p>A recepcionista nos dá a <span class="palavra-destaque">chave do quarto</span> e diz: "Terceiro andar, quarto 312. Aproveitem a estadia!"</p>
+                        <p>Eu pergunto: "Com licença, o hotel tem piscina?"</p>
+                        <p>Ela sorri e diz: "Sim! A piscina fica no segundo andar. Fica aberta até as 22h."</p>
+                        <p>Vamos pro quarto, largamos as malas e trocamos de roupa. Hora da piscina!</p>
+                        <p>Mais tarde, vamos a um restaurante jantar. O <span class="palavra-destaque">garçom</span> nos traz um <span class="palavra-destaque">cardápio</span>.</p>
+                        <p>Eu olho o cardápio e escolho sozinho pela primeira vez: "Eu gostaria de um cheeseburger e uma limonada, por favor."</p>
+                        <p>O garçom diz: "Ótima escolha!" Mamãe e papai pedem massa e bife.</p>
+                        <p>Depois do jantar, papai pede a <span class="palavra-destaque">conta</span>, deixa uma <span class="palavra-destaque">gorjeta</span>, e voltamos andando pro hotel.</p>
+                        <p>Eu olho as luzes da cidade e penso: "Não acredito que estou realmente aqui. E falei inglês o tempo todo!"</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">At the <span class="palavra-destaque">check-in counter</span>, Dad gives our passports and tickets.</div>
+                            <div style="color: #666; font-size: 0.95em;">No balcão de check-in, papai entrega nossos passaportes e passagens.</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Your flight leaves from <span class="palavra-destaque">boarding gate</span> 14."</div>
+                            <div style="color: #666; font-size: 0.95em;">"O voo de vocês sai do portão de embarque 14."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Our flight has a <span class="palavra-destaque">layover</span> in Panama City.</div>
+                            <div style="color: #666; font-size: 0.95em;">Nosso voo tem uma escala na Cidade do Panamá.</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"What is the purpose of your visit?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Qual é o motivo da sua visita?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"We are here on vacation, for two weeks."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Estamos aqui de férias, por duas semanas."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">We pick up our bags at the <span class="palavra-destaque">luggage belt</span> and walk through <span class="palavra-destaque">customs</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Pegamos nossas malas na esteira de bagagem e passamos pela alfândega.</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"We have a reservation under the name Silva."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Temos uma reserva no nome Silva."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I'd like a cheeseburger and a lemonade, please."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu gostaria de um cheeseburger e uma limonada, por favor."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Dad asks for the <span class="palavra-destaque">receipt</span>, leaves a <span class="palavra-destaque">tip</span>.</div>
+                            <div style="color: #666; font-size: 0.95em;">Papai pede a conta, deixa uma gorjeta.</div>
+                        </div>
+
+                        <div style="">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I can't believe I'm really here. And I spoke English the whole time!"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Não acredito que estou realmente aqui. E falei inglês o tempo todo!"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Boarding pass 🎫</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cartão de embarque</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "She prints our boarding passes"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Documento para entrar no avião</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Layover ✈️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Escala (voo)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Our flight has a layover in Panama"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Parada entre voos</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Customs 🛃</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Alfândega</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We walk through customs"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Controle na chegada ao país</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Currency exchange 💱</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Câmbio</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Mom finds a currency exchange place"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Trocar dinheiro por outra moeda</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Front desk 🏨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Recepção (hotel)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At the hotel front desk"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Onde você faz check-in</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Waiter 🍽️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Garçom</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The waiter brings us a menu"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quem serve no restaurante</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Tip 💰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Gorjeta</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Dad leaves a tip"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> 15-20% nos EUA — obrigatório!</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Receipt 🧾</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Recibo / Conta</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Dad asks for the receipt"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Comprovante de pagamento</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Room key 🔑</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Chave do quarto</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The receptionist gives us our room key"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pode ser cartão magnético</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. I'd like 🙏</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Eu gostaria de</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'd like a cheeseburger, please"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Forma educada de pedir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Things Went Wrong -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Things Went Wrong</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3>
+                    <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;">
+                        <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                        <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p>
+                    </div>
+                </div>
+                <div class="audio-section">
+                    <audio controls id="audio-2">
+                        <source src="./02/02-things-went-wrong.mp3" type="audio/mpeg">
+                    </audio>
+                    <a href="./02/02-things-went-wrong.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <!-- Texto Lado a Lado -->
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>Our family trip to New York started with a surprise — and not a good one.</p>
+                        <p>At the airport, we looked at the screen and saw: "Flight 472 — <span class="palavra-destaque">Delayed</span> — 3 hours."</p>
+                        <p>Dad walked to the airline counter and asked: "Excuse me, why is our flight <span class="palavra-destaque">delayed</span>?"</p>
+                        <p>The woman said: "I'm sorry, sir. There's a storm in New York. We expect the flight to leave at 4 PM."</p>
+                        <p>Mom said: "Well, at least it's not <span class="palavra-destaque">cancelled</span>. Let's get something to eat while we wait."</p>
+                        <p>We waited, ate lunch, and finally boarded the plane. Three hours late, but we were on our way!</p>
+                        <p>When we arrived in New York, we went to the <span class="palavra-destaque">luggage belt</span>. We waited and waited. Everyone got their bags — except us.</p>
+                        <p>Mom's suitcase never came. It was <span class="palavra-destaque">lost luggage</span>.</p>
+                        <p>Dad went to the airline office and said: "One of our bags didn't arrive. I need to file a <span class="palavra-destaque">claim</span>."</p>
+                        <p>The man gave him a form and said: "Fill this out. We'll deliver the bag to your hotel within 24 hours."</p>
+                        <p>Mom was upset, but Dad said: "Don't worry. We have <span class="palavra-destaque">insurance</span>. They'll <span class="palavra-destaque">solve</span> this."</p>
+                        <p>We took a taxi to the hotel. At the <span class="palavra-destaque">front desk</span>, Mom said: "Reservation for Silva, please."</p>
+                        <p>The receptionist checked and said: "I'm sorry, ma'am. Your room is not available. We are <span class="palavra-destaque">overbooked</span> tonight."</p>
+                        <p>Mom said: "But we booked this room two months ago! I'd like to make a <span class="palavra-destaque">complaint</span>."</p>
+                        <p>The manager came and said: "I apologize. We'll upgrade you to a bigger room at no extra cost."</p>
+                        <p>Problem solved! The new room was even better.</p>
+                        <p>The next morning, we went out to explore the city. But after thirty minutes of walking, Dad looked at his phone and said: "I think we're <span class="palavra-destaque">lost</span>. The <span class="palavra-destaque">GPS</span> isn't working."</p>
+                        <p>I said: "Dad, let's ask someone for help!"</p>
+                        <p>Dad stopped a woman on the street: "<span class="palavra-destaque">Excuse me</span>, we're trying to find Central Park. Can you give us <span class="palavra-destaque">directions</span>?"</p>
+                        <p>She smiled and said: "Sure! Walk two blocks that way and you'll see a big <span class="palavra-destaque">landmark</span> — the Plaza Hotel. The park is right across from it."</p>
+                        <p>"Thank you so much!"</p>
+                        <p>We found Central Park easily. I learned something important that day: <span class="palavra-destaque">problems happen</span>, but when you can <span class="palavra-destaque">communicate</span>, you can <span class="palavra-destaque">solve</span> anything.</p>
+                        <p>Mom got her suitcase back that evening. The airline even offered a small <span class="palavra-destaque">refund</span> for the trouble.</p>
+                        <p>Dad smiled and said: "See? Everything worked out. The important thing is that we stayed calm and used our English."</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Nossa viagem em família para Nova York começou com uma surpresa — e não foi boa.</p>
+                        <p>No aeroporto, olhamos para a tela e vimos: "Voo 472 — <span class="palavra-destaque">Atrasado</span> — 3 horas."</p>
+                        <p>Papai foi até o balcão da companhia aérea e perguntou: "Com licença, por que nosso voo está <span class="palavra-destaque">atrasado</span>?"</p>
+                        <p>A mulher disse: "Sinto muito, senhor. Há uma tempestade em Nova York. Esperamos que o voo saia às 16h."</p>
+                        <p>Mamãe disse: "Bom, pelo menos não foi <span class="palavra-destaque">cancelado</span>. Vamos comer alguma coisa enquanto esperamos."</p>
+                        <p>Esperamos, almoçamos e finalmente embarcamos. Três horas atrasados, mas estávamos a caminho!</p>
+                        <p>Quando chegamos em Nova York, fomos para a <span class="palavra-destaque">esteira de bagagem</span>. Esperamos e esperamos. Todo mundo pegou suas malas — menos nós.</p>
+                        <p>A mala da mamãe nunca apareceu. Era <span class="palavra-destaque">bagagem extraviada</span>.</p>
+                        <p>Papai foi ao escritório da companhia aérea e disse: "Uma das nossas malas não chegou. Preciso registrar uma <span class="palavra-destaque">reclamação</span>."</p>
+                        <p>O homem deu um formulário e disse: "Preencha isso. Entregaremos a mala no hotel em até 24 horas."</p>
+                        <p>Mamãe ficou chateada, mas papai disse: "Não se preocupe. Temos <span class="palavra-destaque">seguro</span>. Eles vão <span class="palavra-destaque">resolver</span> isso."</p>
+                        <p>Pegamos um táxi para o hotel. Na <span class="palavra-destaque">recepção</span>, mamãe disse: "Reserva para Silva, por favor."</p>
+                        <p>A recepcionista verificou e disse: "Sinto muito, senhora. Seu quarto não está disponível. Estamos <span class="palavra-destaque">lotados</span> esta noite."</p>
+                        <p>Mamãe disse: "Mas reservamos esse quarto há dois meses! Eu gostaria de fazer uma <span class="palavra-destaque">reclamação</span>."</p>
+                        <p>O gerente veio e disse: "Peço desculpas. Vamos colocá-los num quarto maior sem custo extra."</p>
+                        <p>Problema resolvido! O novo quarto era ainda melhor.</p>
+                        <p>Na manhã seguinte, saímos para explorar a cidade. Mas depois de trinta minutos andando, papai olhou o celular e disse: "Acho que estamos <span class="palavra-destaque">perdidos</span>. O <span class="palavra-destaque">GPS</span> não está funcionando."</p>
+                        <p>Eu disse: "Pai, vamos pedir ajuda pra alguém!"</p>
+                        <p>Papai parou uma mulher na rua: "<span class="palavra-destaque">Com licença</span>, estamos tentando encontrar o Central Park. Pode nos dar <span class="palavra-destaque">direções</span>?"</p>
+                        <p>Ela sorriu e disse: "Claro! Ande dois quarteirões naquela direção e você verá um grande <span class="palavra-destaque">ponto de referência</span> — o Hotel Plaza. O parque fica bem em frente."</p>
+                        <p>"Muito obrigado!"</p>
+                        <p>Encontramos o Central Park facilmente. Aprendi algo importante naquele dia: <span class="palavra-destaque">problemas acontecem</span>, mas quando você consegue se <span class="palavra-destaque">comunicar</span>, você consegue <span class="palavra-destaque">resolver</span> qualquer coisa.</p>
+                        <p>Mamãe recebeu a mala de volta naquela noite. A companhia aérea até ofereceu um pequeno <span class="palavra-destaque">reembolso</span> pelo transtorno.</p>
+                        <p>Papai sorriu e disse: "Viu? Tudo se resolveu. O importante é que ficamos calmos e usamos nosso inglês."</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Flight 472 — <span class="palavra-destaque">Delayed</span> — 3 hours."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Voo 472 — Atrasado — 3 horas."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Why is our flight <span class="palavra-destaque">delayed</span>?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Por que nosso voo está atrasado?"</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"At least it's not <span class="palavra-destaque">cancelled</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Pelo menos não foi cancelado."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I need to file a <span class="palavra-destaque">claim</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Preciso registrar uma reclamação."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"We have <span class="palavra-destaque">insurance</span>. They'll solve this."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Temos seguro. Eles vão resolver isso."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"We are <span class="palavra-destaque">overbooked</span> tonight."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Estamos lotados esta noite."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I'd like to make a <span class="palavra-destaque">complaint</span>."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Eu gostaria de fazer uma reclamação."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"I think we're <span class="palavra-destaque">lost</span>. The GPS isn't working."</div>
+                            <div style="color: #666; font-size: 0.95em;">"Acho que estamos perdidos. O GPS não está funcionando."</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Can you give us <span class="palavra-destaque">directions</span>?"</div>
+                            <div style="color: #666; font-size: 0.95em;">"Pode nos dar direções?"</div>
+                        </div>
+
+                        <div style="">
+                            <div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">When you can <span class="palavra-destaque">communicate</span>, you can <span class="palavra-destaque">solve</span> anything.</div>
+                            <div style="color: #666; font-size: 0.95em;">Quando você consegue se comunicar, você consegue resolver qualquer coisa.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Delayed ⏰</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Atrasado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Our flight is delayed"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> delay = atraso</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Cancelled ❌</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Cancelado</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "At least it's not cancelled"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Voo que não vai mais sair</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Lost luggage 🧳</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Bagagem extraviada</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It was lost luggage"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mala que não chegou</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Claim 📋</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Reclamação / Registro</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I need to file a claim"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pedido formal de solução</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Insurance 🛡️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Seguro (viagem)</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We have insurance"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Proteção financeira</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Overbooked 🏨</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Lotado / Com overbooking</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "We are overbooked tonight"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Mais reservas que quartos</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. Complaint 😤</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Reclamação</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I'd like to make a complaint"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Expressar insatisfação</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Directions 🗺️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Direções / Instruções</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Can you give us directions?"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Como chegar a um lugar</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. Landmark 🏛️</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Ponto de referência</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "You'll see a big landmark"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Lugar famoso fácil de ver</p>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Refund 💸</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Reembolso</p>
+                            <p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The airline offered a small refund"</p>
+                            <p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dinheiro de volta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p>
+                </div>
+
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p>
+                    <p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p>
+                </div>
+
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p>
+                    <p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p>
+                </div>
+
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;">
+                    <h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3>
+                    <p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').style.display = 'block';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').style.display = 'none';
+                });
+            }
+        }
+
+        function closeInstallPrompt() {
+            document.getElementById('installBanner').style.display = 'none';
+        }
+
+        function showText(textNumber) {
+            document.getElementById('text-0').classList.add('hidden');
+            document.getElementById('text-1').classList.add('hidden');
+            document.getElementById('text-2').classList.add('hidden');
+            document.getElementById('text-3').classList.add('hidden');
+            document.getElementById('text-' + textNumber).classList.remove('hidden');
+            document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.text-btn')[textNumber].classList.add('active');
+            document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4';
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1);
+                if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1);
+            });
+        });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        });
+
+        document.querySelectorAll('audio').forEach(function(audio) {
+            audio.addEventListener('error', function() {
+                var section = audio.closest('.audio-section');
+                if (section && !section.querySelector('.audio-error-msg')) {
+                    var msg = document.createElement('p');
+                    msg.className = 'audio-error-msg';
+                    msg.style.color = '#e63946';
+                    msg.style.fontSize = '0.9em';
+                    msg.style.marginTop = '8px';
+                    msg.textContent = '⚠️ Áudio não disponível no momento.';
+                    section.appendChild(msg);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

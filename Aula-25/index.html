@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aula 25 - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Aula 25 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar"><div class="toolbar-content"><a href="../index.html" class="toolbar-logo"><img src="../icone-192.png" alt="Tio Binho">Inglês com Tio Binho</a><div style="display: flex; gap: 10px;"><a href="../index.html" class="back-btn">← Voltar</a></div></div></div>
+
+    <div class="container">
+        <div id="installBanner"><h3>📱 Instale nosso app!</h3><p>Acesse o curso direto da sua tela inicial</p><div class="install-buttons"><button class="install-btn" onclick="installApp()">Instalar</button><button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button></div></div>
+        <div class="breadcrumb"><a href="../index.html">🏠 Home</a><span>›</span><span>Aula 25</span></div>
+        <div class="content">
+            <div class="header">
+                <div><h1>📚 Aula 25 - Semana 25</h1><div class="tab-progress" id="tabProgress">1 de 4</div></div>
+                <div class="text-selector">
+                    <button class="text-btn active" onclick="showText(0)">📋 Guia</button>
+                    <button class="text-btn" onclick="showText(1)">Texto 1</button>
+                    <button class="text-btn" onclick="showText(2)">Texto 2</button>
+                    <button class="text-btn" onclick="showText(3)">🎧 Listening</button>
+                </div>
+            </div>
+
+            <!-- Guia -->
+            <div id="text-0" class="text-content">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">📋 Guia da Aula 25</h2>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🎯</span>Objetivo da Semana</h3>
+                    <p style="line-height: 1.8;">Aprender a lidar com mal-entendidos em inglês (pedir esclarecimento, reformular, corrigir) e técnicas para explicar coisas claramente usando comparações, exemplos e simplificações.</p>
+                    <p style="line-height: 1.8; margin-top: 10px;"><strong>Nível: B2</strong> — Você já domina contrações, phrasal verbs, idioms e storytelling. Agora vai aprender a se comunicar com clareza mesmo quando surgem confusões!</p>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">📖</span>Textos da Semana</h3>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">1️⃣ Sorry, I Didn't Understand</h4><p style="margin-bottom: 8px;"><strong>Tema:</strong> Como lidar com mal-entendidos — pedir esclarecimento, reformular, corrigir interpretações erradas</p><p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> sorry I didn't catch that, let me rephrase that, what I meant was, does that make sense, could you say that differently, to put it simply, now I get it, I didn't mean it like that, there's been a misunderstanding</p><p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p></div>
+                    <div><h4 style="color: #2563eb; margin-bottom: 10px;">2️⃣ Let Me Explain</h4><p style="margin-bottom: 8px;"><strong>Tema:</strong> Como explicar coisas claramente — usar comparações, exemplos, simplificações e verificar compreensão</p><p style="margin-bottom: 8px;"><strong>Vocabulário:</strong> let me explain, basically what happened was, let me give you an example, it's like when, think of it this way, for example, the thing is, to be more specific, the point is, in other words, do you get what I mean</p><p style="margin-bottom: 8px;"><strong>Duração:</strong> ~4-5 minutos de áudio</p></div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;">
+                    <h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">🧠</span>Como Estudar os Textos</h3>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 1: Compreensão Inicial</h4><p style="margin-left: 15px; line-height: 1.8;">1. Leia o texto em português 3 vezes<br>2. Entenda a história/contexto completamente<br>3. Não se preocupe com inglês ainda</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 2: Listening com Texto</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em inglês (5 minutos)<br>2. Acompanhe cada palavra<br>3. Deixe o som entrar nos ouvidos</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 3: Listening com Tradução</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute o áudio junto com o texto em português (5 minutos)<br>2. Conecte som com significado<br>3. Entenda o ritmo da fala</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 4: Listening Puro</h4><p style="margin-left: 15px; line-height: 1.8;">1. Escute só o áudio em inglês (5 minutos)<br>2. Sem texto, sem tradução<br>3. Deixe o cérebro trabalhar</p></div>
+                    <div style="margin-bottom: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 5: Anki (Memorização)</h4><p style="margin-left: 15px; line-height: 1.8;">1. Adicione frase por frase no Anki<br>2. Cada frase com áudio<br>3. Revise diariamente</p></div>
+                    <div><h4 style="color: #2563eb; margin-bottom: 10px;">Passo 6: Shadowing (Fala)</h4><p style="margin-left: 15px; line-height: 1.8;">1. Para cada frase do Anki, repita junto com o áudio<br>2. Tente 5 vezes por frase<br>3. Foco em pronúncia e ritmo</p></div>
+                </div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;"><h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">💡</span>Dicas Importantes</h3><p style="margin-bottom: 10px;">✅ <strong>Faça todos os dias</strong> - Consistência é mais importante que quantidade</p><p style="margin-bottom: 10px;">✅ <strong>Não se preocupe com perfeição</strong> - O objetivo é se acostumar com o som</p><p style="margin-bottom: 10px;">✅ <strong>Repita muito</strong> - Seu cérebro precisa de repetição para aprender</p><p style="margin-bottom: 10px;">✅ <strong>Use fones de ouvido</strong> - Melhor qualidade de som = melhor aprendizado</p><p style="margin-bottom: 10px;">✅ <strong>Fale em voz alta</strong> - Não apenas escute, repita também!</p><p>✅ <strong>15 min de listening por dia</strong> - Assista a playlist todos os dias!</p></div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B6B; margin-bottom: 30px;"><h3 style="color: #FF6B6B; margin-bottom: 15px;"><span class="section-icon">🎧</span>Rotina Diária de Listening (15 min)</h3><p style="line-height: 1.8; margin-bottom: 15px;">Continue com sua <strong>rotina diária de listening</strong>! São apenas 15 minutos por dia, mas fazem uma diferença enorme! Acesse a aba <strong>🎧 Listening</strong> e assista 1 vídeo da playlist.</p><p style="line-height: 1.8; margin-bottom: 10px;">✅ Treina seu ouvido com inglês real</p><p style="line-height: 1.8; margin-bottom: 10px;">✅ Reforça vocabulário que você já estudou</p><p style="line-height: 1.8; margin-bottom: 10px;">✅ 15 minutos por dia = progresso garantido</p><p style="line-height: 1.8;">✅ Tudo dentro do app, sem sair!</p></div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb;"><h3 style="color: #2563eb; margin-bottom: 15px;"><span class="section-icon">❓</span>Dúvidas Comuns</h3><div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Preciso entender 100% do texto?</strong></p><p style="margin-left: 15px; color: #666;">R: Não! O objetivo é se acostumar com o som. Entendimento vem com repetição.</p></div><div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Quanto tempo leva para aprender?</strong></p><p style="margin-left: 15px; color: #666;">R: Cada pessoa é diferente. Alguns veem progresso em 2-3 semanas, outros em 1 mês. Seja paciente!</p></div><div style="margin-bottom: 15px;"><p style="margin-bottom: 8px;"><strong>P: Posso pular o Anki?</strong></p><p style="margin-left: 15px; color: #666;">R: Não recomendo. O Anki garante que você não esqueça o vocabulário.</p></div><div><p style="margin-bottom: 8px;"><strong>P: E se eu não entender nada da playlist?</strong></p><p style="margin-left: 15px; color: #666;">R: Tá tudo bem! O objetivo é exposição. Seu cérebro está absorvendo mesmo sem você perceber.</p></div></div>
+            </div>
+
+            <!-- Texto 1: Sorry, I Didn't Understand -->
+            <div id="text-1" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 1: Sorry, I Didn't Understand</h2>
+                <div style="margin-bottom: 20px;"><h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3><div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;"><p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p><p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p></div></div>
+                <div class="audio-section">
+                    <audio controls id="audio-1"><source src="./01/01-sorry-i-didnt-understand.mp3" type="audio/mpeg"></audio>
+                    <a href="./01/01-sorry-i-didnt-understand.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>My name is Lucas, and today I'm video-calling my pen pal Jake from California. We talk every week, but sometimes it's hard to understand everything he says.</p>
+                        <p>Jake starts the call with a big smile. "Hey Lucas! What's up, dude? That math test was totally a piece of cake!"</p>
+                        <p>I look confused. <span class="palavra-destaque">Sorry, I didn't catch that.</span> What's a "piece of cake"? Is he talking about food?</p>
+                        <p>Jake laughs. "Oh, <span class="palavra-destaque">let me rephrase that.</span> <span class="palavra-destaque">What I meant was</span> the test was really easy. 'Piece of cake' means something is easy."</p>
+                        <p>"<span class="palavra-destaque">Oh, I see what you mean!</span> That's a funny expression. We don't say that in Portuguese."</p>
+                        <p>Then Jake asks me about my weekend. I try to explain that I went to a "festa junina" at my school, but I say: "We danced with fire and ate corn on a stick."</p>
+                        <p>Jake looks worried. "You danced WITH fire?!"</p>
+                        <p>"<span class="palavra-destaque">Sorry, that came out wrong.</span> <span class="palavra-destaque">What I'm trying to say is</span> we danced NEAR a big bonfire, not with fire in our hands! <span class="palavra-destaque">Let me explain</span> — it's a traditional party."</p>
+                        <p>Jake relaxes. "Oh okay! <span class="palavra-destaque">Does that make sense</span> now — like a campfire party?"</p>
+                        <p>"Yes! <span class="palavra-destaque">In other words</span>, it's like a country festival with food, music, and games."</p>
+                        <p>Later, Jake tells me about his baseball game. He says: "I hit a grand slam yesterday!"</p>
+                        <p><span class="palavra-destaque">I'm not sure I follow.</span> "<span class="palavra-destaque">Could you say that differently?</span> I don't know baseball words."</p>
+                        <p>Jake thinks for a moment. "<span class="palavra-destaque">To put it simply</span>, I hit the ball really far and my whole team scored. It was amazing!"</p>
+                        <p>"<span class="palavra-destaque">Now I get it!</span> That sounds awesome!"</p>
+                        <p>Then I try to tell Jake that my dog is "very smart" but I accidentally say "my dog is very handsome."</p>
+                        <p>Jake laughs. "Your dog is handsome?"</p>
+                        <p>"<span class="palavra-destaque">I didn't mean it like that!</span> <span class="palavra-destaque">I think there's been a misunderstanding.</span> <span class="palavra-destaque">What I mean is</span> my dog learns tricks quickly. He's intelligent!"</p>
+                        <p>"Oh! <span class="palavra-destaque">In other words</span>, your dog is clever! That's cool!"</p>
+                        <p>We both laugh. Even when we don't understand each other perfectly, we always figure it out. That's what friends do.</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Meu nome é Lucas, e hoje estou fazendo videochamada com meu amigo por correspondência Jake, da Califórnia. A gente conversa toda semana, mas às vezes é difícil entender tudo que ele fala.</p>
+                        <p>Jake começa a ligação com um grande sorriso. "E aí, Lucas! Tudo bem, cara? Aquela prova de matemática foi totalmente moleza!"</p>
+                        <p>Eu fico confuso. <span class="palavra-destaque">Desculpa, não entendi.</span> O que é "piece of cake"? Ele está falando de comida?</p>
+                        <p>Jake ri. "Ah, <span class="palavra-destaque">deixa eu reformular.</span> <span class="palavra-destaque">O que eu quis dizer foi</span> que a prova foi muito fácil. 'Piece of cake' significa que algo é fácil."</p>
+                        <p>"<span class="palavra-destaque">Ah, entendi o que você quer dizer!</span> Essa é uma expressão engraçada. A gente não fala assim em português."</p>
+                        <p>Então Jake me pergunta sobre meu fim de semana. Eu tento explicar que fui a uma festa junina na minha escola, mas eu digo: "A gente dançou com fogo e comeu milho no palito."</p>
+                        <p>Jake fica preocupado. "Vocês dançaram COM fogo?!"</p>
+                        <p>"<span class="palavra-destaque">Desculpa, saiu errado.</span> <span class="palavra-destaque">O que estou tentando dizer é</span> que a gente dançou PERTO de uma fogueira grande, não com fogo nas mãos! <span class="palavra-destaque">Deixa eu explicar</span> — é uma festa tradicional."</p>
+                        <p>Jake relaxa. "Ah tá! <span class="palavra-destaque">Faz sentido</span> agora — tipo uma festa com fogueira?"</p>
+                        <p>"Sim! <span class="palavra-destaque">Em outras palavras</span>, é como um festival do interior com comida, música e brincadeiras."</p>
+                        <p>Depois, Jake me conta sobre o jogo de beisebol dele. Ele diz: "Eu acertei um grand slam ontem!"</p>
+                        <p><span class="palavra-destaque">Não tenho certeza se entendi.</span> "<span class="palavra-destaque">Você poderia dizer de outro jeito?</span> Eu não conheço palavras de beisebol."</p>
+                        <p>Jake pensa por um momento. "<span class="palavra-destaque">Simplificando</span>, eu rebati a bola bem longe e meu time inteiro pontuou. Foi incrível!"</p>
+                        <p>"<span class="palavra-destaque">Agora entendi!</span> Isso parece demais!"</p>
+                        <p>Então eu tento dizer ao Jake que meu cachorro é "muito esperto" mas acidentalmente digo "meu cachorro é muito bonito."</p>
+                        <p>Jake ri. "Seu cachorro é bonito?"</p>
+                        <p>"<span class="palavra-destaque">Não quis dizer assim!</span> <span class="palavra-destaque">Acho que houve um mal-entendido.</span> <span class="palavra-destaque">O que eu quero dizer é</span> que meu cachorro aprende truques rápido. Ele é inteligente!"</p>
+                        <p>"Ah! <span class="palavra-destaque">Em outras palavras</span>, seu cachorro é esperto! Que legal!"</p>
+                        <p>A gente ri junto. Mesmo quando não nos entendemos perfeitamente, sempre conseguimos resolver. É isso que amigos fazem.</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">I look confused. <span class="palavra-destaque">Sorry, I didn't catch that.</span> What's a "piece of cake"?</div><div style="color: #666; font-size: 0.95em;">Eu fico confuso. Desculpa, não entendi. O que é "piece of cake"?</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Jake laughs. "Oh, <span class="palavra-destaque">let me rephrase that.</span> <span class="palavra-destaque">What I meant was</span> the test was really easy."</div><div style="color: #666; font-size: 0.95em;">Jake ri. "Ah, deixa eu reformular. O que eu quis dizer foi que a prova foi muito fácil."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Sorry, that came out wrong.</span> <span class="palavra-destaque">What I'm trying to say is</span> we danced NEAR a big bonfire."</div><div style="color: #666; font-size: 0.95em;">"Desculpa, saiu errado. O que estou tentando dizer é que a gente dançou PERTO de uma fogueira grande."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"Yes! <span class="palavra-destaque">In other words</span>, it's like a country festival with food, music, and games."</div><div style="color: #666; font-size: 0.95em;">"Sim! Em outras palavras, é como um festival do interior com comida, música e brincadeiras."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;"><span class="palavra-destaque">I'm not sure I follow.</span> "<span class="palavra-destaque">Could you say that differently?</span>"</div><div style="color: #666; font-size: 0.95em;">Não tenho certeza se entendi. "Você poderia dizer de outro jeito?"</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">To put it simply</span>, I hit the ball really far and my whole team scored."</div><div style="color: #666; font-size: 0.95em;">"Simplificando, eu rebati a bola bem longe e meu time inteiro pontuou."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">I didn't mean it like that!</span> <span class="palavra-destaque">I think there's been a misunderstanding.</span>"</div><div style="color: #666; font-size: 0.95em;">"Não quis dizer assim! Acho que houve um mal-entendido."</div></div>
+                        <div><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">Even when we don't understand each other perfectly, we always figure it out. That's what friends do.</div><div style="color: #666; font-size: 0.95em;">Mesmo quando não nos entendemos perfeitamente, sempre conseguimos resolver. É isso que amigos fazem.</div></div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 1 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Sorry, I didn't catch that 👂</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desculpa, não entendi</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Sorry, I didn't catch that. Could you repeat?"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Forma educada de pedir para repetir</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. Let me rephrase that 🔄</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Deixa eu reformular</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Let me rephrase that — it was easy"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dizer de outro jeito</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. What I meant was… 💬</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> O que eu quis dizer foi…</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "What I meant was the test was easy"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Corrige algo que disse antes</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. Sorry, that came out wrong 😅</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Desculpa, saiu errado</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Sorry, that came out wrong. Let me try again"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando você se expressa mal</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. Does that make sense? ✅</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Faz sentido? / Entendeu?</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Does that make sense now?"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Verifica se o outro entendeu</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Could you say that differently? 🗣️</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Poderia dizer de outro jeito?</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Could you say that differently? I don't understand"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Pedido educado de esclarecimento</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. To put it simply 📝</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Simplificando</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "To put it simply, I scored a lot of points"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Explicar de forma mais simples</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. Now I get it! 💡</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Agora entendi!</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Oh! Now I get it! That makes sense"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Momento de compreensão</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. I didn't mean it like that 🙈</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Não quis dizer assim</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "I didn't mean it like that! Let me explain"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Quando alguém entende errado</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. In other words 🔁</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Em outras palavras</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "In other words, your dog is clever!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Reformula com palavras diferentes</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto 2: Let Me Explain -->
+            <div id="text-2" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎯</span>Texto 2: Let Me Explain</h2>
+                <div style="margin-bottom: 20px;"><h3 style="color: #2563eb; margin-bottom: 12px; font-size: 1.1em;">🎬 Vídeo Resumo</h3><div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 20px;"><p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p><p style="color: #999; font-size: 0.9em;">O vídeo resumo deste texto será adicionado em breve.</p></div></div>
+                <div class="audio-section">
+                    <audio controls id="audio-2"><source src="./02/02-let-me-explain.mp3" type="audio/mpeg"></audio>
+                    <a href="./02/02-let-me-explain.pdf" download class="btn" style="margin-top: 10px; display: inline-block; font-size: 0.9em;">📄 Baixar PDF</a>
+                </div>
+
+                <div class="side-by-side">
+                    <div class="column">
+                        <h3>US English</h3>
+                        <p>My American friend Emma is on a video call with me. She asks: "Lucas, what are you doing this weekend?"</p>
+                        <p>I tell her: "I'm going to a Festa Junina at my school!" Emma looks confused. "A what? I've never heard of that."</p>
+                        <p>"<span class="palavra-destaque">Let me explain.</span> <span class="palavra-destaque">Basically, what happened was</span> a long time ago, Brazilian people started celebrating the harvest season in June. Now it's one of our biggest parties!"</p>
+                        <p>Emma still looks unsure. "But what do you actually DO there?"</p>
+                        <p>"<span class="palavra-destaque">Let me give you an example.</span> There's a game where you try to catch an apple with your mouth. No hands allowed!"</p>
+                        <p>"Oh, that's like bobbing for apples! We do that on Halloween!"</p>
+                        <p>"Yes! <span class="palavra-destaque">It's like when</span> you have a Halloween party, but ours is in June and the theme is country life."</p>
+                        <p>"Okay, but what do people wear?"</p>
+                        <p>"<span class="palavra-destaque">Think of it this way</span> — everyone dresses up like farmers. <span class="palavra-destaque">For example</span>, boys wear plaid shirts and straw hats. Girls wear colorful dresses with patches."</p>
+                        <p>"That sounds fun! What about food?"</p>
+                        <p>"<span class="palavra-destaque">The thing is</span>, the food is the best part! <span class="palavra-destaque">To be more specific</span>, we eat things made from corn — like popcorn, corn cake, and a sweet corn pudding."</p>
+                        <p>Emma asks: "Is it like a barbecue?"</p>
+                        <p>"Not exactly. <span class="palavra-destaque">What I'm saying is</span> it's more like a fair with food stands. <span class="palavra-destaque">Imagine that</span> you're walking through a street market, but everything is decorated with colorful flags."</p>
+                        <p>"<span class="palavra-destaque">The point is</span> it's a big outdoor party with games, food, dancing, and music. <span class="palavra-destaque">In other words</span>, it's like a country-themed carnival."</p>
+                        <p>"What kind of dancing?"</p>
+                        <p>"There's a special dance called quadrilha. <span class="palavra-destaque">Think of it this way</span> — it's like square dancing. Everyone follows instructions and dances in pairs."</p>
+                        <p>"That sounds amazing! <span class="palavra-destaque">Does that help</span> you understand what I mean about Halloween?"</p>
+                        <p>"Yes! <span class="palavra-destaque">Do you get what I mean?</span> Both parties are about having fun with friends and eating good food."</p>
+                        <p>"Totally! So Festa Junina is Brazil's version of a fun harvest festival with costumes, games, and amazing food?"</p>
+                        <p>"Exactly! Now you get it!"</p>
+                    </div>
+                    <div class="column">
+                        <h3>BR Português</h3>
+                        <p>Minha amiga americana Emma está em uma videochamada comigo. Ela pergunta: "Lucas, o que você vai fazer neste fim de semana?"</p>
+                        <p>Eu digo: "Vou a uma Festa Junina na minha escola!" Emma fica confusa. "Uma o quê? Nunca ouvi falar disso."</p>
+                        <p>"<span class="palavra-destaque">Deixa eu explicar.</span> <span class="palavra-destaque">Basicamente, o que aconteceu foi</span> que há muito tempo, os brasileiros começaram a celebrar a época da colheita em junho. Agora é uma das nossas maiores festas!"</p>
+                        <p>Emma ainda parece insegura. "Mas o que vocês realmente FAZEM lá?"</p>
+                        <p>"<span class="palavra-destaque">Deixa eu te dar um exemplo.</span> Tem um jogo onde você tenta pegar uma maçã com a boca. Sem usar as mãos!"</p>
+                        <p>"Ah, isso é tipo pescar maçã! A gente faz isso no Halloween!"</p>
+                        <p>"Sim! <span class="palavra-destaque">É como quando</span> vocês têm uma festa de Halloween, mas a nossa é em junho e o tema é vida do campo."</p>
+                        <p>"Tá, mas o que as pessoas vestem?"</p>
+                        <p>"<span class="palavra-destaque">Pensa assim</span> — todo mundo se veste como fazendeiro. <span class="palavra-destaque">Por exemplo</span>, meninos usam camisas xadrez e chapéus de palha. Meninas usam vestidos coloridos com remendos."</p>
+                        <p>"Parece divertido! E a comida?"</p>
+                        <p>"<span class="palavra-destaque">O negócio é que</span> a comida é a melhor parte! <span class="palavra-destaque">Para ser mais específico</span>, a gente come coisas feitas de milho — como pipoca, bolo de milho e canjica."</p>
+                        <p>Emma pergunta: "É tipo um churrasco?"</p>
+                        <p>"Não exatamente. <span class="palavra-destaque">O que estou dizendo é</span> que é mais como uma feira com barracas de comida. <span class="palavra-destaque">Imagina que</span> você está andando por uma feira de rua, mas tudo está decorado com bandeirinhas coloridas."</p>
+                        <p>"<span class="palavra-destaque">O ponto é</span> que é uma grande festa ao ar livre com jogos, comida, dança e música. <span class="palavra-destaque">Em outras palavras</span>, é como um carnaval com tema de interior."</p>
+                        <p>"Que tipo de dança?"</p>
+                        <p>"Tem uma dança especial chamada quadrilha. <span class="palavra-destaque">Pensa assim</span> — é como square dancing. Todo mundo segue instruções e dança em pares."</p>
+                        <p>"Parece incrível! <span class="palavra-destaque">Isso ajuda</span> você a entender o que quero dizer sobre o Halloween?"</p>
+                        <p>"Sim! <span class="palavra-destaque">Entende o que quero dizer?</span> As duas festas são sobre se divertir com amigos e comer comida boa."</p>
+                        <p>"Com certeza! Então Festa Junina é a versão brasileira de um festival de colheita divertido com fantasias, jogos e comida incrível?"</p>
+                        <p>"Exatamente! Agora você entendeu!"</p>
+                    </div>
+                </div>
+
+                <!-- Linha a Linha - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">📖 Linha a Linha</h3>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-left: 4px solid #2563eb;">
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Let me explain.</span> <span class="palavra-destaque">Basically, what happened was</span> a long time ago, Brazilian people started celebrating the harvest season in June."</div><div style="color: #666; font-size: 0.95em;">"Deixa eu explicar. Basicamente, o que aconteceu foi que há muito tempo, os brasileiros começaram a celebrar a época da colheita em junho."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Let me give you an example.</span> There's a game where you try to catch an apple with your mouth."</div><div style="color: #666; font-size: 0.95em;">"Deixa eu te dar um exemplo. Tem um jogo onde você tenta pegar uma maçã com a boca."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">It's like when</span> you have a Halloween party, but ours is in June and the theme is country life."</div><div style="color: #666; font-size: 0.95em;">"É como quando vocês têm uma festa de Halloween, mas a nossa é em junho e o tema é vida do campo."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Think of it this way</span> — everyone dresses up like farmers."</div><div style="color: #666; font-size: 0.95em;">"Pensa assim — todo mundo se veste como fazendeiro."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">The thing is</span>, the food is the best part! <span class="palavra-destaque">To be more specific</span>, we eat things made from corn."</div><div style="color: #666; font-size: 0.95em;">"O negócio é que a comida é a melhor parte! Para ser mais específico, a gente come coisas feitas de milho."</div></div>
+                        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;"><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">The point is</span> it's a big outdoor party. <span class="palavra-destaque">In other words</span>, it's like a country-themed carnival."</div><div style="color: #666; font-size: 0.95em;">"O ponto é que é uma grande festa ao ar livre. Em outras palavras, é como um carnaval com tema de interior."</div></div>
+                        <div><div style="color: #2563eb; font-weight: 600; margin-bottom: 8px;">"<span class="palavra-destaque">Do you get what I mean?</span> Both parties are about having fun with friends and eating good food."</div><div style="color: #666; font-size: 0.95em;">"Entende o que quero dizer? As duas festas são sobre se divertir com amigos e comer comida boa."</div></div>
+                    </div>
+                </div>
+
+                <!-- Vocabulário - Texto 2 -->
+                <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                    <h3 style="color: #2563eb; margin-bottom: 25px; font-weight: 700;">🔤 Vocabulário Essencial</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">1. Let me explain 📖</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Deixa eu explicar</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Let me explain how it works"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Introduz uma explicação</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">2. It's like when… 🔗</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> É como quando…</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "It's like when you go to a fair"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Faz comparação com algo conhecido</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">3. Think of it this way 🧠</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Pensa assim</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Think of it this way — it's a big party"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Oferece uma perspectiva nova</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">4. The thing is… 🎯</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> O negócio é que…</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The thing is, the food is amazing"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Destaca o ponto principal</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">5. To be more specific 🔍</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Para ser mais específico</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "To be more specific, we eat corn cake"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Adiciona detalhes</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">6. Imagine that… 💭</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Imagina que…</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Imagine that you're at a street market"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Cria uma imagem mental</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">7. The point is… 📌</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> O ponto é…</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "The point is it's a big outdoor party"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Resume a ideia principal</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">8. In other words 🔁</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Em outras palavras</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "In other words, it's like a carnival"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Reformula de forma mais clara</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">9. For example 📋</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Por exemplo</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "For example, boys wear plaid shirts"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Dá um caso concreto</p></div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);"><h4 style="color: #2563eb; margin-bottom: 12px; font-weight: 700;">10. Do you get what I mean? 🤝</h4><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Significado:</strong> Entende o que quero dizer?</p><p style="font-size: 0.9em; margin-bottom: 8px; color: #333;"><strong>Exemplo:</strong> "Do you get what I mean? Both are fun!"</p><p style="font-size: 0.9em; color: #333;"><strong>Dica:</strong> Verifica compreensão</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div id="text-3" class="text-content hidden">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;"><span class="section-icon">🎧</span>Listening Diário</h2>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;"><h3 style="color: #fff; margin-bottom: 15px; font-weight: 700; font-size: 1.3em;">🎯 Sua missão: 15 minutos de listening por dia!</h3><p style="color: rgba(255,255,255,0.95); line-height: 1.8; font-size: 1.05em;">Escolha <strong>qualquer vídeo</strong> da playlist abaixo e assista por pelo menos <strong>15 minutos</strong>. Pode ser o mesmo vídeo de ontem ou um novo — o importante é ouvir inglês todos os dias!</p></div>
+                <div style="background: #f0f7ff; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;"><h3 style="color: #2563eb; margin-bottom: 15px;">📋 Como fazer</h3><p style="line-height: 1.8; margin-bottom: 10px;">1. Dê play em <strong>qualquer vídeo</strong> da playlist abaixo</p><p style="line-height: 1.8; margin-bottom: 10px;">2. Assista por <strong>pelo menos 15 minutos</strong></p><p style="line-height: 1.8; margin-bottom: 10px;">3. <strong>Não precisa entender tudo!</strong> O objetivo é acostumar o ouvido</p><p style="line-height: 1.8; margin-bottom: 10px;">4. Tente perceber <strong>palavras que você já conhece</strong> dos textos</p><p style="line-height: 1.8;">5. Pode <strong>repetir o mesmo vídeo</strong> quantas vezes quiser — repetição é ótima!</p></div>
+                <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 30px;"><h3 style="color: #2563eb; margin-bottom: 20px;">▶️ Playlist: Listening A1 — Inglês Simples para Iniciantes</h3><p style="color: #666; margin-bottom: 15px;">Escolha qualquer vídeo e dê play. Use os botões ⏮️ ⏭️ para navegar entre os vídeos.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);"><iframe src="https://www.youtube.com/embed/videoseries?list=PLNPLsKdgiHlzJnfzMY2D1zwD0NMtT6bMP" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 25px; border-radius: 15px; margin-bottom: 30px;"><h3 style="color: #fff; margin-bottom: 15px; font-weight: 700;">💡 Por que 15 minutos por dia fazem tanta diferença?</h3><p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Seu cérebro precisa de <strong>exposição diária</strong> ao inglês falado</p><p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Os vídeos reforçam <strong>palavras que você já estudou</strong> nos textos</p><p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">✅ Com o tempo, você vai <strong>entender sem precisar traduzir</strong></p><p style="color: rgba(255,255,255,0.95); line-height: 1.8;">✅ É assim que crianças aprendem — <strong>ouvindo muito!</strong></p></div>
+                <div style="background: #fffdf0; padding: 25px; border-radius: 12px; border-left: 4px solid #FFD93D;"><h3 style="color: #b8860b; margin-bottom: 15px;">⚠️ Importante</h3><p style="line-height: 1.8; color: #666;">Não precisa entender 100%! O objetivo é <strong>exposição</strong>. Seu cérebro está absorvendo mesmo quando você acha que não está entendendo. Continue assistindo todos os dias e em poucas semanas você vai perceber a diferença! 💪</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; document.getElementById('installBanner').style.display = 'block'; });
+        function installApp() { if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then((choiceResult) => { deferredPrompt = null; document.getElementById('installBanner').style.display = 'none'; }); } }
+        function closeInstallPrompt() { document.getElementById('installBanner').style.display = 'none'; }
+        function showText(textNumber) { document.getElementById('text-0').classList.add('hidden'); document.getElementById('text-1').classList.add('hidden'); document.getElementById('text-2').classList.add('hidden'); document.getElementById('text-3').classList.add('hidden'); document.getElementById('text-' + textNumber).classList.remove('hidden'); document.querySelectorAll('.text-btn').forEach(btn => btn.classList.remove('active')); document.querySelectorAll('.text-btn')[textNumber].classList.add('active'); document.getElementById('tabProgress').textContent = (textNumber + 1) + ' de 4'; window.scrollTo(0, 0); }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        window.addEventListener('scroll', function() { const backToTop = document.getElementById('backToTop'); if (window.pageYOffset > 300) { backToTop.classList.add('show'); } else { backToTop.classList.remove('show'); } });
+        document.querySelectorAll('.text-btn').forEach((btn, idx) => { btn.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' && idx < 3) showText(idx + 1); if (e.key === 'ArrowLeft' && idx > 0) showText(idx - 1); }); });
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { initAuth(); });
+        document.querySelectorAll('audio').forEach(function(audio) { audio.addEventListener('error', function() { var section = audio.closest('.audio-section'); if (section && !section.querySelector('.audio-error-msg')) { var msg = document.createElement('p'); msg.className = 'audio-error-msg'; msg.style.color = '#e63946'; msg.style.fontSize = '0.9em'; msg.style.marginTop = '8px'; msg.textContent = '⚠️ Áudio não disponível no momento.'; section.appendChild(msg); } }); });
+    </script>
+</body>
+</html>

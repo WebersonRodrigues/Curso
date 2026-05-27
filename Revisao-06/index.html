@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Revisão 06 - Bloco 6 (Semanas 21 a 24) - Curso de Inglês com Tio Binho">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tio Binho">
+    <title>Revisão 06 - Tio Binho</title>
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-content">
+            <a href="../index.html" class="toolbar-logo">
+                <img src="../icone-192.png" alt="Tio Binho">
+                Inglês com Tio Binho
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="../index.html" class="back-btn">← Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="installBanner">
+            <h3>📱 Instale nosso app!</h3>
+            <p>Acesse o curso direto da sua tela inicial</p>
+            <div class="install-buttons">
+                <button class="install-btn" onclick="installApp()">Instalar</button>
+                <button class="install-btn cancel" onclick="closeInstallPrompt()">Agora não</button>
+            </div>
+        </div>
+
+        <div class="breadcrumb">
+            <a href="../index.html">🏠 Home</a>
+            <span>›</span>
+            <span>Revisão 06</span>
+        </div>
+
+        <div class="content">
+            <!-- Header da Revisão -->
+            <div style="text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #2563eb;">
+                <h1 style="color: #333; font-size: 2em; font-weight: 700; margin-bottom: 10px;">📝 Revisão — Bloco 6 (Semanas 21 a 24)</h1>
+                <p style="color: #666; font-size: 1.1em;">8 textos estudados · Nível B1→B2 · 4 semanas</p>
+            </div>
+
+            <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 4px solid #2563eb; margin-bottom: 40px;">
+                <h2 style="color: #2563eb; margin-bottom: 20px; font-size: 1.5em;">🎬 Vídeo Resumo do Bloco 6</h2>
+                <div style="background: #f0f0f0; padding: 40px; border-radius: 12px; text-align: center;">
+                    <p style="font-size: 1.2em; color: #666;">🎬 Vídeo em breve</p>
+                    <p style="color: #999; font-size: 0.9em;">O vídeo resumo deste bloco será adicionado em breve.</p>
+                </div>
+            </div>
+
+            <h2 style="color: #333; margin-bottom: 25px; font-size: 1.5em;">📖 Textos Estudados</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                <!-- Aula 21 -->
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #fff;">Aula 21 — Semana 21</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #fff;">📖 <a href="../Aula-21/index.html" style="color: #fff; text-decoration: underline;">Teaching My Friend a Game</a></p>
+                    <p style="opacity: 0.95; color: #fff;">📖 <a href="../Aula-21/index.html" style="color: #fff; text-decoration: underline;">My First Time Swimming</a></p>
+                </div>
+                <!-- Aula 22 -->
+                <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #fff;">Aula 22 — Semana 22</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #fff;">📖 <a href="../Aula-22/index.html" style="color: #fff; text-decoration: underline;">How People Really Talk</a></p>
+                    <p style="opacity: 0.95; color: #fff;">📖 <a href="../Aula-22/index.html" style="color: #fff; text-decoration: underline;">Texting with My Friend</a></p>
+                </div>
+                <!-- Aula 23 -->
+                <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #1a1a1a;">Aula 23 — Semana 23</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #1a1a1a;">📖 <a href="../Aula-23/index.html" style="color: #1a1a1a; text-decoration: underline;">Phrasal Verbs Are Everywhere</a></p>
+                    <p style="opacity: 0.95; color: #1a1a1a;">📖 <a href="../Aula-23/index.html" style="color: #1a1a1a; text-decoration: underline;">Keeping a Conversation Going</a></p>
+                </div>
+                <!-- Aula 24 -->
+                <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 1.2em; margin-bottom: 8px; font-weight: 700; color: #fff;">Aula 24 — Semana 24</h3>
+                    <p style="margin-bottom: 8px; opacity: 0.95; color: #fff;">📖 <a href="../Aula-24/index.html" style="color: #fff; text-decoration: underline;">English Idioms Are Crazy!</a></p>
+                    <p style="opacity: 0.95; color: #fff;">📖 <a href="../Aula-24/index.html" style="color: #fff; text-decoration: underline;">Telling a Funny Story</a></p>
+                </div>
+            </div>
+
+            <h2 style="color: #333; margin-bottom: 25px; font-size: 1.5em;">🧠 Vocabulário Consolidado do Bloco 6</h2>
+
+            <!-- ─── Card 1: Instruções e Natação (Aula 21) ─── -->
+            <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">🎮 Card 1 — Ensinar e Aprender (Aula 21)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave dos textos "Teaching My Friend a Game" e "My First Time Swimming"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">explain</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">explicar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">instructions</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">instruções</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">float</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">flutuar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">breathe</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">respirar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">encourage</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">encorajar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">step by step</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">passo a passo</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">7</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">scared</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">com medo</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; color: #fff;">8</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">confident</td><td style="padding: 10px 16px; color: #fff;">confiante</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 2: Linguagem Informal (Aula 22) ─── -->
+            <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(78, 205, 196, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">💬 Card 2 — Linguagem Informal (Aula 22)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave dos textos "How People Really Talk" e "Texting with My Friend"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">gonna</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">going to (informal)</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">wanna</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">want to (informal)</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">LOL</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">rindo muito</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">BTW</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">a propósito</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">slang</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">gíria</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">abbreviation</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">abreviação</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">7</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">casual</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">informal</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; color: #fff;">8</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">emoji</td><td style="padding: 10px 16px; color: #fff;">emoji</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 3: Phrasal Verbs (Aula 23) ─── -->
+            <div style="background: linear-gradient(135deg, #FFD93D 0%, #FFC93C 100%); color: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(255, 217, 61, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #1a1a1a;">🔗 Card 3 — Phrasal Verbs e Conversação (Aula 23)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #1a1a1a;">Palavras-chave dos textos "Phrasal Verbs Are Everywhere" e "Keeping a Conversation Going"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.15);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #1a1a1a;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">look up</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">procurar / pesquisar</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">give up</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">desistir</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">turn on / off</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">ligar / desligar</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">find out</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">descobrir</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">come up with</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">inventar / ter uma ideia</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">by the way</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">a propósito</td></tr>
+                            <tr style="background: rgba(0,0,0,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">7</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); font-weight: 600; color: #1a1a1a;">what do you mean?</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(0,0,0,0.1); color: #1a1a1a;">o que você quer dizer?</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 10px 16px; color: #1a1a1a;">8</td><td style="padding: 10px 16px; font-weight: 600; color: #1a1a1a;">that makes sense</td><td style="padding: 10px 16px; color: #1a1a1a;">faz sentido</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ─── Card 4: Idioms e Histórias (Aula 24) ─── -->
+            <div style="background: linear-gradient(135deg, #A8E6CF 0%, #56AB91 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(168, 230, 207, 0.3); margin-bottom: 25px;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">🤪 Card 4 — Idioms e Storytelling (Aula 24)</h3>
+                <p style="margin-bottom: 15px; opacity: 0.9; color: #fff;">Palavras-chave dos textos "English Idioms Are Crazy!" e "Telling a Funny Story"</p>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0,0,0,0.2);">
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">#</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">English</th>
+                                <th style="padding: 12px 16px; text-align: left; font-weight: 600; color: #fff;">Português</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">1</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">break a leg</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">boa sorte</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">2</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">piece of cake</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">muito fácil</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">3</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">under the weather</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">doente / indisposto</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">4</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">hilarious</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">hilário</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">5</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">punch line</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">piada final</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">6</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">you won't believe this</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">você não vai acreditar</td></tr>
+                            <tr style="background: rgba(255,255,255,0.1);"><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">7</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 600; color: #fff;">guess what</td><td style="padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff;">adivinha só</td></tr>
+                            <tr style="background: rgba(255,255,255,0.05);"><td style="padding: 10px 16px; color: #fff;">8</td><td style="padding: 10px 16px; font-weight: 600; color: #fff;">no way!</td><td style="padding: 10px 16px; color: #fff;">não acredito!</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h2 style="color: #333; margin-bottom: 25px; font-size: 1.5em;">📐 Estruturas Gramaticais Praticadas</h2>
+            <div style="background: #f9f9f9; padding: 25px; border-radius: 12px; margin-bottom: 40px; line-height: 1.8;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px;">✅ <strong>Phrasal Verbs</strong> — "I looked up the word." / "Don't give up!"</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Contractions in speech</strong> — "gonna", "wanna", "gotta"</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Narrative tenses</strong> — "I was walking when suddenly..."</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Idioms in context</strong> — "It was a piece of cake!" / "Break a leg!"</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Conversation fillers</strong> — "Well...", "You know...", "I mean..."</li>
+                    <li style="margin-bottom: 12px;">✅ <strong>Storytelling structures</strong> — "So, this one time..." / "You won't believe what happened..."</li>
+                    <li>✅ <strong>Informal register</strong> — Diferença entre linguagem formal e informal</li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3); margin-bottom: 40px; line-height: 1.8;">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px; font-weight: 700; color: #fff;">💡 Dicas para Revisar o Bloco 6</h3>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Ouça os áudios várias vezes</strong> — quanto mais ouvir, mais natural fica</p>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Leia os textos em voz alta</strong> — ler em voz alta ajuda a internalizar as frases</p>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Faça shadowing dos textos</strong> — repita junto com o áudio, imitando o ritmo e a pronúncia</p>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 8px;">✅ <strong>Use phrasal verbs no dia a dia</strong> — tente substituir verbos simples por phrasal verbs</p>
+                <p style="color: rgba(255,255,255,0.95);">✅ <strong>Conte uma história engraçada em inglês</strong> — pratique storytelling usando as expressões aprendidas</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Inglês com Tio Binho</strong></p>
+        <p>Do começo ao fim, juntos a cada passo! 🚀</p>
+        <div class="footer-credit">© 2026 Tio Binho ❤️</div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', e => { const btn = e.target.closest('.btn, .text-btn, .install-btn, .back-btn'); if (!btn) return; btn.style.transition = 'transform 0.1s ease'; btn.style.transform = 'scale(0.93)'; setTimeout(() => btn.style.transform = '', 150); });
+        let deferredPrompt = null; let installPromptShown = false;
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; showInstallPrompt(); });
+        function checkIfMobileAndShowBanner() { if (Platform.isStandalone) return; if (!Platform.isMobile) return; if (Platform.isIOS) { setTimeout(() => showIOSInstallInstructions(), 2000); return; } if (!installPromptShown) { setTimeout(() => showInstallPrompt(), 2000); } }
+        function showInstallPrompt() { const banner = document.getElementById('installBanner'); if (banner && !installPromptShown) { banner.style.display = 'flex'; installPromptShown = true; } }
+        function showIOSInstallInstructions() { const banner = document.getElementById('installBanner'); if (!banner || installPromptShown) return; banner.querySelector('h3').textContent = '📱 Instale nosso app!'; banner.querySelector('p').innerHTML = 'Toque em <strong>Compartilhar</strong> (ícone ⬆️) → <strong>Adicionar à Tela Inicial</strong>'; const installButtons = banner.querySelector('.install-buttons'); installButtons.innerHTML = '<button class="install-btn cancel" onclick="closeInstallPrompt()">OK, entendi</button>'; banner.style.display = 'flex'; installPromptShown = true; }
+        function installApp() { if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then((choiceResult) => { deferredPrompt = null; closeInstallPrompt(); }).catch(() => closeInstallPrompt()); } else { alert('Para instalar:\n\n📱 Android: Clique no menu (⋮) → "Instalar app"\n\n🍎 iOS: Clique em Compartilhar → "Adicionar à Tela Inicial"'); } }
+        function closeInstallPrompt() { const banner = document.getElementById('installBanner'); if (banner) banner.style.display = 'none'; }
+        window.addEventListener('load', checkIfMobileAndShowBanner);
+    </script>
+    <script src="../platform-detect.js"></script>
+    <script src="../supabase-config.js"></script>
+    <script src="../auth.js"></script>
+    <script src="../access-log.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { initAuth(); });</script>
+</body>
+</html>
